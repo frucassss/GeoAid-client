@@ -108,6 +108,10 @@
     transform: rotate(360deg);
   }
 }
+#map {
+  height: 88vh;
+}
+
 body {
   background: rgb(251, 63, 63);
   background: linear-gradient(41deg, rgb(251, 63, 63) 0%, rgb(252, 146, 70) 100%);

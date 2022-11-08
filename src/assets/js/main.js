@@ -8,6 +8,7 @@ function init() {
     //poc();
     console.log("hi");
     setTimeout(startupAnimaiton, 2500);
+    createMap();
 }
 
 function loadConfig() {
@@ -21,8 +22,14 @@ function loadConfig() {
 
 function startupAnimaiton() {
     const loader = document.querySelector(".loading");
-    const h1 = document.querySelector("h1");
+    const map = document.querySelector("#map");
     loader.classList.add("hidden");
-    h1.classList.remove("hidden");
-    h1.classList.add("lineup");
+    map.classList.remove("hidden");
+}
+
+function createMap() {
+    map = L.map('map').setView([36, -112], 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> '
+    }).addTo(map);
 }
