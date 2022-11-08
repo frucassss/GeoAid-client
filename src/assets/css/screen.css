@@ -109,12 +109,20 @@
   }
 }
 #map {
-  height: 88vh;
+  height: 100%;
+  width: 100%;
 }
 
 body {
   background: rgb(251, 63, 63);
   background: linear-gradient(41deg, rgb(251, 63, 63) 0%, rgb(252, 146, 70) 100%);
+  height: 100%;
+  width: 100%;
+}
+
+html {
+  height: 100%;
+  width: 100%;
 }
 
 h1 {
@@ -123,10 +131,14 @@ h1 {
   font-size: 3rem;
 }
 
-.hidden {
+.invisible {
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s 1.5s, opacity 1.5s linear;
+}
+
+.hidden {
+  display: none;
 }
 
 /*# sourceMappingURL=screen.css.map */

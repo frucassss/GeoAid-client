@@ -6,7 +6,13 @@ body{
 
     background: rgb(251,63,63);
     background: linear-gradient(41deg, rgba(251,63,63,1) 0%, rgba(252,146,70,1) 100%);
+    height: 100%;
+    width: 100%;
+}
 
+html{
+    height: 100%;
+    width: 100%;
 }
 
 h1{
@@ -15,8 +21,12 @@ h1{
     font-size: 3rem;
 }
 
-.hidden {
+.invisible {
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s constants.$transition-time, opacity constants.$transition-time linear;
+}
+
+.hidden {
+    display: none;
 }
