@@ -184,7 +184,7 @@ label, input, textarea {
 }
 input, textarea {
   width: 70%;
-  margin-bottom: 1rem
+  margin-bottom: 1rem;
 }
 textarea {
   height: 10rem;
