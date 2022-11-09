@@ -1,0 +1,51 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body{
+    height: 100%;
+    width: 100%;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#searchbar{
+    width: 16rem;
+    position: relative;
+    display: flex;
+}
+
+.searchTerm{
+    width: 100%;
+    border: 8px solid #EEEEEE;
+    border-right: none;
+    border-left: none;
+    padding: 5px;
+    height: 20px;
+    border-radius: 0 0 0 0;
+}
+
+/*achtergrond van image moet verandert worden*/
+
+.searchButton {
+    background-image: url(../images/search.png);
+    background-repeat: no-repeat;
+    background-size: 1.9rem 1.9rem;
+    background-position: center;
+    width: 40px;
+    height: 46px;
+    border: 0px solid #EEEEEE;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+  }
+
+  .burger{
+    justify-content: left;
+    background-image: url(../images/burger.png);
+    background-repeat: no-repeat;
+    background-size: 1.9rem 1.9rem;
+    background-position: center;
+    width: 40px;
+    height: 46px;
+    border: 0px solid #EEEEEE;
+    border-radius: 10px 0px 0px 10px;
+    cursor: pointer;
+  }
+

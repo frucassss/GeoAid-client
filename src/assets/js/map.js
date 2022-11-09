@@ -2,8 +2,6 @@
     const mbUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
     const mbAttr = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> '
    
-    
-
     //needs some code cleanup
    function createMap() {
     //icons
@@ -56,3 +54,5 @@
             position: 'topright'
         }).addTo(map);
     }
+
+    

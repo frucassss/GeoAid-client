@@ -141,5 +141,14 @@ h1 {
   display: none;
 }
 
+#searchbar{
+  background-color: green;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 1rem;
+  width: 2rem;
+  height: 2rem;
+}
 
 /*# sourceMappingURL=screen.css.map */
