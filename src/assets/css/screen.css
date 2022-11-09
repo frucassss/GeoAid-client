@@ -114,8 +114,7 @@
 }
 
 body {
-  background: rgb(251, 63, 63);
-  background: linear-gradient(41deg, rgb(251, 63, 63) 0%, rgb(252, 146, 70) 100%);
+  background: white;
   height: 100%;
   width: 100%;
 }
@@ -141,60 +140,5 @@ h1 {
   display: none;
 }
 
-form {
-  margin-top: 3rem;
-  margin-inline: auto;
-  width: 60%;
-}
-fieldset {
-  background-color: red;
-  border-radius: 0.5rem;
-}
 
-legend {
-  width: 100%;
-  padding-block: 1rem;
-  text-align: center;
-  font-family: Arial, sans-serif;
-  font-size: 2rem;
-  background-color: darkred;
-  border-top-left-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
-}
-
-div {
-  background-image: url("../images/blub.png");
-  width: 100%;
-  height: 15rem;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-}
-
-fieldset p {
-  margin-block: 1rem;
-  text-align: center;
-  font-family: Arial, sans-serif;
-  font-size: 1.5rem;
-}
-
-label, input, textarea {
-  display: block;
-  margin-inline: auto;
-  width: 70%;
-}
-input, textarea {
-  width: 70%;
-  margin-bottom: 1rem;
-}
-textarea {
-  height: 10rem;
-}
-
-input[type="submit"] {
-  font-size: 0.8rem;
-  padding-block: 0.5rem;
-  font-family: arial, sans-serif;
-  background-color: darkred;
-  border: none;
-}
 /*# sourceMappingURL=screen.css.map */
