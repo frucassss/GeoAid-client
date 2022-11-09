@@ -1,0 +1,33 @@
+#header{
+    margin-top: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background-color: #EEEEEE;
+}
+
+#header ul{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#header ul li{
+    font-size: 1.4rem;
+}
+
+#header ul li:first-child{
+    display: flex;
+}
+
+#header ul li img{
+    margin-top: -1rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    width: 3rem;
+    height: 3rem;
+}
+
+#header ul li:last-child{
+    display: flex;
+    flex-direction: row-reverse;
+    text-decoration: underline;
+}
