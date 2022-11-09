@@ -12,6 +12,8 @@ body{
     display: flex;
 }
 
+/*achtergrond wordt nog wit*/
+
 .searchTerm{
     width: 100%;
     border: 8px solid #EEEEEE;
