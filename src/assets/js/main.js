@@ -5,7 +5,9 @@ document.addEventListener("DOMContentLoaded", loadConfig);
 // Entry point for the JS code.
 function init() {
     // Very small proof of concept.
-    poc();
+    //poc();
+    setTimeout(startupAnimation, 2500);
+    createMap();
 }
 
 function loadConfig() {
@@ -16,3 +18,12 @@ function loadConfig() {
             init();
         });
 }
+
+function startupAnimation() {
+    const loader = document.querySelector(".loading");
+    const map = document.querySelector("#map");
+    loader.classList.add("invisible");
+    map.classList.remove("hidden");
+}
+
+
