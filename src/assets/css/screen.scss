@@ -3,6 +3,7 @@
 @use "constants";
 @use "map";
 @use "searchbar";
+@use "sideNav";
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 body{
     height: 100%;
@@ -24,7 +25,5 @@ html{
 .hidden {
     display: none;
 }
-
-
 
 
