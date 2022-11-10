@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 .loading {
   position: fixed;
   z-index: 999;
@@ -111,24 +112,66 @@
 #map {
   height: 100%;
   width: 100%;
+  z-index: 1;
+}
+
+#searchbar {
+  transform: scale(1.2);
+  margin-top: 1.4rem;
+  margin-left: 2rem;
+  z-index: 2;
+  width: 16rem;
+  position: absolute;
+  display: flex;
+}
+
+/*achtergrond wordt nog wit*/
+.searchTerm {
+  font-size: 1.2rem;
+  width: 100%;
+  border: 0.5rem solid #FFFFFF;
+  border-right: none;
+  border-left: none;
+  padding: 0.313rem;
+  height: 1.25rem;
+  border-radius: 0 0 0 0;
+}
+
+/*achtergrond van image moet verandert worden*/
+.searchButton {
+  background-image: url(../images/search.png);
+  background-repeat: no-repeat;
+  background-size: 1.9rem 1.9rem;
+  background-position: center;
+  width: 2.5rem;
+  height: 2.875rem;
+  border: 0px solid #FFFFFF;
+  border-radius: 0 0.625rem 0.625rem 0;
+  cursor: pointer;
+}
+
+.burger {
+  justify-content: left;
+  background-image: url(../images/burger.png);
+  background-repeat: no-repeat;
+  background-size: 1.9rem 1.9rem;
+  background-position: center;
+  width: 2.5rem;
+  height: 2.875rem;
+  border: 0px solid #FFFFFF;
+  border-radius: 0.626rem 0px 0px 0.625rem;
+  cursor: pointer;
 }
 
 body {
-  background: rgb(251, 63, 63);
-  background: linear-gradient(41deg, rgb(251, 63, 63) 0%, rgb(252, 146, 70) 100%);
   height: 100%;
   width: 100%;
+  font-family: "Open Sans", sans-serif;
 }
 
 html {
   height: 100%;
   width: 100%;
-}
-
-h1 {
-  color: black;
-  text-align: center;
-  font-size: 3rem;
 }
 
 .invisible {
@@ -139,16 +182,6 @@ h1 {
 
 .hidden {
   display: none;
-}
-
-#searchbar{
-  background-color: green;
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin-right: 1rem;
-  width: 2rem;
-  height: 2rem;
 }
 
 /*# sourceMappingURL=screen.css.map */
