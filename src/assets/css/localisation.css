@@ -2,7 +2,7 @@ body {
 
     background: rgb(255,255,255);
     background: linear-gradient(41deg, rgba(255,255,255) 0%, rgba(220,199,170,1) 100%);
-
+    font-family: Arial, sans-serif;
 
 }
 main {
@@ -15,12 +15,15 @@ form {
     margin-inline: auto;
     width: 40%;
 }
+#contact {
+    margin-inline: unset;
+}
 fieldset {
     background-color: rgba(220,199,170);
     border-radius: 0.5rem;
 }
 
-legend {
+legend, h2 {
     color: #f7882f;
     width: 100%;
     padding-block: 1rem;
@@ -32,7 +35,7 @@ legend {
     border-top-right-radius: 0.5rem;
 }
 
-div {
+form div {
     background-image: url("../images/Dome.png");
     width: 100%;
     background-size: cover;
@@ -69,3 +72,22 @@ input[type="submit"] {
     border: none;
     color: white;
 }
+
+aside {
+    background-color: rgba(220,199,170);
+    border-radius: 0.5rem;
+    width: 25%;
+}
+aside img {
+    width: 25%;
+    height: 25%;
+}
+body div {
+    display: flex;
+    justify-content: space-evenly;
+}
+dt {
+    color: white;
+    font-weight: bold;
+}
+
