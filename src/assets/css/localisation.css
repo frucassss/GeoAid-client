@@ -1,30 +1,43 @@
-form {
-    margin-top: 3rem;
-    margin-inline: auto;
+body {
+
+    background: rgb(255,255,255);
+    background: linear-gradient(41deg, rgba(255,255,255) 0%, rgba(220,199,170,1) 100%);
+
+
+}
+main {
+    background-color: #A8C3FA;
     width: 60%;
+    margin-inline: auto;
+}
+form {
+    padding-top: 3rem;
+    margin-inline: auto;
+    width: 40%;
 }
 fieldset {
-    background-color: #ffe9c9;
+    background-color: rgba(220,199,170);
     border-radius: 0.5rem;
 }
 
 legend {
+    color: #f7882f;
     width: 100%;
     padding-block: 1rem;
     text-align: center;
     font-family: Arial, sans-serif;
     font-size: 2rem;
-    background-color: #ff7000;
+    background-color: #6B7A8F;
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
 }
 
 div {
-    background-image: url("../images/blub.png");
+    background-image: url("../images/Dome.png");
     width: 100%;
+    background-size: cover;
     height: 15rem;
     background-repeat: no-repeat;
-    background-size: 100% 100%;
 }
 
 fieldset p {
@@ -52,6 +65,7 @@ input[type="submit"] {
     font-size: 0.8rem;
     padding-block: 0.5rem;
     font-family: arial, sans-serif;
-    background-color: #ff7000;
+    background-color: #f7882f;
     border: none;
+    color: white;
 }
