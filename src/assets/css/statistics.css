@@ -1,0 +1,40 @@
+img {
+  width: 4rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: black solid;
+  background-color: #e77d11;
+}
+nav ul {
+  display: flex;
+  justify-content: space-around;
+}
+nav ul li {
+  font-size: 1.7rem;
+  margin-bottom: auto;
+  margin-top: auto;
+}
+nav ul li a {
+  color: #451804;
+}
+nav ul li:nth-child(2) {
+  font-weight: bold;
+}
+nav ul li:nth-child(7) {
+  border-bottom: black solid;
+}
+nav ul li:last-child img {
+  width: 4rem;
+}
+nav ul li:first-child img {
+  width: 5rem;
+}
+
+/*# sourceMappingURL=statistics.css.map */

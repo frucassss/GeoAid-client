@@ -1,0 +1,47 @@
+@import "constants";
+
+img {
+    width: 4rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: black solid;
+    background-color: $nav-color;
+
+    ul {
+        display: flex;
+        justify-content: space-around;
+
+        li {
+            font-size: 1.7rem;
+            margin-bottom: auto;
+            margin-top: auto;
+
+            a {
+                color: $primary-text-color;
+            }
+        }
+
+        li:nth-child(2) {
+            font-weight: bold;
+        }
+
+        li:nth-child(7) {
+            border-bottom: black solid;
+        }
+
+        li:last-child img {
+            width: 4rem;
+        }
+
+        li:first-child img {
+            width: 5rem;
+        }
+    }
+}
