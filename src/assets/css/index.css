@@ -1,5 +1,5 @@
 body #side_navigation {
-  color: #451804;
+  color: #99857A;
   font-size: 1.5rem;
 }
 body #side_navigation .flexcontainer {
@@ -22,10 +22,10 @@ body #side_navigation ul img {
   width: 2.5rem;
 }
 body #side_navigation ul li:nth-child(odd) {
-  background-color: #c1440e;
+  background-color: #6b1d09;
 }
 body #side_navigation ul li:nth-child(even) {
-  background-color: #e77d11;
+  background-color: #9a542e;
 }
 body #side_navigation ul li:nth-child(1) {
   position: relative;
