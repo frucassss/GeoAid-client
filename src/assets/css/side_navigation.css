@@ -1,4 +1,4 @@
-#sideNav{
+#sideNav {
   position: absolute;
   margin-top: 6rem;
   z-index: 3;
@@ -8,25 +8,24 @@
 }
 
 /*background images transparent maken*/
-
-.head{
+.head {
   border-radius: 0rem 1rem 0rem 0rem;
   background-color: #DC5F00;
   display: flex;
   margin-bottom: 1rem;
-  background-image: url(../images/close.png);
+  background-image: url(../media/close.png);
   background-repeat: no-repeat;
   background-size: 1.9rem 1.9rem;
   background-position: 15.5rem 0.5rem;
 }
 
-.head h1{
+.head h1 {
   font-size: 2rem;
   padding-top: 1rem;
   margin-left: 1rem;
 }
 
-.head img{
+.head img {
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding-left: 1rem;
@@ -34,7 +33,7 @@
   height: 5rem;
 }
 
-.flexUl{
+.flexUl {
   display: flex;
   flex-direction: column;
   padding-bottom: 1rem;
@@ -42,16 +41,18 @@
   column-gap: 1rem;
 }
 
-.flexUl li{
+.flexUl li {
   display: flex;
   font-size: 1.4rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
-.flexUl li img{
+.flexUl li img {
   margin-right: 0.5rem;
   margin-top: 2.2rem;
   width: 2rem;
   height: 2rem;
 }
+
+/*# sourceMappingURL=side_navigation.css.map */

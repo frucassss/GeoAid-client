@@ -1,65 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
-    <title>GeoAid</title>
+    <title>Map</title>
+
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/index.css" />
+
     <script src="assets/js/map.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/api.js"></script>
-    <link rel="stylesheet" href="assets/css/screen.css" />
 
     <!--leaflet-->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
-      integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
-      crossorigin=""
-    />
-    <script
-      src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
-      integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
-      crossorigin=""
-    ></script>
-  </head>
-  <body>
-    <div id="searchbar">
-      <button type="button" class="burger"></button>
-      <input type="text" class="searchTerm" placeholder="Search" />
-      <button type="submit" class="searchButton">
-        <i class="searched"></i>
-      </button>
-    </div>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css" integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js" integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
+</head>
 
-    <div id="sideNav">
-      <div class="head">
-        <img src="../src/assets/images/profile.png" alt="profile icon" />
-        <h1>Name</h1>
-      </div>
-      <ul class="flexUl">
-        <li>
-          <img src="../src/assets/images/statistics.png" alt="Statistics" />
-          <h2>Statistics</h2>
-        </li>
-        <li>
-          <img src="../src/assets/images/company.png" alt="Company" />
-          <h2>Company</h2>
-        </li>
-        <li>
-          <img src="../src/assets/images/location.png" alt="Localisation" />
-          <h2>Localisation</h2>
-        </li>
-        <li>
-          <img src="../src/assets/images/information.jpg" alt="About us" />
-          <h2>About us</h2>
-        </li>
-        <li>
-          <img src="../src/assets/images/settings.png" alt="Settings" />
-          <h2>Settings</h2>
-        </li>
-      </ul>
-    </div>
+<body>
+    <!-- <div id="searchbar">
+        <form action="#">
+            <img src="assets/media/burger.png" alt="burger">
+            <input type="text" placeholder="Search" />
+            <button type="submit" class="searchButton">
+                <img src="assets/media/search.png" alt="search">
+            </button>
+        </form>
+    </div> -->
 
-    <div class="loading">Loading&#8230;</div>
-    <div id="map"></div>
-  </body>
+    <nav id="side_navigation">
+        <ul class="flexcontainer">
+            <li>
+                <img src="assets/media/close_icon.png" alt="close" id="close_icon">
+                <div>
+                    <img src="assets/media/profile_icon.png" alt="profile icon" />
+                    <h2>Kurt</h2>
+                </div>
+            </li>
+            <li>
+                <img src="assets/media/stats_icon.png" alt="Statistics" />
+                <h2>Statistics</h2>
+            </li>
+            <li>
+                <img src="assets/media/company_icon.png" alt="Company" />
+                <h2>Company</h2>
+            </li>
+            <li>
+                <img src="assets/media/location_icon.png" alt="Localisation" />
+                <h2>Localisation</h2>
+            </li>
+            <li>
+                <img src="assets/media/about_us_icon.png" alt="About us" />
+                <h2>About us</h2>
+            </li>
+            <li>
+                <img src="assets/media/settings_icon.png" alt="Settings" />
+                <h2>Settings</h2>
+            </li>
+            <li></li>
+        </ul>
+    </nav>
+
+    <!-- <div class="loading">Loading&#8230;</div>
+    <div id="map"></div> -->
+</body>
+
 </html>
