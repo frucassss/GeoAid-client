@@ -1,44 +1,107 @@
-body #side_navigation {
+.hidden {
+  display: none;
+}
+
+body {
+  cursor: default;
+}
+
+body {
+  background-color: gray;
+}
+body header #side_navigation {
+  position: fixed;
   width: 17rem;
   height: 100vh;
   background-color: #c1440e;
   border-radius: 0 2rem 2rem 0;
 }
-body #side_navigation .flexcontainer {
+body header #side_navigation .flexcontainer {
   height: 100%;
   display: flex;
   flex-direction: column;
 }
-body #side_navigation .flexcontainer li {
+body header #side_navigation .flexcontainer li {
   padding-left: 2rem;
   display: flex;
   flex-basis: 16.6666666667%;
 }
-body #side_navigation .flexcontainer li .icon {
+body header #side_navigation .flexcontainer li .icon {
   padding-right: 2rem;
   font-size: 2.5rem;
 }
-body #side_navigation .flexcontainer li h2 {
+body header #side_navigation .flexcontainer li h2 {
   color: #451804;
   font-size: 1.7rem;
 }
-body #side_navigation .flexcontainer li .icon, body #side_navigation .flexcontainer li h2 {
+body header #side_navigation .flexcontainer li .icon, body header #side_navigation .flexcontainer li h2 {
   margin-top: auto;
   margin-bottom: auto;
 }
-body #side_navigation .flexcontainer li:nth-child(even) {
+body header #side_navigation .flexcontainer li:nth-child(even) {
   background-color: #e77d11;
 }
-body #side_navigation .flexcontainer li:nth-child(1) {
+body header #side_navigation .flexcontainer li:nth-child(1) {
   position: relative;
 }
-body #side_navigation .flexcontainer li:nth-child(1) div {
-  flex-direction: row;
+body header #side_navigation .flexcontainer li:nth-child(1) .flex_profile {
+  display: flex;
 }
-body #side_navigation .flexcontainer li:nth-child(1) .close {
+body header #side_navigation .flexcontainer li:nth-child(1) .close {
   position: absolute;
   top: 1rem;
-  right: 0.3rem;
+  right: 0;
+}
+body main #searchbar {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2rem;
+}
+body main #searchbar .menu {
+  font-size: 2.5rem;
+  height: 2.5rem;
+  padding: 0.3rem 0.4rem;
+  margin-left: 2rem;
+  background: white;
+  border-radius: 2rem;
+}
+body main #searchbar .category {
+  font-size: 2.5rem;
+  height: 2.5rem;
+  padding: 0.3rem 0.4rem;
+  margin-right: 2rem;
+  background: white;
+  border-radius: 2rem;
+}
+body main #searchbar #search {
+  flex-basis: auto;
+  line-height: 3rem;
+  height: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+body main #searchbar #search input {
+  font-size: 1.2rem;
+  padding-left: 1.3rem;
+  border: none;
+  background: none;
+  vertical-align: center;
+}
+body main #searchbar #search input:focus {
+  outline: none;
+}
+body main #searchbar #search button {
+  margin-right: 1rem;
+  background-color: white;
+  border: none;
+  border-radius: 2rem;
+}
+body main #searchbar #search button .search {
+  font-size: 2rem;
 }
 
 /*# sourceMappingURL=index.css.map */

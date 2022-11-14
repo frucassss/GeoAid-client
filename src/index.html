@@ -9,9 +9,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="assets/css/index.css" />
 
+    <script src="assets/js/script.js" type="module"></script>
+    <!--
     <script src="assets/js/map.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/api.js"></script>
+    -->
 
     <!--leaflet-->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css" integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
@@ -19,47 +22,55 @@
 </head>
 
 <body>
-    <!-- <div id="searchbar">
-        <form action="#">
-            <img src="assets/media/burger.png" alt="burger">
-            <input type="text" placeholder="Search" />
-            <button type="submit" class="searchButton">
-                <img src="assets/media/search.png" alt="search">
-            </button>
-        </form>
-    </div> -->
+    <header>
+        <nav id="side_navigation" class="hidden">
+            <ul class="flexcontainer">
+                <li>
+                    <div class="material-icons icon close">close</div>
+                    <div class="flex_profile">
+                        <div class="material-icons icon account_circle">account_circle</div>
+                        <h2>Kurt</h2>
+                    </div>
+                </li>
+                <li>
+                    <div class="material-icons icon query_stats">query_stats</div>
+                    <h2>Statistics</h2>
+                </li>
+                <li>
+                    <div class="material-icons icon apartment">apartment</div>
+                    <h2>Company</h2>
+                </li>
+                <li>
+                    <div class="material-icons icon pin_drop">pin_drop</div>
+                    <h2>Localisation</h2>
+                </li>
+                <li>
+                    <div class="material-icons icon info">info</div>
+                    <h2>About us</h2>
+                </li>
+                <li>
+                    <div class="material-icons icon settings">settings</div>
+                    <h2>Settings</h2>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-    <nav id="side_navigation">
-        <ul class="flexcontainer">
-            <li>
-                <div class="material-icons icon close">close</div>
-                <div class="flex_profile">
-                    <div class="material-icons icon account_circle">account_circle</div>
-                    <h2>Kurt</h2>
+    <main>
+        <div id="searchbar">
+            <div class="material-icons icon menu">menu</div>
+            <form action="#">
+                <div id="search">
+                    <input type="text" placeholder="Search" />
+                    <button type="submit" class="searchButton">
+                        <div class="material-icons icon search">search</div>
+                    </button>
                 </div>
-            </li>
-            <li>
-                <div class="material-icons icon query_stats">query_stats</div>
-                <h2>Statistics</h2>
-            </li>
-            <li>
-                <div class="material-icons icon apartment">apartment</div>
-                <h2>Company</h2>
-            </li>
-            <li>
-                <div class="material-icons icon pin_drop">pin_drop</div>
-                <h2>Localisation</h2>
-            </li>
-            <li>
-                <div class="material-icons icon info">info</div>
-                <h2>About us</h2>
-            </li>
-            <li>
-                <div class="material-icons icon settings">settings</div>
-                <h2>Settings</h2>
-            </li>
-        </ul>
-    </nav>
+            </form>
+            <div class="material-icons icon category">category</div>
+        </div>
+    </main>
+
 
     <!-- <div class="loading">Loading&#8230;</div>
     <div id="map"></div> -->
