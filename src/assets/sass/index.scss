@@ -3,32 +3,35 @@
 body {
 
   #side_navigation {
-    color: $primary-text-color;
-    font-size: 1.5rem;
+    width: 17rem;
+    height: 100vh;
+    background-color: $secondary-color;
+    border-radius: 0 2rem 2rem 0;
 
     .flexcontainer {
+      height: 100%;
       display: flex;
       flex-direction: column;
-    }
 
-    ul {
-      height: 100vh;
       li {
-        height: 15vh;
-        padding-bottom: 2%;
-        padding-top: 2%;
         padding-left: 2rem;
-        width: 15%;
         display: flex;
-      }
+        flex-basis: Calc(100% / 6);
 
-      img {
-        padding-right: 1rem;
-        width: 2.5rem;
-      }
+        .icon {
+          padding-right: 2rem;
+          font-size: 2.5rem;
+        }
 
-      li:nth-child(odd) {
-        background-color: $secondary-color;
+        h2 {
+          color: $primary-text-color;
+          font-size: 1.7rem;
+        }
+
+        .icon, h2 {
+          margin-top: auto;
+          margin-bottom: auto;
+        }
       }
 
       li:nth-child(even) {
@@ -37,30 +40,16 @@ body {
 
       li:nth-child(1) {
         position: relative;
-        border-radius: 0 2rem 0 0;
-        display: block;
 
         div {
-          display: flex;
+          flex-direction: row;
         }
 
-        #close_icon {
+        .close {
           position: absolute;
-          width: 1.5rem;
           top: 1rem;
-
           right: 0.3rem;
         }
-      }
-
-
-
-      li:last-child {
-        border-radius: 0 0 2rem 0;
-      }
-
-      h2 {
-        padding-top: 0.5rem;
       }
     }
   }
