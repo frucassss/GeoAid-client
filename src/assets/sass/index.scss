@@ -3,7 +3,7 @@
 body {
 
   #side_navigation {
-    color: $primary-text-color;
+    color: $primary-font-color;
     font-size: 1.5rem;
 
     .flexcontainer {
@@ -28,11 +28,11 @@ body {
       }
 
       li:nth-child(odd) {
-        background-color: $secondary-color;
+        background-color: $primary-color;
       }
 
       li:nth-child(even) {
-        background-color: $tertiary-color;
+        background-color: $secondary-color;
       }
 
       li:nth-child(1) {
@@ -52,8 +52,6 @@ body {
           right: 0.3rem;
         }
       }
-
-
 
       li:last-child {
         border-radius: 0 0 2rem 0;

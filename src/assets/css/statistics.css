@@ -1,0 +1,108 @@
+a {
+  text-decoration: none;
+}
+
+nav {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: black solid;
+  background-color: #6b1d09;
+}
+nav ul {
+  display: flex;
+  justify-content: space-around;
+}
+nav ul li {
+  font-size: 1.7rem;
+  margin-bottom: auto;
+  margin-top: auto;
+}
+nav ul li a {
+  font-family: Arial, sans-serif;
+  color: black;
+}
+nav ul li:nth-child(2) {
+  font-weight: bold;
+}
+nav ul li:nth-child(7) {
+  border-bottom: black solid;
+}
+nav ul li:last-child img {
+  width: 4rem;
+}
+nav ul li:first-child img {
+  width: 5rem;
+}
+nav ul img {
+  width: 4rem;
+}
+
+body {
+  background-color: #d0c8a8;
+}
+body main #statistics {
+  text-align: center;
+  margin-right: 4rem;
+  margin-left: 4rem;
+  margin-top: 2rem;
+}
+body main #statistics h1 {
+  font-family: Arial, sans-serif;
+  color: #d0c8a8;
+  font-size: 2rem;
+  padding: 1rem;
+  background-color: #3e0000;
+  border-radius: 2rem 2rem 0 0;
+}
+body main #statistics #container_statistics {
+  margin-bottom: 1.5rem;
+  padding-top: 2rem;
+  padding-bottom: 1.5rem;
+  display: flex;
+  background-color: #9a542e;
+  border-radius: 0 0 2rem 2rem;
+}
+body main #statistics #container_statistics aside {
+  width: 20%;
+  background-color: #6b1d09;
+  margin-top: 3rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  padding-bottom: 1rem;
+  border-radius: 2rem;
+}
+body main #statistics #container_statistics aside ul {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+body main #statistics #container_statistics aside ul li {
+  font-size: 1.5rem;
+  padding-top: 0.5rem;
+  border-bottom: black solid;
+  height: 2rem;
+}
+body main #statistics #container_statistics aside ul li:first-child {
+  font-weight: bold;
+}
+body main #statistics #container_statistics #container_charts {
+  width: 80%;
+  padding-right: 2rem;
+}
+body main #statistics #container_statistics #container_charts #ul_period {
+  display: flex;
+  justify-content: space-between;
+}
+body main #statistics #container_statistics #container_charts #ul_period li {
+  font-size: 1.2rem;
+  text-decoration: underline;
+}
+body main #statistics #container_statistics #container_charts article {
+  margin-top: 2rem;
+  height: 57vh;
+  background-color: #6b1d09;
+  border-radius: 2rem;
+}
+
+/*# sourceMappingURL=statistics.css.map */
