@@ -1,0 +1,96 @@
+@import "constants";
+@import "general";
+@import "map";
+@import "animations";
+
+body {
+    background-color: gray;
+        header {
+            margin-top: 1rem;
+            width: 63vw;
+            z-index: 2;
+            position: fixed;
+            display: flex;
+            justify-content: space-between;
+
+            .menu {
+                font-size: 2.5rem;
+                height: 2.5rem;
+                padding: 0.3rem 0.4rem;
+                margin-left: 2rem;
+                background: white;
+                border-radius: 2rem;
+            }
+
+            #searchbar {
+                line-height: 3rem;
+                height: 3rem;
+                width: 26vw;
+                background-color: white;
+                border-radius: 2rem;
+                display: flex;
+                justify-content: space-between;
+
+                input {
+                    font-size: 1.2rem;
+                    padding-left: 1.3rem;
+                    vertical-align: center;
+                }
+                button {
+                    margin-right: 1rem;
+                    background-color: white;
+                    border: none;
+                    border-radius: 2rem;
+
+                    .search {
+                        font-size: 2rem;
+                    }
+                }
+            }
+        }
+    }
+    main {
+        #side_navigation {
+            z-index: 2;
+            position: fixed;
+            width: 17rem;
+            height: 100vh;
+            background-color: $primary-color;
+            border-radius: 0 2rem 0 0;
+
+            .flexcontainer {
+                display: flex;
+                flex-direction: column;
+
+                li {
+                    position: relative;
+                    padding-left: 2rem;
+                    height: 7rem;
+                    a {
+                        display: flex;
+                        padding: 2.25rem 0;
+                    }
+                    .icon {
+                        padding-right: 2rem;
+                        font-size: 2.5rem;
+                    }
+                    h2 {
+                        color: $primary-font-color;
+                        font-size: 1.7rem;
+                    }
+                }
+                li:nth-child(even) {
+                    background-color: $secondary-color;
+                }
+                li:nth-child(1) {
+                    position: relative;
+
+                    .close {
+                        position: absolute;
+                        top: 1rem;
+                        right: 0;
+                    }
+                }
+            }
+        }
+}

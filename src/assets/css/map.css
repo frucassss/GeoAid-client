@@ -3,5 +3,15 @@
   width: 100%;
   z-index: 1;
 }
+#map leaflet-top leaflet-right {
+  margin-top: 1rem;
+}
+#map leaflet-top leaflet-right .leaflet-control {
+  margin-top: 0;
+}
+
+.loading {
+  display: none;
+}
 
 /*# sourceMappingURL=map.css.map */

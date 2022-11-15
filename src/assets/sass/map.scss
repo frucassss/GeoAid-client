@@ -2,4 +2,16 @@
     height:100vh;
     width:100%;
     z-index: 1;
+    leaflet-top leaflet-right {
+        margin-top: 1rem;
+
+        .leaflet-control {
+            margin-top: 0;
+        }
+    }
 }
+
+.loading {
+    display: none;
+}
+

@@ -1,0 +1,145 @@
+.hidden {
+  display: none;
+}
+
+body {
+  cursor: default;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+input {
+  border: none;
+  background: none;
+}
+input:focus {
+  outline: none;
+}
+
+#map {
+  height: 100vh;
+  width: 100%;
+  z-index: 1;
+}
+#map leaflet-top leaflet-right {
+  margin-top: 1rem;
+}
+#map leaflet-top leaflet-right .leaflet-control {
+  margin-top: 0;
+}
+
+.loading {
+  display: none;
+}
+
+.hover-underline-animation {
+  position: relative;
+  color: black;
+}
+
+.hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+body {
+  background-color: gray;
+}
+body header {
+  margin-top: 1rem;
+  width: 63vw;
+  z-index: 2;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+}
+body header .menu {
+  font-size: 2.5rem;
+  height: 2.5rem;
+  padding: 0.3rem 0.4rem;
+  margin-left: 2rem;
+  background: white;
+  border-radius: 2rem;
+}
+body header #searchbar {
+  line-height: 3rem;
+  height: 3rem;
+  width: 26vw;
+  background-color: white;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+body header #searchbar input {
+  font-size: 1.2rem;
+  padding-left: 1.3rem;
+  vertical-align: center;
+}
+body header #searchbar button {
+  margin-right: 1rem;
+  background-color: white;
+  border: none;
+  border-radius: 2rem;
+}
+body header #searchbar button .search {
+  font-size: 2rem;
+}
+
+main #side_navigation {
+  z-index: 2;
+  position: fixed;
+  width: 17rem;
+  height: 100vh;
+  background-color: #6b1d09;
+  border-radius: 0 2rem 0 0;
+}
+main #side_navigation .flexcontainer {
+  display: flex;
+  flex-direction: column;
+}
+main #side_navigation .flexcontainer li {
+  position: relative;
+  padding-left: 2rem;
+  height: 7rem;
+}
+main #side_navigation .flexcontainer li a {
+  display: flex;
+  padding: 2.25rem 0;
+}
+main #side_navigation .flexcontainer li .icon {
+  padding-right: 2rem;
+  font-size: 2.5rem;
+}
+main #side_navigation .flexcontainer li h2 {
+  color: #99857A;
+  font-size: 1.7rem;
+}
+main #side_navigation .flexcontainer li:nth-child(even) {
+  background-color: #9a542e;
+}
+main #side_navigation .flexcontainer li:nth-child(1) {
+  position: relative;
+}
+main #side_navigation .flexcontainer li:nth-child(1) .close {
+  position: absolute;
+  top: 1rem;
+  right: 0;
+}
+
+/*# sourceMappingURL=screen.css.map */
