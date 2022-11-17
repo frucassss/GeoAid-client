@@ -98,14 +98,14 @@ body main #statistics #container_statistics #container_charts #ul_period li {
   font-size: 1.2rem;
   text-decoration: underline;
 }
-body main #statistics #container_statistics #container_charts article {
+body main #statistics #container_statistics #container_charts .stats {
   margin-top: 2rem;
-  height: 70vh;
+  height: 57vh;
   width: 100%;
   background-color: #6b1d09;
   border-radius: 2rem;
 }
-body main #statistics #container_statistics #container_charts article canvas {
+body main #statistics #container_statistics #container_charts .stats canvas {
   height: 100%;
   width: 100%;
 }
