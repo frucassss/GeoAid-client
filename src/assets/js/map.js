@@ -1,4 +1,5 @@
-    //common consts
+
+//common consts
     const mbUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
     const mbAttr = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> '
    
@@ -16,8 +17,8 @@
         }
     });
     
-    const blackdome = new domeIcon({iconUrl: 'assets/images/blackdome.png'});
-    const danger = new dangerIcon({iconUrl: 'assets/images/danger.png'});
+    const blackdome = new domeIcon({iconUrl: 'assets/media/blackdome.png'});
+    const danger = new dangerIcon({iconUrl: 'assets/media/danger.png'});
     //domes marker
     const domes = L.layerGroup();
     const dome1 = L.marker([36, -110.5], {icon: blackdome}).bindPopup('This is Dome1').addTo(domes);

@@ -2,84 +2,84 @@
 @import "nav";
 
 body {
-    background-color: $background-color;
+  background-color: $background-color;
 
-    main {
-        #statistics {
-            text-align: center;
-            margin-right: 4rem;
-            margin-left: 4rem;
-            margin-top: 2rem;
+  main {
+    #statistics {
+      text-align: center;
+      margin-right: 4rem;
+      margin-left: 4rem;
+      margin-top: 2rem;
 
 
-            h1 {
-                font-family: $header-font-family;
-                color: $header-font-color;
-                font-size: 2rem;
-                padding: 1rem;
-                background-color: $header-background-color;
-                border-radius: $border-radius $border-radius 0 0;
+      h1 {
+        font-family: $header-font-family;
+        color: $header-font-color;
+        font-size: 2rem;
+        padding: 1rem;
+        background-color: $header-background-color;
+        border-radius: $border-radius $border-radius 0 0;
+      }
+
+      #container_statistics {
+        margin-bottom: 1.5rem;
+        padding-top: 2rem;
+        padding-bottom: 1.5rem;
+        display: flex;
+        background-color: $secondary-color;
+        border-radius: 0 0 $border-radius $border-radius;
+
+        aside {
+          width: 20%;
+          background-color: $primary-color;
+          margin-top: 3rem;
+          margin-left: 2rem;
+          margin-right: 2rem;
+          padding-bottom: 1rem;
+          border-radius: $border-radius;
+
+          ul {
+            margin-left: 2rem;
+            margin-right: 2rem;
+            display: flex;
+            flex-direction: column;
+
+            li {
+              font-size: 1.5rem;
+              padding-top: 0.5rem;
+              border-bottom: black solid;
+              height: 2rem;
             }
 
-            #container_statistics {
-                margin-bottom: 1.5rem;
-                padding-top: 2rem;
-                padding-bottom: 1.5rem;
-                display: flex;
-                background-color: $secondary-color;
-                border-radius: 0 0 $border-radius $border-radius;
-
-                aside {
-                    width: 20%;
-                    background-color: $primary-color;
-                    margin-top: 3rem;
-                    margin-left: 2rem;
-                    margin-right: 2rem;
-                    padding-bottom: 1rem;
-                    border-radius: $border-radius;
-
-                    ul {
-                        margin-left: 2rem;
-                        margin-right: 2rem;
-                        display: flex;
-                        flex-direction: column;
-
-                        li {
-                            font-size: 1.5rem;
-                            padding-top: 0.5rem;
-                            border-bottom: black solid;
-                            height: 2rem;
-                        }
-
-                        li:first-child {
-                            font-weight: bold;
-                        }
-                    }
-                }
-
-                #container_charts {
-                    width: 80%;
-                    padding-right: 2rem;
-
-                    #ul_period {
-                        display: flex;
-                        justify-content: space-between;
-
-                        li {
-                            font-size: 1.2rem;
-                            text-decoration: underline;
-                        }
-                    }
-
-                    article {
-
-                        margin-top: 2rem;
-                        height: 57vh;
-                        background-color: $primary-color;
-                        border-radius: $border-radius;
-                    }
-                }
+            li:first-child {
+              font-weight: bold;
             }
+          }
         }
+
+        #container_charts {
+          width: 80%;
+          padding-right: 2rem;
+
+          #ul_period {
+            display: flex;
+            justify-content: space-between;
+
+            li {
+              font-size: 1.2rem;
+              text-decoration: underline;
+            }
+          }
+
+          article {
+
+            margin-top: 2rem;
+            height: 57vh;
+            background-color: $primary-color;
+            border-radius: $border-radius;
+          }
+        }
+      }
     }
+  }
 }

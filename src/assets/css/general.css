@@ -1,0 +1,22 @@
+.hidden {
+  display: none;
+}
+
+body {
+  cursor: default;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+input {
+  border: none;
+  background: none;
+}
+input:focus {
+  outline: none;
+}
+
+/*# sourceMappingURL=general.css.map */

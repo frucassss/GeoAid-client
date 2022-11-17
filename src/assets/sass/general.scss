@@ -1,0 +1,21 @@
+.hidden {
+  display: none;
+}
+
+body {
+  cursor: default;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+input {
+  border: none;
+  background: none;
+
+  &:focus {
+    outline: none;
+  }
+}
