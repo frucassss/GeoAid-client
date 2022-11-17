@@ -1,3 +1,42 @@
+a {
+  text-decoration: none;
+}
+
+nav {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: black solid;
+  background-color: #6b1d09;
+}
+nav ul {
+  display: flex;
+  justify-content: space-around;
+}
+nav ul li {
+  font-size: 1.7rem;
+  margin-bottom: auto;
+  margin-top: auto;
+}
+nav ul li a {
+  font-family: Arial, sans-serif;
+  color: black;
+}
+nav ul li:nth-child(2) {
+  font-weight: bold;
+}
+nav ul li:nth-child(7) {
+  border-bottom: black solid;
+}
+nav ul li:last-child img {
+  width: 4rem;
+}
+nav ul li:first-child img {
+  width: 5rem;
+}
+nav ul img {
+  width: 4rem;
+}
+
 #settings {
   margin: 3rem 3rem 3rem 3rem;
   background-color: darkgrey;
@@ -9,7 +48,7 @@
   flex-direction: column;
 }
 #settings .flexcontainer li {
-  background-color: lightgray;
+  background-color: #6b1d09;
   border-radius: 2rem 2rem 2rem 2rem;
   position: relative;
   padding-left: 2rem;
@@ -30,7 +69,7 @@
   font-size: 2.4rem;
 }
 #settings .flexcontainer li h2 {
-  color: black;
+  color: #99857A;
   font-size: 2.4rem;
 }
 
