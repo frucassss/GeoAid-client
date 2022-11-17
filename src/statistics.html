@@ -7,6 +7,10 @@
 
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/statistics.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <script src="assets/js/statistics.js" type="module"></script>
+
 </head>
 
 <body>
@@ -46,10 +50,10 @@
                         <li>1 year</li>
                     </ul>
                     <article id="category_chart">
-                        <h2>Category</h2>
+                        <canvas id="bar-chart"></canvas>
                     </article>
                     <article id="types_chart">
-                        <h2>Types</h2>
+                        <canvas id="chart"></canvas>
                     </article>
                 </div>
             </div>
