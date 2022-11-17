@@ -60,12 +60,13 @@ body {
                     }
                     article {
                         margin-top: 2rem;
-                        height: 57vh;
+                        height: 70vh;
                         width: 100%;
                         background-color: $primary-color;
                         border-radius: $border-radius;
                         canvas {
-                            height: 57vh;
+                            height: 100%;
+                            width: 100%;
                         }
                     }
                 }
