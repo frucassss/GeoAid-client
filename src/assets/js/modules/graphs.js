@@ -1,5 +1,13 @@
-export function makeBarchart(data, selector) {
-    const ctx = document.querySelector(selector).getContext('2d');
+export function makeBarchart(data) {
+    const oldChart = document.querySelector("#bar-chart");
+    if (oldChart) {
+        oldChart.remove();
+    }
+    const html = "<canvas id=\"bar-chart\"></canvas>"
+    const target = document.querySelector("#category_chart");
+    target.innerHTML += html;
+
+    const ctx = document.querySelector("#bar-chart").getContext('2d');
     const configuration = {
         type: 'bar',
         data: {
@@ -48,4 +56,5 @@ export function makeBarchart(data, selector) {
         }
     }
     new Chart(ctx, configuration);
+    return Chart;
 }
