@@ -1,5 +1,6 @@
 .hidden {
   display: none;
+  opacity: 0;
 }
 
 body {
@@ -101,10 +102,92 @@ body header #searchbar button .search {
   font-size: 2rem;
 }
 
+@-moz-keyframes slide /* Firefox */ {
+  from {
+    width: 0;
+  }
+  to {
+    width: 17rem;
+  }
+}
+@-webkit-keyframes slide /* Safari and Chrome */ {
+  from {
+    width: 0;
+  }
+  to {
+    width: 17rem;
+  }
+}
+@-ms-keyframes slide /* IE10 */ {
+  from {
+    width: 0;
+  }
+  to {
+    width: 17rem;
+  }
+}
+@keyframes slide {
+  from {
+    width: 0;
+  }
+  to {
+    width: 17rem;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+@-moz-keyframes fadeout /* Firefox */ {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes fadeout /* Safari and Chrome */ {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-ms-keyframes fadeout /* IE10 */ {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+
+
+
 main #side_navigation {
+  -moz-animation: slide 1s forwards;
+  -webkit-animation: slide 1s forwards;
+  -o-animation: slide 1s forwards;
+  -ms-animation: slide 1s forwards;
   z-index: 2;
   position: fixed;
-  width: 17rem;
   height: 100vh;
   background-color: #6b1d09;
   border-radius: 0 2rem 0 0;
@@ -117,16 +200,19 @@ main #side_navigation .flexcontainer li {
   position: relative;
   padding-left: 2rem;
   height: 7rem;
+  width: auto;
 }
 main #side_navigation .flexcontainer li a {
   display: flex;
   padding: 2.25rem 0;
 }
 main #side_navigation .flexcontainer li .icon {
+  animation: fade 3s;
   padding-right: 2rem;
   font-size: 2.5rem;
 }
 main #side_navigation .flexcontainer li h2 {
+  animation: fade 3s;
   color: #99857A;
   font-size: 1.7rem;
 }
