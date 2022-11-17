@@ -100,9 +100,14 @@ body main #statistics #container_statistics #container_charts #ul_period li {
 }
 body main #statistics #container_statistics #container_charts article {
   margin-top: 2rem;
-  height: 57vh;
+  height: 70vh;
+  width: 100%;
   background-color: #6b1d09;
   border-radius: 2rem;
+}
+body main #statistics #container_statistics #container_charts article canvas {
+  height: 100%;
+  width: 100%;
 }
 
 /*# sourceMappingURL=statistics.css.map */

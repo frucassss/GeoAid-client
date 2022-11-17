@@ -1,4 +1,3 @@
-
 export function makeHidden(selector) {
     const element = document.querySelector(selector)
     element.classList.add("hidden");
