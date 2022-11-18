@@ -37,6 +37,27 @@ nav ul img {
   width: 4rem;
 }
 
+.hidden {
+  display: none;
+}
+
+body {
+  cursor: default;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+input {
+  border: none;
+  background: none;
+}
+input:focus {
+  outline: none;
+}
+
 body {
   background-color: #d0c8a8;
 }
@@ -78,12 +99,16 @@ body main #statistics #container_statistics aside ul {
   flex-direction: column;
 }
 body main #statistics #container_statistics aside ul li {
+  color: #99857A;
   font-size: 1.5rem;
   padding-top: 0.5rem;
   border-bottom: black solid;
   height: 2rem;
 }
-body main #statistics #container_statistics aside ul li:first-child {
+body main #statistics #container_statistics aside ul li:hover {
+  color: black;
+}
+body main #statistics #container_statistics aside ul .selected {
   font-weight: bold;
 }
 body main #statistics #container_statistics #container_charts {

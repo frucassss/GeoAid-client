@@ -1,5 +1,7 @@
 @import "constants";
 @import "nav";
+@import "general";
+
 body {
     background-color: $background-color;
     main {
@@ -37,13 +39,17 @@ body {
                         display: flex;
                         flex-direction: column;
                         li {
+                            color: $primary-font-color;
                             font-size: 1.5rem;
                             padding-top: 0.5rem;
                             border-bottom: black solid;
                             height: 2rem;
                         }
-                        li:first-child {
-                            font-weight: bold;
+                        li:hover {
+                            color: $secondary-font-color;
+                        }
+                        .selected {
+                           font-weight: bold;
                         }
                     }
                 }
