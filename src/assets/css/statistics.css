@@ -136,8 +136,9 @@ body main #statistics #container_statistics #container_charts .stats canvas {
   width: 100%;
 }
 body main #statistics #container_statistics #container_charts #types_chart #dome-choice {
+  z-index: 1;
   position: absolute;
-  padding: 1rem 0 0 2rem;
+  padding: 1.4rem 0 0 2rem;
   display: flex;
 }
 body main #statistics #container_statistics #container_charts #types_chart #dome-choice h2 {
@@ -147,6 +148,7 @@ body main #statistics #container_statistics #container_charts #types_chart #dome
   color: #99857A;
 }
 body main #statistics #container_statistics #container_charts #types_chart #pie-chart {
+  z-index: 2;
   margin-bottom: 2rem;
 }
 

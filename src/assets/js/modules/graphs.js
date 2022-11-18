@@ -16,7 +16,7 @@ export function makeBarchart(data) {
             }]
         },
         options: {
-            backgroundColor: "blue",
+            backgroundColor: "#c30010",
             scales: {
                 y: {
                     title: {
@@ -79,6 +79,7 @@ export function makePieChart(data) {
             }]
         },
         options: {
+
             plugins: {
                 title: {
                     display: true,
@@ -86,11 +87,18 @@ export function makePieChart(data) {
                     font: {
                         size: 24,
                         weight: "bold"
+                    },
+                    padding: {
+                        top: 20,
+                        bottom: 50,
                     }
+                },
+                legend: {
+                    position: "right"
                 },
                 tooltip: {
                     callbacks: {
-                        afterBody: function (context) {
+                        afterBody: function(context) {
                             return '(%)';
                         }
                     }

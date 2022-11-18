@@ -77,8 +77,9 @@ body {
                     }
                     #types_chart {
                         #dome-choice {
+                            z-index: 1;
                             position: absolute;
-                            padding: 1rem 0 0 2rem;
+                            padding: 1.4rem 0 0 2rem;
                             display: flex;
                             h2 {
                                 font-size: 1.3rem;
@@ -88,6 +89,7 @@ body {
                             }
                         }
                         #pie-chart {
+                            z-index: 2;
                             margin-bottom: 2rem;
                         }
                     }
