@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/statistics.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
     <script src="assets/js/statistics.js" type="module"></script>
@@ -36,18 +37,23 @@
                     <ul>
                         <li id="crimes" class="selected">
                             <p>Crimes</p>
+                            <hr>
                         </li>
                         <li id="oxygen-leaks">
                             <p>Oxygen leaks</p>
+                            <hr>
                         </li>
                         <li id="population">
                             <p>Population</p>
+                            <hr>
                         </li>
                         <li id="medical-dispaches">
                             <p>Medical dispaches</p>
+                            <hr>
                         </li>
                         <li id="general">
                             <p>General</p>
+                            <hr>
                         </li>
                     </ul>
                 </aside>
@@ -59,11 +65,15 @@
                         <li>6 months</li>
                         <li>1 year</li>
                     </ul>
-                    <div id="category_chart" class="stats">
 
+                    <div id="category_chart" class="stats">
                     </div>
                     <div id="types_chart" class="stats">
-                        <canvas id="chart"></canvas>
+                        <div id="dome-choice">
+                            <div class="material-icons icon arrow_back_ios">arrow_back_ios</div>
+                            <h2>Dome 1</h2>
+                            <div class="material-icons icon arrow_forward_ios">arrow_forward_ios</div>
+                        </div>
                     </div>
                 </div>
             </div>

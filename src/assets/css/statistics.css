@@ -93,23 +93,24 @@ body main #statistics #container_statistics aside {
   border-radius: 2rem;
 }
 body main #statistics #container_statistics aside ul {
-  margin-left: 2rem;
-  margin-right: 2rem;
+  margin: 2rem;
   display: flex;
   flex-direction: column;
 }
 body main #statistics #container_statistics aside ul li {
   color: #99857A;
   font-size: 1.5rem;
-  padding-top: 0.5rem;
-  border-bottom: black solid;
-  height: 2rem;
 }
 body main #statistics #container_statistics aside ul li:hover {
   color: black;
 }
 body main #statistics #container_statistics aside ul .selected {
   font-weight: bold;
+}
+body main #statistics #container_statistics aside ul hr {
+  height: 0.15rem;
+  background-color: #99857A;
+  border: none;
 }
 body main #statistics #container_statistics #container_charts {
   width: 80%;
@@ -133,6 +134,20 @@ body main #statistics #container_statistics #container_charts .stats {
 body main #statistics #container_statistics #container_charts .stats canvas {
   height: 100%;
   width: 100%;
+}
+body main #statistics #container_statistics #container_charts #types_chart #dome-choice {
+  position: absolute;
+  padding: 1rem 0 0 2rem;
+  display: flex;
+}
+body main #statistics #container_statistics #container_charts #types_chart #dome-choice h2 {
+  font-size: 1.3rem;
+}
+body main #statistics #container_statistics #container_charts #types_chart #dome-choice h2, body main #statistics #container_statistics #container_charts #types_chart #dome-choice .icon {
+  color: #99857A;
+}
+body main #statistics #container_statistics #container_charts #types_chart #pie-chart {
+  margin-bottom: 2rem;
 }
 
 /*# sourceMappingURL=statistics.css.map */

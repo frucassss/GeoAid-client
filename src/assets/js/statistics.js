@@ -1,9 +1,12 @@
-import {getTotalCrime, getTotalOxygenLeaks, getTotalPopulation, getTotalMedicalDispaches} from "./modules/datafetcher.js";
-import {makeBarchart} from "./modules/graphs.js";
+import {getTotalCrime, getTotalOxygenLeaks, getTotalPopulation, getTotalMedicalDispaches, getCrimeTypes} from "./modules/datafetcher.js";
+import {makeBarchart, makePieChart} from "./modules/graphs.js";
 
 function init() {
-    const data = getTotalCrime();
-    makeBarchart(data);
+    const categoryData = getTotalCrime();
+    makeBarchart(categoryData);
+    const typeData = getCrimeTypes();
+    makePieChart(typeData);
+
     document.querySelectorAll("aside li").forEach(li => {
         li.addEventListener("click", function (ev) {
             document.querySelectorAll("aside li").forEach(li => {

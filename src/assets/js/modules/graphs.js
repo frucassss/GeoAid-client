@@ -58,3 +58,47 @@ export function makeBarchart(data) {
     new Chart(ctx, configuration);
     return Chart;
 }
+
+export function makePieChart(data) {
+    const oldChart = document.querySelector("#pie-chart");
+    if (oldChart) {
+        oldChart.remove();
+    }
+    const html = "<canvas id=\"pie-chart\"></canvas>"
+    const target = document.querySelector("#types_chart");
+    target.innerHTML += html;
+
+    const ctx = document.querySelector('#pie-chart').getContext('2d');
+    const configuration = {
+        type: 'doughnut',
+        data: {
+            labels: Object.keys(data),
+            datasets: [{
+                data: Object.values(data),
+                backgroundColor: ['#c30010', "#de0a26", '#ff2c2c', '#f94449', '#ee6b6e', "#f69697", "#ffcbd1"]
+            }]
+        },
+        options: {
+            plugins: {
+                title: {
+                    display: true,
+                    text: "Types of crimes",
+                    font: {
+                        size: 24,
+                        weight: "bold"
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        afterBody: function (context) {
+                            return '(%)';
+                        }
+                    }
+                }
+            },
+            maintainAspectRatio: false
+
+        }
+    }
+    new Chart(ctx, configuration);
+}
