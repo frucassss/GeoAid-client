@@ -2,7 +2,7 @@ import {getTotalCrime, getTotalOxygenLeaks, getTotalPopulation, getTotalMedicalD
 import {makeBarchart, makePieChart} from "./modules/graphs.js";
 
 function init() {
-    // handleEventListeners();
+    handleEventListeners();
     const categoryData = getTotalCrime();
     makeBarchart(categoryData);
     //const domeId = document.querySelector("#dome-choice h2").id;
@@ -12,24 +12,13 @@ function init() {
 
 
 
+
     function handleEventListeners() {
-        document.querySelector("#types_chart .arrow_forward_ios").addEventListener("click", function () {
-            console.log("plus")
-            let domeId = document.querySelector("#dome-choice h2").id;
+        document.querySelector("#types_chart form").addEventListener("submit", function () {
+            const target = document.querySelector('#types_chart h3')
+            let domeId = document.querySelector("#dome-choice h3").id;
             if (domeId <= 3) { // length of all domes - 1
                 const newDomeId = parseInt(domeId) + 1;
-                document.querySelector("#dome-choice h2").id = newDomeId.toString();
-                const typeData = getCrimeTypes(domeId);
-                makePieChart(typeData);
-            }
-        })
-
-        document.querySelector("#types_chart .arrow_back_ios").addEventListener("click", function () {
-            console.log("hey")
-            let domeId = document.querySelector("#dome-choice h2").id;
-            if (domeId <= 0) {
-                console.log("ola")
-                const newDomeId = parseInt(domeId) - 1;
                 document.querySelector("#dome-choice h2").id = newDomeId.toString();
                 const typeData = getCrimeTypes(domeId);
                 makePieChart(typeData);

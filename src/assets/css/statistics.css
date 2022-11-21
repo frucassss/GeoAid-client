@@ -160,8 +160,9 @@ body main #statistics #container_statistics #container_charts #types_chart #dome
   font-size: 2rem;
 }
 body main #statistics #container_statistics #container_charts #types_chart #dome-choice #searchbar {
+  box-sizing: border-box;
+  margin-left: 2rem;
   grid-area: search;
-  margin: 0 2rem;
   line-height: 2rem;
   height: 2rem;
   background-color: #9a542e;

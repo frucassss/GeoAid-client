@@ -94,8 +94,9 @@ body {
                                 font-size: 2rem;
                             }
                             #searchbar {
+                                box-sizing: border-box;
+                                margin-left: 2rem;
                                 grid-area: search;
-                                margin: 0 2rem;
                                 line-height: 2rem;
                                 height: 2rem;
                                 background-color: $secondary-color;
