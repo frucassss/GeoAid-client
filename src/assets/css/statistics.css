@@ -58,6 +58,10 @@ input:focus {
   outline: none;
 }
 
+button {
+  border: none;
+}
+
 body {
   background-color: #d0c8a8;
 }
@@ -127,7 +131,6 @@ body main #statistics #container_statistics #container_charts #ul_period li {
 body main #statistics #container_statistics #container_charts .stats {
   margin-top: 2rem;
   height: 57vh;
-  width: 100%;
   background-color: #6b1d09;
   border-radius: 2rem;
 }
@@ -135,21 +138,55 @@ body main #statistics #container_statistics #container_charts .stats canvas {
   height: 100%;
   width: 100%;
 }
+body main #statistics #container_statistics #container_charts #types_chart {
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+}
 body main #statistics #container_statistics #container_charts #types_chart #dome-choice {
-  z-index: 1;
-  position: absolute;
-  padding: 1.4rem 0 0 2rem;
-  display: flex;
+  width: 100%;
+  display: grid;
+  grid-auto-columns: 33%;
+  grid-template: "dome title search";
+}
+body main #statistics #container_statistics #container_charts #types_chart #dome-choice h3 {
+  text-align: left;
+  padding-left: 1rem;
+  grid-area: dome;
+  horiz-align: left;
+  font-size: 1.5rem;
 }
 body main #statistics #container_statistics #container_charts #types_chart #dome-choice h2 {
-  font-size: 1.3rem;
+  grid-area: title;
+  font-size: 2rem;
 }
-body main #statistics #container_statistics #container_charts #types_chart #dome-choice h2, body main #statistics #container_statistics #container_charts #types_chart #dome-choice .icon {
+body main #statistics #container_statistics #container_charts #types_chart #dome-choice #searchbar {
+  grid-area: search;
+  margin: 0 2rem;
+  line-height: 2rem;
+  height: 2rem;
+  background-color: #9a542e;
+  border-radius: 2rem;
+  display: flex;
+}
+body main #statistics #container_statistics #container_charts #types_chart #dome-choice #searchbar input {
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  vertical-align: center;
+}
+body main #statistics #container_statistics #container_charts #types_chart #dome-choice #searchbar button {
   color: #99857A;
+  margin-right: 0.5rem;
+  background-color: #9a542e;
+  border-radius: 2rem;
+}
+body main #statistics #container_statistics #container_charts #types_chart #dome-choice #searchbar button .search {
+  font-size: 2rem;
 }
 body main #statistics #container_statistics #container_charts #types_chart #pie-chart {
-  z-index: 2;
+  margin-right: 23%;
   margin-bottom: 2rem;
+  z-index: 2;
+  margin-top: 3rem;
 }
 
 /*# sourceMappingURL=statistics.css.map */

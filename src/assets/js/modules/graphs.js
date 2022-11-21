@@ -81,20 +81,16 @@ export function makePieChart(data) {
         options: {
 
             plugins: {
-                title: {
-                    display: true,
-                    text: "Types of crimes",
-                    font: {
-                        size: 24,
-                        weight: "bold"
-                    },
-                    padding: {
-                        top: 20,
-                        bottom: 50,
-                    }
-                },
                 legend: {
-                    position: "right"
+                    position: "left",
+                    labels: {
+                        boxHeight: 30,
+                        font: {
+                            size: 20
+                        },
+                        padding: 15
+                    }
+
                 },
                 tooltip: {
                     callbacks: {

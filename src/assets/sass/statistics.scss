@@ -67,7 +67,6 @@ body {
                     .stats {
                         margin-top: 2rem;
                         height: 57vh;
-                        width: 100%;
                         background-color: $primary-color;
                         border-radius: $border-radius;
                         canvas {
@@ -76,21 +75,57 @@ body {
                         }
                     }
                     #types_chart {
+                        padding-top: 1.5rem;
+                        padding-bottom: 2rem;
                         #dome-choice {
-                            z-index: 1;
-                            position: absolute;
-                            padding: 1.4rem 0 0 2rem;
-                            display: flex;
-                            h2 {
-                                font-size: 1.3rem;
+                            width: 100%;
+                            display: grid;
+                            grid-auto-columns: 33%;
+                            grid-template: "dome title search";
+                            h3 {
+                                text-align: left;
+                                padding-left: 1rem;
+                                grid-area: dome;
+                                horiz-align: left;
+                                font-size: 1.5rem;
                             }
-                            h2, .icon {
-                                color: $primary-font-color;
+                            h2 {
+                                grid-area: title;
+                                font-size: 2rem;
+                            }
+                            #searchbar {
+                                grid-area: search;
+                                margin: 0 2rem;
+                                line-height: 2rem;
+                                height: 2rem;
+                                background-color: $secondary-color;
+                                border-radius: $border-radius;
+                                display: flex;
+
+                                input {
+                                    font-size: 1.2rem;
+                                    padding-left: 1rem;
+                                    vertical-align: center;
+                                }
+
+                                button {
+                                    color: $primary-font-color;
+                                    margin-right: 0.5rem;
+                                    background-color: $secondary-color;
+                                    border-radius: $border-radius;
+
+                                    .search {
+                                        font-size: 2rem;
+                                    }
+                                }
                             }
                         }
+
                         #pie-chart {
-                            z-index: 2;
+                            margin-right: 23%;
                             margin-bottom: 2rem;
+                            z-index: 2;
+                            margin-top: 3rem;
                         }
                     }
                 }

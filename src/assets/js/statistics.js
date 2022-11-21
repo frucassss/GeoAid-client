@@ -2,11 +2,11 @@ import {getTotalCrime, getTotalOxygenLeaks, getTotalPopulation, getTotalMedicalD
 import {makeBarchart, makePieChart} from "./modules/graphs.js";
 
 function init() {
-    handleEventListeners();
+    // handleEventListeners();
     const categoryData = getTotalCrime();
     makeBarchart(categoryData);
-    const domeId = document.querySelector("#dome-choice h2").id;
-    const typeData = getCrimeTypes(domeId);
+    //const domeId = document.querySelector("#dome-choice h2").id;
+    const typeData = getCrimeTypes(0);
     makePieChart(typeData);
 
 
