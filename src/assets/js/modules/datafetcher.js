@@ -36,3 +36,32 @@ export function getTotalMedicalDispaches() {
         "dome 4": 30,
     };
 }
+
+export function getCrimeTypes(id) {
+    let data;
+    if (id === 1) {
+        data = {
+            "Stalking": 30,
+            "Arson": 5,
+            "Burglary": 20,
+            "Domestic abuse": 5,
+            "Robbery": 10,
+            "Rape": 20,
+            "Terrorisme": 10
+        };
+    } else {
+        data = {
+            "Stalking": 10,
+            "Arson": 20,
+            "Burglary": 40,
+            "Domestic abuse": 10,
+            "Robbery": 5,
+            "Rape": 10,
+            "Terrorisme": 5
+        };
+    }
+
+    return Object.fromEntries(
+        Object.entries(data).sort(([,a],[,b]) => b-a)
+    );
+}
