@@ -7,10 +7,23 @@ function init() {
     // Very small proof of concept.
     //poc();
     setTimeout(startupAnimation, 2500);
-    createMap();
+    if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition(makeMapCurrentPosition, makeMapDefaultPosition);
+    }
     createDomeIcons();
     setTimeout(get("domes", getDomes), 3000);
     
+}
+
+function makeMapCurrentPosition(currentPosition) {
+    const coords = currentPosition.coords;
+    const lat = coords.latitude - 75.5;
+    const lon = coords.longitude - 73;
+    createMap([lat, lon])
+}
+
+function makeMapDefaultPosition(){
+    createMap([-23, -69])
 }
 
 function loadConfig() {
