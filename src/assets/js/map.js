@@ -8,10 +8,9 @@ function createMap(position) {
         attribution: mbAttr,
         maxZoom: 20
     });
-
     map = L.map('map', {
         maxZoom: 20,
-        minZoom: 11,
+        minZoom: 6,
         layers: [osm],
         zoomControl: false
     }).setView(position, 13);
@@ -19,11 +18,11 @@ function createMap(position) {
     const baseLayers = {
         "OpenStreetMap": osm
     };
-    const overlays = {
-
-    };
+    const overlays = {};
     const layerControl = L.control.layers(baseLayers, overlays).addTo(map);
+
     createDangerIcons(layerControl);
+    createPersonPin(layerControl, position);
     setZoomTopRight();
 }
 
@@ -37,6 +36,18 @@ function createDangerIcons(layerControl) {
     const crime = L.marker([-23.88430978488233, -69.10460472106935], { icon: danger }).bindPopup('Crime')
     const dangers = L.layerGroup([crime]);
     layerControl.addOverlay(dangers, 'Dangers');
+}
+
+function createPersonPin(layerControl, location) {
+    const icon = L.Icon.extend({
+        options: {
+            iconSize: [50, 50]
+        }
+    });
+    const personPinIcon = new icon({ iconUrl: 'assets/media/person_pin.png' });
+    const personPinMarker = L.marker(location, { icon: personPinIcon }).bindPopup('You are here')
+    const personPinLayer = L.layerGroup([personPinMarker]);
+    layerControl.addOverlay(personPinLayer, 'Me');
 }
 
 function setZoomTopRight() {

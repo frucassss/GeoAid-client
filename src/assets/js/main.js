@@ -12,7 +12,6 @@ function init() {
     }
     createDomeIcons();
     setTimeout(get("domes", getDomes), 3000);
-    
 }
 
 function makeMapCurrentPosition(currentPosition) {
@@ -22,7 +21,7 @@ function makeMapCurrentPosition(currentPosition) {
     createMap([lat, lon])
 }
 
-function makeMapDefaultPosition(){
+function makeMapDefaultPosition() {
     createMap([-23, -69])
 }
 
@@ -41,5 +40,3 @@ function startupAnimation() {
     loader.classList.add("invisible");
     map.classList.remove("hidden");
 }
-
-
