@@ -1,37 +1,147 @@
-@import "general";
 @import "constants";
 @import "nav";
 @import "animations";
+
 #profile {
-    margin: 3rem 3rem 0 3rem;
-    background-color: darkgrey;
-    border-radius: $border-radius;
-    padding: 1rem;
-    #profiletop {
-        margin-bottom: 2rem;
-        font-size: 3rem;
+  margin: 3rem 3rem 1rem 3rem;
+  background-color: darkgrey;
+  border-radius: 2rem;
+  padding: 1rem;
+  #profiletop{
+    margin-bottom: 2rem;
+    font-size: 3rem;
+    text-align: center;
+    .icon3{
+      font-size: 7rem;
+    }
+  }
+  .flexcontainer {
+    display: flex;
+    flex-direction: column;
+    li {
+      background-color: $primary-color;
+      border-radius: 2rem 2rem 2rem 2rem;
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 1rem;
+      display: flex;
+      padding: 2.25rem 0;
+
+      .headerArticle {
+        display: inline-block;
+      }
+      .icon {
+        padding-left: 1rem;
+        padding-right: 2rem;
+        font-size: 2rem;
+      }
+      .icon2{
+        position: absolute;
+        right: 1rem;
+        margin-left: 10rem;
+        padding-right: 2rem;
+        font-size: 2rem;
+      }
+      h2 {
+        color: $primary-font-color;
+        font-size: 2rem;
+      }
+    }
+  }
+  #premium{
+
+    .flexarticles{
+      display: flex;
+      article{
+        margin-left: 10rem;
+        margin-right: 10rem;
+        background-color: gray;
+        border-radius: 1rem;
+        padding: 0.5rem;
+      }
+      article header{
+        font-size: 1.8rem;
+        background-color: darkgray;
+        padding: 0.5rem;
+        border-radius: 1rem;
+        margin-bottom: 0.5rem;
+      }
+      article li{
+        background-color: gray;
+        font-size: 1.4rem;
+      }
+      article li p{
+        display: list-item;
+        list-style-type:circle;
+        list-style-position: inside;
+      }
+      article button{
+        background-color: rgba(51, 51, 51, 0.05);
+        border-radius: 0.5rem;
+        color: #333333;
+        cursor: pointer;
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 20px;
+        list-style: none;
+        margin-left: 6rem;
+        padding: 0.4rem 0.4rem;
         text-align: center;
-        .icon {
-            font-size: 7rem;
-        }
+      }
     }
-    .flexcontainer {
-        display: flex;
-        flex-direction: column;
-        li {
-          background-color: $primary-color;
-          border-radius: $border-radius;
-          padding: 2rem;
-          margin-bottom: 1rem;
-          display: flex;
-            .icon {
-                padding-right: 2rem;
-                font-size: 2rem;
-            }
-            h3 {
-                color: $primary-font-color;
-                font-size: 2rem;
-            }
-        }
+  }
+  #company{
+    .flexarticles{
+      margin-left: 1.8rem;
+      font-size: 1.4rem;
+      display: flex;
+      flex-direction: column;
     }
+    article{
+      margin-top: 4rem;
+      margin-left: -10rem;
+    }
+    article p{
+      color: darkgray;
+    }
+    article h3{
+      display: block;
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+      background-color: gray;
+    }
+  }
+  #appointment{
+    .flexarticles{
+      display: flex;
+      flex-direction: row;
+    }
+    article{
+      font-size: 1.4rem;
+      margin-top: 4rem;
+      margin-right: 30rem;
+    }
+    article p{
+      margin-bottom: 0.5rem;
+      color: darkgray;
+    }
+    article h3{
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+      background-color: gray;
+    }
+    article button{
+      margin-top: 1rem;
+      background-color: rgba(51, 51, 51, 0.05);
+      border-radius: 0.5rem;
+      color: #333333;
+      cursor: pointer;
+      font-size: 1.4rem;
+      font-weight: 500;
+      line-height: 20px;
+      list-style: none;
+      padding: 0.4rem 0.4rem;
+      text-align: center;
+    }
+  }
 }
