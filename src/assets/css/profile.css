@@ -50,20 +50,20 @@ nav ul li a {
 nav ul li .icon {
   color: hsl(142deg, 10%, 75%);
 }
-nav ul li:nth-child(2) {
-  font-weight: bold;
-}
-nav ul li:nth-child(7) {
+nav ul li:nth-child(7) a {
   border-bottom: hsl(142deg, 10%, 75%) solid;
-}
-nav ul li:last-child img {
-  width: 4rem;
 }
 nav ul li:first-child img {
   width: 5rem;
 }
-nav ul img {
-  width: 4rem;
+nav ul .icon {
+  font-size: 4rem;
+}
+nav ul .selected {
+  font-weight: bold;
+}
+nav ul .selected a {
+  color: #848FA5;
 }
 
 .hover-underline-animation {
@@ -203,8 +203,10 @@ nav ul img {
   margin-top: 1rem;
 }
 #profile #appointment form .flexcontainer input, #profile #appointment form .flexcontainer button, #profile #appointment form .flexcontainer select {
+  background-color: #003844;
   font-size: 1rem;
-  color: black;
+  color: hsl(142deg, 10%, 75%);
+  padding: 0.5rem;
 }
 #profile #appointment form .flexcontainer button {
   margin-top: 1rem;

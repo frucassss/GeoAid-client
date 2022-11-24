@@ -1,0 +1,117 @@
+@import "general";
+@import "constants";
+@import "nav";
+@import "animations";
+
+body {
+  background: $background-color;
+  main{
+    margin-top: 2rem;
+    article {
+      background-color: $secondary-color;
+      border-radius: $border-radius;
+      h2 {
+        padding: 1rem 0;
+        font-size: 2rem;
+        background-color: $header-background-color;
+        color: $header-font-color;
+        text-align: center;
+        border-radius: $border-radius $border-radius 0 0;
+      }
+    }
+    .flexcontainer {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 1rem;
+      article {
+        height: 45vh;
+        width: 25vw;
+      }
+      #contact_us {
+        flex-basis: 30%;
+        form {
+          width: 100%;
+          legend {
+            width: 100%;
+          }
+          div {
+            display: flex;
+            flex-direction: column;
+            margin: 1rem 2rem 0 2rem;
+            label {
+              padding-bottom: 0.5rem;
+            }
+            input, textarea {
+              background-color: $primary-color;
+              margin-bottom: 1rem;
+            }
+            textarea {
+              height: 7rem;
+              &:focus {
+                font-size: 1.2rem;
+                color: $primary-font-color;
+              }
+            }
+            button {
+              padding: 0.5rem;
+              background-color: $header-background-color;
+              color: $primary-font-color;
+              border-radius: $border-radius;
+            }
+          }
+        }
+      }
+      #contact {
+        &>div {
+          text-align: center;
+          margin: 1rem 2rem 0 2rem;
+          dl {
+            dt {
+              font-size: 1.3rem;
+              font-weight: bold;
+            }
+            dd {
+              margin: 1rem 0;
+              font-size: 1rem;
+            }
+          }
+          img {
+            width: 3rem;
+          }
+        }
+      }
+    }
+    #business_hours {
+      width: 78vw;
+      margin-right: auto;
+      margin-left: auto;
+        .flexcontainer {
+          margin-top: 1rem;
+          display: flex;
+          justify-content: space-around;
+          text-align: center;
+          li {
+            div {
+              margin-top: 0.5rem;
+              background-color: $primary-color;
+              padding: 1.5rem 1rem;
+              border-radius: 1rem;
+            }
+          }
+      }
+      #extras {
+        margin: 0 3rem;
+         h4 {
+           font-size: 1.3rem;
+           border-bottom: $primary-color solid;
+         }
+        ul li p{
+          display: list-item;
+          list-style-type:circle;
+          list-style-position: inside;
+          margin-top: 0.5rem;
+        }
+      }
+    }
+  }
+}

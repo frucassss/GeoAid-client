@@ -71,7 +71,7 @@
             font-size: 1.5rem;
             padding-bottom: 0.5rem;
             p {
-              color: $secondary-font-color;
+              color: $tertiary-font-color;
               display: list-item;
               list-style-type:circle;
               list-style-position: inside;
@@ -129,8 +129,10 @@
           margin-top: 1rem;
         }
         input, button, select {
+          background-color: $primary-color;
           font-size: 1rem;
-          color: $secondary-font-color;
+          color: $primary-font-color;
+          padding: 0.5rem;
         }
         button {
           margin-top: 1rem;

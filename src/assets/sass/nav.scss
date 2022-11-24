@@ -28,24 +28,22 @@ nav {
       }
     }
 
-    li:nth-child(2) {
-      font-weight: bold;
-    }
-
-    li:nth-child(7) {
+    li:nth-child(7) a{
       border-bottom: $nav-border-color solid;
-    }
-
-    li:last-child img {
-      width: 4rem;
     }
 
     li:first-child img {
       width: 5rem;
     }
 
-    img {
-      width: 4rem;
+    .icon {
+      font-size: 4rem;
+    }
+    .selected {
+      font-weight: bold;
+      a {
+        color: $secondary-font-color;
+      }
     }
   }
 }

@@ -12,21 +12,26 @@ export function makeBarchart(data) {
         type: 'bar',
         data: {
             datasets: [{
-                data: data
+                data: data,
             }]
         },
         options: {
-            backgroundColor: "#c30010",
+            backgroundColor: "#210124",
+            hoverBackgroundColor: '#848FA5',
             scales: {
                 y: {
                     title: {
                         display: true,
                         text: "Amount of crimes",
                         font: {
-                            weight: "bold"
-                        }
+                            weight: "bold",
+                        },
+                        color: "hsl(142deg, 10%, 75%)"
                     },
-                    max: 100
+                    ticks: {
+                        color: "hsl(142deg, 10%, 75%)"
+                    },
+                    suggestedMax: 100
                 },
                 x: {
                     title: {
@@ -35,21 +40,17 @@ export function makeBarchart(data) {
                         font: {
                             weight: "bold",
                         },
-                        padding: 10
+                        color: "hsl(142deg, 10%, 75%)",
+                        padding: {
+                            bottom: 20
+                        }
+                    },
+                    ticks: {
+                        color: "hsl(142deg, 10%, 75%)"
                     }
                 }
             },
             plugins: {
-                title: {
-                    display: true,
-                    text: "Crimes (1 month)",
-                    font: {
-                        size: 24,
-                        weight: "bold"
-                    },
-                    color: "black",
-                    padding: 20
-                },
                 legend: { display: false, }
             },
             maintainAspectRatio: false
@@ -84,11 +85,14 @@ export function makePieChart(data) {
                 legend: {
                     position: "left",
                     labels: {
-                        boxHeight: 30,
+                        boxHeight: 28,
                         font: {
                             size: 20
                         },
-                        padding: 15
+                        padding: 15,
+                        color: "hsl(142deg, 10%, 75%)"
+
+
                     }
 
                 },
