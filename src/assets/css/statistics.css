@@ -210,5 +210,56 @@ body main #statistics #container_statistics #container_charts #types_chart #pie-
   z-index: 2;
   margin-top: 3rem;
 }
+body #adds {
+  margin: 0 4rem 4rem 4rem;
+  text-align: center;
+  background-color: #9a542e;
+  border-radius: 1rem 1rem 1rem 1rem;
+  padding-bottom: 2rem;
+}
+body #adds header h3 {
+  padding: 0.5rem;
+  font-size: 1.4rem;
+  border-radius: 2rem;
+  background-color: #6b1d09;
+  margin-bottom: 1rem;
+}
+body #adds p {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+body #adds h4 {
+  margin-left: 2rem;
+  text-align: left;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+body #adds form {
+  border-radius: 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  background-color: gray;
+  padding: 1rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+body #adds form label {
+  font-size: 1.2rem;
+}
+body #adds form input {
+  padding: 0.2rem;
+  border-radius: 2rem;
+  background-color: darkgray;
+  color: black;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+body #adds form button {
+  color: #99857A;
+  padding: 0.3rem;
+  background-color: #9a542e;
+  border-radius: 2rem;
+}
 
 /*# sourceMappingURL=statistics.css.map */
