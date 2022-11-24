@@ -1,147 +1,141 @@
+@import "general";
 @import "constants";
 @import "nav";
 @import "animations";
 
 #profile {
-  margin: 3rem 3rem 1rem 3rem;
-  background-color: darkgrey;
-  border-radius: 2rem;
+  background: $background-color;
   padding: 1rem;
   #profiletop{
+    color: $primary-font-color;
     margin-bottom: 2rem;
     font-size: 3rem;
     text-align: center;
-    .icon3{
+    .icon{
       font-size: 7rem;
     }
   }
   .flexcontainer {
     display: flex;
     flex-direction: column;
-    li {
+
+    .profileSetting {
       background-color: $primary-color;
-      border-radius: 2rem 2rem 2rem 2rem;
-      position: relative;
-      padding-left: 2rem;
-      margin-bottom: 1rem;
-      display: flex;
-      padding: 2.25rem 0;
+      border-radius: $border-radius;
+      padding: 1rem 0 2rem 2rem;
+      margin: 0 2rem 2rem 2rem;
 
       .headerArticle {
-        display: inline-block;
-      }
-      .icon {
-        padding-left: 1rem;
-        padding-right: 2rem;
+        display: flex;
+        line-height: 2.5rem;
         font-size: 2rem;
-      }
-      .icon2{
-        position: absolute;
-        right: 1rem;
-        margin-left: 10rem;
-        padding-right: 2rem;
-        font-size: 2rem;
-      }
-      h2 {
-        color: $primary-font-color;
-        font-size: 2rem;
+        margin-bottom: 1rem;
+        .icon {
+          color: $header-font-color;
+          font-size: 2.2rem;
+          margin: auto 0;
+          padding-right: 1rem;
+        }
+        h2 {
+          color: $header-font-color;
+        }
       }
     }
+
   }
   #premium{
-
-    .flexarticles{
+    .flexPackets{
       display: flex;
-      article{
-        margin-left: 10rem;
-        margin-right: 10rem;
-        background-color: gray;
-        border-radius: 1rem;
-        padding: 0.5rem;
+      justify-content: space-around;
+      .packet{
+        width: 40%;
+        background-color: $secondary-color;
+        border-radius: $border-radius;
+        padding-bottom: 1rem;
+
+        .packetHeader {
+          text-align: center;
+          font-size: 1.8rem;
+          background-color: $header-background-color;
+          color: $header-font-color;
+          padding: 0.5rem;
+          border-radius: $border-radius $border-radius 0 0;
+          margin-bottom: 0.5rem;
+        }
       }
-      article header{
-        font-size: 1.8rem;
-        background-color: darkgray;
-        padding: 0.5rem;
-        border-radius: 1rem;
-        margin-bottom: 0.5rem;
+      .advantages {
+        width: 100%;
+        ul {
+          margin-left: 1rem;
+          li{
+            font-size: 1.5rem;
+            padding-bottom: 0.5rem;
+            p {
+              color: $secondary-font-color;
+              display: list-item;
+              list-style-type:circle;
+              list-style-position: inside;
+            }
+          }
+        }
+
+        button{
+          width: 50%;
+          background-color: $header-background-color;
+          color: $primary-font-color;
+          cursor: pointer;
+          font-size: 1.4rem;
+          border-radius: $border-radius;
+          padding: 0.5rem;
+          margin-left: 25%;
+          margin-top: 0.5em;
+        }
       }
-      article li{
-        background-color: gray;
-        font-size: 1.4rem;
       }
-      article li p{
-        display: list-item;
-        list-style-type:circle;
-        list-style-position: inside;
-      }
-      article button{
-        background-color: rgba(51, 51, 51, 0.05);
-        border-radius: 0.5rem;
-        color: #333333;
-        cursor: pointer;
-        font-size: 1.4rem;
-        font-weight: 500;
-        line-height: 20px;
-        list-style: none;
-        margin-left: 6rem;
-        padding: 0.4rem 0.4rem;
-        text-align: center;
-      }
-    }
+
   }
   #company{
-    .flexarticles{
-      margin-left: 1.8rem;
-      font-size: 1.4rem;
+    .flexcontainer{
+      h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+      p {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+
+      }
+
       display: flex;
       flex-direction: column;
     }
-    article{
-      margin-top: 4rem;
-      margin-left: -10rem;
-    }
-    article p{
-      color: darkgray;
-    }
-    article h3{
-      display: block;
-      padding: 0.5rem;
-      border-radius: 0.5rem;
-      background-color: gray;
-    }
   }
   #appointment{
-    .flexarticles{
+    form{
+      background-color: $secondary-color;
       display: flex;
-      flex-direction: row;
-    }
-    article{
-      font-size: 1.4rem;
-      margin-top: 4rem;
-      margin-right: 30rem;
-    }
-    article p{
-      margin-bottom: 0.5rem;
-      color: darkgray;
-    }
-    article h3{
-      padding: 0.5rem;
-      border-radius: 0.5rem;
-      background-color: gray;
-    }
-    article button{
-      margin-top: 1rem;
-      background-color: rgba(51, 51, 51, 0.05);
-      border-radius: 0.5rem;
-      color: #333333;
-      cursor: pointer;
-      font-size: 1.4rem;
-      font-weight: 500;
-      line-height: 20px;
-      list-style: none;
-      padding: 0.4rem 0.4rem;
-      text-align: center;
+      justify-content: space-around;
+      margin-right: 2rem;
+      padding-bottom: 2rem;
+      border-radius: $border-radius;
+
+      .flexcontainer {
+        display: flex;
+        margin-right: 2rem;
+
+        label {
+          font-size: 1.5rem;
+          margin-bottom: 1rem;
+          margin-top: 1rem;
+        }
+        input, button, select {
+          font-size: 1rem;
+          color: $secondary-font-color;
+        }
+        button {
+          margin-top: 1rem;
+        }
+      }
     }
   }
 }

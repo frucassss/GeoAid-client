@@ -1,3 +1,29 @@
+.hidden {
+  display: none;
+}
+
+body {
+  cursor: default;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+input {
+  border: none;
+  background: none;
+}
+input:focus {
+  outline: none;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
 a {
   text-decoration: none;
 }
@@ -6,7 +32,7 @@ nav {
   padding-top: 1rem;
   padding-bottom: 1rem;
   border-bottom: black solid;
-  background-color: #6b1d09;
+  background-color: #003844;
 }
 nav ul {
   display: flex;
@@ -19,13 +45,16 @@ nav ul li {
 }
 nav ul li a {
   font-family: Arial, sans-serif;
-  color: black;
+  color: hsl(142deg, 10%, 75%);
+}
+nav ul li .icon {
+  color: hsl(142deg, 10%, 75%);
 }
 nav ul li:nth-child(2) {
   font-weight: bold;
 }
 nav ul li:nth-child(7) {
-  border-bottom: black solid;
+  border-bottom: hsl(142deg, 10%, 75%) solid;
 }
 nav ul li:last-child img {
   width: 4rem;
@@ -61,139 +90,124 @@ nav ul img {
 }
 
 #profile {
-  margin: 3rem 3rem 1rem 3rem;
-  background-color: darkgrey;
-  border-radius: 2rem;
+  background: url("../../images/background.jpg");
   padding: 1rem;
 }
 #profile #profiletop {
+  color: hsl(142deg, 10%, 75%);
   margin-bottom: 2rem;
   font-size: 3rem;
   text-align: center;
 }
-#profile #profiletop .icon3 {
+#profile #profiletop .icon {
   font-size: 7rem;
 }
 #profile .flexcontainer {
   display: flex;
   flex-direction: column;
 }
-#profile .flexcontainer li {
-  background-color: #6b1d09;
-  border-radius: 2rem 2rem 2rem 2rem;
-  position: relative;
-  padding-left: 2rem;
+#profile .flexcontainer .profileSetting {
+  background-color: #003844;
+  border-radius: 2rem;
+  padding: 1rem 0 2rem 2rem;
+  margin: 0 2rem 2rem 2rem;
+}
+#profile .flexcontainer .profileSetting .headerArticle {
+  display: flex;
+  line-height: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
+}
+#profile .flexcontainer .profileSetting .headerArticle .icon {
+  color: hsl(142deg, 10%, 75%);
+  font-size: 2.2rem;
+  margin: auto 0;
+  padding-right: 1rem;
+}
+#profile .flexcontainer .profileSetting .headerArticle h2 {
+  color: hsl(142deg, 10%, 75%);
+}
+#profile #premium .flexPackets {
   display: flex;
-  padding: 2.25rem 0;
+  justify-content: space-around;
 }
-#profile .flexcontainer li .headerArticle {
-  display: inline-block;
+#profile #premium .flexPackets .packet {
+  width: 40%;
+  background-color: #848FA5;
+  border-radius: 2rem;
+  padding-bottom: 1rem;
 }
-#profile .flexcontainer li .icon {
-  padding-left: 1rem;
-  padding-right: 2rem;
-  font-size: 2rem;
-}
-#profile .flexcontainer li .icon2 {
-  position: absolute;
-  right: 1rem;
-  margin-left: 10rem;
-  padding-right: 2rem;
-  font-size: 2rem;
-}
-#profile .flexcontainer li h2 {
-  color: #99857A;
-  font-size: 2rem;
-}
-#profile #premium .flexarticles {
-  display: flex;
-}
-#profile #premium .flexarticles article {
-  margin-left: 10rem;
-  margin-right: 10rem;
-  background-color: gray;
-  border-radius: 1rem;
-  padding: 0.5rem;
-}
-#profile #premium .flexarticles article header {
+#profile #premium .flexPackets .packet .packetHeader {
+  text-align: center;
   font-size: 1.8rem;
-  background-color: darkgray;
+  background-color: #210124;
+  color: hsl(142deg, 10%, 75%);
   padding: 0.5rem;
-  border-radius: 1rem;
+  border-radius: 2rem 2rem 0 0;
   margin-bottom: 0.5rem;
 }
-#profile #premium .flexarticles article li {
-  background-color: gray;
-  font-size: 1.4rem;
+#profile #premium .flexPackets .advantages {
+  width: 100%;
 }
-#profile #premium .flexarticles article li p {
+#profile #premium .flexPackets .advantages ul {
+  margin-left: 1rem;
+}
+#profile #premium .flexPackets .advantages ul li {
+  font-size: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+#profile #premium .flexPackets .advantages ul li p {
+  color: black;
   display: list-item;
   list-style-type: circle;
   list-style-position: inside;
 }
-#profile #premium .flexarticles article button {
-  background-color: rgba(51, 51, 51, 0.05);
-  border-radius: 0.5rem;
-  color: #333333;
+#profile #premium .flexPackets .advantages button {
+  width: 50%;
+  background-color: #210124;
+  color: hsl(142deg, 10%, 75%);
   cursor: pointer;
   font-size: 1.4rem;
-  font-weight: 500;
-  line-height: 20px;
-  list-style: none;
-  margin-left: 6rem;
-  padding: 0.4rem 0.4rem;
-  text-align: center;
+  border-radius: 2rem;
+  padding: 0.5rem;
+  margin-left: 25%;
+  margin-top: 0.5em;
 }
-#profile #company .flexarticles {
-  margin-left: 1.8rem;
-  font-size: 1.4rem;
+#profile #company .flexcontainer {
   display: flex;
   flex-direction: column;
 }
-#profile #company article {
-  margin-top: 4rem;
-  margin-left: -10rem;
-}
-#profile #company article p {
-  color: darkgray;
-}
-#profile #company article h3 {
-  display: block;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  background-color: gray;
-}
-#profile #appointment .flexarticles {
-  display: flex;
-  flex-direction: row;
-}
-#profile #appointment article {
-  font-size: 1.4rem;
-  margin-top: 4rem;
-  margin-right: 30rem;
-}
-#profile #appointment article p {
+#profile #company .flexcontainer h3 {
+  font-size: 1.5rem;
   margin-bottom: 0.5rem;
-  color: darkgray;
 }
-#profile #appointment article h3 {
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  background-color: gray;
+#profile #company .flexcontainer p {
+  font-size: 1rem;
+  margin-bottom: 2rem;
 }
-#profile #appointment article button {
+#profile #appointment form {
+  background-color: #848FA5;
+  display: flex;
+  justify-content: space-around;
+  margin-right: 2rem;
+  padding-bottom: 2rem;
+  border-radius: 2rem;
+}
+#profile #appointment form .flexcontainer {
+  display: flex;
+  margin-right: 2rem;
+}
+#profile #appointment form .flexcontainer label {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
   margin-top: 1rem;
-  background-color: rgba(51, 51, 51, 0.05);
-  border-radius: 0.5rem;
-  color: #333333;
-  cursor: pointer;
-  font-size: 1.4rem;
-  font-weight: 500;
-  line-height: 20px;
-  list-style: none;
-  padding: 0.4rem 0.4rem;
-  text-align: center;
+}
+#profile #appointment form .flexcontainer input, #profile #appointment form .flexcontainer button, #profile #appointment form .flexcontainer select {
+  font-size: 1rem;
+  color: black;
+}
+#profile #appointment form .flexcontainer button {
+  margin-top: 1rem;
 }
 
 /*# sourceMappingURL=profile.css.map */

@@ -21,6 +21,7 @@ input:focus {
 
 button {
   border: none;
+  cursor: pointer;
 }
 
 #map {
@@ -174,7 +175,7 @@ main #side_navigation {
   z-index: 2;
   position: fixed;
   height: 100vh;
-  background-color: #6b1d09;
+  background-color: #003844;
   border-radius: 0 2rem 0 0;
 }
 main #side_navigation .flexcontainer {
@@ -198,11 +199,11 @@ main #side_navigation .flexcontainer li .icon {
 }
 main #side_navigation .flexcontainer li h2 {
   animation: fade 3s;
-  color: #99857A;
+  color: hsl(142deg, 10%, 75%);
   font-size: 1.7rem;
 }
 main #side_navigation .flexcontainer li:nth-child(even) {
-  background-color: #9a542e;
+  background-color: #848FA5;
 }
 main #side_navigation .flexcontainer li:nth-child(1) {
   position: relative;

@@ -27,11 +27,11 @@
 
     <section id="profile">
         <div id="profiletop">
-            <div class="material-icons icon3 account_circle">account_circle</div>
+            <div class="material-icons icon account_circle">account_circle</div>
             <h1>Username</h1>
         </div>
-        <ul class="flexcontainer">
-            <li id="premium">
+        <div class="flexcontainer">
+            <article id="premium" class="profileSetting">
                 <div class="headerArticle">
                     <div class="material-icons icon workspace_premium">
                         workspace_premium
@@ -39,13 +39,13 @@
                     <h2 class="hover-underline-animation">Premium</h2>
                 </div>
 
-                <div class="flexarticles">
-                    <article>
-                        <header>
+                <div class="flexPackets">
+                    <article class="packet">
+                        <div class="packetHeader">
                             <h3>Company premium</h3>
                             <p>60 coins/month</p>
-                        </header>
-                        <div>
+                        </div>
+                        <div class="advantages">
                             <ul>
                                 <li>
                                     <p>No adds</p>
@@ -63,12 +63,12 @@
                             <button>Buy</button>
                         </div>
                     </article>
-                    <article>
-                        <header>
+                    <article class="packet">
+                        <div class="packetHeader">
                             <h3>Standard premium</h3>
                             <p>20 coins/month</p>
-                        </header>
-                        <div>
+                        </div>
+                        <div class="advantages">
                             <ul>
                                 <li>
                                     <p>No adds</p>
@@ -87,43 +87,53 @@
                         </div>
                     </article>
                 </div>
-            </li>
-            <li id="company">
-                <div class="material-icons icon apartment">apartment</div>
-                <h2 class="hover-underline-animation">Company</h2>
-                <div class="flexarticles">
-                    <article>
-                        <p>Name</p>
-                        <h3>Howest</h3>
-                    </article>
-                    <article>
-                        <p>Section</p>
-                        <h3>School</h3>
-                    </article>
+            </article>
+
+            <article id="company" class="profileSetting">
+                <div class="headerArticle">
+                    <div class="material-icons icon apartment">apartment</div>
+                    <h2 class="hover-underline-animation">Company</h2>
                 </div>
-            </li>
-            <li id="appointment">
-                <div class="material-icons icon date_range">date_range</div>
-                <h2 class="hover-underline-animation">Appointment</h2>
-                <div class="flexarticles">
-                    <article>
-                        <p>Pick a date</p>
-                        <img src="" alt="calander" />
-                    </article>
-                    <article>
-                        <p>Pick an hour</p>
-                        <h3>12:00</h3>
+                <div class="flexcontainer">
+                    <div>
+                        <h3>Name</h3>
+                        <p>Howest</p>
+                    </div>
+                    <div>
+                        <h3>Section</h3>
+                        <p>School</p>
+                    </div>
+                </div>
+            </article>
 
-                        <p>Expertise employee</p>
-                        <h3>Localisation company</h3>
+            <article id="appointment" class="profileSetting">
+                <div class="headerArticle">
+                    <div class="material-icons icon date_range">date_range</div>
+                    <h2 class="hover-underline-animation">Appointment</h2>
+                </div>
+                <form action="#">
+                    <div class="flexcontainer">
+                        <label for="date">Pick a date</label>
+                        <input id="date" type="date">
+                    </div>
+                    <div class="flexcontainer">
+                        <label for="time">Pick an hour</label>
+                        <input id="time" type="time">
 
-                        <p>Employee</p>
-                        <h3>/</h3>
+                        <label for="expertise">Expertise employee</label>
+                        <select id="expertise">
+                            <option selected>Localisation company</option>
+                        </select>
+
+                        <label for="employee">Employee</label>
+                        <select id="employee">
+                            <option selected>/</option>
+                        </select>
                         <button>Make appointment</button>
-                    </article>
-                </div>
-            </li>
-        </ul>
+                    </div>
+                </form>
+            </article>
+        </div>
     </section>
 </body>
 
