@@ -6,7 +6,7 @@ nav {
   padding-top: 1rem;
   padding-bottom: 1rem;
   border-bottom: black solid;
-  background-color: #6b1d09;
+  background-color: #003844;
 }
 nav ul {
   display: flex;
@@ -19,13 +19,16 @@ nav ul li {
 }
 nav ul li a {
   font-family: Arial, sans-serif;
-  color: black;
+  color: hsl(142deg, 10%, 75%);
+}
+nav ul li .icon {
+  color: hsl(142deg, 10%, 75%);
 }
 nav ul li:nth-child(2) {
   font-weight: bold;
 }
 nav ul li:nth-child(7) {
-  border-bottom: black solid;
+  border-bottom: hsl(142deg, 10%, 75%) solid;
 }
 nav ul li:last-child img {
   width: 4rem;
@@ -60,6 +63,7 @@ input:focus {
 
 button {
   border: none;
+  cursor: pointer;
 }
 
 ::-webkit-scrollbar {
@@ -84,7 +88,7 @@ button {
 }
 
 body {
-  background-color: #d0c8a8;
+  background-color: url("../../images/background.jpg");
 }
 body main #statistics {
   text-align: center;
@@ -94,10 +98,10 @@ body main #statistics {
 }
 body main #statistics h1 {
   font-family: Arial, sans-serif;
-  color: #d0c8a8;
+  color: hsl(142deg, 10%, 75%);
   font-size: 2rem;
   padding: 1rem;
-  background-color: #3e0000;
+  background-color: #210124;
   border-radius: 2rem 2rem 0 0;
 }
 body main #statistics #container_statistics {
@@ -105,12 +109,12 @@ body main #statistics #container_statistics {
   padding-top: 2rem;
   padding-bottom: 1.5rem;
   display: flex;
-  background-color: #9a542e;
+  background-color: #848FA5;
   border-radius: 0 0 2rem 2rem;
 }
 body main #statistics #container_statistics aside {
   width: 20%;
-  background-color: #6b1d09;
+  background-color: #003844;
   margin-top: 3rem;
   margin-left: 2rem;
   margin-right: 2rem;
@@ -123,7 +127,7 @@ body main #statistics #container_statistics aside ul {
   flex-direction: column;
 }
 body main #statistics #container_statistics aside ul li {
-  color: #99857A;
+  color: hsl(142deg, 10%, 75%);
   font-size: 1.5rem;
 }
 body main #statistics #container_statistics aside ul li:hover {
@@ -134,7 +138,7 @@ body main #statistics #container_statistics aside ul .selected {
 }
 body main #statistics #container_statistics aside ul hr {
   height: 0.15rem;
-  background-color: #99857A;
+  background-color: hsl(142deg, 10%, 75%);
   border: none;
 }
 body main #statistics #container_statistics #container_charts {
@@ -152,7 +156,7 @@ body main #statistics #container_statistics #container_charts #ul_period li {
 body main #statistics #container_statistics #container_charts .stats {
   margin-top: 2rem;
   height: 57vh;
-  background-color: #6b1d09;
+  background-color: #003844;
   border-radius: 2rem;
 }
 body main #statistics #container_statistics #container_charts .stats canvas {
@@ -186,7 +190,7 @@ body main #statistics #container_statistics #container_charts #types_chart #dome
   grid-area: search;
   line-height: 2rem;
   height: 2rem;
-  background-color: #9a542e;
+  background-color: #848FA5;
   border-radius: 2rem;
   display: flex;
 }
@@ -196,9 +200,9 @@ body main #statistics #container_statistics #container_charts #types_chart #dome
   vertical-align: center;
 }
 body main #statistics #container_statistics #container_charts #types_chart #dome-choice #searchbar button {
-  color: #99857A;
+  color: hsl(142deg, 10%, 75%);
   margin-right: 0.5rem;
-  background-color: #9a542e;
+  background-color: #848FA5;
   border-radius: 2rem;
 }
 body main #statistics #container_statistics #container_charts #types_chart #dome-choice #searchbar button .search {
@@ -213,7 +217,7 @@ body main #statistics #container_statistics #container_charts #types_chart #pie-
 body #adds {
   margin: 0 4rem 4rem 4rem;
   text-align: center;
-  background-color: #9a542e;
+  background-color: #848FA5;
   border-radius: 1rem 1rem 1rem 1rem;
   padding-bottom: 2rem;
 }
@@ -221,7 +225,7 @@ body #adds header h3 {
   padding: 0.5rem;
   font-size: 1.4rem;
   border-radius: 2rem;
-  background-color: #6b1d09;
+  background-color: #003844;
   margin-bottom: 1rem;
 }
 body #adds p {
@@ -256,9 +260,9 @@ body #adds form input {
   margin-bottom: 1rem;
 }
 body #adds form button {
-  color: #99857A;
+  color: hsl(142deg, 10%, 75%);
   padding: 0.3rem;
-  background-color: #9a542e;
+  background-color: #848FA5;
   border-radius: 2rem;
 }
 
