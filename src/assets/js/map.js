@@ -25,7 +25,6 @@ function createMap(position, currentPosition) {
     const overlays = {};
     const layerControl = L.control.layers(baseLayers, overlays).addTo(map);
 
-
     createDomes();
     if (currentPosition) {
         createPersonPin(layerControl, position);
@@ -74,4 +73,15 @@ function createDome(data) {
         });
         L.marker([dome.latitude, dome.longitude], { icon: icon }).bindPopup(`this is ${dome.domeName}`).addTo(map);
     })
+}
+
+function setView(position) {
+    map.setView(position);
+}
+
+function center() {
+    const coords = currentPosition.coords;
+    const lat = coords.latitude - 75.5;
+    const lon = coords.longitude - 73;
+    map.setView([lat, lon]);
 }

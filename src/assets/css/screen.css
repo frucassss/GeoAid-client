@@ -117,12 +117,17 @@ body header #searchbar input {
   vertical-align: center;
 }
 body header #searchbar button {
-  margin-right: 1rem;
   background-color: white;
   border: none;
   border-radius: 2rem;
 }
 body header #searchbar button .search {
+  font-size: 2rem;
+}
+body header #searchbar .center {
+  line-height: 3rem;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
   font-size: 2rem;
 }
 

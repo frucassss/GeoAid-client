@@ -3,7 +3,7 @@ let api;
 document.addEventListener("DOMContentLoaded", loadConfig);
 
 function init() {
-    // handleEventListeners();
+    handleEventListeners();
     setTimeout(startupAnimation, 2500);
     makeMap();
 }
@@ -15,7 +15,15 @@ function makeMap() {
 }
 
 function handleEventListeners() {
-    document.querySelector('#center').addEventListener("click", makeMap);
+    document.querySelector('.center').addEventListener("click", function () {
+        if ("geolocation" in navigator) {
+            navigator.geolocation.getCurrentPosition(center, handleError);
+        }
+    });
+}
+
+function handleError() {
+    console.log("give permission")
 }
 
 function makeMapCurrentPosition(currentPosition) {
