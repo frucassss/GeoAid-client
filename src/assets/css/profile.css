@@ -161,5 +161,36 @@ nav ul img {
   border-radius: 0.5rem;
   background-color: gray;
 }
+#profile #appointment .flexarticles {
+  display: flex;
+  flex-direction: row;
+}
+#profile #appointment article {
+  font-size: 1.4rem;
+  margin-top: 4rem;
+  margin-right: 30rem;
+}
+#profile #appointment article p {
+  margin-bottom: 0.5rem;
+  color: darkgray;
+}
+#profile #appointment article h3 {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: gray;
+}
+#profile #appointment article button {
+  margin-top: 1rem;
+  background-color: rgba(51, 51, 51, 0.05);
+  border-radius: 0.5rem;
+  color: #333333;
+  cursor: pointer;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  padding: 0.4rem 0.4rem;
+  text-align: center;
+}
 
 /*# sourceMappingURL=profile.css.map */
