@@ -1,49 +1,37 @@
+@import "general";
 @import "constants";
 @import "nav";
 @import "animations";
-
 #profile {
-  margin: 3rem 3rem 3rem 3rem;
-  background-color: darkgrey;
-  border-radius: 2rem 2rem 2rem 2rem;
-  padding: 1rem 1rem 1rem 1rem;
-  #profiletop{
-    margin-bottom: 2rem;
-    font-size: 6rem;
-    text-align: center;
-    .icon3{
-      font-size: 7rem;
+    margin: 3rem 3rem 0 3rem;
+    background-color: darkgrey;
+    border-radius: $border-radius;
+    padding: 1rem;
+    #profiletop {
+        margin-bottom: 2rem;
+        font-size: 3rem;
+        text-align: center;
+        .icon {
+            font-size: 7rem;
+        }
     }
-  }
-  .flexcontainer {
-      display: flex;
-      flex-direction: column;
-      li {
+    .flexcontainer {
+        display: flex;
+        flex-direction: column;
+        li {
           background-color: $primary-color;
-          border-radius: 2rem 2rem 2rem 2rem;
-          position: relative;
-          padding-left: 2rem;
+          border-radius: $border-radius;
+          padding: 2rem;
           margin-bottom: 1rem;
           display: flex;
-          padding: 2.25rem 0;
-
-          .icon {
-              padding-left: 1rem;
-              padding-right: 2rem;
-              font-size: 2rem;
-          }
-          .icon2{
-            position: absolute;
-            right: 1rem;
-            margin-left: 10rem;
-            padding-right: 2rem;
-            font-size: 2rem;
-          }
-          h2 {
-              color: $primary-font-color;
-              font-size: 2rem;
-          }
-      
-      }
-  }
+            .icon {
+                padding-right: 2rem;
+                font-size: 2rem;
+            }
+            h3 {
+                color: $primary-font-color;
+                font-size: 2rem;
+            }
+        }
+    }
 }
