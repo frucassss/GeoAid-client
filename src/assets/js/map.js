@@ -1,6 +1,7 @@
 const MBURL = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'
 const mbAttr = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> '
 
+
 function createMap(position, currentPosition) {
     const southWest = L.latLng(-25, -70);
     const northEast = L.latLng(-20, -66);
@@ -76,12 +77,14 @@ function createDome(data) {
 }
 
 function setView(position) {
+    console.log(position)
     map.setView(position);
 }
 
-function center() {
+function center(currentPosition) {
     const coords = currentPosition.coords;
     const lat = coords.latitude - 75.5;
     const lon = coords.longitude - 73;
+    console.log([lat, lon]);
     map.setView([lat, lon]);
 }

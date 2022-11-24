@@ -72,6 +72,27 @@ body {
                     font-size: 2rem;
                 }
             }
+            #suggestions {
+                width: 26vw;
+                margin-top: 0.5rem;
+                line-height: 2rem;
+                text-align: center;
+                border-radius: $border-radius;
+                background-color: $primary-color;
+                li:first-child {
+                    border-radius: $border-radius $border-radius 0 0;
+                }
+                li:last-child {
+                    border-radius: 0 0 $border-radius $border-radius;
+                }
+                li:nth-child(even) {
+                    background-color: $secondary-color;
+                }
+                p {
+                    display: inline-block;
+
+                }
+            }
         }
 
     }

@@ -130,6 +130,26 @@ body header #searchbar .center {
   margin-right: 1rem;
   font-size: 2rem;
 }
+body header #suggestions {
+  width: 26vw;
+  margin-top: 0.5rem;
+  line-height: 2rem;
+  text-align: center;
+  border-radius: 2rem;
+  background-color: #6b1d09;
+}
+body header #suggestions li:first-child {
+  border-radius: 2rem 2rem 0 0;
+}
+body header #suggestions li:last-child {
+  border-radius: 0 0 2rem 2rem;
+}
+body header #suggestions li:nth-child(even) {
+  background-color: #9a542e;
+}
+body header #suggestions p {
+  display: inline-block;
+}
 
 @-moz-keyframes slide /* Firefox */ {
   from {
