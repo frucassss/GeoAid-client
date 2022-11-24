@@ -47,7 +47,7 @@
   }
   #premium{
     
-    #flexarticles{
+    .flexarticles{
       display: flex;
       article{
         margin-left: 10rem;
@@ -85,7 +85,27 @@
           padding: 0.4rem 0.4rem;
           text-align: center;
         }
-
+    }
+  }
+  #company{
+    .flexarticles{
+      margin-left: 1.8rem;
+      font-size: 1.4rem;
+      display: flex;
+      flex-direction: column;
+    }
+    article{
+      margin-top: 4rem;
+      margin-left: -10rem;
+    }
+    article p{
+      color: darkgray;
+    }
+    article h3{
+      display: block;
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+      background-color: gray;
     }
   }
 }
