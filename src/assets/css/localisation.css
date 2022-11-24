@@ -73,7 +73,15 @@ fieldset p {
   font-size: 1.5rem;
 }
 
+#contact label {
+  margin-top: 0.5rem;
+  margin-bottom: 0.3rem;
+  font-size: 1.2rem;
+}
+
 label, input, textarea {
+  border-color: black;
+  border-radius: 1rem 1rem 1rem 1rem;
   display: block;
   margin-inline: auto;
   width: 70%;
@@ -99,6 +107,7 @@ input[type=submit] {
 }
 
 aside {
+  margin-top: 3rem;
   background-color: rgb(220, 199, 170);
   border-radius: 0.5rem;
   width: 25%;
@@ -117,6 +126,46 @@ body div {
 dt {
   color: white;
   font-weight: bold;
+}
+
+#business_hours {
+  margin-bottom: 2rem;
+  width: 84rem;
+}
+
+#business_hours #flex {
+  display: flex;
+  flex-direction: column;
+}
+#business_hours #flex #flexcontainer {
+  font-size: 1.4rem;
+  margin: 2rem 0 0 2rem;
+  display: flex;
+  flex-direction: row;
+}
+#business_hours #flex #flexcontainer li {
+  margin-left: 3rem;
+  width: 10rem;
+}
+#business_hours #flex #flexcontainer li p {
+  padding-bottom: 2rem;
+}
+#business_hours #flex #flexcontainer li h3 {
+  margin-left: -4rem;
+}
+
+#business_hours #extras {
+  text-align: left;
+  font-size: 1.2rem;
+  margin: 4rem 0 1.5rem 2rem;
+}
+#business_hours #extras h4 {
+  border-bottom: solid 0.2rem black;
+  margin-bottom: 0.5rem;
+}
+#business_hours #extras ul li {
+  margin-left: 1rem;
+  list-style-type: circle;
 }
 
 /*# sourceMappingURL=localisation.css.map */

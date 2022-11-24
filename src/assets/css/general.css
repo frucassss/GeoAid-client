@@ -21,6 +21,7 @@ input:focus {
 
 button {
   border: none;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=general.css.map */

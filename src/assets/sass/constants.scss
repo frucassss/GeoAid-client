@@ -1,23 +1,23 @@
 // NAV
-$nav-background-color: #6b1d09;
-$nav-font-color: black;
-$nav-border-color: black;
+$nav-background-color: #003844;
+$nav-font-color: hsl(142deg, 10%, 75%);
+$nav-border-color: hsl(142deg, 10%, 75%);
 $nav-font-family: Arial, sans-serif;
 
 //HEADER
-$header-background-color: #3e0000;
-$header-font-color: #d0c8a8;
+$header-background-color: #210124;
+$header-font-color: hsl(142deg, 10%, 75%);
 $header-font-family: Arial, sans-serif;
 
 
 //GLOBAL
-$background-color: #d0c8a8;
+$background-color: url("../../images/background.jpg");
 
-$primary-color: #6b1d09;
-$secondary-color: #9a542e;
-$tertiary-color: #e77d11;
+$primary-color: #003844;
+$secondary-color: #848FA5 ;
+$tertiary-color: white;
 
-$primary-font-color: #99857A;
+$primary-font-color: hsl(142deg, 10%, 75%);
 $secondary-font-color: black;
 $tertiary-font-color: white;
 
