@@ -43,7 +43,49 @@
               color: $primary-font-color;
               font-size: 2rem;
           }
-      
       }
+  }
+  #premium{
+    
+    #flexarticles{
+      display: flex;
+      article{
+        margin-left: 10rem;
+        margin-right: 10rem;
+        background-color: gray;
+        border-radius: 1rem;
+        padding: 0.5rem;
+      }
+        article header{
+          font-size: 1.8rem;
+          background-color: darkgray;
+          padding: 0.5rem;
+          border-radius: 1rem;
+          margin-bottom: 0.5rem;
+        }
+        article li{
+          background-color: gray;
+          font-size: 1.4rem;
+        }
+        article li p{
+          display: list-item;
+          list-style-type:circle;
+          list-style-position: inside;
+        }
+        article button{
+          background-color: rgba(51, 51, 51, 0.05);
+          border-radius: 0.5rem;
+          color: #333333;
+          cursor: pointer;
+          font-size: 1.4rem;
+          font-weight: 500;
+          line-height: 20px;
+          list-style: none;
+          margin-left: 6rem;
+          padding: 0.4rem 0.4rem;
+          text-align: center;
+        }
+
+    }
   }
 }

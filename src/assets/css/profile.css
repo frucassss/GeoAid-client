@@ -103,5 +103,44 @@ nav ul img {
   color: #99857A;
   font-size: 2rem;
 }
+#profile #premium #flexarticles {
+  display: flex;
+}
+#profile #premium #flexarticles article {
+  margin-left: 10rem;
+  margin-right: 10rem;
+  background-color: gray;
+  border-radius: 1rem;
+  padding: 0.5rem;
+}
+#profile #premium #flexarticles article header {
+  font-size: 1.8rem;
+  background-color: darkgray;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  margin-bottom: 0.5rem;
+}
+#profile #premium #flexarticles article li {
+  background-color: gray;
+  font-size: 1.4rem;
+}
+#profile #premium #flexarticles article li p {
+  display: list-item;
+  list-style-type: circle;
+  list-style-position: inside;
+}
+#profile #premium #flexarticles article button {
+  background-color: rgba(51, 51, 51, 0.05);
+  border-radius: 0.5rem;
+  color: #333333;
+  cursor: pointer;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  margin-left: 6rem;
+  padding: 0.4rem 0.4rem;
+  text-align: center;
+}
 
 /*# sourceMappingURL=profile.css.map */
