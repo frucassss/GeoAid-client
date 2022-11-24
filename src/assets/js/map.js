@@ -1,16 +1,20 @@
 const MBURL = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'
 const mbAttr = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> '
 
-//needs some code cleanup
-function createMap(position) {
+function createMap(position, currentPosition) {
+    const southWest = L.latLng(-25, -70);
+    const northEast = L.latLng(-20, -66);
+    const bounds = L.latLngBounds(southWest, northEast);
+
     const osm = L.tileLayer(MBURL, {
         id: "map",
         attribution: mbAttr,
         maxZoom: 20
     });
     map = L.map('map', {
+        maxBounds: bounds,
         maxZoom: 20,
-        minZoom: 6,
+        minZoom: 11,
         layers: [osm],
         zoomControl: false
     }).setView(position, 13);
@@ -21,30 +25,30 @@ function createMap(position) {
     const overlays = {};
     const layerControl = L.control.layers(baseLayers, overlays).addTo(map);
 
-    createDangerIcons(layerControl);
-    createPersonPin(layerControl, position);
+
+    createDomes();
+    if (currentPosition) {
+        createPersonPin(layerControl, position);
+    }
+    createDangers(layerControl);
     setZoomTopRight();
 }
 
-function createDangerIcons(layerControl) {
-    const dangerIcon = L.Icon.extend({
-        options: {
-            iconSize: [50, 50]
-        }
+function createDangers(layerControl) {
+    const dangerIcon = L.icon({
+        iconUrl: 'assets/media/danger.png',
+        iconSize: [50, 50]
     });
-    const danger = new dangerIcon({ iconUrl: 'assets/media/danger.png' });
-    const crime = L.marker([-23.88430978488233, -69.10460472106935], { icon: danger }).bindPopup('Crime')
-    const dangers = L.layerGroup([crime]);
-    layerControl.addOverlay(dangers, 'Dangers');
+    const dangerMarker = L.marker([-23.88430978488233, -69.10460472106935], { icon: dangerIcon }).bindPopup('Crime')
+    const dangerLayer = L.layerGroup([dangerMarker]);
+    layerControl.addOverlay(dangerLayer, 'Dangers');
 }
 
 function createPersonPin(layerControl, location) {
-    const icon = L.Icon.extend({
-        options: {
-            iconSize: [50, 50]
-        }
+    const personPinIcon = L.icon({
+        iconUrl: 'assets/media/person_pin.png',
+        iconSize: [50, 50]
     });
-    const personPinIcon = new icon({ iconUrl: 'assets/media/person_pin.png' });
     const personPinMarker = L.marker(location, { icon: personPinIcon }).bindPopup('You are here')
     const personPinLayer = L.layerGroup([personPinMarker]);
     layerControl.addOverlay(personPinLayer, 'Me');
@@ -56,31 +60,18 @@ function setZoomTopRight() {
     }).addTo(map);
 }
 
-function getDomes(response) {
-    response.json().then(data => createDomes(data));
+function createDomes() {
+    get("domes", function(response) {
+        response.json().then(data => createDome(data.domes))
+    })
 }
 
-function createDomes(data) {
-    console.log(data);
-    let domesArray = [];
-    for (domes in data.domes) {
-        domesArray.push(data.domes[domes]);
-    }
-    domesArray.forEach(dome => {
-        console.log("============================");
-        console.log(`creating dome ${dome.domeName} at ${dome.latitude}, ${dome.longitude} with id ${dome.id}`);
-        createDome(dome);
-        console.log("dome created");
-    });
-}
-
-function createDome(dome) {
-    L.marker([dome.latitude, dome.longitude], { icon: domeIcon }).bindPopup(`this is ${dome.domeName}`).addTo(map);
-}
-
-function createDomeIcons() {
-    domeIcon = L.icon({
-        iconUrl: 'assets/media/blackdome.png',
-        iconSize: [40, 40]
-    });
+function createDome(data) {
+    data.forEach(dome => {
+        const icon = L.icon({
+            iconUrl: 'assets/media/blackdome.png',
+            iconSize: [40, 40]
+        });
+        L.marker([dome.latitude, dome.longitude], { icon: icon }).bindPopup(`this is ${dome.domeName}`).addTo(map);
+    })
 }

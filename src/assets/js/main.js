@@ -2,27 +2,31 @@ let api;
 
 document.addEventListener("DOMContentLoaded", loadConfig);
 
-// Entry point for the JS code.
 function init() {
-    // Very small proof of concept.
-    //poc();
+    // handleEventListeners();
     setTimeout(startupAnimation, 2500);
+    makeMap();
+}
+
+function makeMap() {
     if ("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition(makeMapCurrentPosition, makeMapDefaultPosition);
     }
-    createDomeIcons();
-    setTimeout(get("domes", getDomes), 3000);
+}
+
+function handleEventListeners() {
+    document.querySelector('#center').addEventListener("click", makeMap);
 }
 
 function makeMapCurrentPosition(currentPosition) {
     const coords = currentPosition.coords;
     const lat = coords.latitude - 75.5;
     const lon = coords.longitude - 73;
-    createMap([lat, lon])
+    createMap([lat, lon], true)
 }
 
 function makeMapDefaultPosition() {
-    createMap([-23, -69])
+    createMap([-23, -69], false)
 }
 
 function loadConfig() {
