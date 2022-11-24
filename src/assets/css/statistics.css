@@ -37,6 +37,52 @@ nav ul img {
   width: 4rem;
 }
 
+.hidden {
+  display: none;
+}
+
+body {
+  cursor: default;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+input {
+  border: none;
+  background: none;
+}
+input:focus {
+  outline: none;
+}
+
+button {
+  border: none;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 0.25rem grey;
+  border-radius: 0.5rem;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #9a542e;
+  border-radius: 0.5rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #6b1d09;
+}
+
 body {
   background-color: #d0c8a8;
 }
@@ -72,19 +118,24 @@ body main #statistics #container_statistics aside {
   border-radius: 2rem;
 }
 body main #statistics #container_statistics aside ul {
-  margin-left: 2rem;
-  margin-right: 2rem;
+  margin: 2rem;
   display: flex;
   flex-direction: column;
 }
 body main #statistics #container_statistics aside ul li {
+  color: #99857A;
   font-size: 1.5rem;
-  padding-top: 0.5rem;
-  border-bottom: black solid;
-  height: 2rem;
 }
-body main #statistics #container_statistics aside ul li:first-child {
+body main #statistics #container_statistics aside ul li:hover {
+  color: black;
+}
+body main #statistics #container_statistics aside ul .selected {
   font-weight: bold;
+}
+body main #statistics #container_statistics aside ul hr {
+  height: 0.15rem;
+  background-color: #99857A;
+  border: none;
 }
 body main #statistics #container_statistics #container_charts {
   width: 80%;
@@ -98,11 +149,66 @@ body main #statistics #container_statistics #container_charts #ul_period li {
   font-size: 1.2rem;
   text-decoration: underline;
 }
-body main #statistics #container_statistics #container_charts article {
+body main #statistics #container_statistics #container_charts .stats {
   margin-top: 2rem;
   height: 57vh;
   background-color: #6b1d09;
   border-radius: 2rem;
+}
+body main #statistics #container_statistics #container_charts .stats canvas {
+  height: 100%;
+  width: 100%;
+}
+body main #statistics #container_statistics #container_charts #types_chart {
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+}
+body main #statistics #container_statistics #container_charts #types_chart #dome-choice {
+  width: 100%;
+  display: grid;
+  grid-auto-columns: 33%;
+  grid-template: "dome title search";
+}
+body main #statistics #container_statistics #container_charts #types_chart #dome-choice h3 {
+  text-align: left;
+  padding-left: 1rem;
+  grid-area: dome;
+  horiz-align: left;
+  font-size: 1.5rem;
+}
+body main #statistics #container_statistics #container_charts #types_chart #dome-choice h2 {
+  grid-area: title;
+  font-size: 2rem;
+}
+body main #statistics #container_statistics #container_charts #types_chart #dome-choice #searchbar {
+  box-sizing: border-box;
+  margin-left: 2rem;
+  grid-area: search;
+  line-height: 2rem;
+  height: 2rem;
+  background-color: #9a542e;
+  border-radius: 2rem;
+  display: flex;
+}
+body main #statistics #container_statistics #container_charts #types_chart #dome-choice #searchbar input {
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  vertical-align: center;
+}
+body main #statistics #container_statistics #container_charts #types_chart #dome-choice #searchbar button {
+  color: #99857A;
+  margin-right: 0.5rem;
+  background-color: #9a542e;
+  border-radius: 2rem;
+}
+body main #statistics #container_statistics #container_charts #types_chart #dome-choice #searchbar button .search {
+  font-size: 2rem;
+}
+body main #statistics #container_statistics #container_charts #types_chart #pie-chart {
+  margin-right: 23%;
+  margin-bottom: 2rem;
+  z-index: 2;
+  margin-top: 3rem;
 }
 
 /*# sourceMappingURL=statistics.css.map */

@@ -7,6 +7,11 @@
 
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/statistics.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <script src="assets/js/statistics.js" type="module"></script>
+
 </head>
 
 <body>
@@ -30,11 +35,26 @@
             <div id="container_statistics">
                 <aside>
                     <ul>
-                        <li>Crimes</li>
-                        <li>Oxygen leaks</li>
-                        <li>Population</li>
-                        <li>Medical dispaches</li>
-                        <li>General</li>
+                        <li id="crimes" class="selected">
+                            <p>Crimes</p>
+                            <hr>
+                        </li>
+                        <li id="oxygen-leaks">
+                            <p>Oxygen leaks</p>
+                            <hr>
+                        </li>
+                        <li id="population">
+                            <p>Population</p>
+                            <hr>
+                        </li>
+                        <li id="medical-dispaches">
+                            <p>Medical dispaches</p>
+                            <hr>
+                        </li>
+                        <li id="general">
+                            <p>General</p>
+                            <hr>
+                        </li>
                     </ul>
                 </aside>
 
@@ -45,12 +65,22 @@
                         <li>6 months</li>
                         <li>1 year</li>
                     </ul>
-                    <article id="category_chart">
-                        <h2>Category</h2>
-                    </article>
-                    <article id="types_chart">
-                        <h2>Types</h2>
-                    </article>
+
+                    <div id="category_chart" class="stats">
+                    </div>
+                    <div id="types_chart" class="stats">
+                        <div id="dome-choice">
+                            <h3 id="1">Dome 1</h3>
+                            <h2>Types of crimes</h2>
+                            <form id="searchbar">
+                                <input type="text" placeholder="Search dome" />
+                                <button type="submit" class="searchButton">
+                                    <em class="material-icons icon search">search</em>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </article>

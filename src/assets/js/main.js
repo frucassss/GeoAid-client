@@ -8,6 +8,9 @@ function init() {
     //poc();
     setTimeout(startupAnimation, 2500);
     createMap();
+    createDomeIcons();
+    setTimeout(get("domes", getDomes), 3000);
+    
 }
 
 function loadConfig() {

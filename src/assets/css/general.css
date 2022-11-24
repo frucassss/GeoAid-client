@@ -19,4 +19,8 @@ input:focus {
   outline: none;
 }
 
+button {
+  border: none;
+}
+
 /*# sourceMappingURL=general.css.map */
