@@ -47,7 +47,7 @@ body {
                 height: 3rem;
                 width: 26vw;
                 background-color: white;
-                border-radius: 2rem;
+                border-radius: $border-radius;
                 display: flex;
                 justify-content: space-between;
 
@@ -55,6 +55,7 @@ body {
                     font-size: 1.2rem;
                     padding-left: 1.3rem;
                     vertical-align: center;
+                    border-radius: $border-radius;
                 }
                 button {
                     background-color: white;
@@ -77,21 +78,25 @@ body {
                 margin-top: 0.5rem;
                 line-height: 2rem;
                 text-align: center;
-                border-radius: $border-radius;
+                border-radius: 1rem;
                 background-color: $primary-color;
+                p {
+                    display: inline-block;
+                    color: $primary-font-color;
+                }
                 li:first-child {
-                    border-radius: $border-radius $border-radius 0 0;
+                    border-radius: 1rem 1rem 0 0;
                 }
                 li:last-child {
-                    border-radius: 0 0 $border-radius $border-radius;
+                    border-radius: 0 0 1rem 1rem;
                 }
                 li:nth-child(even) {
                     background-color: $secondary-color;
+                    p {
+                        color: $tertiary-font-color;
+                    }
                 }
-                p {
-                    display: inline-block;
 
-                }
             }
         }
 

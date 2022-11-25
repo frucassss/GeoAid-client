@@ -141,6 +141,7 @@ body header #searchbar input {
   font-size: 1.2rem;
   padding-left: 1.3rem;
   vertical-align: center;
+  border-radius: 2rem;
 }
 body header #searchbar button {
   background-color: white;
@@ -161,20 +162,24 @@ body header #suggestions {
   margin-top: 0.5rem;
   line-height: 2rem;
   text-align: center;
-  border-radius: 2rem;
+  border-radius: 1rem;
   background-color: #003844;
 }
+body header #suggestions p {
+  display: inline-block;
+  color: hsl(142deg, 10%, 75%);
+}
 body header #suggestions li:first-child {
-  border-radius: 2rem 2rem 0 0;
+  border-radius: 1rem 1rem 0 0;
 }
 body header #suggestions li:last-child {
-  border-radius: 0 0 2rem 2rem;
+  border-radius: 0 0 1rem 1rem;
 }
 body header #suggestions li:nth-child(even) {
   background-color: #848FA5;
 }
-body header #suggestions p {
-  display: inline-block;
+body header #suggestions li:nth-child(even) p {
+  color: black;
 }
 
 @-moz-keyframes slide /* Firefox */ {
