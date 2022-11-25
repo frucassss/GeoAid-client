@@ -1,3 +1,54 @@
+img {
+  max-width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+body {
+  cursor: default;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+input {
+  border: none;
+}
+input:focus {
+  outline: none;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 0.25rem grey;
+  border-radius: 5rem;
+  background-color: #848FA5;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #210124;
+  border-radius: 0.5rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #003844;
+}
+
 a {
   text-decoration: none;
 }
@@ -24,71 +75,47 @@ nav ul li a {
 nav ul li .icon {
   color: hsl(142deg, 10%, 75%);
 }
-nav ul li:nth-child(2) {
-  font-weight: bold;
-}
-nav ul li:nth-child(7) {
+nav ul li:nth-child(7) a {
   border-bottom: hsl(142deg, 10%, 75%) solid;
-}
-nav ul li:last-child img {
-  width: 4rem;
 }
 nav ul li:first-child img {
   width: 5rem;
 }
-nav ul img {
-  width: 4rem;
+nav ul .icon {
+  font-size: 4rem;
+}
+nav ul .selected {
+  font-weight: bold;
+}
+nav ul .selected a {
+  color: #848FA5;
 }
 
-.hidden {
-  display: none;
-}
-
-body {
-  cursor: default;
-}
-
-a {
+.hover-underline-animation {
+  position: relative;
   color: black;
-  text-decoration: none;
 }
 
-input {
-  border: none;
-  background: none;
-}
-input:focus {
-  outline: none;
-}
-
-button {
-  border: none;
-  cursor: pointer;
-}
-
-::-webkit-scrollbar {
-  width: 0.5rem;
+.hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
 }
 
-/* Track */
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 0.25rem grey;
-  border-radius: 0.5rem;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #9a542e;
-  border-radius: 0.5rem;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #6b1d09;
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 body {
-  background-color: url("../../images/background.jpg");
+  background: url("../../images/background.jpg");
 }
 body main #statistics {
   text-align: center;
@@ -113,13 +140,14 @@ body main #statistics #container_statistics {
   border-radius: 0 0 2rem 2rem;
 }
 body main #statistics #container_statistics aside {
-  width: 20%;
+  width: 25%;
   background-color: #003844;
   margin-top: 3rem;
   margin-left: 2rem;
   margin-right: 2rem;
   padding-bottom: 1rem;
   border-radius: 2rem;
+  box-shadow: inset 0.5rem 0.5rem 1rem black;
 }
 body main #statistics #container_statistics aside ul {
   margin: 2rem;
@@ -131,10 +159,11 @@ body main #statistics #container_statistics aside ul li {
   font-size: 1.5rem;
 }
 body main #statistics #container_statistics aside ul li:hover {
-  color: black;
+  color: #848FA5;
 }
 body main #statistics #container_statistics aside ul .selected {
   font-weight: bold;
+  color: #848FA5;
 }
 body main #statistics #container_statistics aside ul hr {
   height: 0.15rem;
@@ -142,7 +171,7 @@ body main #statistics #container_statistics aside ul hr {
   border: none;
 }
 body main #statistics #container_statistics #container_charts {
-  width: 80%;
+  width: 75%;
   padding-right: 2rem;
 }
 body main #statistics #container_statistics #container_charts #ul_period {
@@ -154,18 +183,22 @@ body main #statistics #container_statistics #container_charts #ul_period li {
   text-decoration: underline;
 }
 body main #statistics #container_statistics #container_charts .stats {
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
   margin-top: 2rem;
-  height: 57vh;
+  height: 50vh;
   background-color: #003844;
   border-radius: 2rem;
+  box-shadow: inset 0.5rem 0.5rem 1rem black;
 }
 body main #statistics #container_statistics #container_charts .stats canvas {
   height: 100%;
   width: 100%;
 }
-body main #statistics #container_statistics #container_charts #types_chart {
-  padding-top: 1.5rem;
-  padding-bottom: 2rem;
+body main #statistics #container_statistics #container_charts .stats h2 {
+  color: hsl(142deg, 10%, 75%);
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 body main #statistics #container_statistics #container_charts #types_chart #dome-choice {
   width: 100%;
@@ -177,17 +210,16 @@ body main #statistics #container_statistics #container_charts #types_chart #dome
   text-align: left;
   padding-left: 1rem;
   grid-area: dome;
-  horiz-align: left;
   font-size: 1.5rem;
+  color: hsl(142deg, 10%, 75%);
 }
 body main #statistics #container_statistics #container_charts #types_chart #dome-choice h2 {
   grid-area: title;
-  font-size: 2rem;
 }
 body main #statistics #container_statistics #container_charts #types_chart #dome-choice #searchbar {
-  box-sizing: border-box;
-  margin-left: 2rem;
   grid-area: search;
+  margin-right: 2rem;
+  margin-left: 2rem;
   line-height: 2rem;
   height: 2rem;
   background-color: #848FA5;
@@ -198,6 +230,11 @@ body main #statistics #container_statistics #container_charts #types_chart #dome
   font-size: 1.2rem;
   padding-left: 1rem;
   vertical-align: center;
+  background-color: #848FA5;
+  border-radius: 2rem;
+}
+body main #statistics #container_statistics #container_charts #types_chart #dome-choice #searchbar input::placeholder, body main #statistics #container_statistics #container_charts #types_chart #dome-choice #searchbar input:focus {
+  color: hsl(142deg, 10%, 75%);
 }
 body main #statistics #container_statistics #container_charts #types_chart #dome-choice #searchbar button {
   color: hsl(142deg, 10%, 75%);
@@ -207,12 +244,13 @@ body main #statistics #container_statistics #container_charts #types_chart #dome
 }
 body main #statistics #container_statistics #container_charts #types_chart #dome-choice #searchbar button .search {
   font-size: 2rem;
+  color: hsl(142deg, 10%, 75%);
 }
 body main #statistics #container_statistics #container_charts #types_chart #pie-chart {
   margin-right: 23%;
   margin-bottom: 2rem;
   z-index: 2;
-  margin-top: 3rem;
+  margin-top: 1rem;
 }
 
 /*# sourceMappingURL=statistics.css.map */
