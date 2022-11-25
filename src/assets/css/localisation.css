@@ -146,7 +146,7 @@ body main form fieldset p {
   line-height: 2.5rem;
 }
 body main form fieldset .flexcontainer {
-  width: 50%;
+  width: 60%;
   margin: 2rem auto;
   display: flex;
   flex-direction: column;
@@ -170,7 +170,7 @@ body main form fieldset button {
   padding: 0.5rem;
 }
 body main form fieldset #summary {
-  height: 30vh;
+  height: 40vh;
 }
 
 /*# sourceMappingURL=localisation.css.map */
