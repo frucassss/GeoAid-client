@@ -1,3 +1,7 @@
+img {
+  max-width: 100%;
+}
+
 .hidden {
   display: none;
 }
@@ -13,7 +17,6 @@ a {
 
 input {
   border: none;
-  background: none;
 }
 input:focus {
   outline: none;
@@ -21,6 +24,29 @@ input:focus {
 
 button {
   border: none;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 0.25rem grey;
+  border-radius: 5rem;
+  background-color: #848FA5;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #210124;
+  border-radius: 0.5rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #003844;
 }
 
 /*# sourceMappingURL=general.css.map */

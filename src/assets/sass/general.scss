@@ -1,3 +1,8 @@
+@import "constants";
+
+img {
+  max-width: 100%;
+}
 .hidden {
   display: none;
 }
@@ -13,8 +18,6 @@ a {
 
 input {
   border: none;
-  background: none;
-
   &:focus {
     outline: none;
   }
@@ -22,4 +25,27 @@ input {
 
 button {
   border: none;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 0.25rem grey;
+  border-radius: 5rem;
+  background-color: $secondary-color;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $tertiary-color;
+  border-radius: 0.5rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $primary-color;
 }

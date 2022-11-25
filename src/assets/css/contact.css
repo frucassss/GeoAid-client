@@ -117,60 +117,108 @@ nav ul .selected a {
 body {
   background: url("../../images/background.jpg");
 }
-body main form {
-  margin: 2rem 0;
-  text-align: center;
-  width: 100%;
+body main {
+  margin-top: 2rem;
 }
-body main form fieldset {
-  width: 65%;
+body main article {
   background-color: #848FA5;
-  margin-left: auto;
-  margin-right: auto;
+  border-radius: 2rem;
 }
-body main form fieldset legend {
+body main article h2 {
   padding: 1rem 0;
   font-size: 2rem;
-  width: 100%;
   background-color: #210124;
   color: hsl(142deg, 10%, 75%);
+  text-align: center;
   border-radius: 2rem 2rem 0 0;
 }
-body main form fieldset img {
-  width: 100%;
-  margin-bottom: 0.5rem;
-}
-body main form fieldset p {
-  font-size: 2rem;
+body main .flexcontainer {
+  display: flex;
+  justify-content: space-around;
   margin-bottom: 1rem;
-  line-height: 2.5rem;
 }
-body main form fieldset .flexcontainer {
-  width: 60%;
-  margin: 2rem auto;
+body main .flexcontainer article {
+  height: 45vh;
+  width: 25vw;
+}
+body main .flexcontainer #contact_us {
+  flex-basis: 30%;
+}
+body main .flexcontainer #contact_us form {
+  width: 100%;
+}
+body main .flexcontainer #contact_us form legend {
+  width: 100%;
+}
+body main .flexcontainer #contact_us form div {
   display: flex;
   flex-direction: column;
-  text-align: left;
+  margin: 1rem 2rem 0 2rem;
 }
-body main form fieldset label {
-  margin-bottom: 0.5rem;
-  font-size: 1.3rem;
+body main .flexcontainer #contact_us form div label {
+  padding-bottom: 0.5rem;
 }
-body main form fieldset input, body main form fieldset textarea {
-  border-radius: 1rem;
+body main .flexcontainer #contact_us form div input, body main .flexcontainer #contact_us form div textarea {
   background-color: #003844;
   margin-bottom: 1rem;
-  padding: 0.5rem;
+}
+body main .flexcontainer #contact_us form div textarea {
+  height: 7rem;
+}
+body main .flexcontainer #contact_us form div textarea:focus {
+  font-size: 1.2rem;
   color: hsl(142deg, 10%, 75%);
 }
-body main form fieldset button {
+body main .flexcontainer #contact_us form div button {
+  padding: 0.5rem;
+  background-color: #210124;
   color: hsl(142deg, 10%, 75%);
-  background-color: #003844;
   border-radius: 2rem;
-  padding: 0.5rem;
 }
-body main form fieldset #summary {
-  height: 40vh;
+body main .flexcontainer #contact > div {
+  text-align: center;
+  margin: 1rem 2rem 0 2rem;
+}
+body main .flexcontainer #contact > div dl dt {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+body main .flexcontainer #contact > div dl dd {
+  margin: 1rem 0;
+  font-size: 1rem;
+}
+body main .flexcontainer #contact > div img {
+  width: 3rem;
+}
+body main #business_hours {
+  width: 78vw;
+  margin-right: auto;
+  margin-left: auto;
+}
+body main #business_hours .flexcontainer {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+body main #business_hours .flexcontainer li div {
+  margin-top: 0.5rem;
+  background-color: #003844;
+  padding: 1.5rem 1rem;
+  border-radius: 1rem;
+}
+body main #business_hours #extras {
+  margin: 0 3rem;
+}
+body main #business_hours #extras h4 {
+  font-size: 1.3rem;
+  border-bottom: #003844 solid;
+}
+body main #business_hours #extras ul li p {
+  display: list-item;
+  list-style-type: circle;
+  list-style-position: inside;
+  margin-top: 0.5rem;
 }
 
-/*# sourceMappingURL=localisation.css.map */
+/*# sourceMappingURL=contact.css.map */

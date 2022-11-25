@@ -6,7 +6,7 @@ nav {
   padding-top: 1rem;
   padding-bottom: 1rem;
   border-bottom: black solid;
-  background-color: #6b1d09;
+  background-color: #003844;
 }
 nav ul {
   display: flex;
@@ -19,22 +19,25 @@ nav ul li {
 }
 nav ul li a {
   font-family: Arial, sans-serif;
-  color: black;
+  color: hsl(142deg, 10%, 75%);
 }
-nav ul li:nth-child(2) {
-  font-weight: bold;
+nav ul li .icon {
+  color: hsl(142deg, 10%, 75%);
 }
-nav ul li:nth-child(7) {
-  border-bottom: black solid;
-}
-nav ul li:last-child img {
-  width: 4rem;
+nav ul li:nth-child(7) a {
+  border-bottom: hsl(142deg, 10%, 75%) solid;
 }
 nav ul li:first-child img {
   width: 5rem;
 }
-nav ul img {
-  width: 4rem;
+nav ul .icon {
+  font-size: 4rem;
+}
+nav ul .selected {
+  font-weight: bold;
+}
+nav ul .selected a {
+  color: #848FA5;
 }
 
 /*# sourceMappingURL=nav.css.map */
