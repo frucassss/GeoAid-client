@@ -1,3 +1,7 @@
+img {
+  max-width: 100%;
+}
+
 .hidden {
   display: none;
 }
@@ -13,7 +17,6 @@ a {
 
 input {
   border: none;
-  background: none;
 }
 input:focus {
   outline: none;

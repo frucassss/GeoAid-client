@@ -5,149 +5,63 @@
 
 
 body {
-
-  background: rgb(255,255,255);
-  background: linear-gradient(41deg, rgba(255,255,255) 0%, rgba(220,199,170,1) 100%);
-  font-family: Arial, sans-serif;
-
-}
-main {
-  background-color: #A8C3FA;
-  width: 60%;
-  margin-inline: auto;
-}
-form {
-  padding-top: 3rem;
-  margin-inline: auto;
-  width: 40%;
-}
-#contact {
-  margin-inline: unset;
-}
-fieldset {
-  background-color: rgba(220,199,170);
-  border-radius: 0.5rem;
-}
-
-legend, h2 {
-  color: #f7882f;
-  width: 100%;
-  padding-block: 1rem;
-  text-align: center;
-  font-family: Arial, sans-serif;
-  font-size: 2rem;
-  background-color: #6B7A8F;
-  border-top-left-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
-}
-
-form div {
-  background-image: url("../../images/Dome.png");
-  width: 100%;
-  background-size: cover;
-  height: 15rem;
-  background-repeat: no-repeat;
-}
-
-fieldset p {
-  margin-block: 1rem;
-  text-align: center;
-  font-family: Arial, sans-serif;
-  font-size: 1.5rem;
-}
-
-#contact label{
-  margin-top: 0.5rem;
-  margin-bottom: 0.3rem;
-  font-size: 1.2rem;
-}
-
-label, input, textarea {
-  border-color: black;
-  border-radius: 1rem 1rem 1rem 1rem;
-  display: block;
-  margin-inline: auto;
-  width: 70%;
-  font-family: Arial, sans-serif;
-}
-input, textarea {
-  width: 70%;
-  margin-bottom: 1rem;
-}
-textarea {
-  height: 10rem;
-}
-
-input[type="submit"] {
-  font-size: 0.8rem;
-  padding-block: 0.5rem;
-  font-family: arial, sans-serif;
-  background-color: #f7882f;
-  border: none;
-  color: white;
-}
-
-aside {
-  margin-top: 3rem;
-  background-color: rgba(220,199,170);
-  border-radius: 0.5rem;
-  width: 25%;
-}
-
-aside img {
-  width: 25%;
-  height: 25%;
-}
-
-body div {
-  display: flex;
-  justify-content: space-evenly;
-}
-dt {
-  color: white;
-  font-weight: bold;
-}
-
-
-#business_hours{
-  margin-bottom: 2rem;
-  width: 84rem;
-}
-
-#business_hours #flex{
-  display: flex;
-  flex-direction: column;
-  #flexcontainer{
-    font-size: 1.4rem;
-    margin: 2rem 0 0 2rem;
-    display: flex;
-    flex-direction: row;
-  }
-  #flexcontainer li{
-    margin-left: 3rem;
-    width: 10rem;
-  }
-  #flexcontainer li p{
-    padding-bottom: 2rem;
-  }
-  #flexcontainer li h3{
-    margin-left: -4rem;
-  }
-}
-
-#business_hours #extras{
-  
-  text-align: left;
-  font-size: 1.2rem;
-  margin: 4rem 0 1.5rem 2rem;
-
-  h4{
-    border-bottom: solid 0.2rem black;
-    margin-bottom: 0.5rem;
-  }
-  ul li{
-    margin-left: 1rem;
-    list-style-type: circle;
+  background: $background-color;
+  main {
+    form {
+      margin: 2rem 0;
+      text-align: center;
+      width: 100%;
+      fieldset {
+        width: 65%;
+        background-color: $secondary-color;
+        margin-left: auto;
+        margin-right: auto;
+        legend {
+          padding: 1rem 0;
+          font-size: 2rem;
+          width: 100%;
+          background-color: $header-background-color;
+          color: $header-font-color;
+          border-radius: $border-radius $border-radius 0 0;
+        }
+        img {
+          width: 100%;
+          margin-bottom: 0.5rem;
+        }
+        p {
+          font-size: 2rem;
+          margin-bottom: 1rem;
+          line-height: 2.5rem;
+        }
+        .flexcontainer {
+          width: 50%;
+          margin: 2rem auto;
+          display: flex;
+          flex-direction: column;
+          text-align: left;
+        }
+        label {
+          margin-bottom: 0.5rem;
+          font-size: 1.3rem;
+        }
+        input, textarea {
+          border-radius: 1rem;
+          background-color: $primary-color;
+          margin-bottom: 1rem;
+          padding: 0.5rem;
+          color: $primary-font-color;
+        }
+        button {
+          color: $primary-font-color;
+          background-color: $primary-color;
+          border-radius: $border-radius;
+          padding: 0.5rem;
+        }
+        #summary {
+          height: 30vh;
+        }
+      }
+    }
   }
 }
 
