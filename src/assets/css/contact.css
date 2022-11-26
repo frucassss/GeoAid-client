@@ -1,0 +1,224 @@
+img {
+  max-width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+body {
+  cursor: default;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+input {
+  border: none;
+}
+input:focus {
+  outline: none;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 0.25rem grey;
+  border-radius: 5rem;
+  background-color: #848FA5;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #210124;
+  border-radius: 0.5rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #003844;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: black solid;
+  background-color: #003844;
+}
+nav ul {
+  display: flex;
+  justify-content: space-around;
+}
+nav ul li {
+  font-size: 1.7rem;
+  margin-bottom: auto;
+  margin-top: auto;
+}
+nav ul li a {
+  font-family: Arial, sans-serif;
+  color: hsl(142deg, 10%, 75%);
+}
+nav ul li .icon {
+  color: hsl(142deg, 10%, 75%);
+}
+nav ul li:nth-child(7) a {
+  border-bottom: hsl(142deg, 10%, 75%) solid;
+}
+nav ul li:first-child img {
+  width: 5rem;
+}
+nav ul .icon {
+  font-size: 4rem;
+}
+nav ul .selected {
+  font-weight: bold;
+}
+nav ul .selected a {
+  color: #848FA5;
+}
+
+.hover-underline-animation {
+  position: relative;
+  color: black;
+}
+
+.hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+body {
+  background: url("../../images/background.jpg");
+}
+body main {
+  margin-top: 2rem;
+}
+body main article {
+  background-color: #848FA5;
+  border-radius: 2rem;
+}
+body main article h2 {
+  padding: 1rem 0;
+  font-size: 2rem;
+  background-color: #210124;
+  color: hsl(142deg, 10%, 75%);
+  text-align: center;
+  border-radius: 2rem 2rem 0 0;
+}
+body main .flexcontainer {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+}
+body main .flexcontainer article {
+  height: 45vh;
+  width: 25vw;
+}
+body main .flexcontainer #contact_us {
+  flex-basis: 30%;
+}
+body main .flexcontainer #contact_us form {
+  width: 100%;
+}
+body main .flexcontainer #contact_us form legend {
+  width: 100%;
+}
+body main .flexcontainer #contact_us form div {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 2rem 0 2rem;
+}
+body main .flexcontainer #contact_us form div label {
+  padding-bottom: 0.5rem;
+}
+body main .flexcontainer #contact_us form div input, body main .flexcontainer #contact_us form div textarea {
+  background-color: #003844;
+  margin-bottom: 1rem;
+}
+body main .flexcontainer #contact_us form div textarea {
+  height: 7rem;
+}
+body main .flexcontainer #contact_us form div textarea:focus {
+  font-size: 1.2rem;
+  color: hsl(142deg, 10%, 75%);
+}
+body main .flexcontainer #contact_us form div button {
+  padding: 0.5rem;
+  background-color: #210124;
+  color: hsl(142deg, 10%, 75%);
+  border-radius: 2rem;
+}
+body main .flexcontainer #contact > div {
+  text-align: center;
+  margin: 1rem 2rem 0 2rem;
+}
+body main .flexcontainer #contact > div dl dt {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+body main .flexcontainer #contact > div dl dd {
+  margin: 1rem 0;
+  font-size: 1rem;
+}
+body main .flexcontainer #contact > div img {
+  width: 3rem;
+}
+body main #business_hours {
+  width: 78vw;
+  margin-right: auto;
+  margin-left: auto;
+}
+body main #business_hours .flexcontainer {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+body main #business_hours .flexcontainer li div {
+  margin-top: 0.5rem;
+  background-color: #003844;
+  padding: 1.5rem 1rem;
+  border-radius: 1rem;
+}
+body main #business_hours #extras {
+  margin: 0 3rem;
+}
+body main #business_hours #extras h4 {
+  font-size: 1.3rem;
+  border-bottom: #003844 solid;
+}
+body main #business_hours #extras ul li p {
+  display: list-item;
+  list-style-type: circle;
+  list-style-position: inside;
+  margin-top: 0.5rem;
+}
+
+/*# sourceMappingURL=contact.css.map */

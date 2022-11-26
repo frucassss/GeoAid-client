@@ -47,7 +47,7 @@ body {
                 height: 3rem;
                 width: 26vw;
                 background-color: white;
-                border-radius: 2rem;
+                border-radius: $border-radius;
                 display: flex;
                 justify-content: space-between;
 
@@ -55,9 +55,9 @@ body {
                     font-size: 1.2rem;
                     padding-left: 1.3rem;
                     vertical-align: center;
+                    border-radius: $border-radius;
                 }
                 button {
-                    margin-right: 1rem;
                     background-color: white;
                     border: none;
                     border-radius: 2rem;
@@ -66,8 +66,40 @@ body {
                         font-size: 2rem;
                     }
                 }
+                .center {
+                    line-height: 3rem;
+                    margin-bottom: 1rem;
+                    margin-right: 1rem;
+                    font-size: 2rem;
+                }
+            }
+            #suggestions {
+                width: 26vw;
+                margin-top: 0.5rem;
+                line-height: 2rem;
+                text-align: center;
+                border-radius: 1rem;
+                background-color: $primary-color;
+                p {
+                    display: inline-block;
+                    color: $primary-font-color;
+                }
+                li:first-child {
+                    border-radius: 1rem 1rem 0 0;
+                }
+                li:last-child {
+                    border-radius: 0 0 1rem 1rem;
+                }
+                li:nth-child(even) {
+                    background-color: $secondary-color;
+                    p {
+                        color: $tertiary-font-color;
+                    }
+                }
+
             }
         }
+
     }
 @-moz-keyframes slide /* Firefox */
 {
