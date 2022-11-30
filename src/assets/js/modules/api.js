@@ -1,3 +1,5 @@
+let api;
+
 function poc() {
     const messageBody = {
         "quote": "some quote"
@@ -7,7 +9,7 @@ function poc() {
     put("quotes/1", messageBody);
 }
 
-function get(uri, successHandler = logJson, failureHandler = logError) {
+export function get(uri, successHandler = logJson, failureHandler = logError) {
     const request = new Request(api + uri, {
         method: 'GET',
     });
@@ -15,7 +17,7 @@ function get(uri, successHandler = logJson, failureHandler = logError) {
     call(request, successHandler, failureHandler);
 }
 
-function post(uri, body, successHandler = logJson, failureHandler = logError) {
+export function post(uri, body, successHandler = logJson, failureHandler = logError) {
     const request = new Request(api + uri, {
         method: 'POST',
         headers: {
@@ -27,7 +29,7 @@ function post(uri, body, successHandler = logJson, failureHandler = logError) {
     call(request, successHandler, failureHandler);
 }
 
-function put(uri, body, successHandler = logJson, failureHandler = logError) {
+export function put(uri, body, successHandler = logJson, failureHandler = logError) {
     const request = new Request(api + uri, {
         method: 'PUT',
         headers: {
@@ -39,7 +41,7 @@ function put(uri, body, successHandler = logJson, failureHandler = logError) {
     call(request, successHandler, failureHandler);
 }
 
-function remove(uri, successHandler = logJson, failureHandler = logError) {
+export function remove(uri, successHandler = logJson, failureHandler = logError) {
     const request = new Request(api + uri, {
         method: 'DELETE',
     });
@@ -57,4 +59,8 @@ function logError(error) {
 
 function call(request, successHandler, errorHandler) {
     fetch(request).then(successHandler).catch(errorHandler);
+}
+
+export function setApi(givenApi) {
+    api = givenApi;
 }
