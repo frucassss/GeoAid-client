@@ -26,6 +26,17 @@ function makeMap() {
     }
 }
 
+function makeMapCurrentPosition(currentPosition) {
+    const coords = currentPosition.coords;
+    const lat = coords.latitude - 75.5;
+    const lon = coords.longitude - 73;
+    createMap([lat, lon], true)
+}
+
+function makeMapDefaultPosition() {
+    createMap([-23, -69], false);
+}
+
 function handleEventListeners() {
     document.querySelector('.center').addEventListener("click", function() {
         if ("geolocation" in navigator) {
@@ -93,17 +104,6 @@ function findPosition(search) {
 
 function handleError() {
     console.log("Give permission");
-}
-
-function makeMapCurrentPosition(currentPosition) {
-    const coords = currentPosition.coords;
-    const lat = coords.latitude - 75.5;
-    const lon = coords.longitude - 73;
-    createMap([lat, lon], true)
-}
-
-function makeMapDefaultPosition() {
-    createMap([-23, -69], false);
 }
 
 function startupAnimation() {
