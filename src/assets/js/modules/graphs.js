@@ -1,3 +1,8 @@
+const FONTCOLOR = "hsl(142deg, 10%, 75%)";
+const COLORSET = ["#c30010", "#de0a26", "#ff2c2c", "#f94449", "#ee6b6e", "#f69697", "#ffcbd1"];
+const PRIMARYCOLOR = "#210124"
+const HOVERCOLOR = "#848FA5"
+
 export function makeBarchart(data) {
     const oldChart = document.querySelector("#bar-chart");
     if (oldChart) {
@@ -16,8 +21,8 @@ export function makeBarchart(data) {
             }]
         },
         options: {
-            backgroundColor: "#210124",
-            hoverBackgroundColor: '#848FA5',
+            backgroundColor: PRIMARYCOLOR,
+            hoverBackgroundColor: HOVERCOLOR,
             scales: {
                 y: {
                     title: {
@@ -26,10 +31,10 @@ export function makeBarchart(data) {
                         font: {
                             weight: "bold",
                         },
-                        color: "hsl(142deg, 10%, 75%)"
+                        color: FONTCOLOR
                     },
                     ticks: {
-                        color: "hsl(142deg, 10%, 75%)"
+                        color: FONTCOLOR
                     },
                     suggestedMax: 100
                 },
@@ -40,13 +45,13 @@ export function makeBarchart(data) {
                         font: {
                             weight: "bold",
                         },
-                        color: "hsl(142deg, 10%, 75%)",
+                        color: FONTCOLOR,
                         padding: {
                             bottom: 20
                         }
                     },
                     ticks: {
-                        color: "hsl(142deg, 10%, 75%)"
+                        color: FONTCOLOR
                     }
                 }
             },
@@ -76,7 +81,7 @@ export function makePieChart(data) {
             labels: Object.keys(data),
             datasets: [{
                 data: Object.values(data),
-                backgroundColor: ['#c30010', "#de0a26", '#ff2c2c', '#f94449', '#ee6b6e', "#f69697", "#ffcbd1"]
+                backgroundColor: COLORSET
             }]
         },
         options: {
@@ -90,16 +95,14 @@ export function makePieChart(data) {
                             size: 20
                         },
                         padding: 15,
-                        color: "hsl(142deg, 10%, 75%)"
-
-
+                        color: FONTCOLOR
                     }
 
                 },
                 tooltip: {
                     callbacks: {
                         afterBody: function(context) {
-                            return '(%)';
+                            return '(in %)';
                         }
                     }
                 }

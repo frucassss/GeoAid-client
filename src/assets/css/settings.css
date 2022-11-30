@@ -116,7 +116,6 @@ nav ul .selected a {
 
 body {
   background: url("../../images/background.jpg");
-  font-family: Arial, sans-serif;
 }
 body #settings {
   padding: 1rem;
@@ -163,15 +162,13 @@ body #settings .flexcontainer li .dropdown {
   color: black;
   font-size: 0;
 }
-
-.switch {
+body #settings .flexcontainer li .switch {
   position: relative;
   display: inline-block;
   width: 60px;
   height: 34px;
 }
-
-.slider {
+body #settings .flexcontainer li .slider {
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -182,8 +179,7 @@ body #settings .flexcontainer li .dropdown {
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
-
-.slider:before {
+body #settings .flexcontainer li .slider:before {
   position: absolute;
   content: "";
   height: 26px;
@@ -194,30 +190,24 @@ body #settings .flexcontainer li .dropdown {
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
-
-input:checked + .slider {
+body #settings .flexcontainer li input:checked + .slider {
   background-color: #848FA5;
 }
-
-input:focus + .slider {
+body #settings .flexcontainer li input:focus + .slider {
   box-shadow: 0 0 1px #2196F3;
 }
-
-input:checked + .slider:before {
+body #settings .flexcontainer li input:checked + .slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
 }
-
-.slider.round {
+body #settings .flexcontainer li .slider.round {
   border-radius: 34px;
 }
-
-.slider.round:before {
+body #settings .flexcontainer li .slider.round:before {
   border-radius: 50%;
 }
-
-.dropbtn {
+body #settings .flexcontainer li .dropbtn {
   background-color: #848FA5;
   color: black;
   padding: 0.5rem;
@@ -225,15 +215,13 @@ input:checked + .slider:before {
   border: none;
   cursor: pointer;
 }
-
-.dropdown-content {
+body #settings .flexcontainer li .dropdown-content {
   display: none;
   position: absolute;
   width: 9rem;
   z-index: 1;
 }
-
-.dropdown-content p {
+body #settings .flexcontainer li .dropdown-content p {
   color: black;
   font-size: 1rem;
   cursor: pointer;
@@ -241,13 +229,11 @@ input:checked + .slider:before {
   display: block;
   background-color: #848FA5;
 }
-
-.dropdown:hover .dropdown-content {
+body #settings .flexcontainer li .dropdown:hover .dropdown-content {
   display: block;
 }
-
-.dropdown:hover .dropbtn {
-  background-color: #210124;
+body #settings .flexcontainer li .dropdown:hover .dropbtn {
+  background-color: #ccc;
 }
 
 /*# sourceMappingURL=settings.css.map */

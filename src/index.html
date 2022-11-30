@@ -10,9 +10,6 @@
     <link rel="stylesheet" href="assets/css/screen.css" />
 
     <script src="assets/js/script.js" type="module"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/map.js"></script>
-    <script src="assets/js/api.js"></script>
 
     <!--leaflet-->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css" integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
@@ -23,15 +20,13 @@
 <body>
     <header>
         <div class="material-icons icon menu">menu</div>
-        <form action="#">
+        <form>
             <div id="searchbar">
                 <input type="text" placeholder="Search" />
-                <div>
-                    <button type="submit" class="searchButton">
-                        <em class="material-icons icon search">search</em>
-                        </button>
-                    <div class="material-icons icon center">pin_drop</div>
-                </div>
+                <button type="submit" class="searchButton">
+                    <em class="material-icons icon search">search</em>
+                </button>
+                <div class="material-icons icon center">pin_drop</div>
             </div>
             <ul id="suggestions">
             </ul>
@@ -43,7 +38,7 @@
             <ul class="flexcontainer">
                 <li>
                     <div class="material-icons icon close">close</div>
-                    <a href="#">
+                    <a href="profile.html">
                         <div class="material-icons icon account_circle">
                             account_circle
                         </div>
@@ -57,7 +52,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="company.html">
                         <div class="material-icons icon apartment">apartment</div>
                         <h2 class="hover-underline-animation">Company</h2>
                     </a>
@@ -69,13 +64,13 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="contact.html">
                         <div class="material-icons icon info">info</div>
                         <h2 class="hover-underline-animation">About us</h2>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="settings.html">
                         <div class="material-icons icon settings">settings</div>
                         <h2 class="hover-underline-animation">Settings</h2>
                     </a>
