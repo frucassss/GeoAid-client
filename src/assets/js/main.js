@@ -1,3 +1,6 @@
+import {get} from "./modules/api.js";
+import {createMap} from "./modules/map.js";
+
 let api;
 let arrayDomes = [];
 
