@@ -231,29 +231,135 @@ data: {
         }
     }
     employees: {
-        frontenddev= {
-            "amount": 2,
-            "salary": 2250,
+        2018= {
+            frontenddev: {
+                "amount": 2,
+                "salary": 2250,
+            },
+            backenddev: {
+                "amount": 2,
+                "salary": 2500,
+            },
+            marketeers: {
+                "amount": 1,
+                "salary": 2500,
+            },
+            consultants: {
+                "amount": 2,
+                "salary": 2000,
+            },
+            helpdesk: {
+                "amount": 2,
+                "salary": 1500,
+            },
+            ceo: {
+                "amount": 1,
+                "salary": 3000,
+            }
         },
-        backenddev= {
-            "amount": 2,
-            "salary": 2500,
+        2019= {
+            frontenddev: {
+                "amount": 3,
+                "salary": 2250,
+            },
+            backenddev: {
+                "amount": 4,
+                "salary": 2500,
+            },
+            marketeers: {
+                "amount": 3,
+                "salary": 2500,
+            },
+            consultants: {
+                "amount": 4,
+                "salary": 2000,
+            },
+            helpdesk: {
+                "amount": 3,
+                "salary": 1500,
+            },
+            ceo: {
+                "amount": 1,
+                "salary": 3000,
+            }
         },
-        marketeers= {
-            "amount": 1,
-            "salary": 2500,
+        2020= {
+            frontenddev: {
+                "amount": 4,
+                "salary": 2250,
+            },
+            backenddev: {
+                "amount": 7,
+                "salary": 2500,
+            },
+            marketeers: {
+                "amount": 5,
+                "salary": 2500,
+            },
+            consultants: {
+                "amount": 7,
+                "salary": 2000,
+            },
+            helpdesk: {
+                "amount": 5,
+                "salary": 1500,
+            },
+            ceo: {
+                "amount": 1,
+                "salary": 3000,
+            }
         },
-        consultants= {
-            "amount": 2,
-            "salary": 2000,
+        2021= {
+            frontenddev: {
+                "amount": 8,
+                "salary": 2250,
+            },
+            backenddev: {
+                "amount": 10,
+                "salary": 2500,
+            },
+            marketeers: {
+                "amount": 6,
+                "salary": 2500,
+            },
+            consultants: {
+                "amount": 8,
+                "salary": 2000,
+            },
+            helpdesk: {
+                "amount": 6,
+                "salary": 1500,
+            },
+            ceo: {
+                "amount": 1,
+                "salary": 3000,
+            }
         },
-        helpdesk={
-            "amount": 2,
-            "salary": 1500,
-        },
-        ceo= {
-            "amount": 1,
-            "salary": 3000,
+        2022= {
+            frontenddev: {
+                "amount": 9,
+                "salary": 2250,
+            },
+            backenddev: {
+                "amount": 12,
+                "salary": 2500,
+            },
+            marketeers: {
+                "amount": 8,
+                "salary": 2500,
+            },
+            consultants: {
+                "amount": 8,
+                "salary": 2000,
+            },
+            helpdesk: {
+                "amount": 6,
+                "salary": 1500,
+            },
+            ceo: {
+                "amount": 1,
+                "salary": 3000,
+            }
         }
     }
 }
