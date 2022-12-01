@@ -1,3 +1,5 @@
+import {companyData} from "../../../data/company-data.js";
+
 export function getTotalCrime() {
     return {
         "dome 1": 80,
@@ -61,4 +63,52 @@ export function getCrimeTypes(id) {
     return Object.fromEntries(
         Object.entries(data).sort(([,a],[,b]) => b-a)
     );
+}
+
+export function getRevenue(year) {
+    return companyData.revenue[year];
+}
+
+export function getProfit(year) {
+    return companyData.profit[year];
+}
+
+export function getCosts(year) {
+    return companyData.costs[year];
+}
+
+export function getEmployees(year) {
+    return companyData.employees[year];
+
+    return {
+        "January": 25,
+        "February": 50,
+        "March": 40,
+        "April": 10,
+        "May": 30,
+        "June": 75,
+        "July": 50,
+        "August": 55,
+        "September": 40,
+        "October": 30,
+        "November": 40,
+        "December": 55
+    }
+}
+
+export function getSales() {
+    return {
+        "January": 25,
+        "February": 50,
+        "March": 40,
+        "April": 10,
+        "May": 30,
+        "June": 75,
+        "July": 50,
+        "August": 55,
+        "September": 40,
+        "October": 30,
+        "November": 40,
+        "December": 55,
+    }
 }
