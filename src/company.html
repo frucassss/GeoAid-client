@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="assets/css/company.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <script src="assets/js/company.js" type="module"></script>
+
+
 </head>
 
 <body>
@@ -34,29 +38,29 @@
             <div class="flexcontainer">
                 <aside>
                     <ul>
-                        <li class="selected">
+                        <li id="revenue" class="selected">
                             <p>Revenue</p>
                             <hr>
                         </li>
-                        <li>
+                        <li id="profit">
                             <p>Profit</p>
                             <hr>
                         </li>
-                        <li>
+                        <li id="costs">
                             <p>Costs</p>
                             <hr>
                         </li>
-                        <li>
+                        <li id="employees">
                             <p>Employees</p>
                             <hr>
                         </li>
-                        <li>
+                        <li id="sales">
                             <p>Sales</p>
                             <hr>
                         </li>
                     </ul>
                 </aside>
-                <section id="linechart">
+                <section id="company-chart">
                     <h4>Revenue</h4>
                 </section>
             </div>

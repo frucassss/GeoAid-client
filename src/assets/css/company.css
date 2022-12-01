@@ -173,7 +173,7 @@ body main #statistics .flexcontainer aside ul hr {
   background-color: hsl(142deg, 10%, 75%);
   border: none;
 }
-body main #statistics .flexcontainer #linechart {
+body main #statistics .flexcontainer #company-chart {
   margin-right: 2rem;
   padding-top: 1rem;
   flex-basis: 70%;
@@ -181,7 +181,7 @@ body main #statistics .flexcontainer #linechart {
   border-radius: 2rem;
   box-shadow: inset 0.5rem 0.5rem 1rem black;
 }
-body main #statistics .flexcontainer #linechart h4 {
+body main #statistics .flexcontainer #company-chart h4 {
   font-size: 2rem;
   color: hsl(142deg, 10%, 75%);
 }

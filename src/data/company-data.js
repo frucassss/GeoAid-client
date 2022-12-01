@@ -1,7 +1,6 @@
-data: {
+export const companyData = {
     revenue: {
-        2018= {
-            "Total": 107874,
+        2018: {
             "January": 1383,
             "February": 2766,
             "March": 4149,
@@ -15,8 +14,7 @@ data: {
             "November": 15213,
             "December": 16596,
         },
-        2019= {
-            "Total": 387942,
+        2019: {
             "January": 18901,
             "February": 21206,
             "March": 23511,
@@ -30,8 +28,7 @@ data: {
             "November": 41951,
             "December": 44256,
         },
-        2020= {
-            "Total": 854694,
+        2020: {
             "January": 48405,
             "February": 52554,
             "March": 56703,
@@ -45,8 +42,7 @@ data: {
             "November": 89895,
             "December": 94044,
         },
-        2021= {
-            "Total": 1344276,
+        2021: {
             "January": 96810,
             "February": 99576,
             "March": 102342,
@@ -60,8 +56,7 @@ data: {
             "November": 124470,
             "December": 127236,
         },
-        2022= {
-            "Total": 1670664,
+        2022: {
             "January": 129080,
             "February": 130924,
             "March": 132768,
@@ -75,10 +70,9 @@ data: {
             "November": 147520,
             "December": 149364,
         }
-    }
+    },
     profit: {
-        2018= {
-            "Total": -244926,
+        2018: {
             "January": -28017,
             "February": -26634,
             "March": -25251,
@@ -92,8 +86,7 @@ data: {
             "November": -14187,
             "December": -12804,
         },
-        2019= {
-            "Total": 1542,
+        2019: {
             "January": -11999,
             "February": -9694,
             "March": -7389,
@@ -107,8 +100,7 @@ data: {
             "November": 8551,
             "December": 11156,
         },
-        2020= {
-            "Total": 351244,
+        2020: {
             "January": 6555,
             "February": 10704,
             "March": 14853,
@@ -122,8 +114,7 @@ data: {
             "November": 47795,
             "December": 51944,
         },
-        2021= {
-            "Total": 770076,
+        2021: {
             "January": 48960,
             "February": 51726,
             "March": 54492,
@@ -137,8 +128,7 @@ data: {
             "November": 76620,
             "December": 79386,
         },
-        2022= {
-            "Total": 1096464,
+        2022: {
             "January": 81230,
             "February": 83074,
             "March": 84918,
@@ -152,10 +142,9 @@ data: {
             "November": 99670,
             "December": 101514,
         }
-    }
+    },
     costs: {
-        2018= {
-            "Total": 352800,
+        2018: {
             "January": 29400,
             "February": 29400,
             "March": 29400,
@@ -169,8 +158,7 @@ data: {
             "November": 29400,
             "December": 29400,
         },
-        2019= {
-            "Total": 377400,
+        2019: {
             "January": 30900,
             "February": 30900,
             "March": 30900,
@@ -184,8 +172,7 @@ data: {
             "November": 30900,
             "December": 30900,
         },
-        2020= {
-            "Total": 503450,
+        2020: {
             "January": 41850,
             "February": 41850,
             "March": 41850,
@@ -199,8 +186,7 @@ data: {
             "November": 41850,
             "December": 41850,
         },
-        2021= {
-            "Total": 574200,
+        2021: {
             "January": 47850,
             "February": 47850,
             "March": 47850,
@@ -214,8 +200,7 @@ data: {
             "November": 47850,
             "December": 47850,
         },
-        2022= {
-            "Total": 574200,
+        2022: {
             "January": 47850,
             "February": 47850,
             "March": 47850,
@@ -229,9 +214,9 @@ data: {
             "November": 47850,
             "December": 47850,
         }
-    }
+    },
     employees: {
-        2018= {
+        2018: {
             "January": {
                 frontenddev: {
                     "amount": 2,
@@ -545,7 +530,7 @@ data: {
             }
             },
         },
-        2019= {
+        2019: {
             "January": {
                 frontenddev: {
                     "amount": 3,
@@ -859,7 +844,7 @@ data: {
                 }
             },
         },
-        2020= {
+        2020: {
             "January": {
                 frontenddev: {
                     "amount": 4,
@@ -1173,7 +1158,7 @@ data: {
                 }
             },
         },
-        2021= {
+        2021: {
             "January": {
                 frontenddev: {
                     "amount": 8,
@@ -1487,7 +1472,7 @@ data: {
                 }
             },
         },
-        2022= {
+        2022: {
             "January": {
                 frontenddev: {
                     "amount": 9,
