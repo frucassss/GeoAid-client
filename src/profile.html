@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="assets/css/reset.css" />
     <link rel="stylesheet" href="assets/css/profile.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <script src="assets/js/apointments.js" type="module"></script>
 </head>
 
 <body>
@@ -125,15 +126,26 @@
                         <label for="expertise">Expertise employee</label>
                         <select id="expertise">
                             <option selected>Localisation company</option>
+                            <option selected>Localisation home</option>
                         </select>
 
                         <label for="employee">Employee</label>
                         <select id="employee">
-                            <option selected>/</option>
+                            <option selected>Senne</option>
+                            <option selected>Jarne</option>
                         </select>
-                        <button>Make appointment</button>
+                        <button id="submitbtn">Make appointment</button>
                     </div>
                 </form>
+            </article>
+            <article id="appointment-list" class="profileSetting">
+                <div class="headerArticle">
+                    <div class="material-icons icon date_range">date_range</div>
+                    <h2 class="hover-underline-animation">Appointment list</h2>
+                </div>
+                <div id="appointments">
+                    
+                </div>
             </article>
         </div>
     </section>
