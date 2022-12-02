@@ -78,22 +78,12 @@ export function getCosts(year) {
 }
 
 export function getEmployees(year) {
-    return companyData.employees[year];
-
-    return {
-        "January": 25,
-        "February": 50,
-        "March": 40,
-        "April": 10,
-        "May": 30,
-        "June": 75,
-        "July": 50,
-        "August": 55,
-        "September": 40,
-        "October": 30,
-        "November": 40,
-        "December": 55
+    const data = companyData.employees.frontend_developers[year];
+    const res = {}
+    for (const key in data) {
+        res[key] = data[key].amount;
     }
+    return res;
 }
 
 export function getSales() {

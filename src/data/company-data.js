@@ -216,1575 +216,1265 @@ export const companyData = {
         }
     },
     employees: {
-        2018: {
-            "January": {
-                frontenddev: {
+        frontend_developers: {
+            2018: {
+                "January": {
                     "amount": 2,
                     "salary": 2250,
                 },
-                backenddev: {
-                    "amount": 2,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 1,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 2,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 2,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
-                }
-            },
-            "February": {
-                frontenddev: {
+                "February": {
                     "amount": 2,
                     "salary": 2250,
                 },
-                backenddev: {
-                    "amount": 2,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 1,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 2,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 2,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
-                }
-            },
-            "March": {
-                frontenddev: {
+                "March": {
                     "amount": 2,
                     "salary": 2250,
                 },
-                backenddev: {
-                    "amount": 2,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 1,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 2,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 2,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
-                }
-            },
-            "April": {
-                frontenddev: {
+                "April": {
                     "amount": 2,
                     "salary": 2250,
                 },
-                backenddev: {
-                    "amount": 2,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 1,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 2,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 2,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
-                }
-            },
-            "May": {
-                frontenddev: {
+                "May": {
                     "amount": 2,
                     "salary": 2250,
                 },
-                backenddev: {
-                    "amount": 2,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 1,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 2,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 2,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
-                }
-            },
-            "June": {
-                frontenddev: {
+                "June": {
                     "amount": 2,
                     "salary": 2250,
                 },
-                backenddev: {
-                    "amount": 2,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 1,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 2,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 2,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
-                }
-            },
-            "July": {
-                frontenddev: {
+                "July": {
                     "amount": 2,
                     "salary": 2250,
                 },
-                backenddev: {
-                    "amount": 2,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 1,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 2,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 2,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
-                }
-            },
-            "August": {
-                frontenddev: {
+                "August": {
                     "amount": 2,
                     "salary": 2250,
                 },
-                backenddev: {
-                    "amount": 2,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 1,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 2,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 2,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
-                }
-            },
-            "September": {
-                frontenddev: {
+                "September": {
                     "amount": 2,
                     "salary": 2250,
                 },
-                backenddev: {
-                    "amount": 2,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 1,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 2,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 2,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
-                }
-            },
-            "October": {
-                frontenddev: {
+                "October": {
                     "amount": 2,
                     "salary": 2250,
                 },
-                backenddev: {
-                    "amount": 2,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 1,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 2,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 2,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
-                }
-            },
-            "November": {
-                frontenddev: {
+                "November": {
                     "amount": 2,
                     "salary": 2250,
                 },
-                backenddev: {
+                "December": {
                     "amount": 2,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 1,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 2,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 2,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
+                    "salary": 2250,
                 }
             },
-            "December": {
-  frontenddev: {
-                "amount": 2,
-                "salary": 2250,
+            2019: {
+                "January": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "February": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "March": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "April": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "May": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "June": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "July": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "August": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "September": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "October": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "November": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "December": {
+                    "amount": 2,
+                    "salary": 2250,
+                }
             },
-            backenddev: {
-                "amount": 2,
-                "salary": 2500,
+            2020: {
+                "January": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "February": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "March": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "April": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "May": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "June": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "July": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "August": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "September": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "October": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "November": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "December": {
+                    "amount": 2,
+                    "salary": 2250,
+                }
             },
-            marketeers: {
-                "amount": 1,
-                "salary": 2500,
+            2021: {
+                "January": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "February": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "March": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "April": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "May": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "June": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "July": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "August": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "September": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "October": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "November": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "December": {
+                    "amount": 2,
+                    "salary": 2250,
+                }
             },
-            consultants: {
-                "amount": 2,
-                "salary": 2000,
-            },
-            helpdesk: {
-                "amount": 2,
-                "salary": 1500,
-            },
-            ceo: {
-                "amount": 1,
-                "salary": 3000,
+            2022: {
+                "January": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "February": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "March": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "April": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "May": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "June": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "July": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "August": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "September": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "October": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "November": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "December": {
+                    "amount": 2,
+                    "salary": 2250,
+                }
             }
-            },
         },
-        2019: {
-            "January": {
-                frontenddev: {
-                    "amount": 3,
+        backend_developers: {
+            2018: {
+                "January": {
+                    "amount": 2,
                     "salary": 2250,
                 },
-                backenddev: {
-                    "amount": 4,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 3,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 4,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 3,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
-                }
-            },
-            "February": {
-                frontenddev: {
-                    "amount": 3,
+                "February": {
+                    "amount": 2,
                     "salary": 2250,
                 },
-                backenddev: {
-                    "amount": 4,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 3,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 4,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 3,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
-                }
-            },
-            "March": {
-                frontenddev: {
-                    "amount": 3,
+                "March": {
+                    "amount": 2,
                     "salary": 2250,
                 },
-                backenddev: {
-                    "amount": 4,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 3,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 4,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 3,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
-                }
-            },
-            "April": {
-                frontenddev: {
-                    "amount": 3,
+                "April": {
+                    "amount": 2,
                     "salary": 2250,
                 },
-                backenddev: {
-                    "amount": 4,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 3,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 4,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 3,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
-                }
-            },
-            "May": {
-                frontenddev: {
-                    "amount": 3,
+                "May": {
+                    "amount": 2,
                     "salary": 2250,
                 },
-                backenddev: {
-                    "amount": 4,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 3,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 4,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 3,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
-                }
-            },
-            "June": {
-                frontenddev: {
-                    "amount": 3,
+                "June": {
+                    "amount": 2,
                     "salary": 2250,
                 },
-                backenddev: {
-                    "amount": 4,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 3,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 4,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 3,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
-                }
-            },
-            "July": {
-                frontenddev: {
-                    "amount": 3,
+                "July": {
+                    "amount": 2,
                     "salary": 2250,
                 },
-                backenddev: {
-                    "amount": 4,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 3,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 4,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 3,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
-                }
-            },
-            "August": {
-                frontenddev: {
-                    "amount": 3,
+                "August": {
+                    "amount": 2,
                     "salary": 2250,
                 },
-                backenddev: {
-                    "amount": 4,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 3,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 4,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 3,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
-                }
-            },
-            "September": {
-                frontenddev: {
-                    "amount": 3,
+                "September": {
+                    "amount": 2,
                     "salary": 2250,
                 },
-                backenddev: {
-                    "amount": 4,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 3,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 4,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 3,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
-                }
-            },
-            "October": {
-                frontenddev: {
-                    "amount": 3,
+                "October": {
+                    "amount": 2,
                     "salary": 2250,
                 },
-                backenddev: {
-                    "amount": 4,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 3,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 4,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 3,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
-                }
-            },
-            "November": {
-                frontenddev: {
-                    "amount": 3,
+                "November": {
+                    "amount": 2,
                     "salary": 2250,
                 },
-                backenddev: {
-                    "amount": 4,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 3,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 4,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 3,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
+                "December": {
+                    "amount": 2,
+                    "salary": 2250,
                 }
             },
-            "December": {
-                frontenddev: {
-                    "amount": 3,
+            2019: {
+                "January": {
+                    "amount": 2,
                     "salary": 2250,
                 },
-                backenddev: {
-                    "amount": 4,
-                    "salary": 2500,
+                "February": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                marketeers: {
-                    "amount": 3,
-                    "salary": 2500,
+                "March": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                consultants: {
-                    "amount": 4,
-                    "salary": 2000,
+                "April": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                helpdesk: {
-                    "amount": 3,
-                    "salary": 1500,
+                "May": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
+                "June": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "July": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "August": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "September": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "October": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "November": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "December": {
+                    "amount": 2,
+                    "salary": 2250,
                 }
             },
+            2020: {
+                "January": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "February": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "March": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "April": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "May": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "June": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "July": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "August": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "September": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "October": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "November": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "December": {
+                    "amount": 2,
+                    "salary": 2250,
+                }
+            },
+            2021: {
+                "January": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "February": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "March": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "April": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "May": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "June": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "July": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "August": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "September": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "October": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "November": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "December": {
+                    "amount": 2,
+                    "salary": 2250,
+                }
+            },
+            2022: {
+                "January": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "February": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "March": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "April": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "May": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "June": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "July": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "August": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "September": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "October": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "November": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "December": {
+                    "amount": 2,
+                    "salary": 2250,
+                }
+            }
         },
-        2020: {
-            "January": {
-                frontenddev: {
-                    "amount": 4,
+        marketeers: {
+            2018: {
+                "January": {
+                    "amount": 2,
                     "salary": 2250,
                 },
-                backenddev: {
-                    "amount": 7,
-                    "salary": 2500,
+                "February": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                marketeers: {
-                    "amount": 5,
-                    "salary": 2500,
+                "March": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                consultants: {
-                    "amount": 7,
-                    "salary": 2000,
+                "April": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                helpdesk: {
-                    "amount": 5,
-                    "salary": 1500,
+                "May": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
+                "June": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "July": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "August": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "September": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "October": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "November": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "December": {
+                    "amount": 2,
+                    "salary": 2250,
                 }
             },
-            "February": {
-                frontenddev: {
-                    "amount": 4,
+            2019: {
+                "January": {
+                    "amount": 2,
                     "salary": 2250,
                 },
-                backenddev: {
-                    "amount": 7,
-                    "salary": 2500,
+                "February": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                marketeers: {
-                    "amount": 5,
-                    "salary": 2500,
+                "March": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                consultants: {
-                    "amount": 7,
-                    "salary": 2000,
+                "April": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                helpdesk: {
-                    "amount": 5,
-                    "salary": 1500,
+                "May": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
+                "June": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "July": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "August": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "September": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "October": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "November": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "December": {
+                    "amount": 2,
+                    "salary": 2250,
                 }
             },
-            "March": {
-                frontenddev: {
-                    "amount": 4,
+            2020: {
+                "January": {
+                    "amount": 2,
                     "salary": 2250,
                 },
-                backenddev: {
-                    "amount": 7,
-                    "salary": 2500,
+                "February": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                marketeers: {
-                    "amount": 5,
-                    "salary": 2500,
+                "March": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                consultants: {
-                    "amount": 7,
-                    "salary": 2000,
+                "April": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                helpdesk: {
-                    "amount": 5,
-                    "salary": 1500,
+                "May": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
+                "June": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "July": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "August": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "September": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "October": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "November": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "December": {
+                    "amount": 2,
+                    "salary": 2250,
                 }
             },
-            "April": {
-                frontenddev: {
-                    "amount": 4,
+            2021: {
+                "January": {
+                    "amount": 2,
                     "salary": 2250,
                 },
-                backenddev: {
-                    "amount": 7,
-                    "salary": 2500,
+                "February": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                marketeers: {
-                    "amount": 5,
-                    "salary": 2500,
+                "March": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                consultants: {
-                    "amount": 7,
-                    "salary": 2000,
+                "April": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                helpdesk: {
-                    "amount": 5,
-                    "salary": 1500,
+                "May": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
+                "June": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "July": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "August": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "September": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "October": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "November": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "December": {
+                    "amount": 2,
+                    "salary": 2250,
                 }
             },
-            "May": {
-                frontenddev: {
-                    "amount": 4,
+            2022: {
+                "January": {
+                    "amount": 2,
                     "salary": 2250,
                 },
-                backenddev: {
-                    "amount": 7,
-                    "salary": 2500,
+                "February": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                marketeers: {
-                    "amount": 5,
-                    "salary": 2500,
+                "March": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                consultants: {
-                    "amount": 7,
-                    "salary": 2000,
+                "April": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                helpdesk: {
-                    "amount": 5,
-                    "salary": 1500,
+                "May": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
+                "June": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "July": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "August": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "September": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "October": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "November": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "December": {
+                    "amount": 2,
+                    "salary": 2250,
                 }
-            },
-            "June": {
-                frontenddev: {
-                    "amount": 4,
-                    "salary": 2250,
-                },
-                backenddev: {
-                    "amount": 7,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 5,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 7,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 5,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
-                }
-            },
-            "July": {
-                frontenddev: {
-                    "amount": 4,
-                    "salary": 2250,
-                },
-                backenddev: {
-                    "amount": 7,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 5,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 7,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 5,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
-                } 
-            },
-            "August": {
-                frontenddev: {
-                    "amount": 4,
-                    "salary": 2250,
-                },
-                backenddev: {
-                    "amount": 7,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 5,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 7,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 5,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
-                }
-            },
-            "September": {
-                frontenddev: {
-                    "amount": 4,
-                    "salary": 2250,
-                },
-                backenddev: {
-                    "amount": 7,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 5,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 7,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 5,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
-                }
-            },
-            "October": {
-                frontenddev: {
-                    "amount": 4,
-                    "salary": 2250,
-                },
-                backenddev: {
-                    "amount": 7,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 5,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 7,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 5,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
-                }
-            },
-            "November": {
-                frontenddev: {
-                    "amount": 4,
-                    "salary": 2250,
-                },
-                backenddev: {
-                    "amount": 7,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 5,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 7,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 5,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
-                }
-            },
-            "December": {
-                frontenddev: {
-                    "amount": 4,
-                    "salary": 2250,
-                },
-                backenddev: {
-                    "amount": 7,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 5,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 7,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 5,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
-                }
-            },
+            }
         },
-        2021: {
-            "January": {
-                frontenddev: {
-                    "amount": 8,
+        consultans: {
+            2018: {
+                "January": {
+                    "amount": 2,
                     "salary": 2250,
                 },
-                backenddev: {
-                    "amount": 10,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 6,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 8,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 6,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
-                }
-            },
-            "February": {
-                frontenddev: {
-                    "amount": 8,
+                "February": {
+                    "amount": 2,
                     "salary": 2250,
                 },
-                backenddev: {
-                    "amount": 10,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 6,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 8,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 6,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
-                }
-            },
-            "March": {
-                frontenddev: {
-                    "amount": 8,
+                "March": {
+                    "amount": 2,
                     "salary": 2250,
                 },
-                backenddev: {
-                    "amount": 10,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 6,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 8,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 6,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
-                }
-            },
-            "April": {
-                frontenddev: {
-                    "amount": 8,
+                "April": {
+                    "amount": 2,
                     "salary": 2250,
                 },
-                backenddev: {
-                    "amount": 10,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 6,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 8,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 6,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
-                }
-            },
-            "May": {
-                frontenddev: {
-                    "amount": 8,
+                "May": {
+                    "amount": 2,
                     "salary": 2250,
                 },
-                backenddev: {
-                    "amount": 10,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 6,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 8,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 6,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
-                }
-            },
-            "June": {
-                frontenddev: {
-                    "amount": 8,
+                "June": {
+                    "amount": 2,
                     "salary": 2250,
                 },
-                backenddev: {
-                    "amount": 10,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 6,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 8,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 6,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
-                }
-            },
-            "July": {
-                frontenddev: {
-                    "amount": 8,
+                "July": {
+                    "amount": 2,
                     "salary": 2250,
                 },
-                backenddev: {
-                    "amount": 10,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 6,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 8,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 6,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
-                }
-            },
-            "August": {
-                frontenddev: {
-                    "amount": 8,
+                "August": {
+                    "amount": 2,
                     "salary": 2250,
                 },
-                backenddev: {
-                    "amount": 10,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 6,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 8,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 6,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
-                }
-            },
-            "September": {
-                frontenddev: {
-                    "amount": 8,
+                "September": {
+                    "amount": 2,
                     "salary": 2250,
                 },
-                backenddev: {
-                    "amount": 10,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 6,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 8,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 6,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
-                }
-            },
-            "October": {
-                frontenddev: {
-                    "amount": 8,
+                "October": {
+                    "amount": 2,
                     "salary": 2250,
                 },
-                backenddev: {
-                    "amount": 10,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 6,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 8,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 6,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
-                }
-            },
-            "November": {
-                frontenddev: {
-                    "amount": 8,
+                "November": {
+                    "amount": 2,
                     "salary": 2250,
                 },
-                backenddev: {
-                    "amount": 10,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 6,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 8,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 6,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
+                "December": {
+                    "amount": 2,
+                    "salary": 2250,
                 }
             },
-            "December": {
-                frontenddev: {
-                    "amount": 8,
+            2019: {
+                "January": {
+                    "amount": 2,
                     "salary": 2250,
                 },
-                backenddev: {
-                    "amount": 10,
-                    "salary": 2500,
+                "February": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                marketeers: {
-                    "amount": 6,
-                    "salary": 2500,
+                "March": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                consultants: {
-                    "amount": 8,
-                    "salary": 2000,
+                "April": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                helpdesk: {
-                    "amount": 6,
-                    "salary": 1500,
+                "May": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
+                "June": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "July": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "August": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "September": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "October": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "November": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "December": {
+                    "amount": 2,
+                    "salary": 2250,
                 }
             },
+            2020: {
+                "January": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "February": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "March": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "April": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "May": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "June": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "July": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "August": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "September": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "October": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "November": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "December": {
+                    "amount": 2,
+                    "salary": 2250,
+                }
+            },
+            2021: {
+                "January": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "February": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "March": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "April": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "May": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "June": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "July": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "August": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "September": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "October": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "November": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "December": {
+                    "amount": 2,
+                    "salary": 2250,
+                }
+            },
+            2022: {
+                "January": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "February": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "March": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "April": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "May": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "June": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "July": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "August": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "September": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "October": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "November": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "December": {
+                    "amount": 2,
+                    "salary": 2250,
+                }
+            }
         },
-        2022: {
-            "January": {
-                frontenddev: {
-                    "amount": 9,
+        helpdesk: {
+            2018: {
+                "January": {
+                    "amount": 2,
                     "salary": 2250,
                 },
-                backenddev: {
-                    "amount": 12,
-                    "salary": 2500,
+                "February": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                marketeers: {
-                    "amount": 8,
-                    "salary": 2500,
+                "March": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                consultants: {
-                    "amount": 8,
-                    "salary": 2000,
+                "April": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                helpdesk: {
-                    "amount": 6,
-                    "salary": 1500,
+                "May": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
+                "June": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "July": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "August": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "September": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "October": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "November": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "December": {
+                    "amount": 2,
+                    "salary": 2250,
                 }
             },
-            "February": {
-                frontenddev: {
-                    "amount": 9,
+            2019: {
+                "January": {
+                    "amount": 2,
                     "salary": 2250,
                 },
-                backenddev: {
-                    "amount": 12,
-                    "salary": 2500,
+                "February": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                marketeers: {
-                    "amount": 8,
-                    "salary": 2500,
+                "March": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                consultants: {
-                    "amount": 8,
-                    "salary": 2000,
+                "April": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                helpdesk: {
-                    "amount": 6,
-                    "salary": 1500,
+                "May": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
+                "June": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "July": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "August": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "September": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "October": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "November": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "December": {
+                    "amount": 2,
+                    "salary": 2250,
                 }
             },
-            "March": {
-                frontenddev: {
-                    "amount": 9,
+            2020: {
+                "January": {
+                    "amount": 2,
                     "salary": 2250,
                 },
-                backenddev: {
-                    "amount": 12,
-                    "salary": 2500,
+                "February": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                marketeers: {
-                    "amount": 8,
-                    "salary": 2500,
+                "March": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                consultants: {
-                    "amount": 8,
-                    "salary": 2000,
+                "April": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                helpdesk: {
-                    "amount": 6,
-                    "salary": 1500,
+                "May": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
+                "June": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "July": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "August": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "September": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "October": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "November": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "December": {
+                    "amount": 2,
+                    "salary": 2250,
                 }
             },
-            "April": {
-                frontenddev: {
-                    "amount": 9,
+            2021: {
+                "January": {
+                    "amount": 2,
                     "salary": 2250,
                 },
-                backenddev: {
-                    "amount": 12,
-                    "salary": 2500,
+                "February": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                marketeers: {
-                    "amount": 8,
-                    "salary": 2500,
+                "March": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                consultants: {
-                    "amount": 8,
-                    "salary": 2000,
+                "April": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                helpdesk: {
-                    "amount": 6,
-                    "salary": 1500,
+                "May": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
+                "June": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "July": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "August": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "September": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "October": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "November": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "December": {
+                    "amount": 2,
+                    "salary": 2250,
                 }
             },
-            "May": {
-                frontenddev: {
-                    "amount": 9,
+            2022: {
+                "January": {
+                    "amount": 2,
                     "salary": 2250,
                 },
-                backenddev: {
-                    "amount": 12,
-                    "salary": 2500,
+                "February": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                marketeers: {
-                    "amount": 8,
-                    "salary": 2500,
+                "March": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                consultants: {
-                    "amount": 8,
-                    "salary": 2000,
+                "April": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                helpdesk: {
-                    "amount": 6,
-                    "salary": 1500,
+                "May": {
+                    "amount": 2,
+                    "salary": 2250,
                 },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
+                "June": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "July": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "August": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "September": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "October": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "November": {
+                    "amount": 2,
+                    "salary": 2250,
+                },
+                "December": {
+                    "amount": 2,
+                    "salary": 2250,
                 }
-            },
-            "June": {
-                frontenddev: {
-                    "amount": 9,
-                    "salary": 2250,
-                },
-                backenddev: {
-                    "amount": 12,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 8,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 8,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 6,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
-                }
-            },
-            "July": {
-                frontenddev: {
-                    "amount": 9,
-                    "salary": 2250,
-                },
-                backenddev: {
-                    "amount": 12,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 8,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 8,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 6,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
-                }
-            },
-            "August": {
-                frontenddev: {
-                    "amount": 9,
-                    "salary": 2250,
-                },
-                backenddev: {
-                    "amount": 12,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 8,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 8,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 6,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
-                }
-            },
-            "September": {
-                frontenddev: {
-                    "amount": 9,
-                    "salary": 2250,
-                },
-                backenddev: {
-                    "amount": 12,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 8,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 8,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 6,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
-                } 
-            },
-            "October": {
-                frontenddev: {
-                    "amount": 9,
-                    "salary": 2250,
-                },
-                backenddev: {
-                    "amount": 12,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 8,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 8,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 6,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
-                } 
-            },
-            "November": {
-                frontenddev: {
-                    "amount": 9,
-                    "salary": 2250,
-                },
-                backenddev: {
-                    "amount": 12,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 8,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 8,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 6,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
-                }
-            },
-            "December": {
-                frontenddev: {
-                    "amount": 9,
-                    "salary": 2250,
-                },
-                backenddev: {
-                    "amount": 12,
-                    "salary": 2500,
-                },
-                marketeers: {
-                    "amount": 8,
-                    "salary": 2500,
-                },
-                consultants: {
-                    "amount": 8,
-                    "salary": 2000,
-                },
-                helpdesk: {
-                    "amount": 6,
-                    "salary": 1500,
-                },
-                ceo: {
-                    "amount": 1,
-                    "salary": 3000,
-                }
-            },
+            }
         }
     }
 }
