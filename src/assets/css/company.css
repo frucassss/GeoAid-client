@@ -144,7 +144,7 @@ body main #statistics .flexcontainer {
 }
 body main #statistics .flexcontainer aside {
   margin-left: 2rem;
-  padding-top: 1rem;
+  padding-top: 2rem;
   flex-basis: 20%;
   background-color: #003844;
   color: hsl(142deg, 10%, 75%);
@@ -173,7 +173,6 @@ body main #statistics .flexcontainer aside ul hr {
   border: none;
 }
 body main #statistics .flexcontainer #company-chart {
-  margin-right: 2rem;
   flex-basis: 50%;
   background-color: #003844;
   border-radius: 2rem;
@@ -187,6 +186,68 @@ body main #statistics .flexcontainer #company-chart h4 {
 }
 body main #statistics .flexcontainer #company-chart #line-chart {
   margin-bottom: 6rem;
+}
+body main #statistics .flexcontainer #years {
+  color: hsl(142deg, 10%, 75%);
+  text-align: center;
+  padding: 3rem 1rem;
+  margin-right: 2rem;
+  flex-basis: 15%;
+  background-color: #003844;
+  border-radius: 2rem;
+  box-shadow: 0rem 0rem 2rem 0px black;
+}
+body main #statistics .flexcontainer #years input[type=checkbox] {
+  display: none;
+}
+body main #statistics .flexcontainer #years input[type=checkbox] + label {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 20px;
+  font: 14px/20px "Open Sans", Arial, sans-serif;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+body main #statistics .flexcontainer #years input[type=checkbox]:hover + label:hover {
+  color: #848FA5;
+}
+body main #statistics .flexcontainer #years input[type=checkbox]:hover + label:before {
+  background: #848FA5;
+  box-shadow: inset 0px 0px 0px 2px #f7f2f2;
+}
+body main #statistics .flexcontainer #years input[type=checkbox] + label:last-child {
+  margin-bottom: 0;
+}
+body main #statistics .flexcontainer #years input[type=checkbox] + label:before {
+  content: "";
+  display: block;
+  width: 1.4em;
+  height: 1.4em;
+  border: 1px solid #343a3f;
+  border-radius: 0.2em;
+  position: absolute;
+  left: 0;
+  top: 0;
+  -webkit-transition: all 0.2s, background 0.2s ease-in-out;
+  transition: all 0.2s, background 0.2s ease-in-out;
+  background: #f3f3f3;
+}
+body main #statistics .flexcontainer #years input[type=checkbox]:checked + label:before {
+  width: 1.3em;
+  height: 1.3em;
+  border-radius: 0.2em;
+  border: 2px solid #fff;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  background: #848FA5;
+  box-shadow: 0 0 0 1px #000;
+}
+body main #statistics .flexcontainer #years form {
+  flex-direction: column;
+  display: inline-block;
 }
 body main #adds {
   text-align: center;

@@ -127,10 +127,19 @@ export function makeLineChart() {
             datasets: datasets
         },
         options: {
-            pointradius: 5,
+            pointRadius: 4,
             plugins: {
                 legend: {
-                    display: false
+                    labels: {
+                        title: {
+                            text: 2022
+                        },
+                        font: {
+                            weight: "bold"
+                        },
+                        color: FONTCOLOR,
+                        padding: 10
+                    }
                 }
             },
             scales: {
@@ -146,7 +155,7 @@ export function makeLineChart() {
                     ticks: {
                         color: FONTCOLOR
                     },
-                    min: 0
+                    suggestedMin: 0
                 },
                 x: {
                     title: {
@@ -197,26 +206,35 @@ function getPieChartData() {
 
 function getLineChartData() {
     const category = document.querySelector("aside .selected").id;
-    const year = [2021, 2022];
+    const years = getYears();
 
     let data;
     switch(category) {
         case "profit":
-            data = getProfit(year);
+            data = getProfit(years);
             break;
         case "costs":
-            data = getCosts(year);
+            data = getCosts(years);
             break;
         case "employees":
-            data = getEmployees(year);
+            data = getEmployees(years);
             break;
         case "sales":
-            data = getSales(year);
+            data = getSales(years);
             break;
         default:
-            data = getRevenue(year);
+            data = getRevenue(years);
     }
     return data;
+}
+
+function getYears() {
+    const res = []
+    document.querySelectorAll("#years input").forEach(year => {
+        if (year.checked) res.push(year.id)
+    })
+    console.log(res)
+    return res;
 }
 
 function getSideValue() {
@@ -265,6 +283,7 @@ function getDataSets(data) {
             pointBorderColor: PRIMARYCOLOR,
             pointHoverBackgroundColor: SECONDARYCOLOR,
             pointHoverBorderColor: SECONDARYCOLOR,
+            label: getYears()[i],
             data: data[i]
         }
         res.push(chart)

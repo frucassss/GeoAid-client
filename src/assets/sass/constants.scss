@@ -28,6 +28,57 @@ $border-radius: 2rem;
 $transition-time: 1.5s;
 $box-shadow: 0rem 0rem 2rem 0px black;
 
+@mixin checkbox {
+  input[type="checkbox"] {
+    display: none;
+  }
+  input[type="checkbox"] + label {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 20px;
+    font: 14px/20px "Open Sans", Arial, sans-serif;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+  input[type="checkbox"]:hover + label:hover {
+    color: $secondary-color;
+  }
+  input[type="checkbox"]:hover + label:before {
+    background: $secondary-color;
+    box-shadow: inset 0px 0px 0px 2px #f7f2f2;
+  }
+  input[type="checkbox"] + label:last-child {
+    margin-bottom: 0;
+  }
+  input[type="checkbox"] + label:before {
+    content: "";
+    display: block;
+    width: 1.4em;
+    height: 1.4em;
+    border: 1px solid #343a3f;
+    border-radius: 0.2em;
+    position: absolute;
+    left: 0;
+    top: 0;
+    -webkit-transition: all 0.2s, background 0.2s ease-in-out;
+    transition: all 0.2s, background 0.2s ease-in-out;
+    background: #f3f3f3;
+  }
+  input[type="checkbox"]:checked + label:before {
+    width: 1.3em;
+    height: 1.3em;
+    border-radius: 0.2em;
+    border: 2px solid #fff;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    background: $secondary-color;
+    box-shadow: 0 0 0 1px #000;
+  }
+}
+
 
 @mixin slider {
   .switch {
