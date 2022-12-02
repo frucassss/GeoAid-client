@@ -82,6 +82,10 @@ export function getSales(years) {
 }
 
 export function getEmployees(years) {
+    return getDataArray(years, "employees")
+}
+
+export function getJobs(years) {
     const res = []
     years.forEach(year => {
         const employees = companyData.employees;
@@ -94,7 +98,6 @@ export function getEmployees(years) {
             res.push(dataset)
         }
     });
-    console.log(res)
     return res;
 
 }

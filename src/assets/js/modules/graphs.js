@@ -236,6 +236,14 @@ function getYears() {
     console.log(res)
     return res;
 }
+const SIDEVALUE = {
+    revenue: "Revenue in million",
+    profit: "Profit in million",
+    costs: "Costs in million",
+    employees: "Amount of employees",
+    sales: "Sales in million",
+    oxygen_leaks: "Amount of oxygen leaks"
+}
 
 function getSideValue() {
     const category = document.querySelector("aside .selected").id;
