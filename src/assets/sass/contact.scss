@@ -44,13 +44,10 @@ body {
             input, textarea {
               background-color: $primary-color;
               margin-bottom: 1rem;
+              color: $primary-font-color;
             }
             textarea {
               height: 7rem;
-              &:focus {
-                font-size: 1.2rem;
-                color: $primary-font-color;
-              }
             }
             button {
               padding: 0.5rem;

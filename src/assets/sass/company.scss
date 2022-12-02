@@ -7,9 +7,8 @@ body {
   background: $background-color;
   main {
     height: 80vh;
-    margin: 0 3rem 2rem 3rem;
+    margin: 0 4rem 2rem 4rem;
     #statistics {
-      width: 90%;
       height: 76vh;
       margin: 2rem auto;
       text-align: center;
@@ -60,21 +59,24 @@ body {
         }
         #company-chart {
           margin-right: 2rem;
-          padding-top: 1rem;
-          flex-basis: 70%;
+          flex-basis: 50%;
           background-color: $primary-color;
           border-radius: $border-radius;
           box-shadow: $box-shadow;
+          padding: 1rem;
           h4 {
             font-size: 2rem;
             color: $primary-font-color;
+            margin-bottom: 0.5rem;
+          }
+          #line-chart {
+            margin-bottom: 6rem;
           }
         }
       }
 
     }
     #adds {
-      width: 90%;
       text-align: center;
       background-color: $secondary-color;
       border-radius: $border-radius;
