@@ -119,10 +119,9 @@ body {
 }
 body main {
   height: 80vh;
-  margin: 0 3rem 2rem 3rem;
+  margin: 0 4rem 2rem 4rem;
 }
 body main #statistics {
-  width: 90%;
   height: 76vh;
   margin: 2rem auto;
   text-align: center;
@@ -150,7 +149,7 @@ body main #statistics .flexcontainer aside {
   background-color: #003844;
   color: hsl(142deg, 10%, 75%);
   border-radius: 2rem;
-  box-shadow: inset 0.5rem 0.5rem 1rem black;
+  box-shadow: 0rem 0rem 2rem 0px black;
 }
 body main #statistics .flexcontainer aside ul {
   display: flex;
@@ -175,18 +174,21 @@ body main #statistics .flexcontainer aside ul hr {
 }
 body main #statistics .flexcontainer #company-chart {
   margin-right: 2rem;
-  padding-top: 1rem;
-  flex-basis: 70%;
+  flex-basis: 50%;
   background-color: #003844;
   border-radius: 2rem;
-  box-shadow: inset 0.5rem 0.5rem 1rem black;
+  box-shadow: 0rem 0rem 2rem 0px black;
+  padding: 1rem;
 }
 body main #statistics .flexcontainer #company-chart h4 {
   font-size: 2rem;
   color: hsl(142deg, 10%, 75%);
+  margin-bottom: 0.5rem;
+}
+body main #statistics .flexcontainer #company-chart #line-chart {
+  margin-bottom: 6rem;
 }
 body main #adds {
-  width: 90%;
   text-align: center;
   background-color: #848FA5;
   border-radius: 2rem;
@@ -209,7 +211,7 @@ body main #adds form {
   margin: 0 2rem;
   border-radius: 2rem;
   padding: 2rem;
-  box-shadow: inset 0.5rem 0.5rem 1rem black;
+  box-shadow: 0rem 0rem 2rem 0px black;
 }
 body main #adds form fieldset {
   width: 40%;
