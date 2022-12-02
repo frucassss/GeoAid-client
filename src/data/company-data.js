@@ -483,39 +483,39 @@ export const companyData = {
                     "salary": 2250,
                 },
                 "April": {
-                    "amount": 2,
+                    "amount": 3,
                     "salary": 2250,
                 },
                 "May": {
-                    "amount": 2,
+                    "amount": 3,
                     "salary": 2250,
                 },
                 "June": {
-                    "amount": 2,
+                    "amount": 3,
                     "salary": 2250,
                 },
                 "July": {
-                    "amount": 2,
+                    "amount": 3,
                     "salary": 2250,
                 },
                 "August": {
-                    "amount": 2,
+                    "amount": 3,
                     "salary": 2250,
                 },
                 "September": {
-                    "amount": 2,
+                    "amount": 3,
                     "salary": 2250,
                 },
                 "October": {
-                    "amount": 2,
+                    "amount": 3,
                     "salary": 2250,
                 },
                 "November": {
-                    "amount": 2,
+                    "amount": 3,
                     "salary": 2250,
                 },
                 "December": {
-                    "amount": 2,
+                    "amount": 3,
                     "salary": 2250,
                 }
             },
@@ -707,15 +707,15 @@ export const companyData = {
                     "salary": 2250,
                 },
                 "October": {
-                    "amount": 2,
+                    "amount": 3,
                     "salary": 2250,
                 },
                 "November": {
-                    "amount": 2,
+                    "amount": 3,
                     "salary": 2250,
                 },
                 "December": {
-                    "amount": 2,
+                    "amount": 3,
                     "salary": 2250,
                 }
             }

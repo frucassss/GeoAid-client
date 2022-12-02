@@ -66,28 +66,34 @@ export function getCrimeTypes(id) {
 }
 
 export function getRevenue(year) {
-    return companyData.revenue[year];
+    return [companyData.revenue[year]];
 }
 
 export function getProfit(year) {
-    return companyData.profit[year];
+    return [companyData.profit[year]];
 }
 
 export function getCosts(year) {
-    return companyData.costs[year];
+    return [companyData.costs[year]];
 }
 
 export function getEmployees(year) {
-    const data = companyData.employees.frontend_developers[year];
-    const res = {}
-    for (const key in data) {
-        res[key] = data[key].amount;
+    const res = []
+    const employees = companyData.employees;
+    for (const employeesKey in employees) {
+        const data = employees[employeesKey][year]
+        const dataset = {}
+        for (const key in data) {
+            dataset[key] = data[key].amount;
+        }
+        res.push(dataset)
     }
     return res;
+
 }
 
 export function getSales() {
-    return {
+    return [{
         "January": 25,
         "February": 50,
         "March": 40,
@@ -100,5 +106,5 @@ export function getSales() {
         "October": 30,
         "November": 40,
         "December": 55,
-    }
+    }]
 }

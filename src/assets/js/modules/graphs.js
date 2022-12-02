@@ -116,15 +116,15 @@ export function makeLineChart() {
 
     const data = getLineChartData();
     const sideValue = getSideValue();
+    const datasets = getDataSets(data);
 
     const ctx = document.querySelector('#line-chart').getContext('2d');
     const configuration = {
         type: "line",
-        data: {labels: Object.keys(data),
-            datasets: [{
-                backgroundColor: PRIMARYCOLOR,
-                data: data
-            }]},
+        data: {
+            labels: Object.keys(data[0]),
+            datasets: datasets
+        },
         options: {
             pointradius: 5,
             plugins: {
@@ -251,6 +251,24 @@ function getSideValue() {
             sideValue = "Amount of crimes";
     }
     return sideValue;
+}
+
+function getDataSets(data) {
+    const res = []
+    for (let i = 0; i < data.length; i++) {
+        const chart = {
+            backgroundColor: COLORSET[i],
+            borderColor: COLORSET[i],
+            borderDash: [5, 5],
+            pointBackgroundColor: PRIMARYCOLOR,
+            pointBorderColor: PRIMARYCOLOR,
+            pointHoverBackgroundColor: SECONDARYCOLOR,
+            pointHoverBorderColor: SECONDARYCOLOR,
+            data: data[i]
+        }
+        res.push(chart)
+    }
+    return res;
 }
 
 function deleteOldChart(chartId, parentId) {
