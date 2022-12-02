@@ -8,6 +8,17 @@ const PIECHARTCOLORSET = ["#c30010", "#de0a26", "#ff2c2c", "#f94449", "#ee6b6e",
 const LINECHARTCOLORSET = ["blue", "red", "orange", "grey", "pink"]
 const PRIMARYCOLOR = "#210124"
 const SECONDARYCOLOR = "#848FA5"
+const SIDEVALUE = {
+    revenue: "Revenue in million",
+    profit: "Profit in million",
+    costs: "Costs in million",
+    employees: "Amount of employees",
+    sales: "Sales in million",
+    crimes: "Amount of crimes",
+    oxygen_leaks: "Amount of oxygen leaks",
+    population: "population",
+    medical_dispaches : "Amount of medical dispaches"
+}
 
 export function makeBarchart() {
     deleteOldChart("bar-chart", "category_chart");
@@ -236,48 +247,12 @@ function getYears() {
     console.log(res)
     return res;
 }
-const SIDEVALUE = {
-    revenue: "Revenue in million",
-    profit: "Profit in million",
-    costs: "Costs in million",
-    employees: "Amount of employees",
-    sales: "Sales in million",
-    oxygen_leaks: "Amount of oxygen leaks"
-}
+
 
 function getSideValue() {
-    const category = document.querySelector("aside .selected").id;
-
-    let sideValue;
-    switch(category) {
-        case "revenue":
-            sideValue = "Revenue in million";
-            break;
-        case "profit":
-            sideValue = "Profit in million";
-            break;
-        case "costs":
-            sideValue = "Costs in million";
-            break;
-        case "employees":
-            sideValue = "Amount of employees";
-            break;
-        case "sales":
-            sideValue = "Sales in million";
-            break;
-        case "oxygen-leaks":
-            sideValue = "Amount of oxygen leaks";
-            break;
-        case "population":
-            sideValue = "population";
-            break;
-        case "medical-dispaches":
-            sideValue = "Amount of medical dispaches";
-            break;
-        default:
-            sideValue = "Amount of crimes";
-    }
-    return sideValue;
+    let category = document.querySelector("aside .selected").id;
+    category = category.replace("-", "_");
+    return SIDEVALUE[category];
 }
 
 function getDataSets(data) {
