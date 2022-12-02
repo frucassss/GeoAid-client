@@ -4,7 +4,8 @@ import {
 } from "./datafetcher.js";
 
 const FONTCOLOR = "hsl(142deg, 10%, 75%)";
-const COLORSET = ["#c30010", "#de0a26", "#ff2c2c", "#f94449", "#ee6b6e", "#f69697", "#ffcbd1"];
+const PIECHARTCOLORSET = ["#c30010", "#de0a26", "#ff2c2c", "#f94449", "#ee6b6e", "#f69697", "#ffcbd1"];
+const LINECHARTCOLORSET = ["blue", "red", "orange", "grey", "pink"]
 const PRIMARYCOLOR = "#210124"
 const SECONDARYCOLOR = "#848FA5"
 
@@ -78,7 +79,7 @@ export function makePieChart() {
             labels: Object.keys(data),
             datasets: [{
                 data: Object.values(data),
-                backgroundColor: COLORSET
+                backgroundColor: PIECHARTCOLORSET
             }]
         },
         options: {
@@ -196,7 +197,7 @@ function getPieChartData() {
 
 function getLineChartData() {
     const category = document.querySelector("aside .selected").id;
-    const year = 2022
+    const year = [2021, 2022];
 
     let data;
     switch(category) {
@@ -257,8 +258,8 @@ function getDataSets(data) {
     const res = []
     for (let i = 0; i < data.length; i++) {
         const chart = {
-            backgroundColor: COLORSET[i],
-            borderColor: COLORSET[i],
+            backgroundColor: LINECHARTCOLORSET[i],
+            borderColor: LINECHARTCOLORSET[i],
             borderDash: [5, 5],
             pointBackgroundColor: PRIMARYCOLOR,
             pointBorderColor: PRIMARYCOLOR,

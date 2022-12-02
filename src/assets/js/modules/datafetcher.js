@@ -65,46 +65,45 @@ export function getCrimeTypes(id) {
     );
 }
 
-export function getRevenue(year) {
-    return [companyData.revenue[year]];
+export function getRevenue(years) {
+    return getDataArray(years, "revenue");
 }
 
-export function getProfit(year) {
-    return [companyData.profit[year]];
+export function getProfit(years) {
+    return getDataArray(years, "profit");
 }
 
-export function getCosts(year) {
-    return [companyData.costs[year]];
+export function getCosts(years) {
+    return getDataArray(years, "costs");
 }
 
-export function getEmployees(year) {
+export function getSales(years) {
+    return getDataArray(years, "sales");
+}
+
+export function getEmployees(years) {
     const res = []
-    const employees = companyData.employees;
-    for (const employeesKey in employees) {
-        const data = employees[employeesKey][year]
-        const dataset = {}
-        for (const key in data) {
-            dataset[key] = data[key].amount;
+    years.forEach(year => {
+        const employees = companyData.employees;
+        for (const employeesKey in employees) {
+            const data = employees[employeesKey][year]
+            const dataset = {}
+            for (const key in data) {
+                dataset[key] = data[key].amount;
+            }
+            res.push(dataset)
         }
-        res.push(dataset)
-    }
+    });
+    console.log(res)
     return res;
 
 }
 
-export function getSales() {
-    return [{
-        "January": 25,
-        "February": 50,
-        "March": 40,
-        "April": 10,
-        "May": 30,
-        "June": 75,
-        "July": 50,
-        "August": 55,
-        "September": 40,
-        "October": 30,
-        "November": 40,
-        "December": 55,
-    }]
+function getDataArray(years, category) {
+    const res = []
+    years.forEach(year => {
+        res.push(companyData[category][year])
+    });
+    return res;
 }
+
