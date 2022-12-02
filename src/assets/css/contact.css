@@ -161,13 +161,10 @@ body main .flexcontainer #contact_us form div label {
 body main .flexcontainer #contact_us form div input, body main .flexcontainer #contact_us form div textarea {
   background-color: #003844;
   margin-bottom: 1rem;
+  color: hsl(142deg, 10%, 75%);
 }
 body main .flexcontainer #contact_us form div textarea {
   height: 7rem;
-}
-body main .flexcontainer #contact_us form div textarea:focus {
-  font-size: 1.2rem;
-  color: hsl(142deg, 10%, 75%);
 }
 body main .flexcontainer #contact_us form div button {
   padding: 0.5rem;
