@@ -5,6 +5,7 @@
 
 body {
     background: $background-color;
+    font-family: $primary-font-family;
     #settings {
         padding: 1rem;
         margin: 2rem 3rem;
@@ -29,6 +30,7 @@ body {
 
                 & > div {
                     display: flex;
+                    align-items: center;
                 }
 
                 .icon {

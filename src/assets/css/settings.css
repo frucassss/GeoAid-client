@@ -116,6 +116,7 @@ nav ul .selected a {
 
 body {
   background: url("../../images/background.jpg");
+  font-family: Arial, sans-serif;
 }
 body #settings {
   padding: 1rem;
@@ -173,6 +174,7 @@ body #settings .flexcontainer li {
 }
 body #settings .flexcontainer li > div {
   display: flex;
+  align-items: center;
 }
 body #settings .flexcontainer li .icon {
   color: #848FA5;
