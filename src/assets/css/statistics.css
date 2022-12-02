@@ -218,15 +218,17 @@ body main #statistics #container_statistics #container_charts #types_chart #dome
 }
 body main #statistics #container_statistics #container_charts #types_chart #dome-choice #searchbar {
   grid-area: search;
-  margin-right: 2rem;
-  margin-left: 2rem;
+  text-align: right;
   line-height: 2rem;
   height: 2rem;
+  margin-left: 2rem;
   background-color: #848FA5;
   border-radius: 2rem;
   display: flex;
+  justify-content: space-between;
 }
 body main #statistics #container_statistics #container_charts #types_chart #dome-choice #searchbar input {
+  width: 50%;
   font-size: 1.2rem;
   padding-left: 1rem;
   vertical-align: center;
