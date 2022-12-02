@@ -13,20 +13,8 @@ body {
       text-align: center;
       width: 100%;
 
-      @keyframes appear {
-
-        from {
-          opacity: 0;
-        }
-
-        to {
-          opacity: 1;
-        }
-
-      }
-
-      fieldset {
-        animation: appear 1s ease 1 forwards;
+        @include animationlocalisation;
+        fieldset {
         width: 65%;
         background-color: $secondary-color;
         margin-left: auto;

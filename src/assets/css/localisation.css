@@ -123,6 +123,9 @@ body main form {
   text-align: center;
   width: 100%;
 }
+body main form fieldset {
+  animation: appear 1s ease 1 forwards;
+}
 @keyframes appear {
   from {
     opacity: 0;
@@ -132,7 +135,6 @@ body main form {
   }
 }
 body main form fieldset {
-  animation: appear 1s ease 1 forwards;
   width: 65%;
   background-color: #848FA5;
   margin-left: auto;

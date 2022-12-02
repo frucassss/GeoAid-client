@@ -127,6 +127,9 @@ body #settings .flexcontainer {
   display: flex;
   flex-direction: column;
 }
+body #settings .flexcontainer li {
+  animation: slidein 0.3s ease 1 both;
+}
 body #settings .flexcontainer li:nth-child(2) {
   animation-delay: 0.15s;
   z-index: 2;
@@ -165,7 +168,6 @@ body #settings .flexcontainer li {
   position: relative;
   margin-bottom: 1rem;
   display: flex;
-  animation: slidein 0.3s ease 1 both;
   justify-content: space-between;
   padding: 1.5rem 0;
 }
