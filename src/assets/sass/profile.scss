@@ -6,6 +6,28 @@
 #profile {
   background: $background-color;
   padding: 1rem;
+
+  article{
+    animation: slidein 1s ease 1 both;
+  }
+
+  article:nth-child(2) {animation-delay: 0.30s}
+  article:nth-child(3) {animation-delay: 0.60s}
+  article:nth-child(4) {animation-delay: 0.90s}
+
+
+
+  @keyframes slidein{
+    from{
+      transform: translateX(-5rem);
+      opacity: 0;
+    }
+
+    to{
+      transform: translate(0);
+      opacity: 1;
+    }
+  }
   #profiletop{
     color: $primary-font-color;
     margin-bottom: 2rem;
