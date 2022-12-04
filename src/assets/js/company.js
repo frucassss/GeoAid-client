@@ -8,6 +8,10 @@ function init() {
 
 function handleEventListeners() {
     selectClickedCategory(makeLineChart, "#company-chart h4");
+
+    document.querySelectorAll("#years input").forEach(year => {
+        year.addEventListener("change", makeLineChart)
+    })
 }
 
 init()

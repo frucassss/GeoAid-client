@@ -4,9 +4,21 @@ import {
 } from "./datafetcher.js";
 
 const FONTCOLOR = "hsl(142deg, 10%, 75%)";
-const COLORSET = ["#c30010", "#de0a26", "#ff2c2c", "#f94449", "#ee6b6e", "#f69697", "#ffcbd1"];
+const PIECHARTCOLORSET = ["#c30010", "#de0a26", "#ff2c2c", "#f94449", "#ee6b6e", "#f69697", "#ffcbd1"];
+const LINECHARTCOLORSET = ["blue", "red", "orange", "grey", "pink"]
 const PRIMARYCOLOR = "#210124"
 const SECONDARYCOLOR = "#848FA5"
+const SIDEVALUE = {
+    revenue: "Revenue in million",
+    profit: "Profit in million",
+    costs: "Costs in million",
+    employees: "Amount of employees",
+    sales: "Sales in million",
+    crimes: "Amount of crimes",
+    oxygen_leaks: "Amount of oxygen leaks",
+    population: "population",
+    medical_dispaches : "Amount of medical dispaches"
+}
 
 export function makeBarchart() {
     deleteOldChart("bar-chart", "category_chart");
@@ -78,7 +90,7 @@ export function makePieChart() {
             labels: Object.keys(data),
             datasets: [{
                 data: Object.values(data),
-                backgroundColor: COLORSET
+                backgroundColor: PIECHARTCOLORSET
             }]
         },
         options: {
@@ -116,20 +128,29 @@ export function makeLineChart() {
 
     const data = getLineChartData();
     const sideValue = getSideValue();
+    const datasets = getDataSets(data);
 
     const ctx = document.querySelector('#line-chart').getContext('2d');
     const configuration = {
         type: "line",
-        data: {labels: Object.keys(data),
-            datasets: [{
-                backgroundColor: PRIMARYCOLOR,
-                data: data
-            }]},
+        data: {
+            labels: Object.keys(data[0]),
+            datasets: datasets
+        },
         options: {
-            pointradius: 5,
+            pointRadius: 4,
             plugins: {
                 legend: {
-                    display: false
+                    labels: {
+                        title: {
+                            text: 2022
+                        },
+                        font: {
+                            weight: "bold"
+                        },
+                        color: FONTCOLOR,
+                        padding: 10
+                    }
                 }
             },
             scales: {
@@ -145,7 +166,7 @@ export function makeLineChart() {
                     ticks: {
                         color: FONTCOLOR
                     },
-                    min: 0
+                    suggestedMin: 0
                 },
                 x: {
                     title: {
@@ -196,61 +217,61 @@ function getPieChartData() {
 
 function getLineChartData() {
     const category = document.querySelector("aside .selected").id;
-    const year = 2022
+    const years = getYears();
 
     let data;
     switch(category) {
         case "profit":
-            data = getProfit(year);
+            data = getProfit(years);
             break;
         case "costs":
-            data = getCosts(year);
+            data = getCosts(years);
             break;
         case "employees":
-            data = getEmployees(year);
+            data = getEmployees(years);
             break;
         case "sales":
-            data = getSales(year);
+            data = getSales(years);
             break;
         default:
-            data = getRevenue(year);
+            data = getRevenue(years);
     }
     return data;
 }
 
-function getSideValue() {
-    const category = document.querySelector("aside .selected").id;
+function getYears() {
+    const res = []
+    document.querySelectorAll("#years input").forEach(year => {
+        if (year.checked) res.push(year.id)
+    })
+    console.log(res)
+    return res;
+}
 
-    let sideValue;
-    switch(category) {
-        case "revenue":
-            sideValue = "Revenue in million";
-            break;
-        case "profit":
-            sideValue = "Profit in million";
-            break;
-        case "costs":
-            sideValue = "Costs in million";
-            break;
-        case "employees":
-            sideValue = "Amount of employees";
-            break;
-        case "sales":
-            sideValue = "Sales in million";
-            break;
-        case "oxygen-leaks":
-            sideValue = "Amount of oxygen leaks";
-            break;
-        case "population":
-            sideValue = "population";
-            break;
-        case "medical-dispaches":
-            sideValue = "Amount of medical dispaches";
-            break;
-        default:
-            sideValue = "Amount of crimes";
+
+function getSideValue() {
+    let category = document.querySelector("aside .selected").id;
+    category = category.replace("-", "_");
+    return SIDEVALUE[category];
+}
+
+function getDataSets(data) {
+    const res = []
+    for (let i = 0; i < data.length; i++) {
+        const chart = {
+            backgroundColor: LINECHARTCOLORSET[i],
+            borderColor: LINECHARTCOLORSET[i],
+            borderDash: [5, 5],
+            pointBackgroundColor: PRIMARYCOLOR,
+            pointBorderColor: PRIMARYCOLOR,
+            pointHoverBackgroundColor: SECONDARYCOLOR,
+            pointHoverBorderColor: SECONDARYCOLOR,
+            label: getYears()[i],
+            data: data[i]
+        }
+        res.push(chart)
     }
-    return sideValue;
+    return res;
 }
 
 function deleteOldChart(chartId, parentId) {
