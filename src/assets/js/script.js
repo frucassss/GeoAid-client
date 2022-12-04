@@ -1,14 +1,6 @@
-import {get, setApi} from "./modules/api.js";
+import {setApi} from "./modules/api.js";
 import {createMap, center, setView} from "./modules/map.js";
-import { makeHidden, removeHidden } from "./modules/helper.js";
-
-let arrayDomes = [];
-
-function init() {
-    handleEventListeners();
-    setTimeout(startupAnimation, 2500);
-    makeMap();
-}
+import { makeHidden, removeHidden, makeSuggestions, arrayDomes } from "./modules/helper.js";
 
 function loadConfig() {
     fetch("config.json")
@@ -18,6 +10,12 @@ function loadConfig() {
             setApi(api);
             init();
         });
+}
+
+function init() {
+    handleEventListeners();
+    setTimeout(startupAnimation, 2500);
+    makeMap();
 }
 
 function makeMap() {
@@ -43,7 +41,9 @@ function handleEventListeners() {
             navigator.geolocation.getCurrentPosition(center, handleError);
         }
     });
-    document.querySelector('#searchbar input').addEventListener("keyup", makeSuggestions);
+    document.querySelector('#searchbar input').addEventListener("keyup", function () {
+        makeSuggestions(addEventListenersSuggestions);
+    });
 
     document.querySelector(".close").addEventListener("click", () => {
         makeHidden("#side_navigation");
@@ -53,40 +53,11 @@ function handleEventListeners() {
     })
 }
 
-function makeSuggestions() {
-    get("domes", addDomes);
-    arrayDomes = arrayDomes
-        .filter(dome => filterDomes(dome.domeName));
-    showSuggestions(arrayDomes);
-}
-
-function filterDomes(domeName) {
-    const search = document.querySelector("#searchbar input").value;
-    const searchLength = search.length;
-    for (let i = 0; i < searchLength; i++) {
-        if (domeName.charAt(i).toLowerCase() !== search.charAt(i).toLowerCase()) return false
-    }
-    return true;
-}
-
-function addDomes(response) {
-    response.json().then(data => arrayDomes = data.domes);
-}
-
-function showSuggestions(domes) {
-    const target = document.querySelector('#suggestions');
-    target.innerHTML = '';
-    domes.forEach(dome => {
-        const  html = `<li id="${dome.id}"><p class="hover-underline-animation">${dome.domeName}</p></li>`;
-        target.innerHTML += html;
-    })
-    addEventListeners();
-}
-
-function addEventListeners() {
+function addEventListenersSuggestions() {
     document.querySelectorAll('#suggestions li').forEach(li => {
         li.addEventListener("click", function (ev) {
             const target = ev.currentTarget.id;
+            console.log(target)
             const position = findPosition(target)
             setView(position);
         })
@@ -97,6 +68,7 @@ function findPosition(search) {
     for (const i in arrayDomes) {
         const dome = arrayDomes[i];
         if (dome.id === parseInt(search)) {
+            console.log(dome)
             return [dome.latitude, dome.longitude];
         }
     }
