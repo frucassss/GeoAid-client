@@ -1,8 +1,18 @@
-import {loadConfig, makeSuggestions, random, selectClickedCategory} from "./modules/helper.js";
+import {makeSuggestions, selectClickedCategory} from "./modules/helper.js";
 import {makeBarchart, makePieChart} from "./modules/graphs.js";
+import {setApi} from "./modules/api.js";
 
+
+function loadConfig() {
+    fetch("config.json")
+        .then(resp => resp.json())
+        .then(config => {
+            const api = `${config.host ? config.host + '/': ''}${config.group ? config.group + '/' : ''}api/`;
+            setApi(api);
+            init();
+        });
+}
 function init() {
-    loadConfig();
     handleEventListeners();
     makeBarchart();
     makePieChart();
@@ -32,4 +42,4 @@ function addEventListenersSuggestions() {
     })
 }
 
-init();
+loadConfig();

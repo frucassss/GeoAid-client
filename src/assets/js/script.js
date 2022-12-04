@@ -1,9 +1,18 @@
-import {setApi} from "./modules/api.js";
 import {createMap, center, setView} from "./modules/map.js";
-import {makeHidden, removeHidden, makeSuggestions, arrayDomes, loadConfig} from "./modules/helper.js";
+import {makeHidden, removeHidden, makeSuggestions, arrayDomes} from "./modules/helper.js";
+import {setApi} from "./modules/api.js";
+
+function loadConfig() {
+    fetch("config.json")
+        .then(resp => resp.json())
+        .then(config => {
+            const api = `${config.host ? config.host + '/': ''}${config.group ? config.group + '/' : ''}api/`;
+            setApi(api);
+            init();
+        });
+}
 
 function init() {
-    loadConfig()
     handleEventListeners();
     setTimeout(startupAnimation, 2500);
     makeMap();
@@ -75,4 +84,4 @@ function startupAnimation() {
     map.classList.remove("hidden");
 }
 
-init();
+loadConfig();

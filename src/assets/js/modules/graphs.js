@@ -275,11 +275,11 @@ function getDataSets(data) {
 }
 
 function deleteOldChart(chartId, parentId) {
-    const oldChart = document.querySelector("#" + chartId);
-    if (oldChart) {
-        oldChart.remove();
+    const $oldChart = document.querySelector("#" + chartId);
+    if ($oldChart) {
+        $oldChart.remove();
     }
     const html = `<canvas id="${chartId}"></canvas>`
-    const target = document.querySelector("#" + parentId);
-    target.innerHTML += html;
+    const $target = document.querySelector("#" + parentId);
+    $target.innerHTML += html;
 }

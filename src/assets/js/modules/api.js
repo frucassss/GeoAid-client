@@ -10,7 +10,6 @@ function poc() {
 }
 
 export function get(uri, successHandler = logJson, failureHandler = logError) {
-    console.log(uri)
     const request = new Request(api + uri, {
         method: 'GET',
     });
@@ -58,7 +57,6 @@ function logError(error) {
 }
 
 function call(request, successHandler, errorHandler) {
-    console.log(request)
     fetch(request).then(successHandler).catch(errorHandler);
 }
 
