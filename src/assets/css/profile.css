@@ -115,6 +115,7 @@ nav ul .selected a {
 }
 
 #profile {
+  font-family: Arial, sans-serif;
   background: url("../../images/background.jpg");
   padding: 1rem;
 }

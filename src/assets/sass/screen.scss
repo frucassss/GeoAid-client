@@ -5,6 +5,7 @@
 
 body {
     background-color: gray;
+    font-family: $primary-font-family;
         header {
             margin-top: 1rem;
             width: 63vw;
@@ -141,6 +142,7 @@ body {
                     a {
                         display: flex;
                         padding: 2.25rem 0;
+                        align-items: center;
                     }
                     .icon {
                         animation: fade 3s;

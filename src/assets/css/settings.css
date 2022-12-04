@@ -116,6 +116,7 @@ nav ul .selected a {
 
 body {
   background: url("../../images/background.jpg");
+  font-family: Arial, sans-serif;
 }
 body #settings {
   padding: 1rem;
@@ -126,6 +127,9 @@ body #settings {
 body #settings .flexcontainer {
   display: flex;
   flex-direction: column;
+}
+body #settings .flexcontainer li {
+  animation: slidein 0.3s ease 1 both;
 }
 body #settings .flexcontainer li:nth-child(2) {
   animation-delay: 0.15s;
@@ -165,12 +169,12 @@ body #settings .flexcontainer li {
   position: relative;
   margin-bottom: 1rem;
   display: flex;
-  animation: slidein 0.3s ease 1 both;
   justify-content: space-between;
   padding: 1.5rem 0;
 }
 body #settings .flexcontainer li > div {
   display: flex;
+  align-items: center;
 }
 body #settings .flexcontainer li .icon {
   color: #848FA5;
