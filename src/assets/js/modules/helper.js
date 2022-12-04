@@ -1,7 +1,15 @@
-import {get} from "./api.js";
-import {setView} from "./map.js";
+import {get, setApi} from "./api.js";
 
 export let arrayDomes;
+
+export function loadConfig() {
+    fetch("config.json")
+        .then(resp => resp.json())
+        .then(config => {
+            const api = `${config.host ? config.host + '/': ''}${config.group ? config.group + '/' : ''}api/`;
+            setApi(api);
+        });
+}
 
 export function makeHidden(selector) {
     const element = document.querySelector(selector)
@@ -37,7 +45,13 @@ export function makeSuggestions(addEventListeners) {
     arrayDomes = arrayDomes
         .filter(dome => filterDomes(dome.domeName));
     showSuggestions(arrayDomes);
+
     addEventListeners();
+
+    function addDomes(response) {
+        response.json().then(data => arrayDomes = data.domes);
+    }
+
 }
 
 function filterDomes(domeName) {
@@ -49,10 +63,6 @@ function filterDomes(domeName) {
     return true;
 }
 
-function addDomes(response) {
-    response.json().then(data => arrayDomes = data.domes);
-}
-
 function showSuggestions(domes) {
     const target = document.querySelector('#suggestions');
     target.innerHTML = '';
@@ -60,5 +70,12 @@ function showSuggestions(domes) {
         const  html = `<li id="${dome.id}"><p class="hover-underline-animation">${dome.domeName}</p></li>`;
         target.innerHTML += html;
     })
+}
+
+export function random() {
+    document.querySelector('#searchbar input').addEventListener("keydown", (event) => {
+        console.log("lesgo")
+        makeSuggestions(addEventListenersSuggestions);
+    });
 }
 

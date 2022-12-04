@@ -79,7 +79,7 @@ export function makeBarchart() {
 }
 
 export function makePieChart() {
-    deleteOldChart("pie-chart", "types_chart");
+    deleteOldChart("pie-chart", "pie-chart-container");
 
     const data = getPieChartData();
 
