@@ -4,6 +4,7 @@
 @import "animations";
 
 body {
+  font-family: $primary-font-family;
   background: $background-color;
   main{
     margin-top: 2rem;
@@ -44,6 +45,8 @@ body {
             input, textarea {
               background-color: $primary-color;
               margin-bottom: 1rem;
+              border-radius: 1rem;
+              padding: 0.5rem;
               color: $primary-font-color;
             }
             textarea {
@@ -78,6 +81,7 @@ body {
         }
       }
     }
+
     #business_hours {
       width: 78vw;
       margin-right: auto;
@@ -87,8 +91,14 @@ body {
           display: flex;
           justify-content: space-around;
           text-align: center;
+
+          @include animationcontact;
+
+
           li {
+            font-weight: bold;
             div {
+              color: $primary-font-color;
               margin-top: 0.5rem;
               background-color: $primary-color;
               padding: 1.5rem 1rem;
@@ -98,6 +108,7 @@ body {
       }
       #extras {
         margin: 0 3rem;
+        padding-bottom: 1rem;
          h4 {
            font-size: 1.3rem;
            border-bottom: $primary-color solid;

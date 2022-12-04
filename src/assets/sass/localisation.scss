@@ -5,13 +5,16 @@
 
 
 body {
+  font-family: $primary-font-family;
   background: $background-color;
   main {
     form {
       margin: 2rem 0;
       text-align: center;
       width: 100%;
-      fieldset {
+
+        @include animationlocalisation;
+        fieldset {
         width: 65%;
         background-color: $secondary-color;
         margin-left: auto;

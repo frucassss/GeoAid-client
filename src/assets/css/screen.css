@@ -90,6 +90,7 @@ button {
 
 body {
   background-color: gray;
+  font-family: Arial, sans-serif;
 }
 body header {
   margin-top: 1rem;
@@ -226,6 +227,7 @@ main #side_navigation .flexcontainer li {
 main #side_navigation .flexcontainer li a {
   display: flex;
   padding: 2.25rem 0;
+  align-items: center;
 }
 main #side_navigation .flexcontainer li .icon {
   animation: fade 3s;

@@ -115,12 +115,24 @@ nav ul .selected a {
 }
 
 body {
+  font-family: Arial, sans-serif;
   background: url("../../images/background.jpg");
 }
 body main form {
   margin: 2rem 0;
   text-align: center;
   width: 100%;
+}
+body main form fieldset {
+  animation: appear 1s ease 1 forwards;
+}
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 body main form fieldset {
   width: 65%;
