@@ -202,19 +202,22 @@ body main #statistics #container_statistics #container_charts .stats h2 {
 }
 body main #statistics #container_statistics #container_charts #types_chart #dome-choice {
   width: 100%;
+  height: 100%;
   display: grid;
   grid-auto-columns: 33%;
-  grid-template: "dome title search";
+  grid-template: "dome title search" "stat stat suggestions";
+  grid-template-rows: 10% 90%;
 }
 body main #statistics #container_statistics #container_charts #types_chart #dome-choice h3 {
+  grid-area: dome;
   text-align: left;
   padding-left: 1rem;
-  grid-area: dome;
   font-size: 1.5rem;
   color: hsl(142deg, 10%, 75%);
 }
 body main #statistics #container_statistics #container_charts #types_chart #dome-choice h2 {
   grid-area: title;
+  text-align: left;
 }
 body main #statistics #container_statistics #container_charts #types_chart #dome-choice #searchbar {
   grid-area: search;
@@ -248,11 +251,26 @@ body main #statistics #container_statistics #container_charts #types_chart #dome
   font-size: 2rem;
   color: hsl(142deg, 10%, 75%);
 }
-body main #statistics #container_statistics #container_charts #types_chart #pie-chart {
-  margin-right: 23%;
+body main #statistics #container_statistics #container_charts #types_chart #pie-chart-container {
+  grid-area: stat;
   margin-bottom: 2rem;
-  z-index: 2;
   margin-top: 1rem;
+}
+body main #statistics #container_statistics #container_charts #types_chart #suggestions {
+  grid-area: suggestions;
+  margin: 1rem 0 2rem 2rem;
+  padding: 1rem 0;
+  background-color: #848FA5;
+  border-radius: 2rem;
+}
+body main #statistics #container_statistics #container_charts #types_chart #suggestions li {
+  width: 70%;
+  margin: 1rem auto;
+}
+body main #statistics #container_statistics #container_charts #types_chart #suggestions li p {
+  width: max-content;
+  font-size: 1.2rem;
+  margin: 0 auto;
 }
 
 /*# sourceMappingURL=statistics.css.map */

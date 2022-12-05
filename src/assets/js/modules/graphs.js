@@ -79,7 +79,7 @@ export function makeBarchart() {
 }
 
 export function makePieChart() {
-    deleteOldChart("pie-chart", "types_chart");
+    deleteOldChart("pie-chart", "pie-chart-container");
 
     const data = getPieChartData();
 
@@ -99,9 +99,9 @@ export function makePieChart() {
                 legend: {
                     position: "left",
                     labels: {
-                        boxHeight: 28,
+                        boxHeight: 20,
                         font: {
-                            size: 20
+                            size: 15
                         },
                         padding: 15,
                         color: FONTCOLOR
@@ -275,11 +275,11 @@ function getDataSets(data) {
 }
 
 function deleteOldChart(chartId, parentId) {
-    const oldChart = document.querySelector("#" + chartId);
-    if (oldChart) {
-        oldChart.remove();
+    const $oldChart = document.querySelector("#" + chartId);
+    if ($oldChart) {
+        $oldChart.remove();
     }
     const html = `<canvas id="${chartId}"></canvas>`
-    const target = document.querySelector("#" + parentId);
-    target.innerHTML += html;
+    const $target = document.querySelector("#" + parentId);
+    $target.innerHTML += html;
 }

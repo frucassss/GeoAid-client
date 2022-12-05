@@ -90,18 +90,23 @@ body {
                     #types_chart {
                         #dome-choice {
                             width: 100%;
+                            height: 100%;
                             display: grid;
                             grid-auto-columns: 33%;
-                            grid-template: "dome title search";
+                            grid-template:
+                                    "dome title search"
+                                    "stat stat suggestions";
+                            grid-template-rows: 10% 90%;
                             h3 {
+                                grid-area: dome;
                                 text-align: left;
                                 padding-left: 1rem;
-                                grid-area: dome;
                                 font-size: 1.5rem;
                                 color: $primary-font-color;
                             }
                             h2 {
                                 grid-area: title;
+                                text-align: left;
                             }
                             #searchbar {
                                 grid-area: search;
@@ -137,11 +142,26 @@ body {
                                 }
                             }
                         }
-                        #pie-chart {
-                            margin-right: 23%;
+                        #pie-chart-container {
+                            grid-area: stat;
                             margin-bottom: 2rem;
-                            z-index: 2;
                             margin-top: 1rem;
+                        }
+                        #suggestions {
+                            grid-area: suggestions;
+                            margin: 1rem 0 2rem 2rem;
+                            padding: 1rem 0;
+                            background-color: $secondary-color;
+                            border-radius: $border-radius;
+                            li {
+                                width: 70%;
+                                margin: 1rem auto;
+                                p {
+                                    width: max-content;
+                                    font-size: 1.2rem;
+                                    margin: 0 auto;
+                                }
+                            }
                         }
                     }
                 }

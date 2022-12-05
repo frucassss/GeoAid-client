@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="assets/css/statistics.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
     <script src="assets/js/statistics.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
 </head>
 
 <body>
@@ -77,9 +77,11 @@
                             <form id="searchbar">
                                 <input type="text" placeholder="Search dome" />
                                 <button type="submit" class="searchButton">
-                    <em class="material-icons icon search">search</em>
-                  </button>
+                                    <em class="material-icons icon search">search</em>
+                                </button>
                             </form>
+                            <div id="pie-chart-container"></div>
+                            <ul id="suggestions"></ul>
                         </div>
                     </div>
                 </div>

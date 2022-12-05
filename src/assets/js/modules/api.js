@@ -13,7 +13,6 @@ export function get(uri, successHandler = logJson, failureHandler = logError) {
     const request = new Request(api + uri, {
         method: 'GET',
     });
-
     call(request, successHandler, failureHandler);
 }
 
