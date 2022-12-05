@@ -258,6 +258,19 @@ body main #statistics #container_statistics #container_charts #types_chart #pie-
 }
 body main #statistics #container_statistics #container_charts #types_chart #suggestions {
   grid-area: suggestions;
+  margin: 1rem 0 2rem 2rem;
+  padding: 1rem 0;
+  background-color: #848FA5;
+  border-radius: 2rem;
+}
+body main #statistics #container_statistics #container_charts #types_chart #suggestions li {
+  width: 70%;
+  margin: 1rem auto;
+}
+body main #statistics #container_statistics #container_charts #types_chart #suggestions li p {
+  width: max-content;
+  font-size: 1.2rem;
+  margin: 0 auto;
 }
 
 /*# sourceMappingURL=statistics.css.map */

@@ -149,6 +149,19 @@ body {
                         }
                         #suggestions {
                             grid-area: suggestions;
+                            margin: 1rem 0 2rem 2rem;
+                            padding: 1rem 0;
+                            background-color: $secondary-color;
+                            border-radius: $border-radius;
+                            li {
+                                width: 70%;
+                                margin: 1rem auto;
+                                p {
+                                    width: max-content;
+                                    font-size: 1.2rem;
+                                    margin: 0 auto;
+                                }
+                            }
                         }
                     }
                 }
