@@ -1,6 +1,6 @@
 import {createMap, center, setView} from "./modules/map.js";
-import {makeHidden, removeHidden, makeSuggestions, arrayDomes} from "./modules/helper.js";
-import {setApi} from "./modules/api.js";
+import {makeHidden, removeHidden, makeSuggestions} from "./modules/helper.js";
+import {get, setApi} from "./modules/api.js";
 
 function loadConfig() {
     fetch("config.json")
@@ -58,18 +58,24 @@ function addEventListenersSuggestions() {
     document.querySelectorAll('#suggestions li').forEach(li => {
         li.addEventListener("click", function (ev) {
             const target = ev.currentTarget.id;
-            const position = findPosition(target)
-            setView(position);
+            changeview(target)
         })
     })
 }
 
-function findPosition(search) {
-    for (const i in arrayDomes) {
-        const dome = arrayDomes[i];
-        if (dome.id === parseInt(search)) {
-            return [dome.latitude, dome.longitude];
-        }
+function changeview(search) {
+    get("domes", succesHandler)
+
+    function succesHandler(response) {
+        response.json().then(data => {
+            const domes = data.domes
+            for (const i in domes) {
+                const dome = domes[i];
+                if (dome.id === parseInt(search)) {
+                    setView([dome.latitude, dome.longitude]);
+                }
+            }
+        })
     }
 }
 

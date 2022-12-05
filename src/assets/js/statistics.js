@@ -1,6 +1,6 @@
 import {makeSuggestions, selectClickedCategory} from "./modules/helper.js";
 import {makeBarchart, makePieChart} from "./modules/graphs.js";
-import {setApi} from "./modules/api.js";
+import {get, setApi} from "./modules/api.js";
 
 
 function loadConfig() {
@@ -14,6 +14,7 @@ function loadConfig() {
 }
 function init() {
     handleEventListeners();
+    defaultDome();
     makeBarchart();
     makePieChart();
 }
@@ -40,6 +41,18 @@ function addEventListenersSuggestions() {
             makePieChart();
         })
     })
+}
+
+function defaultDome() {
+    get("domes", succesHandler);
+
+    function succesHandler(res) {
+        (res.json()).then((data) => {
+            const $target = document.querySelector("#dome-choice h3");
+            const domeName = data.domes[0].domeName
+            $target.innerText = domeName;
+        });
+    }
 }
 
 loadConfig();

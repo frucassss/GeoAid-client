@@ -99,9 +99,9 @@ export function makePieChart() {
                 legend: {
                     position: "left",
                     labels: {
-                        boxHeight: 28,
+                        boxHeight: 20,
                         font: {
-                            size: 20
+                            size: 15
                         },
                         padding: 15,
                         color: FONTCOLOR

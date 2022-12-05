@@ -79,7 +79,6 @@ function createDome(data) {
 }
 
 export function setView(position) {
-    console.log(position)
     map.setView(position);
 }
 
@@ -87,6 +86,5 @@ export function center(currentPosition) {
     const coords = currentPosition.coords;
     const lat = coords.latitude - 75.5;
     const lon = coords.longitude - 73;
-    console.log([lat, lon]);
     map.setView([lat, lon]);
 }

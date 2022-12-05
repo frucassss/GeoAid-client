@@ -1,6 +1,4 @@
-import {get, setApi} from "./api.js";
-
-export let arrayDomes;
+import {get} from "./api.js";
 
 export function makeHidden(selector) {
     const $element = document.querySelector(selector)
@@ -32,18 +30,18 @@ export function selectClickedCategory(func, selector) {
 }
 
 export function makeSuggestions(addEventListeners) {
-    get("domes", addDomes);
+    get("domes", succesHandler);
 
-    if (arrayDomes) {
-        arrayDomes = arrayDomes
-            .filter(dome => filterDomes(dome.domeName));
-        showSuggestions(arrayDomes);
-
-        addEventListeners();
-    }
-
-    function addDomes(response) {
-        response.json().then(data => arrayDomes = data.domes);
+    function succesHandler(response) {
+        response.json().then(data => {
+            let domes = data.domes;
+            if (domes) {
+                domes = domes
+                    .filter(dome => filterDomes(dome.domeName));
+                showSuggestions(domes);
+                addEventListeners();
+            }
+        });
     }
 
 }
