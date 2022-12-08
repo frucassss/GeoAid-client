@@ -5,6 +5,7 @@
 
 body {
     background: $background-color;
+    font-family: $primary-font-family;
     main {
         #statistics {
             text-align: center;
@@ -149,20 +150,29 @@ body {
                         }
                         #suggestions {
                             grid-area: suggestions;
-                            margin: 1rem 0 2rem 2rem;
-                            padding: 1rem 0;
-                            background-color: $secondary-color;
-                            border-radius: $border-radius;
+                            margin: 0rem 0 2rem 2rem;
+                            padding: 0rem 0;
+                            background-color: transparent;
 
                             @include animationsuggestions;
+                            li:hover {
+                                font-weight: bold;
+                            }
                             li {
-                                width: 70%;
                                 margin: 1rem auto;
+                                border-radius: 0.5rem;
                                 p {
                                     width: max-content;
                                     font-size: 1.2rem;
+                                    line-height: 2rem;
                                     margin: 0 auto;
                                 }
+                            }
+                            li:nth-child(odd) {
+                                background-color: $secondary-color;
+                            }
+                            li:nth-child(even) {
+                                background-color: lightgray;
                             }
                         }
                     }
