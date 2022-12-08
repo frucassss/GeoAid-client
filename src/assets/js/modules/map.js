@@ -103,8 +103,8 @@ function SelectedOnClick() {
             const target = e.target;
             target.classList.add("selected");
             removeClassAfterClick(".selected", "selected");
-        })
-    })
+        });
+    });
 }
 
 export function setView(position) {
