@@ -1,4 +1,5 @@
 import {get} from "./api.js";
+import {MAPBOUNDS} from "./map.js";
 
 export function makeHidden(selector) {
     const $element = document.querySelector(selector)
@@ -8,6 +9,39 @@ export function makeHidden(selector) {
 export function removeHidden(selector) {
     const $element = document.querySelector(selector)
     $element.classList.remove("hidden");
+}
+
+export function removeClass(selector, className) {
+    document.querySelectorAll(selector).forEach($el => {
+        $el.classList.remove(className);
+    })
+}
+
+export function removeClassAfterClick(selector, className) {
+    document.querySelector("body").addEventListener("click", function (e) {
+        const targetClassList = e.target.classList;
+        if (!targetClassList.contains(className)) {
+            removeClass(selector, className);
+        }
+    })
+}
+
+export function setPosition(position) {
+    const res = []
+    const differenceLatitude = Math.abs(MAPBOUNDS.south - MAPBOUNDS.north);
+    const differenceLongitude = Math.abs(MAPBOUNDS.west - MAPBOUNDS.east);
+    for (let i = 0; i < position.length; i++) {
+        let n = position[i];
+        if (i === 0) {
+            const modulo = Math.abs(n % differenceLatitude);
+            n = MAPBOUNDS.south + modulo;
+        } else {
+            const modulo = Math.abs(n % differenceLongitude);
+            n = MAPBOUNDS.west + modulo;
+        }
+        res.push(n)
+    }
+    return res;
 }
 
 export function selectClickedCategory(func, selector) {

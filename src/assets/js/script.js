@@ -1,5 +1,5 @@
 import {createMap, center, setView} from "./modules/map.js";
-import {makeHidden, removeHidden, makeSuggestions} from "./modules/helper.js";
+import {makeHidden, removeHidden, makeSuggestions, setPosition, removeClassAfterClick} from "./modules/helper.js";
 import {get, setApi} from "./modules/api.js";
 
 function loadConfig() {
@@ -26,9 +26,10 @@ function makeMap() {
 
 function makeMapCurrentPosition(currentPosition) {
     const coords = currentPosition.coords;
-    const lat = coords.latitude - 75.5;
-    const lon = coords.longitude - 73;
-    createMap([lat, lon], true)
+    const lat = coords.latitude;
+    const lon = coords.longitude;
+    const position = setPosition([lat, lon])
+    createMap(position, true)
 }
 
 function makeMapDefaultPosition() {
@@ -43,22 +44,32 @@ function handleEventListeners() {
     });
 
     document.querySelector('#searchbar input').addEventListener("keyup", function () {
+        document.querySelector("#suggestions").classList.remove("hidden");
         makeSuggestions(addEventListenersSuggestions);
     });
 
+    document.querySelector("body").addEventListener("click", function (e) {
+        const targetId = e.target.id;
+        const inMap = e.target.parentElement.closest('#map')
+
+        if (inMap || targetId === "map") {
+            document.querySelector("#suggestions").classList.add("hidden");
+        }
+    })
+
     document.querySelector(".close").addEventListener("click", () => {
         makeHidden("#side_navigation");
-    })
+    });
     document.querySelector(".menu").addEventListener("click", () => {
         removeHidden("#side_navigation");
-    })
+    });
 }
 
 function addEventListenersSuggestions() {
     document.querySelectorAll('#suggestions li').forEach(li => {
         li.addEventListener("click", function (ev) {
             const target = ev.currentTarget.id;
-            changeview(target)
+            changeview(target);
         })
     })
 }

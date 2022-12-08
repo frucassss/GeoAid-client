@@ -110,3 +110,48 @@ function getDataArray(years, category) {
     return res;
 }
 
+export function getHeatMapData() {
+    return [{
+        title: "Crimes",
+        data: getCrimes()
+    },{
+        title: "Oxygen Leaks",
+        data: getOxygenLeaks()
+    },{
+        title: "Population",
+        data: getPopulation()
+    },{
+        title: "Medical Dispaches",
+        data: getMedicalDispaches()
+    }]
+}
+
+function getCrimes() {
+    return [[-23, -69, 5],
+        [-23, -69, 10],
+        [-23.5, -69.5, 7],
+        [-23.5, -69.5, 20],
+        [-23.3, -69.2, 9],
+        [-23.5, -69.5, 11],
+        [-21, -67, 10],
+        [-22, -68, 20],
+        [-24.4730056, -69.3011877, 13],
+        [-24.5, -69.3, 11],
+        [-24, -66.3, 11],
+        [-24.1, -66.25, 20]
+    ]
+}
+
+function getOxygenLeaks() {
+    return getCrimes()
+}
+
+function getPopulation() {
+    return getCrimes()
+}
+
+function getMedicalDispaches() {
+    return getCrimes()
+}
+
+
