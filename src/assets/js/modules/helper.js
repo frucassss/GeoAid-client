@@ -14,7 +14,7 @@ export function removeHidden(selector) {
 export function removeClass(selector, className) {
     document.querySelectorAll(selector).forEach($el => {
         $el.classList.remove(className);
-    })
+    });
 }
 
 export function removeClassAfterClick(selector, className) {
@@ -23,7 +23,7 @@ export function removeClassAfterClick(selector, className) {
         if (!targetClassList.contains(className)) {
             removeClass(selector, className);
         }
-    })
+    });
 }
 
 export function setPosition(position) {
@@ -77,24 +77,27 @@ export function makeSuggestions(addEventListeners) {
             }
         });
     }
-
 }
 
 function filterDomes(domeName) {
     const search = document.querySelector("#searchbar input").value;
     const searchLength = search.length;
     for (let i = 0; i < searchLength; i++) {
-        if (domeName.charAt(i).toLowerCase() !== search.charAt(i).toLowerCase()) return false
+        if (domeName.charAt(i).toLowerCase() !== search.charAt(i).toLowerCase()) return false;
     }
     return true;
 }
 
 function showSuggestions(domes) {
     const $target = document.querySelector('#suggestions');
+    const maxSuggestions = 6;
     $target.innerHTML = '';
-    domes.forEach(dome => {
-        const html = `<li id="${dome.id}"><p class="hover-underline-animation">${dome.domeName}</p></li>`;
-        $target.innerHTML += html;
-    })
+    for (let i = 0; i < domes.length; i++) {
+        if (i < maxSuggestions) {
+            const dome = domes[i];
+            const html = `<li id="${dome.id}"><p class="hover-underline-animation">${dome.domeName}</p></li>`;
+            $target.innerHTML += html;
+        }
+    }
 }
 

@@ -1,6 +1,6 @@
 import {companyData} from "../../../data/company-data.js";
 
-export function getTotalCrime() {
+export function getTotalCrime(period) {
     return {
         "dome 1": 80,
         "dome 2": 50,
@@ -9,7 +9,7 @@ export function getTotalCrime() {
     };
 }
 
-export function getTotalOxygenLeaks() {
+export function getTotalOxygenLeaks(period) {
     return {
         "dome 1": 100,
         "dome 2": 30,
@@ -18,7 +18,7 @@ export function getTotalOxygenLeaks() {
     };
 }
 
-export function getTotalPopulation() {
+export function getTotalPopulation(period) {
     return {
         "dome 1": 60,
         "dome 2": 20,
@@ -27,7 +27,7 @@ export function getTotalPopulation() {
     };
 }
 
-export function getTotalMedicalDispaches() {
+export function getTotalMedicalDispaches(period) {
     return {
         "dome 1": 90,
         "dome 2": 40,

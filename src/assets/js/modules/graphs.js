@@ -2,6 +2,7 @@ import {
     getCosts, getCrimeTypes, getEmployees, getProfit, getRevenue, getSales, getTotalCrime, getTotalMedicalDispaches,
     getTotalOxygenLeaks, getTotalPopulation
 } from "./datafetcher.js";
+import {get} from "./api.js";
 
 const FONTCOLOR = "hsl(142deg, 10%, 75%)";
 const PIECHARTCOLORSET = ["#c30010", "#de0a26", "#ff2c2c", "#f94449", "#ee6b6e", "#f69697", "#ffcbd1"];
@@ -71,6 +72,7 @@ export function makeBarchart() {
             plugins: {
                 legend: { display: false, }
             },
+            onClick: changePieChart,
             maintainAspectRatio: false
         }
     }
@@ -191,21 +193,21 @@ export function makeLineChart() {
 
 function getBarChartData() {
     const category = document.querySelector("aside .selected").id;
-    // period
+    const period = document.querySelector("#period").value;
 
     let data;
     switch(category) {
         case "oxygen-leaks":
-            data = getTotalOxygenLeaks();
+            data = getTotalOxygenLeaks(period);
             break;
         case "population":
-            data = getTotalPopulation();
+            data = getTotalPopulation(period);
             break;
         case "medical-dispaches":
-            data = getTotalMedicalDispaches();
+            data = getTotalMedicalDispaches(period);
             break;
         default:
-            data = getTotalCrime();
+            data = getTotalCrime(period);
     }
     return data;
 }
@@ -244,7 +246,6 @@ function getYears() {
     document.querySelectorAll("#years input").forEach(year => {
         if (year.checked) res.push(year.id)
     })
-    console.log(res)
     return res;
 }
 
@@ -282,4 +283,26 @@ function deleteOldChart(chartId, parentId) {
     const html = `<canvas id="${chartId}"></canvas>`
     const $target = document.querySelector("#" + parentId);
     $target.innerHTML += html;
+}
+
+function changePieChart(event, elements) {
+    if (elements.length > 0) {
+        const clickedElement = this.getElementsAtEventForMode(event, "nearest", {intersect: true}, true);
+        const index = clickedElement[0].index;
+        get("domes", succesHandler);
+
+        function succesHandler(res) {
+            res.json().then(data => {
+                data.domes.forEach(dome => {
+                    console.log(dome)
+                    if (dome.id === index) {
+                        const $target = document.querySelector("#types_chart h3");
+                        $target.innerText = dome.domeName;
+                        $target.id = index;
+                        makePieChart();
+                    }
+                });
+            });
+        }
+    }
 }
