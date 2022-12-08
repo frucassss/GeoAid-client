@@ -31,6 +31,10 @@ button {
   width: 0.5rem;
 }
 
+input:focus, textarea:focus {
+  outline: white solid 0.1rem;
+}
+
 /* Track */
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 0.25rem grey;
@@ -122,15 +126,25 @@ nav ul .selected a {
     opacity: 0.4;
   }
 }
+@keyframes slidein {
+  from {
+    transform: translateX(-3rem);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
 body {
   background: url("../../images/background.jpg");
   font-family: Arial, sans-serif;
 }
 body main #statistics {
   text-align: center;
+  margin-top: 2rem;
   margin-right: 4rem;
   margin-left: 4rem;
-  margin-top: 2rem;
 }
 body main #statistics h1 {
   font-family: Arial, sans-serif;
@@ -150,13 +164,41 @@ body main #statistics #container_statistics {
 }
 body main #statistics #container_statistics aside {
   width: 25%;
+  padding-top: 1rem;
   background-color: #003844;
-  margin-top: 3rem;
   margin-left: 2rem;
   margin-right: 2rem;
   padding-bottom: 1rem;
   border-radius: 2rem;
   box-shadow: 0rem 0rem 2rem 0px black;
+}
+body main #statistics #container_statistics aside .dropbtn {
+  background-color: #848FA5;
+  color: black;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+}
+body main #statistics #container_statistics aside .dropdown-content {
+  display: none;
+  position: absolute;
+  width: 9rem;
+  z-index: 1;
+}
+body main #statistics #container_statistics aside .dropdown-content p {
+  color: black;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: block;
+  background-color: #848FA5;
+}
+body main #statistics #container_statistics aside .dropdown:hover .dropdown-content {
+  display: block;
+}
+body main #statistics #container_statistics aside .dropdown:hover .dropbtn {
+  background-color: #ccc;
 }
 body main #statistics #container_statistics aside ul {
   margin: 2rem;
@@ -194,8 +236,7 @@ body main #statistics #container_statistics #container_charts #ul_period li {
 body main #statistics #container_statistics #container_charts .stats {
   padding-top: 1.5rem;
   padding-bottom: 2rem;
-  margin-top: 2rem;
-  height: 50vh;
+  height: 57vh;
   background-color: #003844;
   border-radius: 2rem;
   box-shadow: 0rem 0rem 2rem 0px black;
@@ -208,6 +249,9 @@ body main #statistics #container_statistics #container_charts .stats h2 {
   color: hsl(142deg, 10%, 75%);
   font-size: 2rem;
   margin-bottom: 1rem;
+}
+body main #statistics #container_statistics #container_charts #types_chart {
+  margin-top: 2rem;
 }
 body main #statistics #container_statistics #container_charts #types_chart #dome-choice {
   width: 100%;
@@ -310,16 +354,6 @@ body main #statistics #container_statistics #container_charts #types_chart #sugg
 body main #statistics #container_statistics #container_charts #types_chart #suggestions li:nth-child(10) {
   animation: slidein 0.3s ease 1 both;
   animation-delay: 1s;
-}
-@keyframes slidein {
-  from {
-    transform: translateX(-3rem);
-    opacity: 0;
-  }
-  to {
-    transform: translate(0);
-    opacity: 1;
-  }
 }
 body main #statistics #container_statistics #container_charts #types_chart #suggestions li:hover {
   font-weight: bold;

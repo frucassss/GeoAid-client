@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-{"version":3,"sourceRoot":"","sources":["../sass/animations.scss"],"names":[],"mappings":"AACA;EACE;EACA;;;AAGF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGF;EACE;EACA;;;AA4EF;EACE;IAAI;;EACJ;IAAM","file":"animations.css"}
-=======
-{"version":3,"sourceRoot":"","sources":["../sass/animations.scss"],"names":[],"mappings":"AACA;EACE;EACA;;;AAGF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGF;EACE;EACA","file":"animations.css"}
->>>>>>> 04692c5336d84e8874ce24008fd51d718b8db8f7
+{"version":3,"sourceRoot":"","sources":["../sass/animations.scss"],"names":[],"mappings":"AACA;EACE;EACA;;;AAGF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGF;EACE;EACA;;;AA4EF;EACE;IACE;;EAEF;IACE;;;AAeF;EACE;IACE;IACA;;EAGF;IACE;IACA","file":"animations.css"}

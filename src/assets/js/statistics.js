@@ -15,17 +15,27 @@ function loadConfig() {
 function init() {
     handleEventListeners();
     defaultDome();
+    defaultSuggestions();
     makeBarchart();
     makePieChart();
 }
 
 function handleEventListeners() {
-    selectClickedCategory(makeBarchart, "#category_chart h2");
+    selectClickedCategory(makeCharts, "#category_chart h2");
 
     document.querySelector('#searchbar input').addEventListener("keyup", function () {
         makeSuggestions(addEventListenersSuggestions);
     });
+
+    document.querySelector("#period").addEventListener("change", makeCharts)
+
+    function makeCharts() {
+        makeBarchart();
+        makePieChart();
+    }
 }
+
+
 
 function addEventListenersSuggestions() {
     document.querySelectorAll('#suggestions li').forEach(li => {
@@ -53,6 +63,10 @@ function defaultDome() {
             $target.innerText = domeName;
         });
     }
+}
+
+function defaultSuggestions() {
+    makeSuggestions(addEventListenersSuggestions);
 }
 
 loadConfig();
