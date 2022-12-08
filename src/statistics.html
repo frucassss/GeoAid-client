@@ -35,6 +35,15 @@
             <h1>Statistics</h1>
             <div id="container_statistics">
                 <aside>
+                    <label>
+                        <select id="period" class="dropdown">
+                            <option class="hover-underline-animation" value="0" selected>All time</option>
+                            <option class="hover-underline-animation" value="1">Last month</option>
+                            <option class="hover-underline-animation" value="3">Last 3 months</option>
+                            <option class="hover-underline-animation" value="6">Last 6 months</option>
+                            <option class="hover-underline-animation" value="12">Last year</option>
+                        </select>
+                    </label>
                     <ul>
                         <li id="crimes" class="selected">
                             <p>Crimes</p>
@@ -60,13 +69,6 @@
                 </aside>
 
                 <div id="container_charts">
-                    <ul id="ul_period">
-                        <li>1 month</li>
-                        <li>3 months</li>
-                        <li>6 months</li>
-                        <li>1 year</li>
-                    </ul>
-
                     <div id="category_chart" class="stats">
                         <h2>Crimes</h2>
                     </div>

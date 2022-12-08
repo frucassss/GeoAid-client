@@ -122,6 +122,16 @@ nav ul .selected a {
     opacity: 0.4;
   }
 }
+@keyframes slidein {
+  from {
+    transform: translateX(-3rem);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
 #profile {
   font-family: Arial, sans-serif;
   background: url("../../images/background.jpg");
