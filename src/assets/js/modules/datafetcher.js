@@ -1,4 +1,5 @@
 import {companyData} from "../../../data/company-data.js";
+import {get} from "./api.js";
 
 export function getTotalCrime(period) {
     return {
@@ -10,6 +11,13 @@ export function getTotalCrime(period) {
 }
 
 export function getTotalOxygenLeaks(period) {
+    get("oxygenLeaks", succesHandler)
+
+    function succesHandler(res) {
+        res.json().then(data => {
+            console.log(data.oxygenLeaks)
+        })
+    }
     return {
         "dome 1": 100,
         "dome 2": 30,
@@ -34,6 +42,10 @@ export function getTotalMedicalDispaches(period) {
         "dome 3": 5,
         "dome 4": 30,
     };
+}
+
+function getDataPerDome() {
+
 }
 
 export function getCrimeTypes(id) {
@@ -65,6 +77,8 @@ export function getCrimeTypes(id) {
     );
 }
 
+
+
 export function getRevenue(years) {
     return getDataArray(years, "revenue");
 }
@@ -82,7 +96,7 @@ export function getSales(years) {
 }
 
 export function getEmployees(years) {
-    return getDataArray(years, "employees")
+    return getDataArray(years, "employees");
 }
 
 export function getJobs(years) {
