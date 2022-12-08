@@ -147,6 +147,13 @@ body main .flexcontainer #contact_us {
 }
 body main .flexcontainer #contact_us form {
   width: 100%;
+  height: 100%;
+}
+body main .flexcontainer #contact_us form fieldset {
+  height: 100%;
+}
+body main .flexcontainer #contact_us form fieldset div {
+  height: 95%;
 }
 body main .flexcontainer #contact_us form legend {
   width: 100%;
@@ -167,7 +174,7 @@ body main .flexcontainer #contact_us form div input, body main .flexcontainer #c
   color: hsl(142deg, 10%, 75%);
 }
 body main .flexcontainer #contact_us form div textarea {
-  height: 7rem;
+  height: 40%;
 }
 body main .flexcontainer #contact_us form div button {
   padding: 0.5rem;
