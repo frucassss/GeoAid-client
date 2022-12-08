@@ -70,7 +70,12 @@ body {
       }
       #contact {
         &>div {
+          height: 80%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
           text-align: center;
+          align-items: center;
           margin: 1rem 2rem 0 2rem;
           dl {
             dt {
@@ -84,7 +89,13 @@ body {
           }
           img {
             width: 3rem;
+            filter: invert(11%) sepia(60%) saturate(3461%) hue-rotate(172deg) brightness(98%) contrast(104%);
           }
+        }
+        #figs{
+          width: 100%;
+          display: flex;
+          justify-content: space-around;
         }
       }
     }
