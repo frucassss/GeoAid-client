@@ -28,12 +28,28 @@ body {
                 justify-content: space-between;
                 padding: 1.5rem 0;
 
+                .extra-info{
+                    display: flex;
+                    flex-direction: column;
+
+                    h2{
+                        padding-top: 0.25rem;
+                    }
+                    p{
+                        font-size: 1rem;
+                        margin-top: 1rem;
+                        color: $primary-font-color;
+                    }
+
+                }
+
                 & > div {
                     display: flex;
                     align-items: center;
                 }
 
                 .icon {
+                    align-self: flex-start;
                     color: $secondary-color;
                     padding-left: 1rem;
                     padding-right: 2rem;
