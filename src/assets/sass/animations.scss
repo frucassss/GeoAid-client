@@ -90,3 +90,12 @@
 
   }
 }
+
+@mixin fadingInAndOut {
+  animation: fade-inout 1.2s infinite alternate;
+}
+
+@keyframes fade-inout {
+  0%{ opacity: 1;}
+  100%{ opacity: 0.4;}
+}
