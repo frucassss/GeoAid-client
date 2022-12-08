@@ -114,6 +114,14 @@ nav ul .selected a {
   transform-origin: bottom left;
 }
 
+@keyframes fade-inout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
 body {
   background: url("../../images/background.jpg");
   font-family: Arial, sans-serif;

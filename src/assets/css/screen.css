@@ -49,6 +49,37 @@ button {
   background: #003844;
 }
 
+.hover-underline-animation {
+  position: relative;
+  color: black;
+}
+
+.hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+@keyframes fade-inout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
 #map {
   height: 100vh;
   width: 100%;
@@ -59,6 +90,9 @@ button {
 }
 #map leaflet-top leaflet-right .leaflet-control {
   margin-top: 0;
+}
+#map .selected {
+  animation: fade-inout 1.2s infinite alternate;
 }
 
 .loading {
@@ -88,6 +122,14 @@ button {
   transform-origin: bottom left;
 }
 
+@keyframes fade-inout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
 body {
   background-color: gray;
   font-family: Arial, sans-serif;
