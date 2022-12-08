@@ -96,6 +96,33 @@
 }
 
 @keyframes fade-inout {
-  0%{ opacity: 1;}
-  100%{ opacity: 0.4;}
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.4;
+  }
 }
+
+@mixin animationsuggestions {
+  @for $i from 1 through 10 {
+    li:nth-child(#{$i}) {
+      animation: slidein 0.3s ease 1 both;
+      animation-delay: 0.1s * $i;
+    }
+  }
+}
+
+
+
+  @keyframes slidein {
+    from {
+      transform: translateX(-3rem);
+      opacity: 0;
+    }
+
+    to {
+      transform: translate(0);
+      opacity: 1;
+    }
+  }
