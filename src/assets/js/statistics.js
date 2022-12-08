@@ -1,5 +1,5 @@
 import {makeSuggestions, selectClickedCategory} from "./modules/helper.js";
-import {makeBarchart, makePieChart} from "./modules/graphs.js";
+import {createBarChart, makePieChart} from "./modules/graphs.js";
 import {get, setApi} from "./modules/api.js";
 
 
@@ -16,7 +16,7 @@ function init() {
     handleEventListeners();
     defaultDome();
     defaultSuggestions();
-    makeBarchart();
+    createBarChart();
     makePieChart();
 }
 
@@ -30,7 +30,7 @@ function handleEventListeners() {
     document.querySelector("#period").addEventListener("change", makeCharts)
 
     function makeCharts() {
-        makeBarchart();
+        createBarChart();
         makePieChart();
     }
 }
@@ -59,7 +59,7 @@ function defaultDome() {
     function succesHandler(res) {
         (res.json()).then((data) => {
             const $target = document.querySelector("#dome-choice h3");
-            const domeName = data.domes[0].domeName
+            const domeName = data.domes[0].domeName;
             $target.innerText = domeName;
         });
     }

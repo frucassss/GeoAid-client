@@ -1,6 +1,6 @@
 import {
-    getCosts, getCrimeTypes, getEmployees, getProfit, getRevenue, getSales, getTotalCrime, getTotalMedicalDispaches,
-    getTotalOxygenLeaks, getTotalPopulation
+    getCosts, getCrimeTypes, getEmployees, getProfit, getRevenue, getSales,
+    getBarChartData
 } from "./datafetcher.js";
 import {get} from "./api.js";
 
@@ -21,9 +21,14 @@ const SIDEVALUE = {
     medical_dispaches : "Amount of medical dispaches"
 }
 
-export function makeBarchart() {
+export function createBarChart() {
+    const category = document.querySelector("aside .selected").id;
+    const period = document.querySelector("#period").value;
+    getBarChartData(category, period, makeBarChart);
+}
+
+export function makeBarChart(data) {
     deleteOldChart("bar-chart", "category_chart");
-    const data = getBarChartData();
     const sideValue = getSideValue();
 
     const ctx = document.querySelector("#bar-chart").getContext('2d');
@@ -50,7 +55,7 @@ export function makeBarchart() {
                     ticks: {
                         color: FONTCOLOR
                     },
-                    suggestedMax: 100
+                    suggestedMin: 0
                 },
                 x: {
                     title: {
@@ -191,27 +196,6 @@ export function makeLineChart() {
     new Chart(ctx, configuration);
 }
 
-function getBarChartData() {
-    const category = document.querySelector("aside .selected").id;
-    const period = document.querySelector("#period").value;
-
-    let data;
-    switch(category) {
-        case "oxygen-leaks":
-            data = getTotalOxygenLeaks(period);
-            break;
-        case "population":
-            data = getTotalPopulation(period);
-            break;
-        case "medical-dispaches":
-            data = getTotalMedicalDispaches(period);
-            break;
-        default:
-            data = getTotalCrime(period);
-    }
-    return data;
-}
-
 function getPieChartData() {
     const domeId = document.querySelector("#dome-choice h2").id;
     return getCrimeTypes(domeId);
@@ -294,7 +278,6 @@ function changePieChart(event, elements) {
         function succesHandler(res) {
             res.json().then(data => {
                 data.domes.forEach(dome => {
-                    console.log(dome)
                     if (dome.id === index) {
                         const $target = document.querySelector("#types_chart h3");
                         $target.innerText = dome.domeName;

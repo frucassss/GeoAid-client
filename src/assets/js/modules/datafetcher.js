@@ -1,51 +1,55 @@
 import {companyData} from "../../../data/company-data.js";
 import {get} from "./api.js";
 
-export function getTotalCrime(period) {
-    return {
-        "dome 1": 80,
-        "dome 2": 50,
-        "dome 3": 30,
-        "dome 4": 50,
-    };
+const APICALLS = {
+    crimes: "oxygenLeaks",
+    oxygen_leaks: "oxygenLeaks",
+    population: "oxygenLeaks",
+    medical_dispaches: "oxygenLeaks"
 }
 
-export function getTotalOxygenLeaks(period) {
-    get("oxygenLeaks", succesHandler)
+export function getBarChartData(category, period, func) {
+    category = category.replace("-","_");
+    period = parseInt(period);
+    const apiCall = APICALLS[category];
+    get(apiCall, succesHandler);
 
     function succesHandler(res) {
         res.json().then(data => {
-            console.log(data.oxygenLeaks)
-        })
+            let dataPerDome = createLabels(data[apiCall]);
+            data = data[apiCall]
+                .filter(obj => filterOnPeriod(obj, period))
+            dataPerDome = getDataPerDome(dataPerDome, data);
+            func(dataPerDome);
+        });
     }
-    return {
-        "dome 1": 100,
-        "dome 2": 30,
-        "dome 3": 90,
-        "dome 4": 10,
-    };
 }
 
-export function getTotalPopulation(period) {
-    return {
-        "dome 1": 60,
-        "dome 2": 20,
-        "dome 3": 10,
-        "dome 4": 70,
-    };
+function filterOnPeriod(obj, period) {
+    if (period === 0) return true;
+    const now = new Date();
+    const currentMonth = now.getMonth();
+    const beginMonth = currentMonth - period;
+    now.setMonth(beginMonth);
+
+    const objDate = new Date(obj.date);
+    return objDate > now;
+
 }
 
-export function getTotalMedicalDispaches(period) {
-    return {
-        "dome 1": 90,
-        "dome 2": 40,
-        "dome 3": 5,
-        "dome 4": 30,
-    };
+function createLabels(data) {
+    let res = {}
+    data.forEach(el => {
+        res[el.domeId] = 0;
+    });
+    return res;
 }
 
-function getDataPerDome() {
-
+function getDataPerDome(dataPerDome, data) {
+    data.forEach(el => {
+        dataPerDome[el.domeId] += 1;
+    });
+    return dataPerDome;
 }
 
 export function getCrimeTypes(id) {
