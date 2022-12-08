@@ -16,7 +16,7 @@ export function getBarChartData(category, period, func) {
 
     function succesHandler(res) {
         res.json().then(data => {
-            let dataPerDome = createLabels(data[apiCall]);
+            let dataPerDome = createLabels(data[apiCall], "domeId");
             data = data[apiCall]
                 .filter(obj => filterOnPeriod(obj, period))
             dataPerDome = getDataPerDome(dataPerDome, data);
@@ -37,19 +37,46 @@ function filterOnPeriod(obj, period) {
 
 }
 
-function createLabels(data) {
+function createLabels(data, key) {
     let res = {}
     data.forEach(el => {
-        res[el.domeId] = 0;
+        res[el[key]] = 0;
     });
     return res;
 }
 
 function getDataPerDome(dataPerDome, data) {
-    data.forEach(el => {
-        dataPerDome[el.domeId] += 1;
+    data.forEach(obj => {
+        dataPerDome[obj.domeId] += 1;
     });
     return dataPerDome;
+}
+
+export function getPieChartData(category, period, domeId, func) {
+    category = category.replace("-","_");
+    period = parseInt(period);
+    domeId = parseInt(domeId);
+    const apiCall = APICALLS[category];
+    get(apiCall, succesHandler);
+
+    function succesHandler(res) {
+        res.json().then(data => {
+            console.log(data)
+            let dataPerType = createLabels(data[apiCall], "dangerLevel");
+            data = data[apiCall]
+                .filter(obj => obj.domeId === domeId)
+                .filter(obj => filterOnPeriod(obj, period));
+            dataPerType = getDataPerType(dataPerType, data);
+            func(dataPerType);
+        })
+    }
+}
+
+function getDataPerType(dataPerType, data) {
+    data.forEach(obj => {
+        dataPerType[obj.dangerLevel] += 1;
+    });
+    return dataPerType;
 }
 
 export function getCrimeTypes(id) {

@@ -1,6 +1,6 @@
 import {
-    getCosts, getCrimeTypes, getEmployees, getProfit, getRevenue, getSales,
-    getBarChartData
+    getCosts, getEmployees, getProfit, getRevenue, getSales,
+    getBarChartData, getPieChartData
 } from "./datafetcher.js";
 import {get} from "./api.js";
 
@@ -85,10 +85,15 @@ export function makeBarChart(data) {
     return Chart;
 }
 
-export function makePieChart() {
-    deleteOldChart("pie-chart", "pie-chart-container");
+export function createPieChart() {
+    const category = document.querySelector("aside .selected").id;
+    const period = document.querySelector("#period").value;
+    const domeId = document.querySelector("#dome-choice h3").id;
+    getPieChartData(category, period, domeId, makePieChart);
+}
 
-    const data = getPieChartData();
+function makePieChart(data) {
+    deleteOldChart("pie-chart", "pie-chart-container");
 
     const ctx = document.querySelector('#pie-chart').getContext('2d');
     const configuration = {
@@ -115,14 +120,17 @@ export function makePieChart() {
                     }
 
                 },
+                /*
                 tooltip: {
                     callbacks: {
                         afterBody: function(context) {
                             return '(in %)';
                         }
                     }
-                }
+                                   }
+                 */
             },
+
             maintainAspectRatio: false
 
         }
@@ -194,11 +202,6 @@ export function makeLineChart() {
         maintainAspectRatio: false
     }
     new Chart(ctx, configuration);
-}
-
-function getPieChartData() {
-    const domeId = document.querySelector("#dome-choice h2").id;
-    return getCrimeTypes(domeId);
 }
 
 function getLineChartData() {
@@ -273,19 +276,23 @@ function changePieChart(event, elements) {
     if (elements.length > 0) {
         const clickedElement = this.getElementsAtEventForMode(event, "nearest", {intersect: true}, true);
         const index = clickedElement[0].index;
-        get("domes", succesHandler);
+        searchDome(createPieChart, index)
+    }
+}
 
-        function succesHandler(res) {
-            res.json().then(data => {
-                data.domes.forEach(dome => {
-                    if (dome.id === index) {
-                        const $target = document.querySelector("#types_chart h3");
-                        $target.innerText = dome.domeName;
-                        $target.id = index;
-                        makePieChart();
-                    }
-                });
+function searchDome(func, index) {
+    get("domes", succesHandler);
+
+    function succesHandler(res) {
+        res.json().then(data => {
+            data.domes.forEach(dome => {
+                if (dome.id === index) {
+                    const $target = document.querySelector("#types_chart h3");
+                    $target.innerText = dome.domeName;
+                    $target.id = index;
+                    func();
+                }
             });
-        }
+        });
     }
 }
