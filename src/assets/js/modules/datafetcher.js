@@ -8,6 +8,52 @@ const APICALLS = {
     medical_dispaches: "oxygenLeaks"
 }
 
+// MAP
+export function getHeatMapData() {
+    return [{
+        title: "Crimes",
+        data: getCrimes()
+    },{
+        title: "Oxygen Leaks",
+        data: getOxygenLeaks()
+    },{
+        title: "Population",
+        data: getPopulation()
+    },{
+        title: "Medical Dispaches",
+        data: getMedicalDispaches()
+    }]
+}
+
+function getCrimes() {
+    return [[-23, -69, 5],
+        [-23, -69, 10],
+        [-23.5, -69.5, 7],
+        [-23.5, -69.5, 20],
+        [-23.3, -69.2, 9],
+        [-23.5, -69.5, 11],
+        [-21, -67, 10],
+        [-22, -68, 20],
+        [-24.4730056, -69.3011877, 13],
+        [-24.5, -69.3, 11],
+        [-24, -66.3, 11],
+        [-24.1, -66.25, 20]
+    ]
+}
+
+function getOxygenLeaks() {
+    return getCrimes()
+}
+
+function getPopulation() {
+    return getCrimes()
+}
+
+function getMedicalDispaches() {
+    return getCrimes()
+}
+
+// BAR CHART
 export function getBarChartData(category, period, func) {
     category = category.replace("-","_");
     period = parseInt(period);
@@ -52,6 +98,7 @@ function getDataPerDome(dataPerDome, data) {
     return dataPerDome;
 }
 
+// PIE CHART
 export function getPieChartData(category, period, domeId, func) {
     category = category.replace("-","_");
     period = parseInt(period);
@@ -67,6 +114,7 @@ export function getPieChartData(category, period, domeId, func) {
                 .filter(obj => filterOnPeriod(obj, period));
             dataPerType = getDataPerType(dataPerType, data);
             dataPerType = addPercentage(dataPerType);
+            Object.entries(dataPerType).sort(([,a],[,b]) => b-a);
             func(dataPerType);
         })
     }
@@ -89,57 +137,6 @@ function addPercentage(dataPerType) {
     return dataPerType
 }
 
-export function getCrimeTypes(id) {
-    let data;
-    if (id === 1) {
-        data = {
-            "Stalking": 30,
-            "Arson": 5,
-            "Burglary": 20,
-            "Domestic abuse": 5,
-            "Robbery": 10,
-            "Rape": 20,
-            "Terrorisme": 10
-        };
-    } else {
-        data = {
-            "Stalking": 10,
-            "Arson": 20,
-            "Burglary": 40,
-            "Domestic abuse": 10,
-            "Robbery": 5,
-            "Rape": 10,
-            "Terrorisme": 5
-        };
-    }
-
-    return Object.fromEntries(
-        Object.entries(data).sort(([,a],[,b]) => b-a)
-    );
-}
-
-
-
-export function getRevenue(years) {
-    return getDataArray(years, "revenue");
-}
-
-export function getProfit(years) {
-    return getDataArray(years, "profit");
-}
-
-export function getCosts(years) {
-    return getDataArray(years, "costs");
-}
-
-export function getSales(years) {
-    return getDataArray(years, "sales");
-}
-
-export function getEmployees(years) {
-    return getDataArray(years, "employees");
-}
-
 export function getJobs(years) {
     const res = []
     years.forEach(year => {
@@ -157,56 +154,13 @@ export function getJobs(years) {
 
 }
 
-function getDataArray(years, category) {
+// LINE CHART
+export function getLineChartData(category, years) {
     const res = []
     years.forEach(year => {
         res.push(companyData[category][year])
     });
     return res;
-}
-
-export function getHeatMapData() {
-    return [{
-        title: "Crimes",
-        data: getCrimes()
-    },{
-        title: "Oxygen Leaks",
-        data: getOxygenLeaks()
-    },{
-        title: "Population",
-        data: getPopulation()
-    },{
-        title: "Medical Dispaches",
-        data: getMedicalDispaches()
-    }]
-}
-
-function getCrimes() {
-    return [[-23, -69, 5],
-        [-23, -69, 10],
-        [-23.5, -69.5, 7],
-        [-23.5, -69.5, 20],
-        [-23.3, -69.2, 9],
-        [-23.5, -69.5, 11],
-        [-21, -67, 10],
-        [-22, -68, 20],
-        [-24.4730056, -69.3011877, 13],
-        [-24.5, -69.3, 11],
-        [-24, -66.3, 11],
-        [-24.1, -66.25, 20]
-    ]
-}
-
-function getOxygenLeaks() {
-    return getCrimes()
-}
-
-function getPopulation() {
-    return getCrimes()
-}
-
-function getMedicalDispaches() {
-    return getCrimes()
 }
 
 

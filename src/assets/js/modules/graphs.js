@@ -1,6 +1,5 @@
 import {
-    getCosts, getEmployees, getProfit, getRevenue, getSales,
-    getBarChartData, getPieChartData
+    getBarChartData, getPieChartData, getLineChartData
 } from "./datafetcher.js";
 import {get} from "./api.js";
 
@@ -27,7 +26,7 @@ export function createBarChart() {
     getBarChartData(category, period, makeBarChart);
 }
 
-export function makeBarChart(data) {
+function makeBarChart(data) {
     deleteOldChart("bar-chart", "category_chart");
     const sideValue = getSideValue();
 
@@ -127,10 +126,16 @@ function makePieChart(data) {
     new Chart(ctx, configuration);
 }
 
-export function makeLineChart() {
+export function createLineChart() {
+    const category = document.querySelector("aside .selected").id;
+    const years = getYears();
+    const data =  getLineChartData(category, years);
+    makeLineChart(data);
+}
+
+function makeLineChart(data) {
     deleteOldChart("line-chart", "company-chart");
 
-    const data = getLineChartData();
     const sideValue = getSideValue();
     const datasets = getDataSets(data);
 
@@ -193,30 +198,6 @@ export function makeLineChart() {
     new Chart(ctx, configuration);
 }
 
-function getLineChartData() {
-    const category = document.querySelector("aside .selected").id;
-    const years = getYears();
-
-    let data;
-    switch(category) {
-        case "profit":
-            data = getProfit(years);
-            break;
-        case "costs":
-            data = getCosts(years);
-            break;
-        case "employees":
-            data = getEmployees(years);
-            break;
-        case "sales":
-            data = getSales(years);
-            break;
-        default:
-            data = getRevenue(years);
-    }
-    return data;
-}
-
 function getYears() {
     const res = []
     document.querySelectorAll("#years input").forEach(year => {
@@ -251,16 +232,6 @@ function getDataSets(data) {
     return res;
 }
 
-function deleteOldChart(chartId, parentId) {
-    const $oldChart = document.querySelector("#" + chartId);
-    if ($oldChart) {
-        $oldChart.remove();
-    }
-    const html = `<canvas id="${chartId}"></canvas>`
-    const $target = document.querySelector("#" + parentId);
-    $target.innerHTML += html;
-}
-
 function changePieChart(event, elements) {
     if (elements.length > 0) {
         const clickedElement = this.getElementsAtEventForMode(event, "nearest", {intersect: true}, true);
@@ -284,4 +255,14 @@ function searchDome(func, index) {
             });
         });
     }
+}
+
+function deleteOldChart(chartId, parentId) {
+    const $oldChart = document.querySelector("#" + chartId);
+    if ($oldChart) {
+        $oldChart.remove();
+    }
+    const html = `<canvas id="${chartId}"></canvas>`
+    const $target = document.querySelector("#" + parentId);
+    $target.innerHTML += html;
 }
