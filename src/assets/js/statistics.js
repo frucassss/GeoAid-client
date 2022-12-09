@@ -1,7 +1,13 @@
 import {makeSuggestions, selectClickedCategory} from "./modules/helper.js";
-import {makeBarchart, makePieChart} from "./modules/graphs.js";
+import {createBarChart, createPieChart} from "./modules/graphs.js";
 import {get, setApi} from "./modules/api.js";
 
+const PIECHARTTITLES = {
+    crimes: "Type of crimes",
+    oxygen_leaks: "Danger level of oxygen leaks",
+    population: "Jobs of population",
+    medical_dispaches: "Danger level of medical dispaches"
+}
 
 function loadConfig() {
     fetch("config.json")
@@ -16,12 +22,18 @@ function init() {
     handleEventListeners();
     defaultDome();
     defaultSuggestions();
-    makeBarchart();
-    makePieChart();
+    createBarChart();
+    createPieChart();
 }
 
 function handleEventListeners() {
-    selectClickedCategory(makeCharts, "#category_chart h2");
+    selectClickedCategory("#category_chart h2", function () {
+        makeCharts();
+        const $target = document.querySelector("#types_chart h2");
+        let category = document.querySelector("aside .selected").id;
+        category = category.replace("-","_");
+        $target.innerText = PIECHARTTITLES[category];
+    });
 
     document.querySelector('#searchbar input').addEventListener("keyup", function () {
         makeSuggestions(addEventListenersSuggestions);
@@ -30,8 +42,8 @@ function handleEventListeners() {
     document.querySelector("#period").addEventListener("change", makeCharts)
 
     function makeCharts() {
-        makeBarchart();
-        makePieChart();
+        createBarChart();
+        createPieChart();
     }
 }
 
@@ -43,12 +55,11 @@ function addEventListenersSuggestions() {
             const $clicked = ev.currentTarget;
             const id = $clicked.id;
             const domeName = $clicked.querySelector("p").innerText;
-            const html = `<h3 id=${id}>${domeName}</h3>`
-
             const $target = document.querySelector("#dome-choice h3");
-            $target.innerHTML = html;
+            $target.innerText = domeName;
+            $target.id = id;
 
-            makePieChart();
+            createPieChart();
         })
     })
 }
@@ -59,7 +70,7 @@ function defaultDome() {
     function succesHandler(res) {
         (res.json()).then((data) => {
             const $target = document.querySelector("#dome-choice h3");
-            const domeName = data.domes[0].domeName
+            const domeName = data.domes[0].domeName;
             $target.innerText = domeName;
         });
     }

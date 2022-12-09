@@ -1,6 +1,5 @@
 import {
-    getCosts, getCrimeTypes, getEmployees, getProfit, getRevenue, getSales, getTotalCrime, getTotalMedicalDispaches,
-    getTotalOxygenLeaks, getTotalPopulation
+    getBarChartData, getPieChartData, getLineChartData
 } from "./datafetcher.js";
 import {get} from "./api.js";
 
@@ -21,9 +20,14 @@ const SIDEVALUE = {
     medical_dispaches : "Amount of medical dispaches"
 }
 
-export function makeBarchart() {
+export function createBarChart() {
+    const category = document.querySelector("aside .selected").id;
+    const period = document.querySelector("#period").value;
+    getBarChartData(category, period, makeBarChart);
+}
+
+function makeBarChart(data) {
     deleteOldChart("bar-chart", "category_chart");
-    const data = getBarChartData();
     const sideValue = getSideValue();
 
     const ctx = document.querySelector("#bar-chart").getContext('2d');
@@ -50,7 +54,7 @@ export function makeBarchart() {
                     ticks: {
                         color: FONTCOLOR
                     },
-                    suggestedMax: 100
+                    suggestedMin: 0
                 },
                 x: {
                     title: {
@@ -80,10 +84,15 @@ export function makeBarchart() {
     return Chart;
 }
 
-export function makePieChart() {
-    deleteOldChart("pie-chart", "pie-chart-container");
+export function createPieChart() {
+    const category = document.querySelector("aside .selected").id;
+    const period = document.querySelector("#period").value;
+    const domeId = document.querySelector("#dome-choice h3").id;
+    getPieChartData(category, period, domeId, makePieChart);
+}
 
-    const data = getPieChartData();
+function makePieChart(data) {
+    deleteOldChart("pie-chart", "pie-chart-container");
 
     const ctx = document.querySelector('#pie-chart').getContext('2d');
     const configuration = {
@@ -109,26 +118,24 @@ export function makePieChart() {
                         color: FONTCOLOR
                     }
 
-                },
-                tooltip: {
-                    callbacks: {
-                        afterBody: function(context) {
-                            return '(in %)';
-                        }
-                    }
                 }
             },
             maintainAspectRatio: false
-
-        }
+        },
     }
     new Chart(ctx, configuration);
 }
 
-export function makeLineChart() {
+export function createLineChart() {
+    const category = document.querySelector("aside .selected").id;
+    const years = getYears();
+    const data =  getLineChartData(category, years);
+    makeLineChart(data);
+}
+
+function makeLineChart(data) {
     deleteOldChart("line-chart", "company-chart");
 
-    const data = getLineChartData();
     const sideValue = getSideValue();
     const datasets = getDataSets(data);
 
@@ -191,56 +198,6 @@ export function makeLineChart() {
     new Chart(ctx, configuration);
 }
 
-function getBarChartData() {
-    const category = document.querySelector("aside .selected").id;
-    const period = document.querySelector("#period").value;
-
-    let data;
-    switch(category) {
-        case "oxygen-leaks":
-            data = getTotalOxygenLeaks(period);
-            break;
-        case "population":
-            data = getTotalPopulation(period);
-            break;
-        case "medical-dispaches":
-            data = getTotalMedicalDispaches(period);
-            break;
-        default:
-            data = getTotalCrime(period);
-    }
-    return data;
-}
-
-function getPieChartData() {
-    const domeId = document.querySelector("#dome-choice h2").id;
-    return getCrimeTypes(domeId);
-}
-
-function getLineChartData() {
-    const category = document.querySelector("aside .selected").id;
-    const years = getYears();
-
-    let data;
-    switch(category) {
-        case "profit":
-            data = getProfit(years);
-            break;
-        case "costs":
-            data = getCosts(years);
-            break;
-        case "employees":
-            data = getEmployees(years);
-            break;
-        case "sales":
-            data = getSales(years);
-            break;
-        default:
-            data = getRevenue(years);
-    }
-    return data;
-}
-
 function getYears() {
     const res = []
     document.querySelectorAll("#years input").forEach(year => {
@@ -275,6 +232,31 @@ function getDataSets(data) {
     return res;
 }
 
+function changePieChart(event, elements) {
+    if (elements.length > 0) {
+        const clickedElement = this.getElementsAtEventForMode(event, "nearest", {intersect: true}, true);
+        const index = clickedElement[0].index;
+        searchDome(createPieChart, index)
+    }
+}
+
+function searchDome(func, index) {
+    get("domes", succesHandler);
+
+    function succesHandler(res) {
+        res.json().then(data => {
+            data.domes.forEach(dome => {
+                if (dome.id === index) {
+                    const $target = document.querySelector("#types_chart h3");
+                    $target.innerText = dome.domeName;
+                    $target.id = index;
+                    func();
+                }
+            });
+        });
+    }
+}
+
 function deleteOldChart(chartId, parentId) {
     const $oldChart = document.querySelector("#" + chartId);
     if ($oldChart) {
@@ -283,26 +265,4 @@ function deleteOldChart(chartId, parentId) {
     const html = `<canvas id="${chartId}"></canvas>`
     const $target = document.querySelector("#" + parentId);
     $target.innerHTML += html;
-}
-
-function changePieChart(event, elements) {
-    if (elements.length > 0) {
-        const clickedElement = this.getElementsAtEventForMode(event, "nearest", {intersect: true}, true);
-        const index = clickedElement[0].index;
-        get("domes", succesHandler);
-
-        function succesHandler(res) {
-            res.json().then(data => {
-                data.domes.forEach(dome => {
-                    console.log(dome)
-                    if (dome.id === index) {
-                        const $target = document.querySelector("#types_chart h3");
-                        $target.innerText = dome.domeName;
-                        $target.id = index;
-                        makePieChart();
-                    }
-                });
-            });
-        }
-    }
 }
