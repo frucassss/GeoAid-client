@@ -119,21 +119,10 @@ function makePieChart(data) {
                         color: FONTCOLOR
                     }
 
-                },
-                /*
-                tooltip: {
-                    callbacks: {
-                        afterBody: function(context) {
-                            return '(in %)';
-                        }
-                    }
-                                   }
-                 */
+                }
             },
-
             maintainAspectRatio: false
-
-        }
+        },
     }
     new Chart(ctx, configuration);
 }

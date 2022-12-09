@@ -44,7 +44,7 @@ export function setPosition(position) {
     return res;
 }
 
-export function selectClickedCategory(func, selector) {
+export function selectClickedCategory(selector, func) {
     document.querySelectorAll("aside li").forEach($li => {
         $li.addEventListener("click", function (ev) {
 

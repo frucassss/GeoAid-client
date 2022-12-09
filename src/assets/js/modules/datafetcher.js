@@ -61,12 +61,12 @@ export function getPieChartData(category, period, domeId, func) {
 
     function succesHandler(res) {
         res.json().then(data => {
-            console.log(data)
             let dataPerType = createLabels(data[apiCall], "dangerLevel");
             data = data[apiCall]
                 .filter(obj => obj.domeId === domeId)
                 .filter(obj => filterOnPeriod(obj, period));
             dataPerType = getDataPerType(dataPerType, data);
+            dataPerType = addPercentage(dataPerType);
             func(dataPerType);
         })
     }
@@ -77,6 +77,16 @@ function getDataPerType(dataPerType, data) {
         dataPerType[obj.dangerLevel] += 1;
     });
     return dataPerType;
+}
+
+function addPercentage(dataPerType) {
+    const total = Object.values(dataPerType).reduce((a, b) => a + b);
+    for (const dataPerTypeKey in dataPerType) {
+        const value = dataPerType[dataPerTypeKey];
+        const percentage = (value / total * 100).toFixed(0);
+        delete Object.assign(dataPerType, {[" (" + percentage + "%) " + dataPerTypeKey]: dataPerType[dataPerTypeKey] })[dataPerTypeKey];
+    }
+    return dataPerType
 }
 
 export function getCrimeTypes(id) {
