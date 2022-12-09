@@ -8,21 +8,58 @@ const APICALLS = {
     medical_dispaches: "oxygenLeaks"
 }
 
+const HEATMAPS = [{
+    title: "Crimes",
+    dataApiCall: APICALLS.crimes
+},{
+    title: "Oxygen Leaks",
+    dataApiCall: APICALLS.oxygen_leaks
+},{
+    title: "Population",
+    dataApiCall: APICALLS.population
+},{
+    title: "Medical Dispaches",
+    dataApiCall: APICALLS.medical_dispaches
+}];
+
 // MAP
-export function getHeatMapData() {
-    return [{
-        title: "Crimes",
-        data: getCrimes()
-    },{
-        title: "Oxygen Leaks",
-        data: getOxygenLeaks()
-    },{
-        title: "Population",
-        data: getPopulation()
-    },{
-        title: "Medical Dispaches",
-        data: getMedicalDispaches()
-    }]
+export function getHeatMapData(func) {
+    const res = []
+    createDataHeatmap(res, 0, nextFunction)
+
+    function nextFunction(res, i) {
+        if (i + 1 < HEATMAPS.length) {
+            createDataHeatmap(res, i + 1, nextFunction)
+        } else {
+            func(res)
+        }
+    }
+}
+
+
+function createDataHeatmap(res, i, func) {
+    get(HEATMAPS[i].dataApiCall, succesHandler)
+
+    function succesHandler(response) {
+        response.json().then(data => {
+            const obj = {
+                title: HEATMAPS[i].title,
+                data: makeDataInPosition(data[HEATMAPS[i].dataApiCall])
+            }
+            res.push(obj);
+            func(res, i);
+        })
+    }
+}
+
+function makeDataInPosition(data) {
+    const res = [];
+    data.forEach(obj =>{
+        const position = [obj.lat, obj.lon, 1];
+        res.push(position);
+    });
+    return getCrimes()
+    return res;
 }
 
 function getCrimes() {
@@ -39,10 +76,6 @@ function getCrimes() {
         [-24, -66.3, 11],
         [-24.1, -66.25, 20]
     ]
-}
-
-function getOxygenLeaks() {
-    return getCrimes()
 }
 
 function getPopulation() {

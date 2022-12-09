@@ -45,21 +45,25 @@ export function createMap(position, isCurrentPosition) {
 }
 
 function createHeatMaps(layerControl) {
-    const data = getHeatMapData();
-    data.forEach(heatmap => {
-        const heat = L.heatLayer(heatmap.data, {
-            radius: 25,
-            minOpacity: 0.4,
-            gradient: {
-                '0.00': 'rgb(255,0,255)',
-                '0.25': 'rgb(0,0,255)',
-                '0.50': 'rgb(0,255,0)',
-                '0.75': 'rgb(255,255,0)',
-                '1.00': 'rgb(255,0,0)'
-            }
-        });
-        layerControl.addOverlay(heat, heatmap.title)
-    })
+    getHeatMapData(succesHandler);
+
+    function succesHandler(data) {
+        console.log(data)
+        data.forEach(heatmap => {
+            const heatLayer = L.heatLayer(heatmap.data, {
+                radius: 25,
+                minOpacity: 0.4,
+                gradient: {
+                    '0.00': 'rgb(255,0,255)',
+                    '0.25': 'rgb(0,0,255)',
+                    '0.50': 'rgb(0,255,0)',
+                    '0.75': 'rgb(255,255,0)',
+                    '1.00': 'rgb(255,0,0)'
+                }
+            });
+            layerControl.addOverlay(heatLayer, heatmap.title)
+        })
+    }
 }
 
 function createPersonPin(layerControl, location) {
