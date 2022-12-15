@@ -6,6 +6,17 @@
   z-index: 1;
   left: 25%;
   top: 50%;
+  max-width: 55rem;
   overflow: auto;
-  background-color: $primary-color;
+  background-color: $secondary-color;
+  border: 0.2rem solid black;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  h2{
+    font-size: 1.4rem;
+  }
+  p{
+    margin: 0.5rem;
+    font-size: 1.2rem;
+  }
 }
