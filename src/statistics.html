@@ -11,6 +11,7 @@
 
     <script src="assets/js/statistics.js" type="module"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <script src="assets/js/help.js" type="module"></script>
 </head>
 
 <body>
@@ -43,6 +44,7 @@
                             <option class="hover-underline-animation" value="6">Last 6 months</option>
                             <option class="hover-underline-animation" value="12">Last year</option>
                         </select>
+                        <button id="helpbutton" type="button">?</button>
                     </label>
                     <ul>
                         <li id="crimes" class="selected">
@@ -62,6 +64,25 @@
                             <hr />
                         </li>
                     </ul>
+                    <div id="helper" class="hidden helpclass">
+                       <p>
+                            <strong>Period</strong> - Select the period of time you want to see the statistics for.
+                            <br>
+                            <strong>Filter</strong> - Click on the filter you want to see the statistics for.
+                            <br>
+                            <br>
+                            <strong>Crimes</strong> - Shows the number of crimes that have been reported in the selected period of time.
+                            <br>
+                            <br>
+                            <strong>Oxygen leaks</strong> - Shows the number of oxygen leaks that have been reported in the selected period of time.
+                            <br>
+                            <br>
+                            <strong>Population</strong> - Shows the number of people that have been reported in the selected period of time.
+                            <br>
+                            <br>
+                            <strong>Medical dispaches</strong> - Shows the number of medical dispaches that have been reported in the selected period of time.
+                       </p> 
+                    </div>
                 </aside>
 
                 <div id="container_charts">
