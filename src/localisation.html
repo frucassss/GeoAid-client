@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/localisation.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-    <script src="assets/js/help.js" type="module"></script>
 
+    <script src="assets/js/localisation.js" type="module"></script>
 </head>
 
 <body>
@@ -35,7 +35,7 @@
                 <legend>Localisation</legend>
                 <img src="images/Dome.png" alt="Dome">
                 <p>You want to begin your own business or build a new home?<br> With our group of experts,<br> we will help you find the right place to settle!</p>
-                <button id="helpbutton" type="button">?</button>
+                <a class="material-icons icon help" data-help="localisation">help</a>
                 <div class="flexcontainer">
                     <label for="topic">Topic</label>
                     <input type="text" name="topic" id="topic">
@@ -43,16 +43,19 @@
                     <textarea name="summary" id="summary"></textarea>
                     <button type="submit">Send request</button>
                 </div>
-                <div id="helper" class="hidden helpclass">
-                    <p>On this page you are able to send a request to gather information about where to settle your new business or home.
-                        <br> You can choose the topic of your request and the employee you want to help you.
-                        <br> You will receive an email with the answer to your request.
-                        <br> Our team will help you making the right decision.
-                    </p>
-                </div>
             </fieldset>
         </form>
-        
+        <div id="popup-localisation" class="popup hidden">
+            <h2>Localisation</h2>
+            <div class="material-icons icon close">close</div>
+            <div class="content">
+                <p>On this page you are able to send a request to gather information about where to settle your new business or home.
+                    <br> You can choose the topic of your request and the employee you want to help you.
+                    <br> You will receive an email with the answer to your request.
+                    <br> Our team will help you making the right decision.
+                </p>
+            </div>
+        </div>
     </main>
 </body>
 
