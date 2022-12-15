@@ -122,3 +122,25 @@ function showSuggestions(domes) {
     }
 }
 
+export function eventListenerFullscreen(iconsSelector, parentSelector) {
+    document.querySelectorAll(iconsSelector).forEach($icon => {
+        $icon.addEventListener("click", fullscreenToggle);
+    });
+
+    document.querySelector(parentSelector).addEventListener("fullscreenchange", ev => {
+        ev.currentTarget.querySelectorAll(iconsSelector).forEach(icon => {
+            icon.classList.toggle('hidden');
+        });
+    });
+
+    function fullscreenToggle(e) {
+        const target = e.currentTarget;
+        const parent = target.parentElement;
+
+        if (target.innerText === "fullscreen")
+            parent.requestFullscreen();
+        else
+            document.exitFullscreen();
+    }
+}
+

@@ -1,5 +1,5 @@
 import {createLineChart} from "./modules/graphs.js";
-import {selectClickedCategory} from "./modules/helper.js";
+import {eventListenerFullscreen, selectClickedCategory} from "./modules/helper.js";
 
 function init() {
     handleEventListeners();
@@ -11,7 +11,10 @@ function handleEventListeners() {
 
     document.querySelectorAll("#years input").forEach(year => {
         year.addEventListener("change", createLineChart)
-    })
+    });
+
+    console.log(document.querySelectorAll("#company-chart"))
+    eventListenerFullscreen("#company-chart .material-icons", "#company-chart")
 }
 
 init()

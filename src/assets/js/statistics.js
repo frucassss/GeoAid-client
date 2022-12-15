@@ -1,4 +1,4 @@
-import {makeSuggestions, selectClickedCategory} from "./modules/helper.js";
+import {eventListenerFullscreen, makeSuggestions, selectClickedCategory} from "./modules/helper.js";
 import {createBarChart, createPieChart} from "./modules/graphs.js";
 import {get, setApi} from "./modules/api.js";
 
@@ -45,8 +45,9 @@ function handleEventListeners() {
         createBarChart();
         createPieChart();
     }
-}
 
+    eventListenerFullscreen("#category_chart .material-icons", "#category_chart")
+}
 
 
 function addEventListenersSuggestions() {

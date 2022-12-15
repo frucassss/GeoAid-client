@@ -195,6 +195,7 @@ body main #statistics .flexcontainer aside ul hr {
   border: none;
 }
 body main #statistics .flexcontainer #company-chart {
+  position: relative;
   flex-basis: 50%;
   background-color: #003844;
   border-radius: 2rem;
@@ -206,8 +207,15 @@ body main #statistics .flexcontainer #company-chart h4 {
   color: hsl(142deg, 10%, 75%);
   margin-bottom: 0.5rem;
 }
-body main #statistics .flexcontainer #company-chart #line-chart {
-  margin-bottom: 6rem;
+body main #statistics .flexcontainer #company-chart #bar-chart-container {
+  height: 90%;
+  width: 100%;
+}
+body main #statistics .flexcontainer #company-chart .material-icons {
+  color: hsl(142deg, 10%, 75%);
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
 }
 body main #statistics .flexcontainer #years {
   color: hsl(142deg, 10%, 75%);

@@ -250,6 +250,19 @@ body main #statistics #container_statistics #container_charts .stats h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
 }
+body main #statistics #container_statistics #container_charts #category_chart {
+  position: relative;
+}
+body main #statistics #container_statistics #container_charts #category_chart #bar-chart-container {
+  height: 90%;
+  width: 100%;
+}
+body main #statistics #container_statistics #container_charts #category_chart .material-icons {
+  color: hsl(142deg, 10%, 75%);
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
 body main #statistics #container_statistics #container_charts #types_chart {
   margin-top: 2rem;
 }

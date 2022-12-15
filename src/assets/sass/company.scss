@@ -56,7 +56,11 @@ body {
                         }
                     }
                 }
+                #category_chart {
+
+                }
                 #company-chart {
+                    position: relative;
                     flex-basis: 50%;
                     background-color: $primary-color;
                     border-radius: $border-radius;
@@ -67,8 +71,16 @@ body {
                         color: $primary-font-color;
                         margin-bottom: 0.5rem;
                     }
-                    #line-chart {
-                        margin-bottom: 6rem;
+                    #bar-chart-container {
+                        height: 90%;
+                        width: 100%;
+                    }
+
+                    .material-icons {
+                        color: $primary-font-color;
+                        position: absolute;
+                        top: 1.5rem;
+                        right: 2rem;
                     }
                 }
                 #years {
