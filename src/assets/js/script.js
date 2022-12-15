@@ -1,5 +1,5 @@
 import {createMap, center, setView} from "./modules/map.js";
-import {makeHidden, removeHidden, makeSuggestions, setPosition, removeClassAfterClick} from "./modules/helper.js";
+import {makeHidden, removeHidden, makeSuggestions, setPosition} from "./modules/helper.js";
 import {get, setApi} from "./modules/api.js";
 
 function loadConfig() {
@@ -55,7 +55,7 @@ function handleEventListeners() {
         if (inMap || targetId === "map") {
             document.querySelector("#suggestions").classList.add("hidden");
         }
-    })
+    });
 
     document.querySelector(".close").addEventListener("click", () => {
         makeHidden("#side_navigation");

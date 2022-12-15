@@ -2,13 +2,17 @@ import {get} from "./api.js";
 import {MAPBOUNDS} from "./map.js";
 
 export function makeHidden(selector) {
-    const $element = document.querySelector(selector)
-    $element.classList.add("hidden");
+    const $element = document.querySelector(selector);
+    if ($element) {
+        $element.classList.add("hidden");
+    }
 }
 
 export function removeHidden(selector) {
     const $element = document.querySelector(selector)
-    $element.classList.remove("hidden");
+    if ($element) {
+        $element.classList.remove("hidden");
+    }
 }
 
 export function removeClass(selector, className) {
@@ -24,6 +28,23 @@ export function removeClassAfterClick(selector, className) {
             removeClass(selector, className);
         }
     });
+}
+
+export function searchDome(searchDome, func) {
+    get("domes", succesHandler);
+
+    function succesHandler(res) {
+        res.json().then(data => {
+            const domes = data.domes;
+            let result
+            if (Number.isInteger(searchDome)) {
+                result = domes.find(dome => dome.id === searchDome);
+            } else {
+                result = domes.find(dome => dome.domeName === searchDome);
+            }
+            func(result)
+        });
+    }
 }
 
 export function setPosition(position) {

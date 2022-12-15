@@ -108,6 +108,9 @@ input:focus, textarea:focus {
 #map .selected {
   animation: fade-inout 1.2s infinite alternate;
 }
+#map .circle {
+  z-index: 5;
+}
 
 .loading {
   display: none;
