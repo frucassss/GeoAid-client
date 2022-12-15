@@ -28,7 +28,7 @@ export function createBarChart() {
 }
 
 function makeBarChart(data) {
-    deleteOldChart("bar-chart", "category_chart");
+    deleteOldChart("bar-chart", "bar-chart-container");
     const sideValue = getSideValue();
 
     const ctx = document.querySelector("#bar-chart").getContext('2d');
@@ -135,7 +135,7 @@ export function createLineChart() {
 }
 
 function makeLineChart(data) {
-    deleteOldChart("line-chart", "company-chart");
+    deleteOldChart("line-chart", "line-chart-container");
 
     const sideValue = getSideValue();
     const datasets = getDataSets(data);
