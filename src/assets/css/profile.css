@@ -1,3 +1,17 @@
+:root {
+  --background: url("../../images/background.jpg");
+  --primary-color: #003844;
+  --secondary-color: #848FA5;
+  --tertiary-color: #210124;
+}
+
+[color-theme=dark] {
+  --background: black;
+  --primary-color: gray;
+  --secondary-color: lightgray;
+  --tertiary-color: darkgrey;
+}
+
 img {
   max-width: 100%;
 }
@@ -39,18 +53,46 @@ input:focus, textarea:focus {
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 0.25rem grey;
   border-radius: 5rem;
-  background-color: #848FA5;
+  background-color: var(--secondary-color);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #210124;
+  background: var(--tertiary-color);
   border-radius: 0.5rem;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #003844;
+  background: var(--primary-color);
+}
+
+:root {
+  --background: url("../../images/background.jpg");
+  --primary-color: #003844;
+  --secondary-color: #848FA5;
+  --tertiary-color: #210124;
+}
+
+[color-theme=dark] {
+  --background: black;
+  --primary-color: gray;
+  --secondary-color: lightgray;
+  --tertiary-color: darkgrey;
+}
+
+:root {
+  --background: url("../../images/background.jpg");
+  --primary-color: #003844;
+  --secondary-color: #848FA5;
+  --tertiary-color: #210124;
+}
+
+[color-theme=dark] {
+  --background: black;
+  --primary-color: gray;
+  --secondary-color: lightgray;
+  --tertiary-color: darkgrey;
 }
 
 a {
@@ -61,7 +103,7 @@ nav {
   padding-top: 1rem;
   padding-bottom: 1rem;
   border-bottom: black solid;
-  background-color: #003844;
+  background-color: var(--primary-color);
 }
 nav ul {
   display: flex;
@@ -92,7 +134,7 @@ nav ul .selected {
   font-weight: bold;
 }
 nav ul .selected a {
-  color: #848FA5;
+  color: var(--secondary-color);
 }
 
 .hover-underline-animation {
@@ -138,7 +180,7 @@ nav ul .selected a {
 }
 #profile {
   font-family: Arial, sans-serif;
-  background: url("../../images/background.jpg");
+  background: var(--background);
   padding: 1rem;
 }
 #profile article {
@@ -177,7 +219,7 @@ nav ul .selected a {
   flex-direction: column;
 }
 #profile .flexcontainer .profileSetting {
-  background-color: #003844;
+  background-color: var(--primary-color);
   border-radius: 2rem;
   padding: 1rem 0 2rem 2rem;
   margin: 0 2rem 2rem 2rem;
@@ -203,14 +245,14 @@ nav ul .selected a {
 }
 #profile #premium .flexPackets .packet {
   width: 40%;
-  background-color: #848FA5;
+  background-color: var(--secondary-color);
   border-radius: 2rem;
   padding-bottom: 1rem;
 }
 #profile #premium .flexPackets .packet .packetHeader {
   text-align: center;
   font-size: 1.8rem;
-  background-color: #210124;
+  background-color: var(--tertiary-color);
   color: hsl(142deg, 10%, 75%);
   padding: 0.5rem;
   border-radius: 2rem 2rem 0 0;
@@ -234,7 +276,7 @@ nav ul .selected a {
 }
 #profile #premium .flexPackets .advantages button {
   width: 50%;
-  background-color: #210124;
+  background-color: var(--tertiary-color);
   color: hsl(142deg, 10%, 75%);
   cursor: pointer;
   font-size: 1.4rem;
@@ -244,7 +286,7 @@ nav ul .selected a {
   margin-top: 0.5em;
 }
 #profile #company .flexcontainer {
-  background-color: #848FA5;
+  background-color: var(--secondary-color);
   border-radius: 2rem;
   padding-left: 1rem;
   padding-top: 1rem;
@@ -261,7 +303,7 @@ nav ul .selected a {
   margin-bottom: 2rem;
 }
 #profile #appointment form {
-  background-color: #848FA5;
+  background-color: var(--secondary-color);
   display: flex;
   justify-content: space-around;
   margin-right: 2rem;
@@ -278,7 +320,7 @@ nav ul .selected a {
   margin-top: 1rem;
 }
 #profile #appointment form .flexcontainer input, #profile #appointment form .flexcontainer button, #profile #appointment form .flexcontainer select {
-  background-color: #003844;
+  background-color: var(--primary-color);
   font-size: 1rem;
   color: hsl(142deg, 10%, 75%);
   padding: 0.5rem;
@@ -287,7 +329,7 @@ nav ul .selected a {
 #profile #appointment form .flexcontainer button {
   align-items: center;
   margin-top: 1rem;
-  background-color: #210124;
+  background-color: var(--tertiary-color);
   color: hsl(142deg, 10%, 75%);
   cursor: pointer;
   font-size: 1.4rem;
@@ -295,7 +337,7 @@ nav ul .selected a {
   padding: 0.5rem;
 }
 #profile #appointment-list #appointments {
-  background-color: #848FA5;
+  background-color: var(--secondary-color);
   border-radius: 2rem;
   padding-left: 1rem;
   padding-top: 1rem;

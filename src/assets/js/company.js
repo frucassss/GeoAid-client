@@ -1,9 +1,13 @@
 import {createLineChart} from "./modules/graphs.js";
-import {eventListenerFullscreen, selectClickedCategory} from "./modules/helper.js";
+import {eventListenerFullscreen, selectClickedCategory, setColorScheme} from "./modules/helper.js";
 
 function init() {
     handleEventListeners();
+    setColorScheme();
     createLineChart();
+
+    const html = document.querySelector('html');
+    html.dataset.theme = `theme-light`;
 }
 
 function handleEventListeners() {
@@ -13,8 +17,7 @@ function handleEventListeners() {
         year.addEventListener("change", createLineChart)
     });
 
-    console.log(document.querySelectorAll("#company-chart"))
     eventListenerFullscreen("#company-chart .material-icons", "#company-chart")
 }
 
-init()
+init();
