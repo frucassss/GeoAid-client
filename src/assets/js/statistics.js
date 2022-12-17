@@ -1,4 +1,4 @@
-import {eventListenerFullscreen, makeSuggestions, selectClickedCategory} from "./modules/helper.js";
+import {eventListenerFullscreen, makeSuggestions, selectClickedCategory, setColorScheme} from "./modules/helper.js";
 import {createBarChart, createPieChart} from "./modules/graphs.js";
 import {get, setApi} from "./modules/api.js";
 
@@ -20,10 +20,21 @@ function loadConfig() {
 }
 function init() {
     handleEventListeners();
+    setColorScheme();
     defaultDome();
     defaultSuggestions();
     createBarChart();
     createPieChart();
+
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        console.log(window.matchMedia)
+        console.log("darkmodes")
+    };
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+        const newColorScheme = e.matches ? "dark" : "light";
+        console.log(newColorScheme)
+    });
 }
 
 function handleEventListeners() {

@@ -1,15 +1,32 @@
 //GLOBAL
-$background-color: url("../../images/background.jpg");
 
-$primary-color: #003844;
-$secondary-color: #848FA5;
-$tertiary-color: #210124;
+  :root {
+    --background: url("../../images/background.jpg");
+    --primary-color: #003844;
+    --secondary-color: #848FA5;
+    --tertiary-color: #210124;
+  }
+
+
+[color-theme="dark"] {
+    --background: black;
+    --primary-color: gray;
+    --secondary-color: lightgray;
+    --tertiary-color: darkgrey;
+}
+
+$background-color: var(--background);
+$primary-color: var(--primary-color);
+$secondary-color: var(--secondary-color);
+$tertiary-color: var(--tertiary-color);
 
 $primary-font-color: hsl(142deg, 10%, 75%);
 $secondary-font-color: $secondary-color;
 $tertiary-font-color: black;
 
 $primary-font-family: Arial, sans-serif;
+
+
 
 
 // NAV
@@ -27,6 +44,15 @@ $header-font-family: $primary-font-family;
 $border-radius: 2rem;
 $transition-time: 1.5s;
 $box-shadow: 0rem 0rem 2rem 0px black;
+
+$themes: (
+        default: (
+                text: white,
+        ),
+        dark: (
+                text: black,
+        ),
+);
 
 @mixin checkbox {
   input[type="checkbox"] {

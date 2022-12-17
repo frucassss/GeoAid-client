@@ -1,5 +1,5 @@
 import {createMap, center, setView} from "./modules/map.js";
-import {makeHidden, removeHidden, makeSuggestions, setPosition} from "./modules/helper.js";
+import {makeHidden, removeHidden, makeSuggestions, setPosition, setColorScheme} from "./modules/helper.js";
 import {get, setApi} from "./modules/api.js";
 
 function loadConfig() {
@@ -14,6 +14,7 @@ function loadConfig() {
 
 function init() {
     handleEventListeners();
+    setColorScheme();
     setTimeout(startupAnimation, 2500);
     makeMap();
 }

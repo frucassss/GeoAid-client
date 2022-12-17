@@ -30,6 +30,15 @@ export function removeClassAfterClick(selector, className) {
     });
 }
 
+export function setColorScheme() {
+    let theme = localStorage.getItem("color-theme");
+    if (!theme) {
+        localStorage.setItem("color-theme", "light");
+        theme = "light"
+    }
+    document.documentElement.setAttribute("color-theme", theme);
+}
+
 export function searchDome(searchDome, func) {
     get("domes", succesHandler);
 
