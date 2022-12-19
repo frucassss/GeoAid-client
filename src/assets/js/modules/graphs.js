@@ -5,10 +5,19 @@ import {get} from "./api.js";
 import {searchDome} from "./helper.js";
 
 const FONTCOLOR = "hsl(142deg, 10%, 75%)";
-const PIECHARTCOLORSET = ["#c30010", "#de0a26", "#ff2c2c", "#f94449", "#ee6b6e", "#f69697", "#ffcbd1"];
-const LINECHARTCOLORSET = ["blue", "red", "orange", "grey", "pink"]
-const PRIMARYCOLOR = "#210124"
-const SECONDARYCOLOR = "#848FA5"
+const PIECHARTCOLORSET = {
+    light: ["#3d2117", "#4e2117", "#5e2117", "#6e2117", "#7e2117", "#8e2117", "#9e2117"],
+    dark: ["#1f1f1f", "#2f1f1f", "#3f1f1f", "#4f1f1f", "#5f1f1f"]
+};
+const LINECHARTCOLORSET = ["blue", "red", "orange", "grey", "pink"];
+const PRIMARYCOLOR = {
+    light: "#3d2117",
+    dark: "#1f1f1f"
+};
+const SECONDARYCOLOR = {
+    light: "#C67B5C",
+    dark: "#8a8a8a"
+};
 const SIDEVALUE = {
     revenue: "Revenue in million",
     profit: "Profit in million",
@@ -19,7 +28,7 @@ const SIDEVALUE = {
     oxygen_leaks: "Amount of oxygen leaks",
     population: "population",
     medical_dispaches : "Amount of medical dispaches"
-}
+};
 
 export function createBarChart() {
     const category = document.querySelector("aside .selected").id;
@@ -30,6 +39,7 @@ export function createBarChart() {
 function makeBarChart(data) {
     deleteOldChart("bar-chart", "bar-chart-container");
     const sideValue = getSideValue();
+    const theme = localStorage.getItem("color-theme");
 
     const ctx = document.querySelector("#bar-chart").getContext('2d');
     const configuration = {
@@ -40,8 +50,8 @@ function makeBarChart(data) {
             }]
         },
         options: {
-            backgroundColor: PRIMARYCOLOR,
-            hoverBackgroundColor: SECONDARYCOLOR,
+            backgroundColor: PRIMARYCOLOR[theme],
+            hoverBackgroundColor: SECONDARYCOLOR[theme],
             scales: {
                 y: {
                     title: {
@@ -94,6 +104,7 @@ export function createPieChart() {
 
 function makePieChart(data) {
     deleteOldChart("pie-chart", "pie-chart-container");
+    const theme = localStorage.getItem("color-theme");
 
     const ctx = document.querySelector('#pie-chart').getContext('2d');
     const configuration = {
@@ -102,7 +113,7 @@ function makePieChart(data) {
             labels: Object.keys(data),
             datasets: [{
                 data: Object.values(data),
-                backgroundColor: PIECHARTCOLORSET
+                backgroundColor: PIECHARTCOLORSET[theme]
             }]
         },
         options: {
@@ -215,16 +226,17 @@ function getSideValue() {
 }
 
 function getDataSets(data) {
-    const res = []
+    const res = [];
+    const theme = localStorage.getItem("color-theme");
     for (let i = 0; i < data.length; i++) {
         const chart = {
             backgroundColor: LINECHARTCOLORSET[i],
             borderColor: LINECHARTCOLORSET[i],
             borderDash: [5, 5],
-            pointBackgroundColor: PRIMARYCOLOR,
-            pointBorderColor: PRIMARYCOLOR,
-            pointHoverBackgroundColor: SECONDARYCOLOR,
-            pointHoverBorderColor: SECONDARYCOLOR,
+            pointBackgroundColor: PRIMARYCOLOR[theme],
+            pointBorderColor: PRIMARYCOLOR[theme],
+            pointHoverBackgroundColor: SECONDARYCOLOR[theme],
+            pointHoverBorderColor: SECONDARYCOLOR[theme],
             label: getYears()[i],
             data: data[i]
         }
