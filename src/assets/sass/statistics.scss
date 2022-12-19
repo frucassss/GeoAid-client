@@ -93,6 +93,20 @@ body {
                             margin-bottom: 1rem;
                         }
                     }
+                    #category_chart {
+                        position: relative;
+                        #bar-chart-container {
+                            height: 90%;
+                            width: 100%;
+                        }
+                        .material-icons {
+                            color: $primary-font-color;
+                            position: absolute;
+                            top: 2rem;
+                            right: 2rem;
+                        }
+                    }
+
                     #types_chart {
                         margin-top: 2rem;
                         #dome-choice {

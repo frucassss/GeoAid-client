@@ -1,6 +1,6 @@
 import {get} from "./api.js";
 import {getHeatMapData} from "./datafetcher.js";
-import {removeClass, removeClassAfterClick, setPosition} from "./helper.js";
+import {removeClass, removeClassAfterClick, setPosition, searchDome} from "./helper.js";
 
 const MBURL = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'
 const mbAttr = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> '
@@ -28,7 +28,7 @@ export function createMap(position, isCurrentPosition) {
         minZoom: 9,
         layers: [osm],
         zoomControl: false
-    }).setView(position, 13);
+    }).setView(position, 60);
 
     const baseLayers = {
         "OpenStreetMap": osm
@@ -48,7 +48,6 @@ function createHeatMaps(layerControl) {
     getHeatMapData(succesHandler);
 
     function succesHandler(data) {
-        console.log(data)
         data.forEach(heatmap => {
             const heatLayer = L.heatLayer(heatmap.data, {
                 radius: 25,
@@ -72,8 +71,7 @@ function createPersonPin(layerControl, location) {
         iconSize: [50, 50]
     });
     const personPinMarker = L.marker(location, { icon: personPinIcon }).bindPopup('You are here' + location)
-    const personPinLayer = L.layerGroup([personPinMarker]);
-    layerControl.addOverlay(personPinLayer, 'Me');
+    personPinMarker.addTo(map);
 }
 
 function setZoomTopRight() {
@@ -95,7 +93,9 @@ function createDome(data) {
             iconSize: [40, 40],
             className: "dome"
         });
-        L.marker([dome.latitude, dome.longitude], { icon: icon }).bindPopup(`this is ${dome.domeName}`).addTo(map);
+        const domeMarker = L.marker([dome.latitude, dome.longitude], { icon: icon }).bindPopup(`this is ${dome.domeName}`)
+        domeMarker.addTo(map);
+        domeMarker._icon.id = dome.domeName
     });
     SelectedOnClick()
 }
@@ -107,8 +107,25 @@ function SelectedOnClick() {
             const target = e.target;
             target.classList.add("selected");
             removeClassAfterClick(".selected", "selected");
+            createCircle(target.id)
         });
     });
+}
+
+function createCircle(domeName) {
+    const $oldCircle = document.querySelector(".circle")
+    if ($oldCircle) $oldCircle.remove()
+
+    searchDome(domeName, succesHandler)
+    function succesHandler(dome) {
+        const circle = L.circle([dome.latitude, dome.longitude], {
+            color: "grey",
+            fillColor: "grey",
+            fillOpacity: 0.3,
+            radius: 300,
+            className: "circle"
+        }).addTo(map);
+    }
 }
 
 export function setView(position) {
@@ -120,5 +137,5 @@ export function center(currentPosition) {
     const lat = coords.latitude;
     const lon = coords.longitude;
     const position = setPosition([lat, lon])
-    map.setView(position);
+    map.setView(position, 15);
 }

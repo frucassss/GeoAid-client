@@ -1,3 +1,17 @@
+:root {
+  --background: url("../../images/background.jpg");
+  --primary-color: #003844;
+  --secondary-color: #848FA5;
+  --tertiary-color: #210124;
+}
+
+[color-theme=dark] {
+  --background: black;
+  --primary-color: gray;
+  --secondary-color: lightgray;
+  --tertiary-color: darkgrey;
+}
+
 img {
   max-width: 100%;
 }
@@ -39,18 +53,46 @@ input:focus, textarea:focus {
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 0.25rem grey;
   border-radius: 5rem;
-  background-color: #848FA5;
+  background-color: var(--secondary-color);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #210124;
+  background: var(--tertiary-color);
   border-radius: 0.5rem;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #003844;
+  background: var(--primary-color);
+}
+
+:root {
+  --background: url("../../images/background.jpg");
+  --primary-color: #003844;
+  --secondary-color: #848FA5;
+  --tertiary-color: #210124;
+}
+
+[color-theme=dark] {
+  --background: black;
+  --primary-color: gray;
+  --secondary-color: lightgray;
+  --tertiary-color: darkgrey;
+}
+
+:root {
+  --background: url("../../images/background.jpg");
+  --primary-color: #003844;
+  --secondary-color: #848FA5;
+  --tertiary-color: #210124;
+}
+
+[color-theme=dark] {
+  --background: black;
+  --primary-color: gray;
+  --secondary-color: lightgray;
+  --tertiary-color: darkgrey;
 }
 
 a {
@@ -61,7 +103,7 @@ nav {
   padding-top: 1rem;
   padding-bottom: 1rem;
   border-bottom: black solid;
-  background-color: #003844;
+  background-color: var(--primary-color);
 }
 nav ul {
   display: flex;
@@ -92,7 +134,7 @@ nav ul .selected {
   font-weight: bold;
 }
 nav ul .selected a {
-  color: #848FA5;
+  color: var(--secondary-color);
 }
 
 .hover-underline-animation {
@@ -137,13 +179,13 @@ nav ul .selected a {
   }
 }
 body {
-  background: url("../../images/background.jpg");
+  background: var(--background);
   font-family: Arial, sans-serif;
 }
 body #settings {
   padding: 1rem;
   margin: 2rem 3rem;
-  background-color: #848FA5;
+  background-color: var(--secondary-color);
   border-radius: 2rem;
 }
 body #settings .flexcontainer {
@@ -186,7 +228,7 @@ body #settings .flexcontainer li:nth-child(8) {
   }
 }
 body #settings .flexcontainer li {
-  background-color: #003844;
+  background-color: var(--primary-color);
   border-radius: 2rem;
   position: relative;
   margin-bottom: 1rem;
@@ -204,7 +246,7 @@ body #settings .flexcontainer li .extra-info h2 {
 body #settings .flexcontainer li .extra-info p {
   font-size: 1.25rem;
   margin-top: 1rem;
-  color: #848FA5;
+  color: var(--secondary-color);
 }
 body #settings .flexcontainer li > div {
   display: flex;
@@ -212,13 +254,13 @@ body #settings .flexcontainer li > div {
 }
 body #settings .flexcontainer li .icon {
   align-self: flex-start;
-  color: #848FA5;
+  color: var(--secondary-color);
   padding-left: 1rem;
   padding-right: 2rem;
   font-size: 2.4rem;
 }
 body #settings .flexcontainer li .icon2 {
-  color: #848FA5;
+  color: var(--secondary-color);
   position: absolute;
   right: 1rem;
   margin-left: 10rem;
@@ -230,7 +272,7 @@ body #settings .flexcontainer li h2 {
   font-size: 2rem;
 }
 body #settings .flexcontainer li .dropdown {
-  background-color: #848FA5;
+  background-color: var(--secondary-color);
   color: black;
   font-size: 0;
 }
@@ -263,7 +305,7 @@ body #settings .flexcontainer li .slider:before {
   transition: 0.4s;
 }
 body #settings .flexcontainer li input:checked + .slider {
-  background-color: #848FA5;
+  background-color: var(--secondary-color);
 }
 body #settings .flexcontainer li input:focus + .slider {
   box-shadow: 0 0 1px #2196F3;
@@ -280,7 +322,7 @@ body #settings .flexcontainer li .slider.round:before {
   border-radius: 50%;
 }
 body #settings .flexcontainer li .dropbtn {
-  background-color: #848FA5;
+  background-color: var(--secondary-color);
   color: black;
   padding: 0.5rem;
   font-size: 1rem;
@@ -299,7 +341,7 @@ body #settings .flexcontainer li .dropdown-content p {
   cursor: pointer;
   padding: 0.5rem;
   display: block;
-  background-color: #848FA5;
+  background-color: var(--secondary-color);
 }
 body #settings .flexcontainer li .dropdown:hover .dropdown-content {
   display: block;

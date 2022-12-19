@@ -1,19 +1,22 @@
 import { createLineChart } from "./modules/graphs.js";
-import { selectClickedCategory } from "./modules/helper.js";
+import { selectClickedCategory, eventListenerFullscreen, setColorScheme } from "./modules/helper.js";
 import { eventListenerPopup } from "./modules/popup.js";
 
 function init() {
-  handleEventListeners();
-  createLineChart();
-  eventListenerPopup();
+    handleEventListeners();
+    setColorScheme();
+    createLineChart();
+    eventListenerPopup();
 }
 
 function handleEventListeners() {
-  selectClickedCategory("#company-chart h4", createLineChart);
+    selectClickedCategory("#company-chart h4", createLineChart);
 
-  document.querySelectorAll("#years input").forEach((year) => {
-    year.addEventListener("change", createLineChart);
-  });
+    document.querySelectorAll("#years input").forEach(year => {
+        year.addEventListener("change", createLineChart)
+    });
+
+    eventListenerFullscreen("#company-chart .material-icons", "#company-chart")
 }
 
 init();

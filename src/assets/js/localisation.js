@@ -1,7 +1,9 @@
-import {eventListenerPopup} from "./modules/popup.js";
+import { eventListenerPopup } from "./modules/popup.js";
+import {setColorScheme} from "./modules/helper.js";
 
 function init() {
-    eventListenerPopup()
+    setColorScheme();
+    eventListenerPopup();
 }
 
-init()
+init();

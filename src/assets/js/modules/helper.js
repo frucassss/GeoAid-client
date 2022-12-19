@@ -2,13 +2,17 @@ import {get} from "./api.js";
 import {MAPBOUNDS} from "./map.js";
 
 export function makeHidden(selector) {
-    const $element = document.querySelector(selector)
-    $element.classList.add("hidden");
+    const $element = document.querySelector(selector);
+    if ($element) {
+        $element.classList.add("hidden");
+    }
 }
 
 export function removeHidden(selector) {
     const $element = document.querySelector(selector)
-    $element.classList.remove("hidden");
+    if ($element) {
+        $element.classList.remove("hidden");
+    }
 }
 
 export function removeClass(selector, className) {
@@ -24,6 +28,32 @@ export function removeClassAfterClick(selector, className) {
             removeClass(selector, className);
         }
     });
+}
+
+export function setColorScheme() {
+    let theme = localStorage.getItem("color-theme");
+    if (!theme) {
+        localStorage.setItem("color-theme", "light");
+        theme = "light"
+    }
+    document.documentElement.setAttribute("color-theme", theme);
+}
+
+export function searchDome(searchDome, func) {
+    get("domes", succesHandler);
+
+    function succesHandler(res) {
+        res.json().then(data => {
+            const domes = data.domes;
+            let result
+            if (Number.isInteger(searchDome)) {
+                result = domes.find(dome => dome.id === searchDome);
+            } else {
+                result = domes.find(dome => dome.domeName === searchDome);
+            }
+            func(result)
+        });
+    }
 }
 
 export function setPosition(position) {
@@ -98,6 +128,28 @@ function showSuggestions(domes) {
             const html = `<li id="${dome.id}"><p class="hover-underline-animation">${dome.domeName}</p></li>`;
             $target.innerHTML += html;
         }
+    }
+}
+
+export function eventListenerFullscreen(iconsSelector, parentSelector) {
+    document.querySelectorAll(iconsSelector).forEach($icon => {
+        $icon.addEventListener("click", fullscreenToggle);
+    });
+
+    document.querySelector(parentSelector).addEventListener("fullscreenchange", ev => {
+        ev.currentTarget.querySelectorAll(iconsSelector).forEach(icon => {
+            icon.classList.toggle('hidden');
+        });
+    });
+
+    function fullscreenToggle(e) {
+        const target = e.currentTarget;
+        const parent = target.parentElement;
+
+        if (target.innerText === "fullscreen")
+            parent.requestFullscreen();
+        else
+            document.exitFullscreen();
     }
 }
 

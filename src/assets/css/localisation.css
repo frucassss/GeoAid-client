@@ -1,3 +1,17 @@
+:root {
+  --background: url("../../images/background.jpg");
+  --primary-color: #003844;
+  --secondary-color: #848FA5;
+  --tertiary-color: #210124;
+}
+
+[color-theme=dark] {
+  --background: black;
+  --primary-color: gray;
+  --secondary-color: lightgray;
+  --tertiary-color: darkgrey;
+}
+
 img {
   max-width: 100%;
 }
@@ -39,18 +53,46 @@ input:focus, textarea:focus {
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 0.25rem grey;
   border-radius: 5rem;
-  background-color: #848FA5;
+  background-color: var(--secondary-color);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #210124;
+  background: var(--tertiary-color);
   border-radius: 0.5rem;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #003844;
+  background: var(--primary-color);
+}
+
+:root {
+  --background: url("../../images/background.jpg");
+  --primary-color: #003844;
+  --secondary-color: #848FA5;
+  --tertiary-color: #210124;
+}
+
+[color-theme=dark] {
+  --background: black;
+  --primary-color: gray;
+  --secondary-color: lightgray;
+  --tertiary-color: darkgrey;
+}
+
+:root {
+  --background: url("../../images/background.jpg");
+  --primary-color: #003844;
+  --secondary-color: #848FA5;
+  --tertiary-color: #210124;
+}
+
+[color-theme=dark] {
+  --background: black;
+  --primary-color: gray;
+  --secondary-color: lightgray;
+  --tertiary-color: darkgrey;
 }
 
 a {
@@ -61,7 +103,7 @@ nav {
   padding-top: 1rem;
   padding-bottom: 1rem;
   border-bottom: black solid;
-  background-color: #003844;
+  background-color: var(--primary-color);
 }
 nav ul {
   display: flex;
@@ -92,7 +134,7 @@ nav ul .selected {
   font-weight: bold;
 }
 nav ul .selected a {
-  color: #848FA5;
+  color: var(--secondary-color);
 }
 
 .hover-underline-animation {
@@ -136,6 +178,20 @@ nav ul .selected a {
     opacity: 1;
   }
 }
+:root {
+  --background: url("../../images/background.jpg");
+  --primary-color: #003844;
+  --secondary-color: #848FA5;
+  --tertiary-color: #210124;
+}
+
+[color-theme=dark] {
+  --background: black;
+  --primary-color: gray;
+  --secondary-color: lightgray;
+  --tertiary-color: darkgrey;
+}
+
 img {
   max-width: 100%;
 }
@@ -177,18 +233,32 @@ input:focus, textarea:focus {
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 0.25rem grey;
   border-radius: 5rem;
-  background-color: #848FA5;
+  background-color: var(--secondary-color);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #210124;
+  background: var(--tertiary-color);
   border-radius: 0.5rem;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #003844;
+  background: var(--primary-color);
+}
+
+:root {
+  --background: url("../../images/background.jpg");
+  --primary-color: #003844;
+  --secondary-color: #848FA5;
+  --tertiary-color: #210124;
+}
+
+[color-theme=dark] {
+  --background: black;
+  --primary-color: gray;
+  --secondary-color: lightgray;
+  --tertiary-color: darkgrey;
 }
 
 .popup {
@@ -198,7 +268,7 @@ input:focus, textarea:focus {
   top: 50%;
   max-width: 55rem;
   overflow: auto;
-  background-color: #848FA5;
+  background-color: var(--secondary-color);
   border: 0.2rem solid black;
   padding: 0.5rem;
   border-radius: 1rem;
@@ -213,7 +283,7 @@ input:focus, textarea:focus {
 
 body {
   font-family: Arial, sans-serif;
-  background: url("../../images/background.jpg");
+  background: var(--background);
 }
 body main form {
   margin: 2rem 0;
@@ -233,7 +303,7 @@ body main form fieldset {
 }
 body main form fieldset {
   width: 65%;
-  background-color: #848FA5;
+  background-color: var(--secondary-color);
   margin-left: auto;
   margin-right: auto;
 }
@@ -241,7 +311,7 @@ body main form fieldset legend {
   padding: 1rem 0;
   font-size: 2rem;
   width: 100%;
-  background-color: #210124;
+  background-color: var(--tertiary-color);
   color: hsl(142deg, 10%, 75%);
   border-radius: 2rem 2rem 0 0;
 }
@@ -267,14 +337,14 @@ body main form fieldset label {
 }
 body main form fieldset input, body main form fieldset textarea {
   border-radius: 1rem;
-  background-color: #003844;
+  background-color: var(--primary-color);
   margin-bottom: 1rem;
   padding: 0.5rem;
   color: hsl(142deg, 10%, 75%);
 }
 body main form fieldset button {
   color: hsl(142deg, 10%, 75%);
-  background-color: #003844;
+  background-color: var(--primary-color);
   border-radius: 2rem;
   padding: 0.5rem;
 }

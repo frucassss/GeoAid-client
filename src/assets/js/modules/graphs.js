@@ -2,6 +2,7 @@ import {
     getBarChartData, getPieChartData, getLineChartData
 } from "./datafetcher.js";
 import {get} from "./api.js";
+import {searchDome} from "./helper.js";
 
 const FONTCOLOR = "hsl(142deg, 10%, 75%)";
 const PIECHARTCOLORSET = ["#c30010", "#de0a26", "#ff2c2c", "#f94449", "#ee6b6e", "#f69697", "#ffcbd1"];
@@ -27,7 +28,7 @@ export function createBarChart() {
 }
 
 function makeBarChart(data) {
-    deleteOldChart("bar-chart", "category_chart");
+    deleteOldChart("bar-chart", "bar-chart-container");
     const sideValue = getSideValue();
 
     const ctx = document.querySelector("#bar-chart").getContext('2d');
@@ -134,7 +135,7 @@ export function createLineChart() {
 }
 
 function makeLineChart(data) {
-    deleteOldChart("line-chart", "company-chart");
+    deleteOldChart("line-chart", "line-chart-container");
 
     const sideValue = getSideValue();
     const datasets = getDataSets(data);
@@ -236,24 +237,14 @@ function changePieChart(event, elements) {
     if (elements.length > 0) {
         const clickedElement = this.getElementsAtEventForMode(event, "nearest", {intersect: true}, true);
         const index = clickedElement[0].index;
-        searchDome(createPieChart, index)
-    }
-}
 
-function searchDome(func, index) {
-    get("domes", succesHandler);
-
-    function succesHandler(res) {
-        res.json().then(data => {
-            data.domes.forEach(dome => {
-                if (dome.id === index) {
-                    const $target = document.querySelector("#types_chart h3");
-                    $target.innerText = dome.domeName;
-                    $target.id = index;
-                    func();
-                }
-            });
-        });
+        searchDome(index, succesHandler)
+        function succesHandler(dome) {
+            const $target = document.querySelector("#types_chart h3");
+            $target.innerText = dome.domeName;
+            $target.id = index;
+            createPieChart()
+        }
     }
 }
 

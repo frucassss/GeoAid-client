@@ -1,3 +1,17 @@
+:root {
+  --background: url("../../images/background.jpg");
+  --primary-color: #003844;
+  --secondary-color: #848FA5;
+  --tertiary-color: #210124;
+}
+
+[color-theme=dark] {
+  --background: black;
+  --primary-color: gray;
+  --secondary-color: lightgray;
+  --tertiary-color: darkgrey;
+}
+
 img {
   max-width: 100%;
 }
@@ -39,18 +53,32 @@ input:focus, textarea:focus {
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 0.25rem grey;
   border-radius: 5rem;
-  background-color: #848FA5;
+  background-color: var(--secondary-color);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #210124;
+  background: var(--tertiary-color);
   border-radius: 0.5rem;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #003844;
+  background: var(--primary-color);
+}
+
+:root {
+  --background: url("../../images/background.jpg");
+  --primary-color: #003844;
+  --secondary-color: #848FA5;
+  --tertiary-color: #210124;
+}
+
+[color-theme=dark] {
+  --background: black;
+  --primary-color: gray;
+  --secondary-color: lightgray;
+  --tertiary-color: darkgrey;
 }
 
 .popup {
@@ -60,7 +88,7 @@ input:focus, textarea:focus {
   top: 50%;
   max-width: 55rem;
   overflow: auto;
-  background-color: #848FA5;
+  background-color: var(--secondary-color);
   border: 0.2rem solid black;
   padding: 0.5rem;
   border-radius: 1rem;

@@ -1,3 +1,17 @@
+:root {
+  --background: url("../../images/background.jpg");
+  --primary-color: #003844;
+  --secondary-color: #848FA5;
+  --tertiary-color: #210124;
+}
+
+[color-theme=dark] {
+  --background: black;
+  --primary-color: gray;
+  --secondary-color: lightgray;
+  --tertiary-color: darkgrey;
+}
+
 img {
   max-width: 100%;
 }
@@ -39,18 +53,46 @@ input:focus, textarea:focus {
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 0.25rem grey;
   border-radius: 5rem;
-  background-color: #848FA5;
+  background-color: var(--secondary-color);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #210124;
+  background: var(--tertiary-color);
   border-radius: 0.5rem;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #003844;
+  background: var(--primary-color);
+}
+
+:root {
+  --background: url("../../images/background.jpg");
+  --primary-color: #003844;
+  --secondary-color: #848FA5;
+  --tertiary-color: #210124;
+}
+
+[color-theme=dark] {
+  --background: black;
+  --primary-color: gray;
+  --secondary-color: lightgray;
+  --tertiary-color: darkgrey;
+}
+
+:root {
+  --background: url("../../images/background.jpg");
+  --primary-color: #003844;
+  --secondary-color: #848FA5;
+  --tertiary-color: #210124;
+}
+
+[color-theme=dark] {
+  --background: black;
+  --primary-color: gray;
+  --secondary-color: lightgray;
+  --tertiary-color: darkgrey;
 }
 
 a {
@@ -61,7 +103,7 @@ nav {
   padding-top: 1rem;
   padding-bottom: 1rem;
   border-bottom: black solid;
-  background-color: #003844;
+  background-color: var(--primary-color);
 }
 nav ul {
   display: flex;
@@ -92,7 +134,7 @@ nav ul .selected {
   font-weight: bold;
 }
 nav ul .selected a {
-  color: #848FA5;
+  color: var(--secondary-color);
 }
 
 .hover-underline-animation {
@@ -136,6 +178,20 @@ nav ul .selected a {
     opacity: 1;
   }
 }
+:root {
+  --background: url("../../images/background.jpg");
+  --primary-color: #003844;
+  --secondary-color: #848FA5;
+  --tertiary-color: #210124;
+}
+
+[color-theme=dark] {
+  --background: black;
+  --primary-color: gray;
+  --secondary-color: lightgray;
+  --tertiary-color: darkgrey;
+}
+
 img {
   max-width: 100%;
 }
@@ -177,18 +233,32 @@ input:focus, textarea:focus {
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 0.25rem grey;
   border-radius: 5rem;
-  background-color: #848FA5;
+  background-color: var(--secondary-color);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #210124;
+  background: var(--tertiary-color);
   border-radius: 0.5rem;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #003844;
+  background: var(--primary-color);
+}
+
+:root {
+  --background: url("../../images/background.jpg");
+  --primary-color: #003844;
+  --secondary-color: #848FA5;
+  --tertiary-color: #210124;
+}
+
+[color-theme=dark] {
+  --background: black;
+  --primary-color: gray;
+  --secondary-color: lightgray;
+  --tertiary-color: darkgrey;
 }
 
 .popup {
@@ -198,7 +268,7 @@ input:focus, textarea:focus {
   top: 50%;
   max-width: 55rem;
   overflow: auto;
-  background-color: #848FA5;
+  background-color: var(--secondary-color);
   border: 0.2rem solid black;
   padding: 0.5rem;
   border-radius: 1rem;
@@ -212,7 +282,7 @@ input:focus, textarea:focus {
 }
 
 body {
-  background: url("../../images/background.jpg");
+  background: var(--background);
 }
 body main {
   height: 80vh;
@@ -224,7 +294,7 @@ body main #statistics {
   text-align: center;
 }
 body main #statistics h3 {
-  background-color: #210124;
+  background-color: var(--tertiary-color);
   color: hsl(142deg, 10%, 75%);
   border-radius: 2rem 2rem 0 0;
   padding: 1rem;
@@ -233,7 +303,7 @@ body main #statistics h3 {
 body main #statistics .flexcontainer {
   padding-top: 2rem;
   padding-bottom: 2rem;
-  background-color: #848FA5;
+  background-color: var(--secondary-color);
   display: flex;
   justify-content: space-between;
   height: 75%;
@@ -243,7 +313,7 @@ body main #statistics .flexcontainer aside {
   margin-left: 2rem;
   padding-top: 2rem;
   flex-basis: 20%;
-  background-color: #003844;
+  background-color: var(--primary-color);
   color: hsl(142deg, 10%, 75%);
   border-radius: 2rem;
   box-shadow: 0rem 0rem 2rem 0px black;
@@ -258,11 +328,11 @@ body main #statistics .flexcontainer aside ul li {
   font-size: 1.5rem;
 }
 body main #statistics .flexcontainer aside ul li:hover {
-  color: #848FA5;
+  color: var(--secondary-color);
 }
 body main #statistics .flexcontainer aside ul .selected {
   font-weight: bold;
-  color: #848FA5;
+  color: var(--secondary-color);
 }
 body main #statistics .flexcontainer aside ul hr {
   height: 0.15rem;
@@ -270,8 +340,9 @@ body main #statistics .flexcontainer aside ul hr {
   border: none;
 }
 body main #statistics .flexcontainer #company-chart {
+  position: relative;
   flex-basis: 50%;
-  background-color: #003844;
+  background-color: var(--primary-color);
   border-radius: 2rem;
   box-shadow: 0rem 0rem 2rem 0px black;
   padding: 1rem;
@@ -281,8 +352,15 @@ body main #statistics .flexcontainer #company-chart h4 {
   color: hsl(142deg, 10%, 75%);
   margin-bottom: 0.5rem;
 }
-body main #statistics .flexcontainer #company-chart #line-chart {
-  margin-bottom: 6rem;
+body main #statistics .flexcontainer #company-chart #bar-chart-container {
+  height: 90%;
+  width: 100%;
+}
+body main #statistics .flexcontainer #company-chart .material-icons {
+  color: hsl(142deg, 10%, 75%);
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
 }
 body main #statistics .flexcontainer #years {
   color: hsl(142deg, 10%, 75%);
@@ -290,7 +368,7 @@ body main #statistics .flexcontainer #years {
   padding: 3rem 1rem;
   margin-right: 2rem;
   flex-basis: 15%;
-  background-color: #003844;
+  background-color: var(--primary-color);
   border-radius: 2rem;
   box-shadow: 0rem 0rem 2rem 0px black;
 }
@@ -309,10 +387,10 @@ body main #statistics .flexcontainer #years input[type=checkbox] + label {
   -ms-user-select: none;
 }
 body main #statistics .flexcontainer #years input[type=checkbox]:hover + label:hover {
-  color: #848FA5;
+  color: var(--secondary-color);
 }
 body main #statistics .flexcontainer #years input[type=checkbox]:hover + label:before {
-  background: #848FA5;
+  background: var(--secondary-color);
   box-shadow: inset 0px 0px 0px 2px #f7f2f2;
 }
 body main #statistics .flexcontainer #years input[type=checkbox] + label:last-child {
@@ -339,7 +417,7 @@ body main #statistics .flexcontainer #years input[type=checkbox]:checked + label
   border: 2px solid #fff;
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
-  background: #848FA5;
+  background: var(--secondary-color);
   box-shadow: 0 0 0 1px #000;
 }
 body main #statistics .flexcontainer #years form {
@@ -348,7 +426,7 @@ body main #statistics .flexcontainer #years form {
 }
 body main #adds {
   text-align: center;
-  background-color: #848FA5;
+  background-color: var(--secondary-color);
   border-radius: 2rem;
   padding-bottom: 2rem;
   margin: 0 auto;
@@ -358,14 +436,14 @@ body main #adds header h3 {
   padding: 1rem;
   font-size: 2rem;
   border-radius: 2rem 2rem 0 0;
-  background-color: #210124;
+  background-color: var(--tertiary-color);
 }
 body main #adds p {
   font-size: 1.5rem;
   margin: 2rem 0;
 }
 body main #adds form {
-  background-color: #003844;
+  background-color: var(--primary-color);
   margin: 0 2rem;
   border-radius: 2rem;
   padding: 2rem;
@@ -400,7 +478,7 @@ body main #adds form fieldset input {
 body main #adds form fieldset button {
   color: hsl(142deg, 10%, 75%);
   padding: 0.5rem;
-  background-color: #210124;
+  background-color: var(--tertiary-color);
   border-radius: 2rem;
 }
 
