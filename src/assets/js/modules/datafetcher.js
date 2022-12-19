@@ -1,11 +1,19 @@
 import {companyData} from "../../../data/company-data.js";
 import {get} from "./api.js";
+import {searchDome} from "./helper.js";
 
 const APICALLS = {
     crimes: "oxygenLeaks",
     oxygen_leaks: "oxygenLeaks",
     population: "oxygenLeaks",
     medical_dispaches: "oxygenLeaks"
+}
+
+const CATEGORYTYPES = {
+    crimes: "dangerLevel",
+    oxygen_leaks: "dangerLevel",
+    population: "dangerLevel",
+    medical_dispaches: "dangerLevel"
 }
 
 const HEATMAPS = [{
@@ -24,14 +32,14 @@ const HEATMAPS = [{
 
 // MAP
 export function getHeatMapData(func) {
-    const res = []
-    createDataHeatmap(res, 0, nextFunction)
+    const res = [];
+    createDataHeatmap(res, 0, nextFunction);
 
     function nextFunction(res, i) {
         if (i + 1 < HEATMAPS.length) {
-            createDataHeatmap(res, i + 1, nextFunction)
+            createDataHeatmap(res, i + 1, nextFunction);
         } else {
-            func(res)
+            func(res);
         }
     }
 }
@@ -55,35 +63,10 @@ function createDataHeatmap(res, i, func) {
 function makeDataInPosition(data) {
     const res = [];
     data.forEach(obj =>{
-        const position = [obj.lat, obj.lon, 1];
+        const position = [obj.longitude, obj.latitude, 1];
         res.push(position);
     });
-    return getCrimes()
     return res;
-}
-
-function getCrimes() {
-    return [[-23, -69, 5],
-        [-23, -69, 10],
-        [-23.5, -69.5, 7],
-        [-23.5, -69.5, 20],
-        [-23.3, -69.2, 9],
-        [-23.5, -69.5, 11],
-        [-21, -67, 10],
-        [-22, -68, 20],
-        [-24.4730056, -69.3011877, 13],
-        [-24.5, -69.3, 11],
-        [-24, -66.3, 11],
-        [-24.1, -66.25, 20]
-    ]
-}
-
-function getPopulation() {
-    return getCrimes()
-}
-
-function getMedicalDispaches() {
-    return getCrimes()
 }
 
 // BAR CHART
@@ -99,9 +82,22 @@ export function getBarChartData(category, period, func) {
             data = data[apiCall]
                 .filter(obj => filterOnPeriod(obj, period))
             dataPerDome = getDataPerDome(dataPerDome, data);
+            dataPerDome = getDomeNameLabels(dataPerDome);
             func(dataPerDome);
         });
     }
+}
+
+function getDomeNameLabels(data) {
+    for (let dataKey in data) {
+        dataKey = parseInt(dataKey);
+        searchDome(dataKey, succesHandler);
+
+        function succesHandler(dome) {
+            delete Object.assign(data, {[dome.domeName]: data[dataKey] })[dataKey];
+        }
+    }
+    return data
 }
 
 function filterOnPeriod(obj, period) {
@@ -114,14 +110,6 @@ function filterOnPeriod(obj, period) {
     const objDate = new Date(obj.date);
     return objDate > now;
 
-}
-
-function createLabels(data, key) {
-    let res = {}
-    data.forEach(el => {
-        res[el[key]] = 0;
-    });
-    return res;
 }
 
 function getDataPerDome(dataPerDome, data) {
@@ -141,7 +129,7 @@ export function getPieChartData(category, period, domeId, func) {
 
     function succesHandler(res) {
         res.json().then(data => {
-            let dataPerType = createLabels(data[apiCall], "dangerLevel");
+            let dataPerType = createLabels(data[apiCall], CATEGORYTYPES[category]);
             data = data[apiCall]
                 .filter(obj => obj.domeId === domeId)
                 .filter(obj => filterOnPeriod(obj, period));
@@ -170,6 +158,14 @@ function addPercentage(dataPerType) {
     return dataPerType
 }
 
+function createLabels(data, key) {
+    let res = {}
+    data.forEach(el => {
+        res[el[key]] = 0;
+    });
+    return res;
+}
+
 export function getJobs(years) {
     const res = []
     years.forEach(year => {
@@ -195,5 +191,6 @@ export function getLineChartData(category, years) {
     });
     return res;
 }
+
 
 
