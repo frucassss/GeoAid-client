@@ -514,6 +514,7 @@ body main #statistics #container_statistics #container_charts #types_chart #dome
   border-radius: 2rem;
 }
 body main #statistics #container_statistics #container_charts #types_chart #dome-choice #searchbar input::placeholder, body main #statistics #container_statistics #container_charts #types_chart #dome-choice #searchbar input:focus {
+  outline: none;
   color: hsl(142deg, 10%, 75%);
 }
 body main #statistics #container_statistics #container_charts #types_chart #dome-choice #searchbar button {
