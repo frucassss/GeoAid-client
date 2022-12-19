@@ -39,6 +39,9 @@ body {
                     vertical-align: center;
                     border-radius: $border-radius;
                 }
+                input:focus{
+                    outline: none;
+                }
                 button {
                     background-color: white;
                     border: none;
