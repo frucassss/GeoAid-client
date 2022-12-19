@@ -29,6 +29,15 @@ button {
   cursor: pointer;
 }
 
+.blur main {
+  & > * {
+    filter: blur(0.2rem);
+  }
+  .popup {
+    filter: none;
+  }
+}
+
 ::-webkit-scrollbar {
   width: 0.5rem;
 }
