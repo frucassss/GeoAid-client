@@ -14,6 +14,13 @@ body {
             margin-top: 2rem;
             margin-right: 4rem;
             margin-left: 4rem;
+            position: relative;
+            .help {
+                position: absolute;
+                color: $primary-font-color;
+                top: 1.2rem;
+                right: 2rem;
+            }
             h1 {
                 font-family: $header-font-family;
                 color: $header-font-color;

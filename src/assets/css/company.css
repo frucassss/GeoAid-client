@@ -319,6 +319,13 @@ body main #statistics {
   height: 76vh;
   margin: 2rem auto;
   text-align: center;
+  position: relative;
+}
+body main #statistics .help {
+  position: absolute;
+  color: hsl(142deg, 10%, 75%);
+  top: 1.3rem;
+  right: 2rem;
 }
 body main #statistics h3 {
   background-color: var(--tertiary-color);
@@ -457,6 +464,13 @@ body main #adds {
   border-radius: 2rem;
   padding-bottom: 2rem;
   margin: 0 auto;
+  position: relative;
+}
+body main #adds .help {
+  position: absolute;
+  color: hsl(142deg, 10%, 75%);
+  top: 1.3rem;
+  right: 2rem;
 }
 body main #adds header h3 {
   color: hsl(142deg, 10%, 75%);

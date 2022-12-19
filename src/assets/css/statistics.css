@@ -317,6 +317,13 @@ body main #statistics {
   margin-top: 2rem;
   margin-right: 4rem;
   margin-left: 4rem;
+  position: relative;
+}
+body main #statistics .help {
+  position: absolute;
+  color: hsl(142deg, 10%, 75%);
+  top: 1.2rem;
+  right: 2rem;
 }
 body main #statistics h1 {
   font-family: Arial, sans-serif;
