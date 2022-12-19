@@ -271,7 +271,6 @@ body main .flexcontainer #contact > div dl dd {
 }
 body main .flexcontainer #contact > div img {
   width: 3rem;
-  filter: invert(11%) sepia(60%) saturate(3461%) hue-rotate(172deg) brightness(98%) contrast(104%);
 }
 body main .flexcontainer #contact #figs {
   width: 100%;
