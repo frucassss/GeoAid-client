@@ -4,6 +4,7 @@
 @import "animations";
 body {
     background: $background-color;
+    font-family: $primary-font-family;
     main {
         height: 80vh;
         margin: 0 4rem 2rem 4rem;

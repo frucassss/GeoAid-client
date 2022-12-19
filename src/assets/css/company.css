@@ -186,6 +186,7 @@ nav ul .selected a {
 }
 body {
   background: var(--background);
+  font-family: Arial, sans-serif;
 }
 body main {
   height: 80vh;
