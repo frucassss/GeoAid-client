@@ -225,6 +225,9 @@ body header #searchbar input {
   vertical-align: center;
   border-radius: 2rem;
 }
+body header #searchbar input:focus {
+  outline: none;
+}
 body header #searchbar button {
   background-color: white;
   border: none;

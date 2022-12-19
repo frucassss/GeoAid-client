@@ -164,6 +164,7 @@ body {
                                     border-radius: $border-radius;
                                     &::placeholder,
                                     &:focus {
+                                        outline: none;
                                         color: $primary-font-color;
                                     }
                                 }
