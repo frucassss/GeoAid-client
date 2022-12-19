@@ -99,9 +99,13 @@ export function makeSuggestions(addEventListeners) {
     function succesHandler(response) {
         response.json().then(data => {
             let domes = data.domes;
+            console.log(domes)
+            console.log(domes)
             if (domes) {
                 domes = domes
-                    .filter(dome => filterDomes(dome.domeName));
+                    .filter(dome => filterDomes(dome.domeName))
+                    .sort((a, b) => a.domeName.localeCompare(b.domeName));
+                console.log(domes)
                 showSuggestions(domes);
                 addEventListeners();
             }
