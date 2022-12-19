@@ -2,6 +2,8 @@
 @import "constants";
 @import "nav";
 @import "animations";
+@import "popup";
+
 
 body {
     background: $background-color;
@@ -38,6 +40,9 @@ body {
                     box-shadow: $box-shadow;
                     @include dropdown;
 
+                    .material-icons{
+                        //needs styling
+                    }
                     ul {
                         margin: 2rem;
                         display: flex;
