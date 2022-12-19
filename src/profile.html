@@ -3,13 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <title>Profile</title>
+
     <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
     <link rel="stylesheet" href="assets/css/profile.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
-    <script src="assets/js/apointments.js" type="module"></script>
+
+    <script src="assets/js/profile.js" type="module"></script>
   </head>
 
   <body>
@@ -28,14 +27,12 @@
           <li><a href="settings.html">Settings</a></li>
           <li><a href="index.html">Back to map</a></li>
           <li>
-            <a href="profile.html" class="material-icons icon account_circle"
-              >account_circle</a
-            >
+            <a href="profile.html" class="material-icons icon account_circle">account_circle</a>
           </li>
         </ul>
       </nav>
     </header>
-
+    <main>
     <section id="profile">
       <div id="profiletop">
         <div class="material-icons icon account_circle">account_circle</div>
@@ -122,6 +119,7 @@
         </article>
 
         <article id="appointment" class="profileSetting">
+          <div class="material-icons icon help" data-help="appointment">help</div>
           <div class="headerArticle">
             <div class="material-icons icon date_range">date_range</div>
             <h2 class="hover-underline-animation">Appointment</h2>
@@ -161,5 +159,16 @@
         </article>
       </div>
     </section>
+      <div id="popup-appointment" class="popup hidden">
+        <div class="material-icons icon close">close</div>
+        <h2>Appointments</h2>
+        <div class="content">
+          <p>
+            On this page you are able to send a request to gather information about where to settle your new business or home. <br /> You can choose the topic of your request and the employee you want to help you. <br /> You will receive an email
+            with the answer to your request. <br /> Our team will help you making the right decision.
+          </p>
+        </div>
+      </div>
+    </main>
   </body>
 </html>

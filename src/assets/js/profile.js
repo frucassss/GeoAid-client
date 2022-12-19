@@ -1,10 +1,19 @@
-const btn = document.getElementById("submitbtn");
+import {setColorScheme} from "./modules/helper.js";
+import {eventListenerPopup} from "./modules/popup.js";
+
+function init() {
+  handleEventListeners();
+  setColorScheme();
+  eventListenerPopup();
+}
+
+function handleEventListeners() {
+  document.getElementById("submitbtn").addEventListener("click", submit);
+}
+
 const article = document.getElementById("appointment-list");
 const appointments = document.getElementById("appointments");
 let appointmentNumber = 1;
-document.addEventListener("DOMContentLoaded", function (e) {
-  btn.addEventListener("click", submit);
-});
 
 function submit(e) {
   e.preventDefault();
@@ -24,3 +33,5 @@ function submit(e) {
     <p>Employee: ${employee}</p>
     </div> `;
 }
+
+init();

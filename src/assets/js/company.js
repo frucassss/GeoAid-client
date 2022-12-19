@@ -1,13 +1,12 @@
-import {createLineChart} from "./modules/graphs.js";
-import {eventListenerFullscreen, selectClickedCategory, setColorScheme} from "./modules/helper.js";
+import { createLineChart } from "./modules/graphs.js";
+import { selectClickedCategory, eventListenerFullscreen, setColorScheme } from "./modules/helper.js";
+import { eventListenerPopup } from "./modules/popup.js";
 
 function init() {
     handleEventListeners();
     setColorScheme();
     createLineChart();
-
-    const html = document.querySelector('html');
-    html.dataset.theme = `theme-light`;
+    eventListenerPopup();
 }
 
 function handleEventListeners() {

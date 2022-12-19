@@ -2,6 +2,7 @@
 @import "constants";
 @import "nav";
 @import "animations";
+@import "popup";
 body {
     background: $background-color;
     font-family: $primary-font-family;
@@ -12,6 +13,14 @@ body {
             height: 76vh;
             margin: 2rem auto;
             text-align: center;
+            position: relative;
+
+            .help {
+                position: absolute;
+                color: $primary-font-color;
+                top: 1.3rem;
+                right: 2rem;
+            }
             h3 {
                 background-color: $header-background-color;
                 color: $header-font-color;
@@ -56,9 +65,6 @@ body {
                             border: none;
                         }
                     }
-                }
-                #category_chart {
-
                 }
                 #company-chart {
                     position: relative;
@@ -107,6 +113,14 @@ body {
             border-radius: $border-radius;
             padding-bottom: 2rem;
             margin: 0 auto;
+            position: relative;
+
+            .help {
+                position: absolute;
+                color: $primary-font-color;
+                top: 1.3rem;
+                right: 2rem;
+            }
             header h3 {
                 color: $header-font-color;
                 padding: 1rem;

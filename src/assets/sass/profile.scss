@@ -2,6 +2,7 @@
 @import "constants";
 @import "nav";
 @import "animations";
+@import "popup";
 
 #profile {
   font-family: $primary-font-family;
@@ -15,8 +16,6 @@
   article:nth-child(2) {animation-delay: 0.30s}
   article:nth-child(3) {animation-delay: 0.60s}
   article:nth-child(4) {animation-delay: 0.90s}
-
-
 
   @keyframes slidein{
     from{
@@ -139,6 +138,13 @@
     }
   }
   #appointment{
+    position: relative;
+    .help {
+      position: absolute;
+      color: $primary-font-color;
+      top: 1.3rem;
+      right: 2rem;
+    }
     form{
       background-color: $secondary-color;
       display: flex;
