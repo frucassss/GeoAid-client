@@ -41,6 +41,13 @@ button {
   cursor: pointer;
 }
 
+.blur main > * {
+  filter: blur(0.2rem);
+}
+.blur main .popup {
+  filter: none;
+}
+
 ::-webkit-scrollbar {
   width: 0.5rem;
 }
@@ -221,6 +228,13 @@ button {
   cursor: pointer;
 }
 
+.blur main > * {
+  filter: blur(0.2rem);
+}
+.blur main .popup {
+  filter: none;
+}
+
 ::-webkit-scrollbar {
   width: 0.5rem;
 }
@@ -264,21 +278,34 @@ input:focus, textarea:focus {
 .popup {
   position: fixed;
   z-index: 1;
-  left: 25%;
-  top: 50%;
-  max-width: 55rem;
+  left: 30%;
+  top: 35%;
+  width: 40%;
   overflow: auto;
   background-color: var(--secondary-color);
-  border: 0.2rem solid black;
-  padding: 0.5rem;
+  border: 0.3rem solid var(--primary-color);
+  padding: 1rem;
   border-radius: 1rem;
+  box-shadow: 0rem 0rem 2rem 0px black;
 }
 .popup h2 {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 .popup p {
-  margin: 0.5rem;
+  line-height: 1.7rem;
   font-size: 1.2rem;
+}
+.popup br {
+  display: block;
+  content: "";
+  margin-top: 0.5rem;
+}
+.popup .close {
+  position: absolute;
+  font-size: 2rem;
+  top: 0.8rem;
+  right: 0.5rem;
 }
 
 body {
@@ -306,8 +333,10 @@ body main form fieldset {
   background-color: var(--secondary-color);
   margin-left: auto;
   margin-right: auto;
+  border-radius: 2rem;
+  position: relative;
 }
-body main form fieldset legend {
+body main form fieldset h1 {
   padding: 1rem 0;
   font-size: 2rem;
   width: 100%;
@@ -350,6 +379,13 @@ body main form fieldset button {
 }
 body main form fieldset #summary {
   height: 40vh;
+}
+body main form fieldset .help {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.5rem;
+  color: hsl(142deg, 10%, 75%);
+  font-size: 1.5rem;
 }
 
 /*# sourceMappingURL=localisation.css.map */
