@@ -37,7 +37,28 @@ body {
                     border-radius: $border-radius;
                     box-shadow: $box-shadow;
                     @include dropdown;
+                    select {
+                        background-color: $secondary-color;
+                        border: 1px solid $tertiary-font-color;
+                        border-radius: 0.75rem;
+                        color: #333333;
+                        font-size: 1rem;
+                        padding: 0.5rem;
 
+                        option{
+                            background-color: $primary-color;
+                            color: $primary-font-color;
+                        }
+
+                        option:hover{
+                            background-color: $tertiary-color;
+                            color: $tertiary-font-color;
+                        }
+                    }
+                    select:hover {
+                        background-color: $tertiary-color;
+                        color: $primary-font-color;
+                    }
                     ul {
                         margin: 2rem;
                         display: flex;

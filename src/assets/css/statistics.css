@@ -248,6 +248,26 @@ body main #statistics #container_statistics aside .dropdown:hover .dropdown-cont
 body main #statistics #container_statistics aside .dropdown:hover .dropbtn {
   background-color: #ccc;
 }
+body main #statistics #container_statistics aside select {
+  background-color: var(--secondary-color);
+  border: 1px solid black;
+  border-radius: 0.75rem;
+  color: #333333;
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+body main #statistics #container_statistics aside select option {
+  background-color: var(--primary-color);
+  color: hsl(142deg, 10%, 75%);
+}
+body main #statistics #container_statistics aside select option:hover {
+  background-color: var(--tertiary-color);
+  color: black;
+}
+body main #statistics #container_statistics aside select:hover {
+  background-color: var(--tertiary-color);
+  color: hsl(142deg, 10%, 75%);
+}
 body main #statistics #container_statistics aside ul {
   margin: 2rem;
   display: flex;
