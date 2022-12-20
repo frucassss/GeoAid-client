@@ -454,14 +454,60 @@ input:focus, textarea:focus {
 #profile #appointment form {
   background-color: var(--secondary-color);
   display: flex;
-  justify-content: space-around;
   margin-right: 2rem;
   padding-bottom: 2rem;
   border-radius: 2rem;
+  flex-direction: column;
+  align-items: center;
+}
+#profile #appointment form .subjectflex {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+}
+#profile #appointment form .subjectflex label {
+  align-self: center;
+}
+#profile #appointment form .boxflex {
+  display: flex;
+  flex-direction: row;
+}
+#profile #appointment form .inputflex {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+#profile #appointment form label {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+#profile #appointment form input, #profile #appointment form button, #profile #appointment form select {
+  background-color: var(--primary-color);
+  font-size: 1rem;
+  color: hsl(142deg, 10%, 75%);
+  padding: 0.5rem 0.5rem 0.5rem 0.75rem;
+  line-height: 2rem;
+  border-radius: 2rem;
+}
+#profile #appointment form select {
+  height: 3rem;
+  padding: 0.5rem;
+}
+#profile #appointment form button {
+  width: 20%;
+  align-items: center;
+  margin-top: 1rem;
+  background-color: var(--tertiary-color);
+  color: hsl(142deg, 10%, 75%);
+  cursor: pointer;
+  font-size: 1.4rem;
+  border-radius: 2rem;
+  padding: 0.5rem;
 }
 #profile #appointment form .flexcontainer {
   display: flex;
-  width: 30%;
 }
 #profile #appointment form .flexcontainer label {
   font-size: 1.5rem;
