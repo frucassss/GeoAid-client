@@ -8,8 +8,10 @@ export function eventListenerPopup() {
     })
 }
 
-function showPopup(e) {
-    const popupId = e.target.dataset.help;
+export function showPopup(e, id) {
+    let popupId;
+    if (id) popupId = id;
+    else popupId = e.target.dataset.help;
     const $popup = document.querySelector(`#popup-${popupId}`);
     $popup.classList.remove("hidden");
     addBlur();
