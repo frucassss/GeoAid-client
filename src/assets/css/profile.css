@@ -508,7 +508,6 @@ input:focus, textarea:focus {
 }
 #profile #appointment-list #appointments p {
   font-size: 1rem;
-  margin-bottom: 0.5rem;
 }
 #profile #appointment-list #appointments .appointment {
   width: 40%;
@@ -517,6 +516,18 @@ input:focus, textarea:focus {
   margin-bottom: 1rem;
   padding: 1rem;
 }
+#profile #appointment-list #appointments .appointment .appointmentflex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.5rem;
+}
+#profile #appointment-list #appointments .appointment .appointmentflex label {
+  color: var(--secondary-color);
+  font-size: 1.2rem;
+  margin-right: 1rem;
+  font-weight: bold;
+}
 #profile #appointment-list #appointments .appointment h3 {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
@@ -524,6 +535,7 @@ input:focus, textarea:focus {
 }
 #profile #appointment-list #appointments .appointment p {
   color: hsl(142deg, 10%, 75%);
+  font-size: 1.2rem;
 }
 
 /*# sourceMappingURL=profile.css.map */
