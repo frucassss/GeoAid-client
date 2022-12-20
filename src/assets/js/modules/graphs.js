@@ -37,6 +37,7 @@ export function createBarChart() {
 }
 
 function makeBarChart(data) {
+    console.log(data)
     deleteOldChart("bar-chart", "bar-chart-container");
     const sideValue = getSideValue();
     const theme = localStorage.getItem("color-theme");

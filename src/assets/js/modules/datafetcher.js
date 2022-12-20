@@ -82,22 +82,14 @@ export function getBarChartData(category, period, func) {
             data = data[apiCall]
                 .filter(obj => filterOnPeriod(obj, period))
             dataPerDome = getDataPerDome(dataPerDome, data);
-            dataPerDome = getDomeNameLabels(dataPerDome);
+            dataPerDome = makeDomeNameLabels(dataPerDome);
             func(dataPerDome);
         });
     }
 }
 
-function getDomeNameLabels(data) {
-    for (let dataKey in data) {
-        dataKey = parseInt(dataKey);
-        searchDome(dataKey, succesHandler);
-
-        function succesHandler(dome) {
-            delete Object.assign(data, {[dome.domeName]: data[dataKey] })[dataKey];
-        }
-    }
-    return data
+function makeDomeNameLabels(data) {
+    return data;
 }
 
 function filterOnPeriod(obj, period) {

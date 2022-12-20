@@ -93,9 +93,9 @@ function createDome(data) {
             iconSize: [40, 40],
             className: "dome"
         });
-        const domeMarker = L.marker([dome.latitude, dome.longitude], { icon: icon }).bindPopup(`this is ${dome.domeName}`)
+        const domeMarker = L.marker([dome.latitude, dome.longitude], { icon: icon }).bindPopup(`this is ${dome.domeName}`);
         domeMarker.addTo(map);
-        domeMarker._icon.id = dome.domeName
+        domeMarker._icon.id = dome.domeName;
     });
     SelectedOnClick()
 }
@@ -113,16 +113,17 @@ function SelectedOnClick() {
 }
 
 function createCircle(domeName) {
-    const $oldCircle = document.querySelector(".circle")
-    if ($oldCircle) $oldCircle.remove()
+    const $oldCircle = document.querySelector(".circle");
+    if ($oldCircle) $oldCircle.remove();
 
-    searchDome(domeName, succesHandler)
+    searchDome(domeName, succesHandler);
     function succesHandler(dome) {
+        const radius = Math.sqrt(dome.surface / Math.PI);
         const circle = L.circle([dome.latitude, dome.longitude], {
             color: "grey",
             fillColor: "grey",
             fillOpacity: 0.3,
-            radius: 300,
+            radius: radius,
             className: "circle"
         }).addTo(map);
     }
