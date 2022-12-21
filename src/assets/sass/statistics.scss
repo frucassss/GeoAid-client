@@ -1,3 +1,4 @@
+@import "spinner";
 @import "general";
 @import "constants";
 @import "nav";
@@ -128,6 +129,10 @@ body {
                         #bar-chart-container {
                             height: 90%;
                             width: 100%;
+                            .spinner-wave-in{
+                                margin: 0 auto;
+                                margin-top: 22vh;
+                            }
                         }
                         .material-icons {
                             color: $primary-font-color;
