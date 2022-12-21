@@ -4,23 +4,20 @@ import {getIncidents} from "./apiCrimes.js";
 import {setPosition} from "./helper.js";
 
 const APICALLS = {
-    crimes: "oxygenLeaks",
+    crimes: "crimes",
     oxygen_leaks: "oxygenLeaks",
     population: "population",
-    medical_dispaches: "oxygenLeaks"
+    medical_dispaches: "medicalDispatches"
 };
 
 const CATEGORYTYPES = {
-    crimes: "dangerLevel",
+    crimes: "type",
     oxygen_leaks: "dangerLevel",
     population: "colony",
-    medical_dispaches: "dangerLevel"
+    medical_dispaches: "dispatchType"
 };
 
 const HEATMAPS = [{
-    title: "Crimes",
-    dataApiCall: APICALLS.crimes
-},{
     title: "Oxygen Leaks",
     dataApiCall: APICALLS.oxygen_leaks
 },{
@@ -31,16 +28,24 @@ const HEATMAPS = [{
     dataApiCall: APICALLS.medical_dispaches
 }];
 
+
+
 // MAP
 export function getHeatMapData(func) {
-    const res = [];
-    createDataHeatmap(res, 0, nextFunction);
+    getCrimes(succesHandler);
 
-    function nextFunction(res, i) {
-        if (i + 1 < HEATMAPS.length) {
-            createDataHeatmap(res, i + 1, nextFunction);
-        } else {
-            func(res);
+    function succesHandler(data) {
+        const res = [{title: "Crimes",
+                        data: data.crimes}];
+        createDataHeatmap(res, 0, nextFunction);
+
+        function nextFunction(res, i) {
+            if (i + 1 < HEATMAPS.length) {
+                createDataHeatmap(res, i + 1, nextFunction);
+            } else {
+                console.log(res)
+                func(res);
+            }
         }
     }
 }
@@ -65,7 +70,8 @@ function makeDataInPosition(data) {
     const res = [];
     data.forEach(obj =>{
         const position = [obj.longitude, obj.latitude, 1];
-        for (let i = 0; i < 0.01; i = i + 0.0001) {
+        for (let i = 0; i < 0.001; i = i + 0.0001) {
+            res.push([...position]);
             position[0] = position[0] + i;
             res.push([...position]);
             position[1] = position[1] + i;
@@ -90,22 +96,21 @@ export function getBarChartData(category, period, func) {
         get(apiCall, succesHandler);
     }
     function succesHandler(res) {
-        console.log(res)
-        if (Array.isArray(res)) {
-            let dataPerDome = createDomeNameLabels(res);
-            res = res
-                .filter(obj => filterOnPeriod(obj, period));
-            dataPerDome = getDataPerDome(dataPerDome, res);
-            func(dataPerDome);
+        if (res["crimes"]) {
+            createData(res);
         } else {
+            console.log(res)
             res.json().then(data => {
-                let dataPerDome = createDomeNameLabels(data[apiCall]);
-                data = data[apiCall]
-                    .filter(obj => filterOnPeriod(obj, period));
-                dataPerDome = getDataPerDome(dataPerDome, data);
-                func(dataPerDome);
+                createData(data);
             });
         }
+    }
+    function createData(data) {
+        let dataPerDome = createDomeNameLabels(data[apiCall]);
+        data = data[apiCall]
+            .filter(obj => filterOnPeriod(obj, period));
+        dataPerDome = getDataPerDome(dataPerDome, data);
+        func(dataPerDome);
     }
 }
 
@@ -141,21 +146,31 @@ export function getPieChartData(category, period, domeId, func) {
     period = parseInt(period);
     domeId = parseInt(domeId);
     const apiCall = APICALLS[category];
-    get(apiCall, succesHandler);
+    if (category === "crimes") {
+        getCrimes(succesHandler);
+    } else {
+        get(apiCall, succesHandler);
+    }
 
     function succesHandler(res) {
-        res.json().then(data => {
-            let dataPerType = createLabels(data[apiCall], CATEGORYTYPES[category]);
-            data[apiCall].forEach(el => {
-            })
-            data = data[apiCall]
-                .filter(obj => obj.dome.id === domeId)
-                .filter(obj => filterOnPeriod(obj, period));
-            dataPerType = getDataPerType(dataPerType, data, category);
-            dataPerType = addPercentage(dataPerType);
-            Object.entries(dataPerType).sort(([,a],[,b]) => b-a);
-            func(dataPerType);
-        });
+        if (res["crimes"]) {
+            createData(res)
+        } else {
+            console.log(res)
+            res.json().then(data => {
+                createData(data);
+            });
+        }
+    }
+    function createData(data) {
+        let dataPerType = createLabels(data[apiCall], CATEGORYTYPES[category]);
+        data = data[apiCall]
+            .filter(obj => obj.dome.id === domeId)
+            .filter(obj => filterOnPeriod(obj, period));
+        dataPerType = getDataPerType(dataPerType, data, category);
+        dataPerType = addPercentage(dataPerType);
+        Object.entries(dataPerType).sort(([,a],[,b]) => b-a);
+        func(dataPerType);
     }
 }
 
@@ -215,16 +230,17 @@ function makeCrimes(data, func) {
         const position = setPosition([incident.latitude, incident.longitude]);
         getClosestDome(position, succesHandler);
 
-        function succesHandler(closestDome) {
+        async function succesHandler(closestDome) {
             const crime = {
                 id: incident.id,
-                latitude: position[0],
-                longitude: position[1],
+                lat: position[0],
+                lon: position[1],
                 dome: closestDome,
                 type: incident.type
             };
             res.push(crime);
             if (i === data.length - 1) {
+                res = {"crimes": res}
                 func(res);
             }
         }
