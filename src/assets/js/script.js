@@ -70,21 +70,23 @@ function addEventListenersSuggestions() {
     document.querySelectorAll('#suggestions li').forEach(li => {
         li.addEventListener("click", function (ev) {
             const target = ev.currentTarget.id;
-            changeview(target);
+            changeView(target);
         })
     })
 }
 
-function changeview(search) {
+function changeView(search) {
     get("domes", succesHandler)
 
     function succesHandler(response) {
         response.json().then(data => {
             const domes = data.domes
             for (const i in domes) {
-                const dome = domes[i];
-                if (dome.id === parseInt(search)) {
-                    setView([dome.latitude, dome.longitude]);
+                if (domes.hasOwnProperty(i)) {
+                    const dome = domes[i];
+                    if (dome.id === parseInt(search)) {
+                        setView([dome.latitude, dome.longitude]);
+                    }
                 }
             }
         })

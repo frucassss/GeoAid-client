@@ -1,25 +1,27 @@
 import {companyData} from "../../../data/company-data.js";
 import {get} from "./api.js";
-import {searchDome} from "./helper.js";
+import {getIncidents} from "./apiCrimes.js";
+import {setPosition} from "./helper.js";
 
 const APICALLS = {
-    crimes: "oxygenLeaks",
+    crimes: "crimes",
     oxygen_leaks: "oxygenLeaks",
-    population: "oxygenLeaks",
-    medical_dispaches: "oxygenLeaks"
-}
+    population: "population",
+    medical_dispaches: "medicalDispatches",
+    dust_storms: "dustStorms",
+    meteor_showers: "meteorShowers"
+};
 
 const CATEGORYTYPES = {
-    crimes: "dangerLevel",
+    crimes: "type",
     oxygen_leaks: "dangerLevel",
-    population: "dangerLevel",
-    medical_dispaches: "dangerLevel"
-}
+    population: "colony",
+    medical_dispaches: "dispatchType",
+    dust_storms: "damageLevel",
+    meteor_showers: "damageLevel"
+};
 
 const HEATMAPS = [{
-    title: "Crimes",
-    dataApiCall: APICALLS.crimes
-},{
     title: "Oxygen Leaks",
     dataApiCall: APICALLS.oxygen_leaks
 },{
@@ -27,36 +29,49 @@ const HEATMAPS = [{
     dataApiCall: APICALLS.population
 },{
     title: "Medical Dispaches",
-    dataApiCall: APICALLS.medical_dispaches
+    dataApiCall: APICALLS.medical_dispaches,
+},{
+    title: "Dust Storms",
+    dataApiCall: APICALLS.dust_storms,
+},{
+    title: "Meteor Showers",
+    dataApiCall: APICALLS.meteor_showers,
 }];
+
 
 // MAP
 export function getHeatMapData(func) {
-    const res = [];
-    createDataHeatmap(res, 0, nextFunction);
+    getCrimes(succesHandler);
 
-    function nextFunction(res, i) {
-        if (i + 1 < HEATMAPS.length) {
-            createDataHeatmap(res, i + 1, nextFunction);
-        } else {
-            func(res);
+    function succesHandler(data) {
+        const res = [{title: "Crimes",
+                        data: data.crimes}];
+        createDataHeatmap(res, 0, nextFunction);
+
+        function nextFunction(res, i) {
+            if (i + 1 < HEATMAPS.length) {
+                createDataHeatmap(res, i + 1, nextFunction);
+            } else {
+                console.log(res)
+                func(res);
+            }
         }
     }
 }
 
 
 function createDataHeatmap(res, i, func) {
-    get(HEATMAPS[i].dataApiCall, succesHandler)
+    get(HEATMAPS[i].dataApiCall, succesHandler);
 
     function succesHandler(response) {
         response.json().then(data => {
             const obj = {
                 title: HEATMAPS[i].title,
                 data: makeDataInPosition(data[HEATMAPS[i].dataApiCall])
-            }
+            };
             res.push(obj);
             func(res, i);
-        })
+        });
     }
 }
 
@@ -64,7 +79,17 @@ function makeDataInPosition(data) {
     const res = [];
     data.forEach(obj =>{
         const position = [obj.longitude, obj.latitude, 1];
-        res.push(position);
+        for (let i = 0; i < 0.001; i = i + 0.0001) {
+            res.push([...position]);
+            position[0] = position[0] + i;
+            res.push([...position]);
+            position[1] = position[1] + i;
+            res.push([...position]);
+            position[1] = position[1] - i;
+            res.push([...position]);
+            position[1] = position[1] - i;
+            res.push([...position]);
+        }
     });
     return res;
 }
@@ -74,26 +99,39 @@ export function getBarChartData(category, period, func) {
     category = category.replace("-","_");
     period = parseInt(period);
     const apiCall = APICALLS[category];
-    get(apiCall, succesHandler);
-
+    if (category === "crimes") {
+        getCrimes(succesHandler);
+    } else {
+        get(apiCall, succesHandler);
+    }
     function succesHandler(res) {
-        res.json().then(data => {
-            let dataPerDome = createLabels(data[apiCall], "domeId");
-            data = data[apiCall]
-                .filter(obj => filterOnPeriod(obj, period))
-            dataPerDome = getDataPerDome(dataPerDome, data);
-            dataPerDome = makeDomeNameLabels(dataPerDome);
-            func(dataPerDome);
-        });
+        if (res["crimes"]) {
+            createData(res);
+        } else {
+            res.json().then(data => {
+                createData(data);
+            });
+        }
+    }
+    function createData(data) {
+        let dataPerDome = createDomeNameLabels(data[apiCall]);
+        data = data[apiCall]
+            .filter(obj => filterOnPeriod(obj, period));
+        dataPerDome = getDataPerDome(dataPerDome, data);
+        func(dataPerDome);
     }
 }
 
-function makeDomeNameLabels(data) {
-    return data;
+function createDomeNameLabels(data) {
+    let res = {}
+    data.forEach(el => {
+        res[el.dome.domeName] = 0;
+    });
+    return res;
 }
 
 function filterOnPeriod(obj, period) {
-    if (period === 0) return true;
+    if (period === 0) {return true}
     const now = new Date();
     const currentMonth = now.getMonth();
     const beginMonth = currentMonth - period;
@@ -101,12 +139,11 @@ function filterOnPeriod(obj, period) {
 
     const objDate = new Date(obj.date);
     return objDate > now;
-
 }
 
 function getDataPerDome(dataPerDome, data) {
     data.forEach(obj => {
-        dataPerDome[obj.domeId] += 1;
+        dataPerDome[obj.dome.domeName] += 1;
     });
     return dataPerDome;
 }
@@ -117,25 +154,36 @@ export function getPieChartData(category, period, domeId, func) {
     period = parseInt(period);
     domeId = parseInt(domeId);
     const apiCall = APICALLS[category];
-    get(apiCall, succesHandler);
+    if (category === "crimes") {
+        getCrimes(succesHandler);
+    } else {
+        get(apiCall, succesHandler);
+    }
 
     function succesHandler(res) {
-        res.json().then(data => {
-            let dataPerType = createLabels(data[apiCall], CATEGORYTYPES[category]);
-            data = data[apiCall]
-                .filter(obj => obj.domeId === domeId)
-                .filter(obj => filterOnPeriod(obj, period));
-            dataPerType = getDataPerType(dataPerType, data);
-            dataPerType = addPercentage(dataPerType);
-            Object.entries(dataPerType).sort(([,a],[,b]) => b-a);
-            func(dataPerType);
-        })
+        if (res["crimes"]) {
+            createData(res)
+        } else {
+            res.json().then(data => {
+                createData(data);
+            });
+        }
+    }
+    function createData(data) {
+        let dataPerType = createLabels(data[apiCall], CATEGORYTYPES[category]);
+        data = data[apiCall]
+            .filter(obj => obj.dome.id === domeId)
+            .filter(obj => filterOnPeriod(obj, period));
+        dataPerType = getDataPerType(dataPerType, data, category);
+        dataPerType = addPercentage(dataPerType);
+        Object.entries(dataPerType).sort(([,a],[,b]) => b-a);
+        func(dataPerType);
     }
 }
 
-function getDataPerType(dataPerType, data) {
+function getDataPerType(dataPerType, data, category) {
     data.forEach(obj => {
-        dataPerType[obj.dangerLevel] += 1;
+        dataPerType[obj[CATEGORYTYPES[category]]] += 1;
     });
     return dataPerType;
 }
@@ -143,46 +191,93 @@ function getDataPerType(dataPerType, data) {
 function addPercentage(dataPerType) {
     const total = Object.values(dataPerType).reduce((a, b) => a + b);
     for (const dataPerTypeKey in dataPerType) {
-        const value = dataPerType[dataPerTypeKey];
-        const percentage = (value / total * 100).toFixed(0);
-        delete Object.assign(dataPerType, {[" (" + percentage + "%) " + dataPerTypeKey]: dataPerType[dataPerTypeKey] })[dataPerTypeKey];
+        if (dataPerType.hasOwnProperty(dataPerTypeKey)) {
+            const value = dataPerType[dataPerTypeKey];
+            const percentage = (value / total * 100).toFixed(0);
+            delete Object.assign(dataPerType, {[` (${percentage}%) ${dataPerTypeKey}`]: dataPerType[dataPerTypeKey] })[dataPerTypeKey];
+        }
     }
-    return dataPerType
+    return dataPerType;
 }
 
 function createLabels(data, key) {
-    let res = {}
+    const res = {};
     data.forEach(el => {
         res[el[key]] = 0;
     });
     return res;
 }
 
-export function getJobs(years) {
-    const res = []
-    years.forEach(year => {
-        const employees = companyData.employees;
-        for (const employeesKey in employees) {
-            const data = employees[employeesKey][year]
-            const dataset = {}
-            for (const key in data) {
-                dataset[key] = data[key].amount;
-            }
-            res.push(dataset)
-        }
-    });
-    return res;
-
-}
-
 // LINE CHART
 export function getLineChartData(category, years) {
-    const res = []
+    const res = [];
     years.forEach(year => {
-        res.push(companyData[category][year])
+        res.push(companyData[category][year]);
+        // normally the company itself should prepare this data, so we do it with the data of out company we made in the business case
     });
     return res;
 }
 
+// GLOBAL
+
+function getCrimes(func) {
+    getIncidents(succesHandler);
+
+    function succesHandler(res) {
+        res.json().then(data => {
+            makeCrimes(data, func)
+        })
+    }
+}
+
+function makeCrimes(data, func) {
+    let res = []
+    for (let i = 0; i < data.length; i++) {
+        const incident = data[i];
+        const position = setPosition([incident.latitude, incident.longitude]);
+        getClosestDome(position, succesHandler);
+
+        async function succesHandler(closestDome) {
+            const crime = {
+                id: incident.id,
+                lat: position[0],
+                lon: position[1],
+                dome: closestDome,
+                type: incident.type
+            };
+            res.push(crime);
+            if (i === data.length - 1) {
+                res = {"crimes": res}
+                func(res);
+            }
+        }
+    }
+}
+
+function getClosestDome(position, func) {
+    get("domes", succesHandler);
+
+    function succesHandler(response) {
+        response.json().then(data => {
+            const domes = data.domes;
+            let closestDome = domes[0];
+            let minDistance = getDistance(position, domes[0]);
+            domes.forEach(dome => {
+                const distance = getDistance(position, dome);
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    closestDome = dome;
+                }
+            });
+            func(closestDome);
+        })
+    }
+}
+
+function getDistance(position, dome) {
+    const distanceLat = Math.round(position.latitude + dome.latitude);
+    const distanceLong = Math.round(position.longitude + dome.longitude);
+    return distanceLat + distanceLong;
+}
 
 

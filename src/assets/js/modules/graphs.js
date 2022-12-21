@@ -1,13 +1,12 @@
 import {
     getBarChartData, getPieChartData, getLineChartData
 } from "./datafetcher.js";
-import {get} from "./api.js";
 import {searchDome} from "./helper.js";
 
 const FONTCOLOR = "hsl(142deg, 10%, 75%)";
 const PIECHARTCOLORSET = {
-    light: ["#3d2117", "#4e2117", "#5e2117", "#6e2117", "#7e2117", "#8e2117", "#9e2117"],
-    dark: ["#1f1f1f", "#2f1f1f", "#3f1f1f", "#4f1f1f", "#5f1f1f"]
+    light: ["#663926", "#6b4c26", "#724b2f", "#734c30", "#8b5742", "#8c5843", "#8c5d44", "#8d5e45", "#9b6e3e", "#9b7a5c", "#9c7a5a", "#9d6f3f", "#a5876d", "#a67c52", "#a69071", "#a78c53", "#a7987b", "#a89a7c", "#a67c52", "#b38f6b", "#bc9f6f"],
+    dark:   ["#2e2e2e", "#3f3f3f", "#4d4d4d", "#4e4e4e", "#5d5d5d", "#5e5e5e", "#6d6d6d", "#6e6e6e", "#7d7d7d", "#7e7e7e", "#8d8d8d", "#8e8e8e", "#9d9d9d", "#9e9e9e", "#aeaeae", "#bebebe", "#cecece", "#dfdfdf", "#efefef", "#ffffff"]
 };
 const LINECHARTCOLORSET = ["blue", "red", "orange", "grey", "pink"];
 const PRIMARYCOLOR = {
@@ -27,7 +26,9 @@ const SIDEVALUE = {
     crimes: "Amount of crimes",
     oxygen_leaks: "Amount of oxygen leaks",
     population: "population",
-    medical_dispaches : "Amount of medical dispaches"
+    medical_dispaches : "Amount of medical dispaches",
+    meteor_showers: "Amount of of meteor showers",
+    dust_storms: "Amount of dust storms"
 };
 
 export function createBarChart() {
@@ -37,7 +38,6 @@ export function createBarChart() {
 }
 
 function makeBarChart(data) {
-    console.log(data)
     deleteOldChart("bar-chart", "bar-chart-container");
     const sideValue = getSideValue();
     const theme = localStorage.getItem("color-theme");

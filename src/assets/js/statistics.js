@@ -1,13 +1,22 @@
 import {get, setApi } from "./modules/api.js";
 import { eventListenerPopup } from "./modules/popup.js";
-import { eventListenerFullscreen, makeSuggestions, selectClickedCategory, setColorScheme } from "./modules/helper.js";
+import {
+    eventListenerFullscreen,
+    makeSuggestions,
+    selectClickedCategory,
+    setColorScheme,
+    setPosition
+} from "./modules/helper.js";
 import { createBarChart, createPieChart } from "./modules/graphs.js";
+import {getIncidents} from "./modules/apiCrimes.js";
 
 const PIECHARTTITLES = {
-    crimes: "Type of crimes",
-    oxygen_leaks: "Danger level of oxygen leaks",
-    population: "Jobs of population",
-    medical_dispaches: "Danger level of medical dispaches",
+    crimes: "Types (crimes)",
+    oxygen_leaks: "Danger level (oxygen leaks)",
+    population: "Colony (population)",
+    medical_dispaches: "Danger level (medical dispaches)",
+    dust_storms: "Damage level (dust storms)",
+    meteor_showers: "Damage level (meteor showers)"
 };
 
 function loadConfig() {

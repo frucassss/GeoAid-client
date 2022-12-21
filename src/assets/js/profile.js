@@ -1,5 +1,5 @@
 import {setColorScheme} from "./modules/helper.js";
-import {eventListenerPopup} from "./modules/popup.js";
+import {eventListenerPopup, showPopup} from "./modules/popup.js";
 import {get, post, setApi} from "./modules/api.js";
 
 function loadConfig() {
@@ -20,7 +20,11 @@ function init() {
 }
 
 function handleEventListeners() {
-  document.querySelector("form").addEventListener("submit", submitAppointment);
+  document.querySelector("form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    submitAppointment();
+    showPopup(e, "submit");
+  });
 }
 
 function displayAppointments() {
@@ -46,7 +50,6 @@ function displayAppointments() {
 }
 
 function submitAppointment(e) {
-  e.preventDefault();
   const date = document.querySelector("#date").value;
   const time = document.querySelector("#time").value;
   const expertise = document.querySelector("#expertise").value;
@@ -61,7 +64,18 @@ function submitAppointment(e) {
     "expertise": expertise
   };
 
+  changeValuesPopup(body);
   post("appointment", body, displayAppointments);
+}
+
+function changeValuesPopup(body) {
+  console.log("hey")
+  const $target = document.querySelector("#popup-submit");
+  $target.querySelector(".date").innerText = body.date;
+  $target.querySelector(".time").innerText = body.time;
+  $target.querySelector(".subject").innerText = body.topic;
+  $target.querySelector(".employee").innerText = body.employee_id;
+  $target.querySelector(".expertise").innerText = body.expertise;
 }
 
 loadConfig();

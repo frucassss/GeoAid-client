@@ -89,7 +89,7 @@
                                         <p>Localisation home</p>
                                     </li>
                                 </ul>
-                                <button>Current use</button>
+                                <button>Buy</button>
                             </div>
                         </article>
                     </div>
@@ -124,38 +124,38 @@
                     </div>
                     <form action="#">
                         <div class="subjectflex">
-                        <label for="subject">Enter your subject</label>
-                        <input id="subject" type="text" />
+                            <label for="subject">Enter your subject</label>
+                            <input id="subject" type="text" />
                         </div>
                         <div class="boxflex">
-                        <div class="flexcontainer">
-                            <div class="inputflex">
-                            <label for="date">Pick a date</label>
-                            <input id="date" type="date" />
+                            <div class="flexcontainer">
+                                <div class="inputflex">
+                                    <label for="date">Pick a date</label>
+                                    <input id="date" type="date" />
+                                </div>
+                                <div class="inputflex">
+                                    <label for="time">Pick an hour</label>
+                                    <input id="time" type="text" pattern="[0-9]{2}:[0-9]{2}" placeholder="HH:MM">
+                                </div>
                             </div>
-                            <div class="inputflex">
-                            <label for="time">Pick an hour</label>
-                            <input id="time" type="text" pattern="[0-9]{2}:[0-9]{2}" placeholder="HH:MM">
-                            </div>
-                        </div>
-                        <div class="flexcontainer">
-                            <div class="inputflex">
-                            <label for="expertise">Expertise employee</label>
-                            <select id="expertise">
+                            <div class="flexcontainer">
+                                <div class="inputflex">
+                                    <label for="expertise">Expertise employee</label>
+                                    <select id="expertise">
                                 <option>Localisation company</option>
                                 <option selected>Localisation home</option>
                               </select>
-                            </div>
-                            <div class="inputflex">
-                            <label for="employee">Employee</label>
-                            <select id="employee">
+                                </div>
+                                <div class="inputflex">
+                                    <label for="employee">Employee</label>
+                                    <select id="employee">
                                 <option>Senne</option>
                                 <option selected>Jarne</option>
                               </select>
+                                </div>
                             </div>
                         </div>
-                        </div>
-                        <button id="submitbtn">Make appointment</button>
+                        <button>Make appointment</button>
                     </form>
                 </article>
                 <article id="appointment-list" class="profileSetting">
@@ -181,22 +181,37 @@
 
             <h3 class="subject">Subject</h3>
             <div class="appointmentflex">
-            <label>Date:</label>
-            <p class="date">Date</p>
+                <label>Date:</label>
+                <p class="date">Date</p>
             </div>
             <div class="appointmentflex">
-            <label>Time:</label>
-            <p class="time">Time</p>
+                <label>Time:</label>
+                <p class="time">Time</p>
             </div>
             <div class="appointmentflex">
-            <label>Expertise:</label>
-            <p class="expertise">Expertise</p>
+                <label>Expertise:</label>
+                <p class="expertise">Expertise</p>
             </div>
             <div class="appointmentflex">
-            <label>Employee:</label>
-            <p class="employee">Employee</p>
+                <label>Employee:</label>
+                <p class="employee">Employee</p>
+            </div>
+        </div>
+        <div id="popup-submit" class="popup hidden">
+            <div class="material-icons icon close">close</div>
+            <h2>Appointment</h2>
+            <div class="content">
+                <p>Your appointment has been confirmed!<br/>
+                    <strong>Subject: </strong><em class="subject">subject</em><br/>
+                    <strong>Date: </strong><em class="date">date</em><br/>
+                    <strong>Time: </strong><em class="time">time</em><br/>
+                    <strong>Expertise: </strong>
+                    <em class="expertise">expertise</em>
+                    <br/><strong>Employee: </strong><em class="employee">employee</em><br/>See you soon :))
+                </p>
             </div>
         </div>
     </main>
-    </body>
+</body>
+
 </html>
