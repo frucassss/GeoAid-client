@@ -12,13 +12,16 @@ function showPopup(e) {
     const popupId = e.target.dataset.help;
     const $popup = document.querySelector(`#popup-${popupId}`);
     $popup.classList.remove("hidden");
+    $popup.classList.remove("slide-out");
+    $popup.classList.add("slide-in");
     addBlur();
 }
 
 function hidePopup(e) {
     const $target = e.target;
     const $popup = $target.closest(".popup");
-    $popup.classList.add("hidden");
+    $popup.classList.remove("slide-in");
+    $popup.classList.add("slide-out");
     removeBlur();
 }
 

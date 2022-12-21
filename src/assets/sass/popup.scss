@@ -37,3 +37,33 @@
     right: 0.5rem;
   }
 }
+
+.slide-in {
+  opacity: 0;
+  transform: translateY(-100%);
+
+  animation: slideIn 0.5s ease-in-out forwards;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+
+.slide-out {
+  opacity: 1;
+  transform: translateY(0%);
+
+  animation: slideOut 0.5s ease-in-out forwards;
+}
+
+@keyframes slideOut {
+  to {
+    display: none;
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
