@@ -26,7 +26,9 @@ const SIDEVALUE = {
     crimes: "Amount of crimes",
     oxygen_leaks: "Amount of oxygen leaks",
     population: "population",
-    medical_dispaches : "Amount of medical dispaches"
+    medical_dispaches : "Amount of medical dispaches",
+    meteor_showers: "Amount of of meteor showers",
+    dust_storms: "Amount of dust storms"
 };
 
 export function createBarChart() {

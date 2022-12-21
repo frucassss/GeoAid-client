@@ -7,14 +7,18 @@ const APICALLS = {
     crimes: "crimes",
     oxygen_leaks: "oxygenLeaks",
     population: "population",
-    medical_dispaches: "medicalDispatches"
+    medical_dispaches: "medicalDispatches",
+    dust_storms: "dustStorms",
+    meteor_showers: "meteorShowers"
 };
 
 const CATEGORYTYPES = {
     crimes: "type",
     oxygen_leaks: "dangerLevel",
     population: "colony",
-    medical_dispaches: "dispatchType"
+    medical_dispaches: "dispatchType",
+    dust_storms: "damageLevel",
+    meteor_showers: "damageLevel"
 };
 
 const HEATMAPS = [{
@@ -25,9 +29,14 @@ const HEATMAPS = [{
     dataApiCall: APICALLS.population
 },{
     title: "Medical Dispaches",
-    dataApiCall: APICALLS.medical_dispaches
+    dataApiCall: APICALLS.medical_dispaches,
+},{
+    title: "Dust Storms",
+    dataApiCall: APICALLS.dust_storms,
+},{
+    title: "Meteor Showers",
+    dataApiCall: APICALLS.meteor_showers,
 }];
-
 
 
 // MAP
@@ -99,7 +108,6 @@ export function getBarChartData(category, period, func) {
         if (res["crimes"]) {
             createData(res);
         } else {
-            console.log(res)
             res.json().then(data => {
                 createData(data);
             });
@@ -156,7 +164,6 @@ export function getPieChartData(category, period, domeId, func) {
         if (res["crimes"]) {
             createData(res)
         } else {
-            console.log(res)
             res.json().then(data => {
                 createData(data);
             });
