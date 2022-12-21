@@ -60,7 +60,7 @@ function createHeatMaps(layerControl) {
                     '1.00': 'rgb(255,0,0)'
                 }
             });
-            layerControl.addOverlay(heatLayer, heatmap.title)
+            layerControl.addOverlay(heatLayer, heatmap.title);
         })
     }
 }

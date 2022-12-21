@@ -13,10 +13,10 @@ function handleEventListeners() {
     selectClickedCategory("#company-chart h4", createLineChart);
 
     document.querySelectorAll("#years input").forEach(year => {
-        year.addEventListener("change", createLineChart)
+        year.addEventListener("change", createLineChart);
     });
 
-    eventListenerFullscreen("#company-chart .material-icons", "#company-chart")
+    eventListenerFullscreen("#company-chart .material-icons", "#company-chart");
 }
 
 init();

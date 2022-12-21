@@ -1,4 +1,4 @@
-let api;
+export let api;
 
 function poc() {
     const messageBody = {

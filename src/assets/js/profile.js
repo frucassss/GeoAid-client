@@ -1,5 +1,5 @@
 import {setColorScheme} from "./modules/helper.js";
-import {eventListenerPopup} from "./modules/popup.js";
+import {eventListenerPopup, showPopup} from "./modules/popup.js";
 import {get, post, setApi} from "./modules/api.js";
 
 function loadConfig() {
@@ -20,7 +20,10 @@ function init() {
 }
 
 function handleEventListeners() {
-  document.querySelector("form").addEventListener("submit", submitAppointment);
+  document.querySelector("form").addEventListener("submit", function (e) {
+    submitAppointment();
+    // showPopup(e, "submit");
+  } );
 }
 
 function displayAppointments() {
@@ -61,7 +64,17 @@ function submitAppointment(e) {
     "expertise": expertise
   };
 
+  // changeValuesPopup(body);
   post("appointment", body, displayAppointments);
+}
+
+function changeValuesPopup(body) {
+  const $target = document.querySelector("#popup-submit");
+  $target.querySelector(".date").value = body.date;
+  $target.querySelector(".time").value = body.time;
+  $target.querySelector(".subject").value = body.topic;
+  $target.querySelector(".employee").value = body.employee_id;
+  $target.querySelector(".expertise").value = body.expertise;
 }
 
 loadConfig();

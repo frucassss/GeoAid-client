@@ -1,7 +1,6 @@
 import {
     getBarChartData, getPieChartData, getLineChartData
 } from "./datafetcher.js";
-import {get} from "./api.js";
 import {searchDome} from "./helper.js";
 
 const FONTCOLOR = "hsl(142deg, 10%, 75%)";
@@ -37,7 +36,6 @@ export function createBarChart() {
 }
 
 function makeBarChart(data) {
-    console.log(data)
     deleteOldChart("bar-chart", "bar-chart-container");
     const sideValue = getSideValue();
     const theme = localStorage.getItem("color-theme");
