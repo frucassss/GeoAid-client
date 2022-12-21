@@ -1,5 +1,7 @@
 import {companyData} from "../../../data/company-data.js";
 import {get} from "./api.js";
+import {getIncidents} from "./apiCrimes.js";
+import {setPosition} from "./helper.js";
 
 const APICALLS = {
     crimes: "oxygenLeaks",
@@ -82,16 +84,28 @@ export function getBarChartData(category, period, func) {
     category = category.replace("-","_");
     period = parseInt(period);
     const apiCall = APICALLS[category];
-    get(apiCall, succesHandler);
-
+    if (category === "crimes") {
+        getCrimes(succesHandler);
+    } else {
+        get(apiCall, succesHandler);
+    }
     function succesHandler(res) {
-        res.json().then(data => {
-            let dataPerDome = createDomeNameLabels(data[apiCall]);
-            data = data[apiCall]
+        console.log(res)
+        if (Array.isArray(res)) {
+            let dataPerDome = createDomeNameLabels(res);
+            res = res
                 .filter(obj => filterOnPeriod(obj, period));
-            dataPerDome = getDataPerDome(dataPerDome, data);
+            dataPerDome = getDataPerDome(dataPerDome, res);
             func(dataPerDome);
-        });
+        } else {
+            res.json().then(data => {
+                let dataPerDome = createDomeNameLabels(data[apiCall]);
+                data = data[apiCall]
+                    .filter(obj => filterOnPeriod(obj, period));
+                dataPerDome = getDataPerDome(dataPerDome, data);
+                func(dataPerDome);
+            });
+        }
     }
 }
 
@@ -182,5 +196,65 @@ export function getLineChartData(category, years) {
     return res;
 }
 
+// GLOBAL
+
+function getCrimes(func) {
+    getIncidents(succesHandler);
+
+    function succesHandler(res) {
+        res.json().then(data => {
+            makeCrimes(data, func)
+        })
+    }
+}
+
+function makeCrimes(data, func) {
+    let res = []
+    for (let i = 0; i < data.length; i++) {
+        const incident = data[i];
+        const position = setPosition([incident.latitude, incident.longitude]);
+        getClosestDome(position, succesHandler);
+
+        function succesHandler(closestDome) {
+            const crime = {
+                id: incident.id,
+                latitude: position[0],
+                longitude: position[1],
+                dome: closestDome,
+                type: incident.type
+            };
+            res.push(crime);
+            if (i === data.length - 1) {
+                func(res);
+            }
+        }
+    }
+}
+
+function getClosestDome(position, func) {
+    get("domes", succesHandler);
+
+    function succesHandler(response) {
+        response.json().then(data => {
+            const domes = data.domes;
+            let closestDome = domes[0];
+            let minDistance = getDistance(position, domes[0]);
+            domes.forEach(dome => {
+                const distance = getDistance(position, dome);
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    closestDome = dome;
+                }
+            });
+            func(closestDome);
+        })
+    }
+}
+
+function getDistance(position, dome) {
+    const distanceLat = Math.round(position.latitude + dome.latitude);
+    const distanceLong = Math.round(position.longitude + dome.longitude);
+    return distanceLat + distanceLong;
+}
 
 

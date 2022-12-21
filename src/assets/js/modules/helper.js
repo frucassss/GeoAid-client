@@ -57,7 +57,7 @@ export function searchDome(searchDome, func) {
 }
 
 export function setPosition(position) {
-    const res = []
+    const res = [];
     const differenceLatitude = Math.abs(MAPBOUNDS.south - MAPBOUNDS.north);
     const differenceLongitude = Math.abs(MAPBOUNDS.west - MAPBOUNDS.east);
     for (let i = 0; i < position.length; i++) {

@@ -1,4 +1,4 @@
-import {get, setApi, api } from "./modules/api.js";
+import {get, setApi } from "./modules/api.js";
 import { eventListenerPopup } from "./modules/popup.js";
 import {
     eventListenerFullscreen,
@@ -8,6 +8,7 @@ import {
     setPosition
 } from "./modules/helper.js";
 import { createBarChart, createPieChart } from "./modules/graphs.js";
+import {getIncidents} from "./modules/apiCrimes.js";
 
 const PIECHARTTITLES = {
     crimes: "Type of crimes",
@@ -27,77 +28,15 @@ function loadConfig() {
 }
 
 function init() {
-    //getCrimes()
     handleEventListeners();
     setColorScheme();
-    //defaultDome();
-    //defaultSuggestions();
-    //createBarChart();
-    //createPieChart();
+    defaultDome();
+    defaultSuggestions();
+    createBarChart();
+    createPieChart();
     eventListenerPopup();
-
 }
 
-function getCrimes() {
-    const oldApi = api;
-    const newApi = "https://project-ii.ti.howest.be/mars-11/api/"; // using the api of group 11 to get crimes
-    setApi(newApi);
-    get("incidents", succesHandler);
-
-    function succesHandler(res) {
-        res.json().then(data => {
-            makeCrimes(data)
-        })
-    }
-}
-
-function makeCrimes(data) {
-    console.log(data)
-    const res = [];
-    data.forEach(incident => {
-        const position = setPosition([incident.latitude, incident.longitude]);
-        getClosestDome(position, succesHandler);
-
-        function succesHandler(closestDome) {
-            const crime = {
-                id: incident.id,
-                latitude: position[0],
-                longitude: position[1],
-                dome: closestDome,
-                type: incident.type
-            };
-            res.push(crime);
-        }
-    });
-    console.log(res)
-    return res;
-}
-
-function getClosestDome(position, func) {
-    get("domes", succesHandler);
-
-    function succesHandler(response) {
-        response.json().then(data => {
-            const domes = data.domes;
-            let closestDome = domes[0];
-            let minDistance = getDistance(position, domes[0]);
-            domes.forEach(dome => {
-                const distance = getDistance(position, dome);
-                if (distance < minDistance) {
-                    minDistance = distance;
-                    closestDome = dome;
-                }
-            });
-            func(closestDome);
-        })
-    }
-}
-
-function getDistance(position, dome) {
-    const distanceLat = Math.round(position.latitude + dome.latitude);
-    const distanceLong = Math.round(position.longitude + dome.longitude);
-    return distanceLat + distanceLong;
-}
 function handleEventListeners() {
     selectClickedCategory("#category_chart h2", function() {
         makeCharts();
