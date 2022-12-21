@@ -19,7 +19,7 @@ export function showPopup(e, id) {
     addBlur();
 }
 
-function hidePopup(e) {
+export function hidePopup(e) {
     const $target = e.target;
     const $popup = $target.closest(".popup");
     $popup.classList.remove("slide-in");
