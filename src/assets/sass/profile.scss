@@ -146,28 +146,80 @@
       right: 2rem;
     }
     form{
-      background-color: $secondary-color;
+      background-color: var(--secondary-color);
       display: flex;
-      justify-content: space-around;
       margin-right: 2rem;
       padding-bottom: 2rem;
-      border-radius: $border-radius;
+      border-radius: 2rem;
+      flex-direction: column;
+      align-items: center;
+      .subjectflex {
+        display: flex;
+        flex-direction: column;
+        width: 20%;
+        label{
+          align-self: center;
+        }
+      }
+      .boxflex {
+        display: flex;
+        flex-direction: row;
+      }
+      .inputflex {
+        display: flex;
+        flex-direction: column;
+        margin: 1rem;
+      }
+      label {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+        font-weight: bold;
+      }
+      input, button, select {
+        background-color: $primary-color;
+        font-size: 1rem;
+        color: $primary-font-color;
+        padding: 0.5rem 0.5rem 0.5rem 0.75rem;
+        line-height: 2rem;
+        border-radius: $border-radius;
+      }
+      select{
+        height: 3rem;
+        padding: 0.5rem;
+      }
+      button {
+        width: 20%;
+        align-items: center;
+        margin-top: 1rem;
+        background-color: $header-background-color;
+        color: $primary-font-color;
+        cursor: pointer;
+        font-size: 1.4rem;
+        border-radius: $border-radius;
+        padding: 0.5rem;
+      }
 
       .flexcontainer {
         display: flex;
-        margin-right: 2rem;
 
         label {
           font-size: 1.5rem;
           margin-bottom: 1rem;
           margin-top: 1rem;
+          font-weight: bold;
         }
         input, button, select {
           background-color: $primary-color;
           font-size: 1rem;
           color: $primary-font-color;
-          padding: 0.5rem;
+          padding: 0.5rem 0.5rem 0.5rem 0.75rem;
+          line-height: 2rem;
           border-radius: $border-radius;
+        }
+        select{
+          height: 3rem;
+          padding: 0.5rem;
         }
         button {
           align-items: center;
@@ -196,12 +248,40 @@
       }
       p {
         font-size: 1rem;
-        margin-bottom: 0.5rem;
-
       }
 
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+        .appointment{
+            width: 40%;
+            background-color: $primary-color;
+            border-radius: $border-radius;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            .appointmentflex{
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              padding: 0.5rem;
+              label{
+                color: $secondary-font-color;
+                font-size: 1.2rem;
+                margin-right: 1rem;
+                font-weight: bold;
+              }
+            }
+            h3{
+              font-size: 1.5rem;
+              margin-bottom: 0.5rem;
+              color: $header-font-color;
+            }
+            p{
+              color: $primary-font-color;
+              font-size: 1.2rem;
+            }
+        }
     }
   }
 }
