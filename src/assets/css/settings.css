@@ -280,6 +280,9 @@ body #settings .flexcontainer li .icon2 {
   padding-right: 2rem;
   font-size: 2.4rem;
 }
+body #settings .flexcontainer li .icon2 .switch input {
+  margin: 1rem;
+}
 body #settings .flexcontainer li h2 {
   color: hsl(142deg, 10%, 75%);
   font-size: 2rem;
