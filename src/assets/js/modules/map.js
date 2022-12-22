@@ -28,7 +28,7 @@ export function createMap(position, isCurrentPosition) {
         minZoom: 10,
         layers: [osm],
         zoomControl: false
-    }).setView(position, 60);
+    }).setView(position, 11);
 
     const baseLayers = {
         "OpenStreetMap": osm
@@ -90,7 +90,7 @@ function createDome(data) {
     data.forEach(dome => {
         const icon = L.icon({
             iconUrl: "assets/media/blackdome.png",
-            iconSize: [40, 40],
+            iconSize: [50, 50],
             className: "dome"
         });
         const domeMarker = L.marker([dome.latitude, dome.longitude], { icon: icon }).bindPopup(`this is ${dome.domeName}`);

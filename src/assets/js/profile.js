@@ -129,7 +129,7 @@ function changeValuesPopup(body) {
   $target.querySelector(".date").innerText = body.date;
   $target.querySelector(".time").innerText = body.time;
   $target.querySelector(".subject").innerText = body.topic;
-  $target.querySelector(".employee").innerText = body.employee_id;
+  $target.querySelector(".employee").innerText = body.employee_name;
   $target.querySelector(".expertise").innerText = body.expertise;
 }
 

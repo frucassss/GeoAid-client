@@ -16,7 +16,7 @@ const CATEGORYTYPES = {
     crimes: "type",
     oxygen_leaks: "dangerLevel",
     population: "colony",
-    medical_dispaches: "dispatchType",
+    medical_dispaches: "dispachType",
     dust_storms: "damageLevel",
     meteor_showers: "damageLevel"
 };
@@ -114,8 +114,9 @@ export function getBarChartData(category, period, func) {
         }
     }
     function createData(data) {
-        let dataPerDome = createDomeNameLabels(data[apiCall]);
-        data = data[apiCall]
+        data = data[apiCall].sort((a, b) => a.dome.id - b.dome.id)
+        let dataPerDome = createDomeNameLabels(data);
+        data = data
             .filter(obj => filterOnPeriod(obj, period));
         dataPerDome = getDataPerDome(dataPerDome, data);
         func(dataPerDome);
@@ -176,9 +177,21 @@ export function getPieChartData(category, period, domeId, func) {
             .filter(obj => filterOnPeriod(obj, period));
         dataPerType = getDataPerType(dataPerType, data, category);
         dataPerType = addPercentage(dataPerType);
-        Object.entries(dataPerType).sort(([,a],[,b]) => b-a);
+        console.log(dataPerType)
+        dataPerType = sortObject(dataPerType);
+        console.log(dataPerType)
         func(dataPerType);
     }
+}
+
+function sortObject(obj) {
+    const keys = Object.keys(obj);
+    const sortedKeys = keys.sort((a, b) => obj[b] - obj[a]);
+    const sortedObj = {};
+    sortedKeys.forEach(key => {
+        sortedObj[key] = obj[key];
+    });
+    return sortedObj;
 }
 
 function getDataPerType(dataPerType, data, category) {
@@ -194,7 +207,8 @@ function addPercentage(dataPerType) {
         if (dataPerType.hasOwnProperty(dataPerTypeKey)) {
             const value = dataPerType[dataPerTypeKey];
             const percentage = (value / total * 100).toFixed(0);
-            delete Object.assign(dataPerType, {[` (${percentage}%) ${dataPerTypeKey}`]: dataPerType[dataPerTypeKey] })[dataPerTypeKey];
+            const label = dataPerTypeKey.charAt(0).toUpperCase() + dataPerTypeKey.slice(1).toLowerCase();
+            delete Object.assign(dataPerType, {[` (${percentage}%) ${label}`]: dataPerType[dataPerTypeKey] })[dataPerTypeKey];
         }
     }
     return dataPerType;
