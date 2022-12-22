@@ -203,6 +203,9 @@ body {
                             grid-area: stat;
                             margin-bottom: 2rem;
                             margin-top: 1rem;
+                            .spinner-wave-in {
+                                margin: 20vh auto 0;
+                            }
                         }
                         #suggestions {
                             grid-area: suggestions;

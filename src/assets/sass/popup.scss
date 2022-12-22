@@ -47,6 +47,7 @@
 
 @keyframes slideIn {
   to {
+    display: block;
     opacity: 1;
     transform: translateY(0%);
   }
@@ -54,6 +55,7 @@
 
 
 .slide-out {
+  display: block;
   opacity: 1;
   transform: translateY(0%);
 
@@ -62,6 +64,7 @@
 
 @keyframes slideOut {
   to {
+    z-index: -1;
     display: none;
     opacity: 0;
     transform: translateY(100%);
