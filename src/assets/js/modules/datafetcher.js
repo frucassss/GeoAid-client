@@ -275,9 +275,9 @@ function getClosestDome(position, func) {
 }
 
 function getDistance(position, dome) {
-    const distanceLat = Math.round(position.latitude + dome.latitude);
-    const distanceLong = Math.round(position.longitude + dome.longitude);
-    return distanceLat + distanceLong;
+    const distanceLat = Math.abs(Math.round(position[0] - dome.latitude));
+    const distanceLong = Math.abs(Math.round(position[1] - dome.longitude));
+    return distanceLong - distanceLat;
 }
 
 
