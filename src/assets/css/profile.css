@@ -738,5 +738,16 @@ input:focus, textarea:focus {
 .popup {
   font-family: Arial, sans-serif;
 }
+.popup .content #delete-choice {
+  text-align: center;
+  margin-top: 1rem;
+}
+.popup .content #delete-choice button {
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  line-height: 2rem;
+  padding: 0.25rem 1rem;
+  margin: 0.5rem;
+}
 
 /*# sourceMappingURL=profile.css.map */
