@@ -230,7 +230,7 @@ body main .flexcontainer #contact_us form fieldset {
   height: 100%;
 }
 body main .flexcontainer #contact_us form fieldset div {
-  height: 95%;
+  height: 85%;
 }
 body main .flexcontainer #contact_us form legend {
   width: 100%;
@@ -263,10 +263,10 @@ body main .flexcontainer #contact > div {
   height: 80%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   text-align: center;
   align-items: center;
-  margin: 1rem 2rem 0 2rem;
+  margin: 0 2rem 0 2rem;
 }
 body main .flexcontainer #contact > div dl dt {
   font-size: 1.3rem;
