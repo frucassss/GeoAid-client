@@ -7,7 +7,6 @@ body {
     background: $background-color;
     font-family: $primary-font-family;
     main {
-        height: 80vh;
         margin: 0 4rem 2rem 4rem;
         #statistics {
             height: 76vh;
@@ -156,11 +155,12 @@ body {
                         margin-bottom: 0.5rem;
                     }
                     input {
-                        padding: 0.2rem;
-                        border-radius: $border-radius;
+                        border-radius: 2rem;
                         background-color: darkgray;
                         color: black;
                         font-size: 1.1rem;
+                        line-height: 2rem;
+                        padding: 0.2rem 0.2rem 0.2rem 1rem;
                         margin-bottom: 1rem;
                     }
                     button {

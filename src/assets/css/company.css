@@ -351,7 +351,6 @@ body {
   font-family: Arial, sans-serif;
 }
 body main {
-  height: 80vh;
   margin: 0 4rem 2rem 4rem;
 }
 body main #statistics {
@@ -548,11 +547,12 @@ body main #adds form fieldset label {
   margin-bottom: 0.5rem;
 }
 body main #adds form fieldset input {
-  padding: 0.2rem;
   border-radius: 2rem;
   background-color: darkgray;
   color: black;
   font-size: 1.1rem;
+  line-height: 2rem;
+  padding: 0.2rem 0.2rem 0.2rem 1rem;
   margin-bottom: 1rem;
 }
 body main #adds form fieldset button {

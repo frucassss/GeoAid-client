@@ -728,9 +728,6 @@ body main #statistics #container_statistics #container_charts #types_chart #sugg
   animation: slidein 0.3s ease 1 both;
   animation-delay: 1s;
 }
-body main #statistics #container_statistics #container_charts #types_chart #suggestions li:hover {
-  font-weight: bold;
-}
 body main #statistics #container_statistics #container_charts #types_chart #suggestions li {
   margin: 1rem auto;
   border-radius: 0.5rem;
@@ -740,6 +737,9 @@ body main #statistics #container_statistics #container_charts #types_chart #sugg
   font-size: 1.2rem;
   line-height: 2rem;
   margin: 0 auto;
+}
+body main #statistics #container_statistics #container_charts #types_chart #suggestions li:hover {
+  font-weight: bold;
 }
 body main #statistics #container_statistics #container_charts #types_chart #suggestions li:nth-child(odd) {
   background-color: var(--secondary-color);
