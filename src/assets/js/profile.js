@@ -14,7 +14,7 @@ function loadConfig() {
 
 function init() {
   handleEventListeners();
-  formatAppointmentInput();
+  defaultDate();
   displayAppointments();
   setColorScheme();
   eventListenerPopup();
@@ -27,21 +27,20 @@ function handleEventListeners() {
   });
 }
 
-function formatAppointmentInput() {
-  document.querySelector("#date").valueAsDate = new Date();
-
+function defaultDate() {
+  const tomorrow = new Date()
+  tomorrow.setDate(tomorrow.getDate() + 1)
+  document.querySelector("#date").valueAsDate = tomorrow;
 }
 
 function displayAppointments() {
   removeHidden(".spinner-wave-in");
-  const $target = document.querySelector("#appointments");
-  $target.innerHTML = "";
 
+  const $target = document.querySelector("#appointments");
+  if ($target) {$target.innerHTML = "";}
   get("appointments", succesHandler)
+
   function succesHandler(res) {
-    const $target = document.querySelector("#appointment-list");
-    const list =  `<div id="appointments"></div>`;
-    $target.insertAdjacentHTML("afterend", list);
     res.json().then(data => {
       const appointments = data.appointments;
       appointments.forEach(appointment => {
@@ -52,7 +51,7 @@ function displayAppointments() {
         clone.querySelector(".date").innerText = appointment.date;
         clone.querySelector(".time").innerText = appointment.time;
         clone.querySelector(".expertise").innerText = appointment.expertise;
-        clone.querySelector(".employee").innerText = appointment.employeeId;
+        clone.querySelector(".employee").innerText = appointment.employeeName;
         clone.querySelector(".delete").addEventListener("click", deleteAppointment);
         $target.appendChild(clone);
       })
@@ -87,7 +86,7 @@ function submitAppointment(e) {
     "date": date,
     "time": time,
     "topic": subject,
-    "employee_id": 1,
+    "employee_name": employee,
     "expertise": expertise
   };
   console.log(body)
@@ -96,27 +95,33 @@ function submitAppointment(e) {
   if (valid) {
     changeValuesPopup(body);
     post("appointment", body, displayAppointments);
-    console.log("hey")
     showPopup(e, "submit");
   } else {
-    console.log("failed")
+    showPopup(e, "failed");
   }
 }
 
 function checkBodyValid(body) {
-  let res = `<p></p>`
+  let res = true;
+  let message = "<p>"
+
   if (new Date(body.date) <= new Date()) {
-    const $dateInput = document.querySelector("#date");
-    $dateInput.setCustomValidity("You can't book an appointment in the past.");
-    $dateInput.reportValidity();
+    message += "- You can't book an appointment in the past or today.<br/>";
+    res = false
   }
-  console.log(body)
   if (!body.topic) {
-    const $subjectInput = document.querySelector("#subject");
-    $subjectInput.setCustomValidity("Please fill in the subject.");
-    $subjectInput.reportValidity();
+    message += "- Please fill in the subject.<br/>";
+    res = false
   }
-  return false; // !/^[0-1]{2}:[0-9]{2}$/.test(value)
+  if (!/^([0-1]?[0-9]|2[0-3]):[0-5][0-9](:[0-5][0-9])?$/.test(body.time)) {
+    message += "- Please fill in the time in the correct form HH:MM (ex: 12:00).<br/>";
+    res = false
+  }
+
+  message += "</p>";
+  const $errorMessage = document.querySelector("#popup-failed .content");
+  $errorMessage.innerHTML =  message;
+  return res;
 }
 
 function changeValuesPopup(body) {
