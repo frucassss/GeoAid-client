@@ -249,6 +249,10 @@ body #settings .flexcontainer li {
   justify-content: space-between;
   padding: 1.5rem 0;
 }
+body #settings .flexcontainer li h2 {
+  color: hsl(142deg, 10%, 75%);
+  font-size: 2rem;
+}
 body #settings .flexcontainer li .extra-info {
   display: flex;
   flex-direction: column;
@@ -282,10 +286,6 @@ body #settings .flexcontainer li .icon2 {
 }
 body #settings .flexcontainer li .icon2 .switch input {
   margin: 1rem;
-}
-body #settings .flexcontainer li h2 {
-  color: hsl(142deg, 10%, 75%);
-  font-size: 2rem;
 }
 body #settings .flexcontainer li .dropdown {
   background-color: var(--secondary-color);

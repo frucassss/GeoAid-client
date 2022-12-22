@@ -214,9 +214,6 @@ body {
                             background-color: transparent;
 
                             @include animationsuggestions;
-                            li:hover {
-                                font-weight: bold;
-                            }
                             li {
                                 margin: 1rem auto;
                                 border-radius: 0.5rem;
@@ -226,6 +223,9 @@ body {
                                     line-height: 2rem;
                                     margin: 0 auto;
                                 }
+                            }
+                            li:hover {
+                                font-weight: bold;
                             }
                             li:nth-child(odd) {
                                 background-color: $secondary-color;
