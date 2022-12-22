@@ -64,16 +64,20 @@ body {
                 line-height: 2rem;
                 text-align: center;
                 border-radius: 1rem;
-                background-color: $primary-color;
+                @include animationsuggestionsmap;
                 p {
                     display: inline-block;
                     color: $primary-font-color;
                 }
-                li:first-child {
-                    border-radius: 1rem 1rem 0 0;
+                li{
+                    border-radius: 1rem;
+                    margin-bottom: 0.25rem;
+                    p{
+                        line-height: 1.5rem;
+                    }
                 }
-                li:last-child {
-                    border-radius: 0 0 1rem 1rem;
+                li:nth-child(odd) {
+                    background-color: $primary-color;
                 }
                 li:nth-child(even) {
                     background-color: $secondary-color;

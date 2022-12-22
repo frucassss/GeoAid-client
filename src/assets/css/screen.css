@@ -255,17 +255,48 @@ body header #suggestions {
   line-height: 2rem;
   text-align: center;
   border-radius: 1rem;
-  background-color: var(--primary-color);
+}
+body header #suggestions li {
+  animation: appear 0.3s ease 1 both;
+}
+body header #suggestions li:nth-child(2) {
+  animation-delay: 0.15s;
+}
+body header #suggestions li:nth-child(3) {
+  animation-delay: 0.3s;
+}
+body header #suggestions li:nth-child(4) {
+  animation-delay: 0.45s;
+}
+body header #suggestions li:nth-child(5) {
+  animation-delay: 0.6s;
+}
+body header #suggestions li:nth-child(6) {
+  animation-delay: 0.75s;
+}
+@keyframes appear {
+  from {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0);
+    opacity: 1;
+  }
 }
 body header #suggestions p {
   display: inline-block;
   color: hsl(142deg, 10%, 75%);
 }
-body header #suggestions li:first-child {
-  border-radius: 1rem 1rem 0 0;
+body header #suggestions li {
+  border-radius: 1rem;
+  margin-bottom: 0.25rem;
 }
-body header #suggestions li:last-child {
-  border-radius: 0 0 1rem 1rem;
+body header #suggestions li p {
+  line-height: 1.5rem;
+}
+body header #suggestions li:nth-child(odd) {
+  background-color: var(--primary-color);
 }
 body header #suggestions li:nth-child(even) {
   background-color: var(--secondary-color);
