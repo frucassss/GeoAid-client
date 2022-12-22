@@ -24,31 +24,12 @@ function handleEventListeners() {
   document.querySelector("form").addEventListener("submit", function (e) {
     e.preventDefault();
     submitAppointment();
-    showPopup(e, "submit");
   });
 }
 
 function formatAppointmentInput() {
   document.querySelector("#date").valueAsDate = new Date();
 
-  const $timeInput = document.querySelector("#time");
-  $timeInput.addEventListener("change", function() {
-    const value = $timeInput.value;
-    if (!/^[0-1]{2}:[0-9]{2}$/.test(value)) {
-      $timeInput.setCustomValidity("Please enter a valid time in the HH:MM format");
-      $timeInput.reportValidity();
-    }
-  });
-
-  const $dateInput = document.querySelector("#date");
-  $dateInput.addEventListener("change", function() {
-    const value = $dateInput.value;
-    const date = new Date(value);
-    if (date < new Date()) {
-      $dateInput.setCustomValidity("You can't book an appointment before today");
-      $dateInput.reportValidity();
-    }
-  });
 }
 
 function displayAppointments() {
@@ -58,6 +39,9 @@ function displayAppointments() {
 
   get("appointments", succesHandler)
   function succesHandler(res) {
+    const $target = document.querySelector("#appointment-list");
+    const list =  `<div id="appointments"></div>`;
+    $target.insertAdjacentHTML("afterend", list);
     res.json().then(data => {
       const appointments = data.appointments;
       appointments.forEach(appointment => {
@@ -72,14 +56,13 @@ function displayAppointments() {
         clone.querySelector(".delete").addEventListener("click", deleteAppointment);
         $target.appendChild(clone);
       })
+      makeHidden(".spinner-wave-in");
     });
-    makeHidden(".spinner-wave-in");
   }
 }
 
 function deleteAppointment(e) {
   e.preventDefault();
-  console.log("dele")
   const $appointment = e.target.closest(".appointment");
   const id = $appointment.id;
 
@@ -107,9 +90,33 @@ function submitAppointment(e) {
     "employee_id": 1,
     "expertise": expertise
   };
+  console.log(body)
 
-  changeValuesPopup(body);
-  post("appointment", body, displayAppointments);
+  const valid = checkBodyValid(body);
+  if (valid) {
+    changeValuesPopup(body);
+    post("appointment", body, displayAppointments);
+    console.log("hey")
+    showPopup(e, "submit");
+  } else {
+    console.log("failed")
+  }
+}
+
+function checkBodyValid(body) {
+  let res = `<p></p>`
+  if (new Date(body.date) <= new Date()) {
+    const $dateInput = document.querySelector("#date");
+    $dateInput.setCustomValidity("You can't book an appointment in the past.");
+    $dateInput.reportValidity();
+  }
+  console.log(body)
+  if (!body.topic) {
+    const $subjectInput = document.querySelector("#subject");
+    $subjectInput.setCustomValidity("Please fill in the subject.");
+    $subjectInput.reportValidity();
+  }
+  return false; // !/^[0-1]{2}:[0-9]{2}$/.test(value)
 }
 
 function changeValuesPopup(body) {
