@@ -1,7 +1,7 @@
 import {
     getBarChartData, getPieChartData, getLineChartData
 } from "./datafetcher.js";
-import {searchDome} from "./helper.js";
+import {makeHidden, removeHidden, searchDome} from "./helper.js";
 
 const FONTCOLOR = "hsl(142deg, 10%, 75%)";
 const PIECHARTCOLORSET = {
@@ -32,13 +32,14 @@ const SIDEVALUE = {
 };
 
 export function createBarChart() {
+    deleteOldChart("bar-chart", "bar-chart-container");
+    removeHidden("#bar-chart-container .spinner-wave-in");
     const category = document.querySelector("aside .selected").id;
     const period = document.querySelector("#period").value;
     getBarChartData(category, period, makeBarChart);
 }
 
 function makeBarChart(data) {
-    deleteOldChart("bar-chart", "bar-chart-container");
     const sideValue = getSideValue();
     const theme = localStorage.getItem("color-theme");
 
@@ -53,6 +54,7 @@ function makeBarChart(data) {
         options: {
             backgroundColor: PRIMARYCOLOR[theme],
             hoverBackgroundColor: SECONDARYCOLOR[theme],
+            borderRadius: 10,
             scales: {
                 y: {
                     title: {
@@ -92,11 +94,14 @@ function makeBarChart(data) {
             maintainAspectRatio: false
         }
     }
+    makeHidden("#bar-chart-container .spinner-wave-in");
     new Chart(ctx, configuration);
     return Chart;
 }
 
 export function createPieChart() {
+    deleteOldChart("pie-chart", "pie-chart-container");
+    removeHidden("#pie-chart-container .spinner-wave-in");
     const category = document.querySelector("aside .selected").id;
     const period = document.querySelector("#period").value;
     const domeId = document.querySelector("#dome-choice h3").id;
@@ -104,7 +109,6 @@ export function createPieChart() {
 }
 
 function makePieChart(data) {
-    deleteOldChart("pie-chart", "pie-chart-container");
     const theme = localStorage.getItem("color-theme");
 
     const ctx = document.querySelector('#pie-chart').getContext('2d');
@@ -121,6 +125,7 @@ function makePieChart(data) {
 
             plugins: {
                 legend: {
+                    maxWidth: 270,
                     position: "left",
                     labels: {
                         boxHeight: 20,
@@ -136,6 +141,7 @@ function makePieChart(data) {
             maintainAspectRatio: false
         },
     }
+    makeHidden("#pie-chart-container .spinner-wave-in");
     new Chart(ctx, configuration);
 }
 
