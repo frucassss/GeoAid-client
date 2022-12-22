@@ -1,3 +1,4 @@
+@import "spinner";
 @import "general";
 @import "constants";
 @import "nav";
@@ -236,6 +237,9 @@
   }
 
   #appointment-list{
+    .spinner-wave-in{
+      margin: 0 auto;
+    }
     #appointments{
       background-color: $secondary-color;
       border-radius: $border-radius;
