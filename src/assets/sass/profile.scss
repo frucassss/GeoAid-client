@@ -1,3 +1,4 @@
+@import "spinner";
 @import "general";
 @import "constants";
 @import "nav";
@@ -236,6 +237,9 @@
   }
 
   #appointment-list{
+    .spinner-wave-in{
+      margin: 0 auto;
+    }
     #appointments{
       background-color: $secondary-color;
       border-radius: $border-radius;
@@ -260,6 +264,11 @@
             border-radius: $border-radius;
             margin-bottom: 1rem;
             padding: 1rem;
+            .delete{
+              float: right;
+              cursor: pointer;
+              color: $primary-font-color;
+            }
             .appointmentflex{
               display: flex;
               flex-direction: row;
@@ -284,4 +293,20 @@
         }
     }
   }
+}
+.popup{
+  font-family: $primary-font-family;
+    .content{
+      #delete-choice{
+        text-align: center;
+        margin-top: 1rem;
+        button{
+          font-size: 1rem;
+          border-radius: 0.5rem;
+          line-height: 2rem;
+          padding: 0.25rem 1rem;
+          margin: 0.5rem;
+        }
+      }
+    }
 }
