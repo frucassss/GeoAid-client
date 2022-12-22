@@ -326,11 +326,13 @@ input:focus, textarea:focus {
 
 @keyframes slideIn {
   to {
+    display: block;
     opacity: 1;
     transform: translateY(0%);
   }
 }
 .slide-out {
+  display: block;
   opacity: 1;
   transform: translateY(0%);
   animation: slideOut 0.5s ease-in-out forwards;
@@ -338,6 +340,7 @@ input:focus, textarea:focus {
 
 @keyframes slideOut {
   to {
+    z-index: -1;
     display: none;
     opacity: 0;
     transform: translateY(100%);
@@ -612,6 +615,10 @@ input:focus, textarea:focus {
 #profile #appointment-list #appointments .appointment p {
   color: hsl(142deg, 10%, 75%);
   font-size: 1.2rem;
+}
+
+.popup {
+  font-family: Arial, sans-serif;
 }
 
 /*# sourceMappingURL=profile.css.map */
