@@ -676,6 +676,9 @@ body main #statistics #container_statistics #container_charts #types_chart #pie-
   margin-bottom: 2rem;
   margin-top: 1rem;
 }
+body main #statistics #container_statistics #container_charts #types_chart #pie-chart-container .spinner-wave-in {
+  margin: 20vh auto 0;
+}
 body main #statistics #container_statistics #container_charts #types_chart #suggestions {
   grid-area: suggestions;
   margin: 0rem 0 2rem 2rem;
