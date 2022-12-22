@@ -6,9 +6,9 @@ const MBURL = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imager
 const mbAttr = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> '
 let map;
 export const MAPBOUNDS = {
-    north: -20,
+    north: -18,
     east: -66,
-    south: -25,
+    south: -27,
     west: -70
 }
 
@@ -25,10 +25,10 @@ export function createMap(position, isCurrentPosition) {
     map = L.map('map', {
         maxBounds: bounds,
         maxZoom: 17,
-        minZoom: 9,
+        minZoom: 10,
         layers: [osm],
         zoomControl: false
-    }).setView(position, 60);
+    }).setView(position, 11);
 
     const baseLayers = {
         "OpenStreetMap": osm
@@ -90,7 +90,7 @@ function createDome(data) {
     data.forEach(dome => {
         const icon = L.icon({
             iconUrl: "assets/media/blackdome.png",
-            iconSize: [40, 40],
+            iconSize: [50, 50],
             className: "dome"
         });
         const domeMarker = L.marker([dome.latitude, dome.longitude], { icon: icon }).bindPopup(`this is ${dome.domeName}`);
@@ -130,7 +130,7 @@ function createCircle(domeName) {
 }
 
 export function setView(position) {
-    map.setView(position, 15);
+    map.setView(position, 10);
 }
 
 export function center(currentPosition) {
@@ -138,5 +138,5 @@ export function center(currentPosition) {
     const lat = coords.latitude;
     const lon = coords.longitude;
     const position = setPosition([lat, lon])
-    map.setView(position, 15);
+    map.setView(position, 10);
 }

@@ -28,17 +28,17 @@
                 <li><a href="index.html">Back to map</a></li>
                 <li>
                     <a href="profile.html" class="material-icons icon account_circle">account_circle</a>
-          </li>
-        </ul>
-      </nav>
+                </li>
+            </ul>
+        </nav>
     </header>
     <main>
-      <article id="statistics">
-        <div class="material-icons icon help" data-help="statistics">help</div>
-        <h1>Statistics</h1>
-        <div id="container_statistics">
-          <aside>
-            <select id="period" class="dropdown">
+        <article id="statistics">
+            <div class="material-icons icon help" data-help="statistics">help</div>
+            <h1>Statistics</h1>
+            <div id="container_statistics">
+                <aside>
+                    <select id="period" class="dropdown">
               <option class="hover-underline-animation" value="0" selected>
                 All time
               </option>
@@ -55,94 +55,91 @@
                 Last year
               </option>
             </select>
-            <ul>
-              <li id="crimes" class="selected">
-                <p>Crimes</p>
-                <hr />
-              </li>
-              <li id="oxygen-leaks">
-                <p>Oxygen leaks</p>
-                <hr />
-              </li>
-              <li id="population">
-                <p>Population</p>
-                <hr />
-              </li>
-              <li id="medical-dispaches">
-                <p>Medical dispaches</p>
-                <hr />
-              </li>
-              <li id="meteor-showers">
-                <p>Meteor showers</p>
-                <hr />
-              </li>
-              <li id="dust-storms">
-                <p>Dust storms</p>
-                <hr />
-              </li>
-            </ul>
-          </aside>
+                    <ul>
 
-          <div id="container_charts">
-            <div id="category_chart" class="stats">
-              <h2>Crimes</h2>
-              <div class="material-icons fullscreen">fullscreen</div>
-              <div class="material-icons fullscreen-exit hidden">
-                fullscreen_exit
-              </div>
-              <div id="bar-chart-container">
-                <div class="spinner-wave-in hidden"></div>
-              </div>
-            </div>
-            <div id="types_chart" class="stats">
-              <div id="dome-choice">
-                <h3 id="0">Dome 1</h3>
-                <h2>Types of crimes</h2>
+                        <li id="oxygen-leaks" class="selected">
+                            <p>Oxygen leaks</p>
+                            <hr />
+                        </li>
+                        <li id="medical-dispaches">
+                            <p>Medical dispaches</p>
+                            <hr />
+                        </li>
+                        <li id="meteor-showers">
+                            <p>Meteor showers</p>
+                            <hr />
+                        </li>
+                        <li id="dust-storms">
+                            <p>Dust storms</p>
+                            <hr />
+                        </li>
+                        <li id="crimes">
+                            <p>Crimes</p>
+                            <hr />
+                        </li>
+                        <li id="population">
+                            <p>Population</p>
+                            <hr />
+                        </li>
+                    </ul>
+                </aside>
 
-                <form id="searchbar">
-                  <input type="text" placeholder="Search dome" />
-                  <button type="submit" class="searchButton">
+                <div id="container_charts">
+                    <div id="category_chart" class="stats">
+                        <h2>Oxygen leaks</h2>
+                        <div class="material-icons fullscreen">fullscreen</div>
+                        <div class="material-icons fullscreen-exit hidden">
+                            fullscreen_exit
+                        </div>
+                        <div id="bar-chart-container">
+                            <div class="spinner-wave-in hidden"></div>
+                        </div>
+                    </div>
+                    <div id="types_chart" class="stats">
+                        <div id="dome-choice">
+                            <h3 id="0">Dome 1</h3>
+                            <h2>Types of crimes</h2>
+
+                            <form id="searchbar">
+                                <input type="text" placeholder="Search dome" />
+                                <button type="submit" class="searchButton">
                     <em class="material-icons icon search">search</em>
                   </button>
-                </form>
-                <div id="pie-chart-container">
-                    <div class="spinner-wave-in hidden"></div>
+                            </form>
+                            <div id="pie-chart-container">
+                                <div class="spinner-wave-in hidden"></div>
+                            </div>
+                            <ul id="suggestions"></ul>
+                        </div>
+                    </div>
                 </div>
-                <ul id="suggestions"></ul>
-              </div>
             </div>
-          </div>
+        </article>
+        <div id="popup-statistics" class="popup hidden">
+            <div class="material-icons icon close">close</div>
+            <h2>Statistics</h2>
+            <div class="content">
+                <p>
+                    <strong>Crimes</strong> - Shows the number of crimes that have been reported in the selected period of time.
+                    <br />
+                    <br />
+                    <strong>Oxygen leaks</strong> - Shows the number of oxygen leaks that have been reported in the selected period of time.
+                    <br />
+                    <br />
+                    <strong>Population</strong> - Shows the number of people that have been reported in the selected period of time.
+                    <br />
+                    <br />
+                    <strong>Medical dispaches</strong> - Shows the number of medical dispaches that have been reported in the selected period of time.
+                    <br />
+                    <br />
+                    <strong>Meteor Showers</strong> - Shows the number of meteor showers that have been reported in the selected period of time.
+                    <br />
+                    <br />
+                    <strong>Dust Storms</strong> - Shows the number of dust storms that have been reported in the selected period of time.
+                </p>
+            </div>
         </div>
-      </article>
-      <div id="popup-statistics" class="popup hidden">
-        <div class="material-icons icon close">close</div>
-        <h2>Statistics</h2>
-        <div class="content">
-          <p>
-            <strong>Period</strong> - Select the period of time you want to see
-            the statistics for.
-            <br />
-            <strong>Filter</strong> - Click on the filter you want to see the
-            statistics for.
-            <br />
-            <br />
-            <strong>Crimes</strong> - Shows the number of crimes that have been
-            reported in the selected period of time.
-            <br />
-            <br />
-            <strong>Oxygen leaks</strong> - Shows the number of oxygen leaks
-            that have been reported in the selected period of time.
-            <br />
-            <br />
-            <strong>Population</strong> - Shows the number of people that have
-            been reported in the selected period of time.
-            <br />
-            <br />
-            <strong>Medical dispaches</strong> - Shows the number of medical
-            dispaches that have been reported in the selected period of time.
-          </p>
-        </div>
-      </div>
     </main>
-  </body>
+</body>
+
 </html>
