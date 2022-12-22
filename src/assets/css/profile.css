@@ -587,6 +587,11 @@ input:focus, textarea:focus {
   margin-bottom: 1rem;
   padding: 1rem;
 }
+#profile #appointment-list #appointments .appointment .delete {
+  float: right;
+  cursor: pointer;
+  color: hsl(142deg, 10%, 75%);
+}
 #profile #appointment-list #appointments .appointment .appointmentflex {
   display: flex;
   flex-direction: row;
