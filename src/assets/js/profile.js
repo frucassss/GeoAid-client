@@ -28,8 +28,8 @@ function handleEventListeners() {
 }
 
 function defaultDate() {
-  const tomorrow = new Date()
-  tomorrow.setDate(tomorrow.getDate() + 1)
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
   document.querySelector("#date").valueAsDate = tomorrow;
 }
 
@@ -37,8 +37,10 @@ function displayAppointments() {
   removeHidden(".spinner-wave-in");
 
   const $target = document.querySelector("#appointments");
-  if ($target) {$target.innerHTML = "";}
-  get("appointments", succesHandler)
+  if ($target) {
+    $target.innerHTML = "";
+  }
+  get("appointments", succesHandler);
 
   function succesHandler(res) {
     res.json().then(data => {
@@ -54,7 +56,7 @@ function displayAppointments() {
         clone.querySelector(".employee").innerText = appointment.employeeName;
         clone.querySelector(".delete").addEventListener("click", deleteAppointment);
         $target.appendChild(clone);
-      })
+      });
       makeHidden(".spinner-wave-in");
     });
   }
@@ -102,19 +104,19 @@ function submitAppointment(e) {
 
 function checkBodyValid(body) {
   let res = true;
-  let message = "<p>"
+  let message = "<p>";
 
   if (new Date(body.date) <= new Date()) {
     message += "- You can't book an appointment in the past or today.<br/>";
-    res = false
+    res = false;
   }
   if (!body.topic) {
     message += "- Please fill in the subject.<br/>";
-    res = false
+    res = false;
   }
   if (!/^([0-1]?[0-9]|2[0-3]):[0-5][0-9](:[0-5][0-9])?$/.test(body.time)) {
     message += "- Please fill in the time in the correct form HH:MM (ex: 12:00).<br/>";
-    res = false
+    res = false;
   }
 
   message += "</p>";
