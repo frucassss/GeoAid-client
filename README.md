@@ -47,3 +47,9 @@ This is the settings page.
 ![Profile](https://cdn.discordapp.com/attachments/1022428928247341061/1055801998278148107/image.png)
 
 Here we see the profile page where we are able to make appointments.
+
+This video will show a full Exploration of our application.
+[![Watch the video](https://i.ytimg.com/vi/XKD-m16nCY4/hqdefault.jpg)](https://www.youtube.com/watch?v=XKD-m16nCY4)
+
+
+
