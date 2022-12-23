@@ -62,13 +62,16 @@
  https://github.com/Leaflet/Leaflet.heat
 */
     L.HeatLayer = (L.Layer ? L.Layer : L.Class).extend({
-        initialize: function(t, i) { this._latlngs = t, L.setOptions(this, i) },
+        initialize: function(t, i) {
+            this._latlngs = t;
+            L.setOptions(this, i) },
         setLatLngs: function(t) { return this._latlngs = t, this.redraw() },
         addLatLng: function(t) { return this._latlngs.push(t), this.redraw() },
         setOptions: function(t) { return L.setOptions(this, t), this._heat && this._updateOptions(), this.redraw() },
         redraw: function() { return !this._heat || this._frame || this._map._animating || (this._frame = L.Util.requestAnimFrame(this._redraw, this)), this },
         onAdd: function(t) {
-            this._map = t, this._canvas || this._initCanvas();
+            this._map = t;
+            this._canvas || this._initCanvas();
             t._panes.overlayPane.appendChild(this._canvas);
             t.on("moveend", this._reset, this);
             t.options.zoomAnimation && L.Browser.any3d && t.on("zoomanim", this._animateZoom, this);
@@ -87,7 +90,8 @@
             t.width = a.x, t.height = a.y;
             var s = this._map.options.zoomAnimation && L.Browser.any3d;
             L.DomUtil.addClass(t, "leaflet-zoom-" + (s ? "animated" : "hide"));
-            this._heat = simpleheat(t), this._updateOptions()
+            this._heat = simpleheat(t);
+            this._updateOptions()
         },
         _updateOptions: function() {
             this._heat.radius(this.options.radius || this._heat.defaultRadius, this.options.blur);
