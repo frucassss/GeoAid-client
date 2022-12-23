@@ -37,7 +37,13 @@
             this._circle || this.radius(this.defaultRadius), this._grad || this.gradient(this.defaultGradient);
             var i = this._ctx;
             i.clearRect(0, 0, this._width, this._height);
-            for (var a, s = 0, e = this._data.length; e > s; s++) a = this._data[s], i.globalAlpha = Math.max(a[2] / this._max, t || .05), i.drawImage(this._circle, a[0] - this._r, a[1] - this._r);
+            for (var a, s = 0, e = this._data.length; e > s; s++) {
+                a = this._data[s];
+                if (a.length === 3) {
+                    i.globalAlpha = Math.max(a[2] / this._max, t || .05);
+                    i.drawImage(this._circle, a[0] - this._r, a[1] - this._r);
+                }
+            }
             var n = i.getImageData(0, 0, this._width, this._height);
             return this._colorize(n.data, this._grad), i.putImageData(n, 0, 0), this
         },
