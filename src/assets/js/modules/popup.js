@@ -5,13 +5,17 @@ export function eventListenerPopup() {
 
     document.querySelectorAll(".popup .close").forEach(close => {
         close.addEventListener("click", hidePopup);
-    })
+    });
 }
 
 export function showPopup(e, id) {
     let popupId;
-    if (id) popupId = id;
-    else popupId = e.target.dataset.help;
+    if (id) {
+        popupId = id;
+    }
+    else {
+        popupId = e.target.dataset.help;
+    }
     const $popup = document.querySelector(`#popup-${popupId}`);
     $popup.classList.remove("hidden");
     $popup.classList.remove("slide-out");

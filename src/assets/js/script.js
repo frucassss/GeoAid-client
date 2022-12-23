@@ -94,7 +94,7 @@ function changeView(search) {
 }
 
 function handleError() {
-    console.log("Give permission");
+    console.log("Give permission to see your location");
 }
 
 function startupAnimation() {

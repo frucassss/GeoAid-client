@@ -9,7 +9,7 @@ export function makeHidden(selector) {
 }
 
 export function removeHidden(selector) {
-    const $element = document.querySelector(selector)
+    const $element = document.querySelector(selector);
     if ($element) {
         $element.classList.remove("hidden");
     }
@@ -31,10 +31,10 @@ export function removeClassAfterClick(selector, className) {
 }
 
 export function setColorScheme() {
-    let theme = localStorage.getItem("color-theme");
+    let theme = getTheme();
     if (!theme) {
         localStorage.setItem("color-theme", "light");
-        theme = "light"
+        theme = "light";
     }
     document.documentElement.setAttribute("color-theme", theme);
 }
@@ -45,13 +45,13 @@ export function searchDome(searchDome, func) {
     function succesHandler(res) {
         res.json().then(data => {
             const domes = data.domes;
-            let result
+            let result;
             if (Number.isInteger(searchDome)) {
                 result = domes.find(dome => dome.id === searchDome);
             } else {
                 result = domes.find(dome => dome.domeName === searchDome);
             }
-            func(result)
+            func(result);
         });
     }
 }
@@ -69,7 +69,7 @@ export function setPosition(position) {
             const modulo = Math.abs(n % differenceLongitude);
             n = MAPBOUNDS.west + modulo;
         }
-        res.push(n)
+        res.push(n);
     }
     return res;
 }
@@ -89,8 +89,8 @@ export function selectClickedCategory(selector, func) {
             $oldTitle.innerText = newTitle;
 
             func();
-        })
-    })
+        });
+    });
 }
 
 export function makeSuggestions(addEventListeners) {
@@ -114,7 +114,9 @@ function filterDomes(domeName) {
     const search = document.querySelector("#searchbar input").value;
     const searchLength = search.length;
     for (let i = 0; i < searchLength; i++) {
-        if (domeName.charAt(i).toLowerCase() !== search.charAt(i).toLowerCase()) return false;
+        if (domeName.charAt(i).toLowerCase() !== search.charAt(i).toLowerCase()) {
+            return false;
+        }
     }
     return true;
 }
@@ -147,10 +149,15 @@ export function eventListenerFullscreen(iconsSelector, parentSelector) {
         const target = e.currentTarget;
         const parent = target.parentElement;
 
-        if (target.innerText === "fullscreen")
+        if (target.innerText === "fullscreen") {
             parent.requestFullscreen();
-        else
+        }
+        else {
             document.exitFullscreen();
+        }
     }
 }
 
+function getTheme() {
+    return localStorage.getItem("color-theme");
+}

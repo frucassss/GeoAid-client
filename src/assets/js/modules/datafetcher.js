@@ -52,7 +52,6 @@ export function getHeatMapData(func) {
             if (i + 1 < HEATMAPS.length) {
                 createDataHeatmap(res, i + 1, nextFunction);
             } else {
-                console.log(res)
                 func(res);
             }
         }
@@ -109,22 +108,23 @@ export function getBarChartData(category, period, func) {
             createData(res);
         } else {
             res.json().then(data => {
-                createData(data);
+                createData(data, apiCall, period, func);
             });
         }
     }
-    function createData(data) {
-        data = data[apiCall].sort((a, b) => a.dome.id - b.dome.id)
-        let dataPerDome = createDomeNameLabels(data);
-        data = data
-            .filter(obj => filterOnPeriod(obj, period));
-        dataPerDome = getDataPerDome(dataPerDome, data);
-        func(dataPerDome);
-    }
+}
+
+function createData(data, apiCall, period, func) {
+    data = data[apiCall].sort((a, b) => a.dome.id - b.dome.id);
+    let dataPerDome = createDomeNameLabels(data);
+    data = data
+        .filter(obj => filterOnPeriod(obj, period));
+    dataPerDome = getDataPerDome(dataPerDome, data);
+    func(dataPerDome);
 }
 
 function createDomeNameLabels(data) {
-    let res = {}
+    const res = {};
     data.forEach(el => {
         res[el.dome.domeName] = 0;
     });
@@ -132,7 +132,9 @@ function createDomeNameLabels(data) {
 }
 
 function filterOnPeriod(obj, period) {
-    if (period === 0) {return true}
+    if (period === 0) {
+        return true;
+    }
     const now = new Date();
     const currentMonth = now.getMonth();
     const beginMonth = currentMonth - period;
@@ -163,35 +165,38 @@ export function getPieChartData(category, period, domeId, func) {
 
     function succesHandler(res) {
         if (res["crimes"]) {
-            createData(res)
+            createData(res);
         } else {
             res.json().then(data => {
-                createData(data);
+                createPieChartData(data, apiCall, category, domeId, period, func);
             });
         }
     }
-    function createData(data) {
-        let dataPerType = createLabels(data[apiCall], CATEGORYTYPES[category]);
-        data = data[apiCall]
-            .filter(obj => obj.dome.id === domeId)
-            .filter(obj => filterOnPeriod(obj, period));
-        dataPerType = getDataPerType(dataPerType, data, category);
-        dataPerType = addPercentage(dataPerType);
-        console.log(dataPerType)
-        dataPerType = sortObject(dataPerType);
-        console.log(dataPerType)
-        func(dataPerType);
-    }
+}
+
+function createPieChartData(data, apiCall, category, domeId, period, func) {
+    let dataPerType = createLabels(data[apiCall], CATEGORYTYPES[category]);
+    data = data[apiCall]
+        .filter(obj => obj.dome.id === domeId)
+        .filter(obj => filterOnPeriod(obj, period));
+    dataPerType = getDataPerType(dataPerType, data, category);
+    dataPerType = addPercentage(dataPerType);
+    dataPerType = sortObject(dataPerType);
+    func(dataPerType);
 }
 
 function sortObject(obj) {
     const keys = Object.keys(obj);
-    const sortedKeys = keys.sort((a, b) => obj[b] - obj[a]);
+    const sortedKeys = sortKeys(obj, keys);
     const sortedObj = {};
     sortedKeys.forEach(key => {
         sortedObj[key] = obj[key];
     });
     return sortedObj;
+}
+
+function sortKeys(obj, keys) {
+    return keys.sort((a, b) => obj[b] - obj[a]);
 }
 
 function getDataPerType(dataPerType, data, category) {
@@ -239,13 +244,13 @@ function getCrimes(func) {
 
     function succesHandler(res) {
         res.json().then(data => {
-            makeCrimes(data, func)
-        })
+            makeCrimes(data, func);
+        });
     }
 }
 
 function makeCrimes(data, func) {
-    let res = []
+    let res = [];
     for (let i = 0; i < data.length; i++) {
         const incident = data[i];
         const position = setPosition([incident.latitude, incident.longitude]);
@@ -261,7 +266,7 @@ function makeCrimes(data, func) {
             };
             res.push(crime);
             if (i === data.length - 1) {
-                res = {"crimes": res}
+                res = {"crimes": res};
                 func(res);
             }
         }
@@ -284,7 +289,7 @@ function getClosestDome(position, func) {
                 }
             });
             func(closestDome);
-        })
+        });
     }
 }
 

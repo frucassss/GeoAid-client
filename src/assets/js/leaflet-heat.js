@@ -26,7 +26,11 @@
                 a = i.getContext("2d"),
                 s = a.createLinearGradient(0, 0, 0, 256);
             i.width = 1, i.height = 256;
-            for (var e in t) s.addColorStop(e, t[e]);
+            for (var e in t) {
+                if (t.hasOwnProperty(e)) {
+                    s.addColorStop(e, t[e]);
+                }
+            }
             return a.fillStyle = s, a.fillRect(0, 0, 1, 256), this._grad = a.getImageData(0, 0, 1, 256).data, this
         },
         draw: function(t) {

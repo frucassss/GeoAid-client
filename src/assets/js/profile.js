@@ -89,7 +89,6 @@ function submitAppointment(e) {
     "employee_name": employee,
     "expertise": expertise
   };
-  console.log(body)
 
   const valid = checkBodyValid(body);
   if (valid) {
