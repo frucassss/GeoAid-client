@@ -29,8 +29,8 @@ function makeMapCurrentPosition(currentPosition) {
     const coords = currentPosition.coords;
     const lat = coords.latitude;
     const lon = coords.longitude;
-    const position = setPosition([lat, lon])
-    createMap(position, true)
+    const position = setPosition([lat, lon]);
+    createMap(position, true);
 }
 
 function makeMapDefaultPosition() {
@@ -51,7 +51,7 @@ function handleEventListeners() {
 
     document.querySelector("body").addEventListener("click", function (e) {
         const targetId = e.target.id;
-        const inMap = e.target.parentElement.closest('#map')
+        const inMap = e.target.parentElement.closest('#map');
 
         if (inMap || targetId === "map") {
             document.querySelector("#suggestions").classList.add("hidden");
@@ -71,16 +71,16 @@ function addEventListenersSuggestions() {
         li.addEventListener("click", function (ev) {
             const target = ev.currentTarget.id;
             changeView(target);
-        })
-    })
+        });
+    });
 }
 
 function changeView(search) {
-    get("domes", succesHandler)
+    get("domes", succesHandler);
 
     function succesHandler(response) {
         response.json().then(data => {
-            const domes = data.domes
+            const domes = data.domes;
             for (const i in domes) {
                 if (domes.hasOwnProperty(i)) {
                     const dome = domes[i];
@@ -89,12 +89,12 @@ function changeView(search) {
                     }
                 }
             }
-        })
+        });
     }
 }
 
 function handleError() {
-    console.log("Give permission");
+    console.log("Give permission to see your location");
 }
 
 function startupAnimation() {

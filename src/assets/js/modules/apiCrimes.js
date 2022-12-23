@@ -1,4 +1,4 @@
-let api = "https://project-ii.ti.howest.be/mars-11/api/";
+const api = "https://project-ii.ti.howest.be/mars-11/api/";
 
 export function getIncidents(successHandler = logJson, failureHandler = logError) {
     const request = new Request(api + "incidents?active=false", {

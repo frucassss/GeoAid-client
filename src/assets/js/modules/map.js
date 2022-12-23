@@ -2,15 +2,15 @@ import {get} from "./api.js";
 import {getHeatMapData} from "./datafetcher.js";
 import {removeClass, removeClassAfterClick, setPosition, searchDome} from "./helper.js";
 
-const MBURL = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'
-const mbAttr = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> '
+const MBURL = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}';
+const mbAttr = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> ';
 let map;
 export const MAPBOUNDS = {
     north: -18,
     east: -66,
     south: -27,
     west: -70
-}
+};
 
 export function createMap(position, isCurrentPosition) {
     const southWest = L.latLng(MAPBOUNDS.south, MAPBOUNDS.west);
@@ -35,7 +35,10 @@ export function createMap(position, isCurrentPosition) {
     };
     const overlays = {};
     const layerControl = L.control.layers(baseLayers, overlays).addTo(map);
+    makeLayers(isCurrentPosition, layerControl, position);
+}
 
+function makeLayers(isCurrentPosition, layerControl, position) {
     createDomes();
     if (isCurrentPosition) {
         createPersonPin(layerControl, position);
@@ -61,7 +64,7 @@ function createHeatMaps(layerControl) {
                 }
             });
             layerControl.addOverlay(heatLayer, heatmap.title);
-        })
+        });
     }
 }
 
@@ -70,7 +73,7 @@ function createPersonPin(layerControl, location) {
         iconUrl: 'assets/media/person_pin.png',
         iconSize: [50, 50]
     });
-    const personPinMarker = L.marker(location, { icon: personPinIcon }).bindPopup('You are here' + location)
+    const personPinMarker = L.marker(location, { icon: personPinIcon }).bindPopup('You are here' + location);
     personPinMarker.addTo(map);
 }
 
@@ -82,8 +85,8 @@ function setZoomTopRight() {
 
 function createDomes() {
     get("domes", function(response) {
-        response.json().then(data => createDome(data.domes))
-    })
+        response.json().then(data => createDome(data.domes));
+    });
 }
 
 function createDome(data) {
@@ -97,24 +100,26 @@ function createDome(data) {
         domeMarker.addTo(map);
         domeMarker._icon.id = dome.domeName;
     });
-    SelectedOnClick()
+    selectedOnClick();
 }
 
-function SelectedOnClick() {
+function selectedOnClick() {
     document.querySelectorAll(".dome").forEach(dome =>{
         dome.addEventListener("click", function (e) {
             removeClass(".selected", "selected");
             const target = e.target;
             target.classList.add("selected");
             removeClassAfterClick(".selected", "selected");
-            createCircle(target.id)
+            createCircle(target.id);
         });
     });
 }
 
 function createCircle(domeName) {
     const $oldCircle = document.querySelector(".circle");
-    if ($oldCircle) $oldCircle.remove();
+    if ($oldCircle) {
+        $oldCircle.remove();
+    }
 
     searchDome(domeName, succesHandler);
     function succesHandler(dome) {
@@ -137,6 +142,6 @@ export function center(currentPosition) {
     const coords = currentPosition.coords;
     const lat = coords.latitude;
     const lon = coords.longitude;
-    const position = setPosition([lat, lon])
+    const position = setPosition([lat, lon]);
     map.setView(position, 10);
 }

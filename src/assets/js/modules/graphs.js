@@ -32,16 +32,16 @@ const SIDEVALUE = {
 };
 
 export function createBarChart() {
-    deleteOldChart("bar-chart", "bar-chart-container");
     removeHidden("#bar-chart-container .spinner-wave-in");
-    const category = document.querySelector("aside .selected").id;
+    deleteOldChart("bar-chart", "bar-chart-container");
     const period = document.querySelector("#period").value;
+    const category = document.querySelector("aside .selected").id;
     getBarChartData(category, period, makeBarChart);
 }
 
 function makeBarChart(data) {
     const sideValue = getSideValue();
-    const theme = localStorage.getItem("color-theme");
+    const theme = getTheme();
 
     const ctx = document.querySelector("#bar-chart").getContext('2d');
     const configuration = {
@@ -93,23 +93,23 @@ function makeBarChart(data) {
             onClick: changePieChart,
             maintainAspectRatio: false
         }
-    }
+    };
     makeHidden("#bar-chart-container .spinner-wave-in");
     new Chart(ctx, configuration);
     return Chart;
 }
 
 export function createPieChart() {
-    deleteOldChart("pie-chart", "pie-chart-container");
     removeHidden("#pie-chart-container .spinner-wave-in");
+    deleteOldChart("pie-chart", "pie-chart-container");
+    const domeId = document.querySelector("#dome-choice h3").id;
     const category = document.querySelector("aside .selected").id;
     const period = document.querySelector("#period").value;
-    const domeId = document.querySelector("#dome-choice h3").id;
     getPieChartData(category, period, domeId, makePieChart);
 }
 
 function makePieChart(data) {
-    const theme = localStorage.getItem("color-theme");
+    const theme = getTheme();
 
     const ctx = document.querySelector('#pie-chart').getContext('2d');
     const configuration = {
@@ -140,7 +140,7 @@ function makePieChart(data) {
             },
             maintainAspectRatio: false
         },
-    }
+    };
     makeHidden("#pie-chart-container .spinner-wave-in");
     new Chart(ctx, configuration);
 }
@@ -213,15 +213,17 @@ function makeLineChart(data) {
 
         },
         maintainAspectRatio: false
-    }
+    };
     new Chart(ctx, configuration);
 }
 
 function getYears() {
-    const res = []
+    const res = [];
     document.querySelectorAll("#years input").forEach(year => {
-        if (year.checked) res.push(year.id)
-    })
+        if (year.checked) {
+            res.push(year.id);
+        }
+    });
     return res;
 }
 
@@ -246,8 +248,8 @@ function getDataSets(data) {
             pointHoverBorderColor: SECONDARYCOLOR[theme],
             label: getYears()[i],
             data: data[i]
-        }
-        res.push(chart)
+        };
+        res.push(chart);
     }
     return res;
 }
@@ -257,12 +259,12 @@ function changePieChart(event, elements) {
         const clickedElement = this.getElementsAtEventForMode(event, "nearest", {intersect: true}, true);
         const index = clickedElement[0].index;
 
-        searchDome(index, succesHandler)
+        searchDome(index, succesHandler);
         function succesHandler(dome) {
             const $target = document.querySelector("#types_chart h3");
             $target.innerText = dome.domeName;
             $target.id = index;
-            createPieChart()
+            createPieChart();
         }
     }
 }
@@ -272,7 +274,11 @@ function deleteOldChart(chartId, parentId) {
     if ($oldChart) {
         $oldChart.remove();
     }
-    const html = `<canvas id="${chartId}"></canvas>`
+    const html = `<canvas id="${chartId}"></canvas>`;
     const $target = document.querySelector("#" + parentId);
     $target.innerHTML += html;
+}
+
+function getTheme() {
+    return localStorage.getItem("color-theme");
 }
