@@ -1,74 +1,49 @@
-# Mars web project group-18
-This is the client-side start project for the Analysis and Development project.
+<h2>Client</h2>
 
-Create your client-side project in this repo.
+---
 
-## Important public urls  
-* Web project: https://project-ii.ti.howest.be/mars-18/
-* Sonar reports: https://sonar.ti.howest.be/dashboard?id=2022.project-ii%3Amars-client-18
+**Home page**
 
-## Please complete the following instructions before committing the **final version** on the project
-Please **add** any **instructions** required to: 
-* make your application work if applicable 
-* be able to test the application (credentials, populated db, ...)
-* view the wireframes.
+![Homepage](https://cdn.discordapp.com/attachments/1022428928247341061/1055793746136014888/image.png)
 
-Also clarify
-* If there are known **bugs**.
-* If you haven't managed to finish certain required functionality.
+On the home page we are able to click on domes and see the radius of them. We are also able to filter the heatmap. 
 
-## Instructions for testing locally
-* Run the mars-server with gradle run (through your IDE)
-* Open the mars-client in phpstorm/webstorm
-  * Navigate to the index.html
-  * Click on a browser icon at the top right of your IDE to host the mars-client.
-  
-## Instruction for testing the web client locally with a deployed mars-server
-* Open the mars-client in phpstorm
-  * Copy the following settings to **config.json** (make sure to replace the XX)
-```json
-      {
-        "host": "https://project-ii.ti.howest.be",
-        "folder": "",
-        "group": "mars-XX"
-      }
-```
-  * Navigate to the index.html
-  * Click on a browser icon at the top right of your IDE to host the mars-client.
-  * Make sure to undo the settings once you are done testing the remote server!
+![Homepage](https://cdn.discordapp.com/attachments/1022428928247341061/1055795621921030164/image.png)
 
-## Instructions for local quality checks
-You can run the validators for html, CSS and JS rules locally. 
+We are also able to search for domes .And see the side menu. 
 
-Make sure **npm** is installed.
+![Statistics](https://cdn.discordapp.com/attachments/1022428928247341061/1055798459447394354/image.png)
 
-There is no need to push to the server to check if you are compliant with our rules. 
+On this page we see all the stats, and we can filter on these.
 
-In the interest of sparing the server, please result to local testing as often as possible. 
+![Statistics](https://cdn.discordapp.com/attachments/1022428928247341061/1055798880618422293/image.png)
 
-If everyone pushes to test, the remote will not last. 
+On the page we also have pies of the data.
 
-Open a terminal in your IDE
-  - Make sure you are in the root folder of the client project.
-  - Execute `npm install` this step is only needed once.
-  - Execute `npm run validate-local` for linux/mac users.
-  - Execute `npm run validate-local-win` for Windows users. 
-  - If there are errors, the program execution will halt and show the first error
-  - If there are no errors, a report file will be generated in the `.scannerworks/` directory. 
-    - You will find the link to the sonar report in this file 
+![Company](https://cdn.discordapp.com/attachments/1022428928247341061/1055800148455854100/image.png)
 
-Hint:
+Here we can see the company stats and filter on them.
 
-If you want to skip ci remotely, include `[ci skip]` in your commit message. 
+![Company](https://cdn.discordapp.com/attachments/1022428928247341061/1055800459048276068/image.png)
 
-This is convenient for when you want to quickly add a certain commit, but do not wish to trigger the whole CI sequence. 
+On the same page the user is able to buy adds.
 
-## Default files
+![Localisation](https://cdn.discordapp.com/attachments/1022428928247341061/1055800864050270290/image.png)
 
-### CSS 
-The `reset.css` has already been supplied, but it's up to you and your team to add other styles. 
+![Localisation](https://cdn.discordapp.com/attachments/1022428928247341061/1055800964646445126/image.png)
 
-### JavaScript
-A demonstration for connecting with the API has already been set up. 
+Here the user can make a request.
 
-We urge you to divide your JS files into many small JS files. 
+![About us](https://cdn.discordapp.com/attachments/1022428928247341061/1055800964646445126/image.png)
+
+On this page we can find the company info.
+
+![Settings](https://cdn.discordapp.com/attachments/1022428928247341061/1055801463139483710/image.png)
+
+This is the settings page.
+
+![Profile](https://media.discordapp.net/attachments/1022428928247341061/1055801891637956658/image.png?width=1283&height=676)
+
+![Profile](https://cdn.discordapp.com/attachments/1022428928247341061/1055801998278148107/image.png)
+
+Here we see the profile page where we are able to make appointments.
