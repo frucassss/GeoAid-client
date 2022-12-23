@@ -54,30 +54,30 @@
  Leaflet.heat, a tiny and fast heatmap plugin for Leaflet.
  https://github.com/Leaflet/Leaflet.heat
 */
-L.HeatLayer = (L.Layer ? L.Layer : L.Class).extend({
-    initialize: function(t, i) { this._latlngs = t, L.setOptions(this, i) },
-    setLatLngs: function(t) { return this._latlngs = t, this.redraw() },
-    addLatLng: function(t) { return this._latlngs.push(t), this.redraw() },
-    setOptions: function(t) { return L.setOptions(this, t), this._heat && this._updateOptions(), this.redraw() },
-    redraw: function() { return !this._heat || this._frame || this._map._animating || (this._frame = L.Util.requestAnimFrame(this._redraw, this)), this },
-    onAdd: function(t) { this._map = t, this._canvas || this._initCanvas(), t._panes.overlayPane.appendChild(this._canvas), t.on("moveend", this._reset, this), t.options.zoomAnimation && L.Browser.any3d && t.on("zoomanim", this._animateZoom, this), this._reset() },
-    onRemove: function(t) { t.getPanes().overlayPane.removeChild(this._canvas), t.off("moveend", this._reset, this), t.options.zoomAnimation && t.off("zoomanim", this._animateZoom, this) },
-    addTo: function(t) { return t.addLayer(this), this },
-    _initCanvas: function() {
-        var t = this._canvas = L.DomUtil.create("canvas", "leaflet-heatmap-layer leaflet-layer"),
-            i = L.DomUtil.testProp(["transformOrigin", "WebkitTransformOrigin", "msTransformOrigin"]);
-        t.style[i] = "50% 50%";
-        var a = this._map.getSize();
-        t.width = a.x, t.height = a.y;
-        var s = this._map.options.zoomAnimation && L.Browser.any3d;
-        L.DomUtil.addClass(t, "leaflet-zoom-" + (s ? "animated" : "hide")), this._heat = simpleheat(t), this._updateOptions()
-    },
-    _updateOptions: function() { this._heat.radius(this.options.radius || this._heat.defaultRadius, this.options.blur), this.options.gradient && this._heat.gradient(this.options.gradient), this.options.max && this._heat.max(this.options.max) },
-    _reset: function() {
-        var t = this._map.containerPointToLayerPoint([0, 0]);
-        L.DomUtil.setPosition(this._canvas, t);
-        var i = this._map.getSize();
-        this._heat._width !== i.x && (this._canvas.width = this._heat._width = i.x), this._heat._height !== i.y && (this._canvas.height = this._heat._height = i.y), this._redraw()
+    L.HeatLayer = (L.Layer ? L.Layer : L.Class).extend({
+        initialize: function(t, i) { this._latlngs = t, L.setOptions(this, i) },
+        setLatLngs: function(t) { return this._latlngs = t, this.redraw() },
+        addLatLng: function(t) { return this._latlngs.push(t), this.redraw() },
+        setOptions: function(t) { return L.setOptions(this, t), this._heat && this._updateOptions(), this.redraw() },
+        redraw: function() { return !this._heat || this._frame || this._map._animating || (this._frame = L.Util.requestAnimFrame(this._redraw, this)), this },
+        onAdd: function(t) { this._map = t, this._canvas || this._initCanvas(), t._panes.overlayPane.appendChild(this._canvas), t.on("moveend", this._reset, this), t.options.zoomAnimation && L.Browser.any3d && t.on("zoomanim", this._animateZoom, this), this._reset() },
+        onRemove: function(t) { t.getPanes().overlayPane.removeChild(this._canvas), t.off("moveend", this._reset, this), t.options.zoomAnimation && t.off("zoomanim", this._animateZoom, this) },
+        addTo: function(t) { return t.addLayer(this), this },
+        _initCanvas: function() {
+            var t = this._canvas = L.DomUtil.create("canvas", "leaflet-heatmap-layer leaflet-layer"),
+                i = L.DomUtil.testProp(["transformOrigin", "WebkitTransformOrigin", "msTransformOrigin"]);
+            t.style[i] = "50% 50%";
+            var a = this._map.getSize();
+            t.width = a.x, t.height = a.y;
+            var s = this._map.options.zoomAnimation && L.Browser.any3d;
+            L.DomUtil.addClass(t, "leaflet-zoom-" + (s ? "animated" : "hide")), this._heat = simpleheat(t), this._updateOptions()
+        },
+        _updateOptions: function() { this._heat.radius(this.options.radius || this._heat.defaultRadius, this.options.blur), this.options.gradient && this._heat.gradient(this.options.gradient), this.options.max && this._heat.max(this.options.max) },
+        _reset: function() {
+            var t = this._map.containerPointToLayerPoint([0, 0]);
+            L.DomUtil.setPosition(this._canvas, t);
+            var i = this._map.getSize();
+            this._heat._width !== i.x && (this._canvas.width = this._heat._width = i.x), this._heat._height !== i.y && (this._canvas.height = this._heat._height = i.y), this._redraw()
     },
     _redraw: function() {
         var t, i, a, s, e, n, h, o, r, d = [],
