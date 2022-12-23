@@ -35,13 +35,11 @@ function defaultDate() {
 
 function displayAppointments() {
   removeHidden(".spinner-wave-in");
-
   const $target = document.querySelector("#appointments");
   if ($target) {
     $target.innerHTML = "";
   }
   get("appointments", succesHandler);
-
   function succesHandler(res) {
     res.json().then(data => {
       const appointments = data.appointments;

@@ -10,18 +10,20 @@ function handleEventListeners() {
     document.querySelector("input[type='checkbox']").addEventListener("change", function (e) {
         const $target = e.target;
         if ($target.checked) {
-            localStorage.setItem("color-theme", "dark")
+            localStorage.setItem("color-theme", "dark");
         } else {
-            localStorage.setItem("color-theme", "light")
+            localStorage.setItem("color-theme", "light");
         }
-        setColorScheme()
+        setColorScheme();
     });
 }
 
 function setCheckBox() {
     const $checkbox = document.querySelector("input[type='checkbox']");
     const theme = localStorage.getItem("color-theme");
-    if (theme === "dark") $checkbox.click();
+    if (theme === "dark") {
+        $checkbox.click();
+    }
 }
 
 init();

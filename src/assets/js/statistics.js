@@ -5,10 +5,8 @@ import {
     makeSuggestions,
     selectClickedCategory,
     setColorScheme,
-    setPosition
 } from "./modules/helper.js";
 import { createBarChart, createPieChart } from "./modules/graphs.js";
-import {getIncidents} from "./modules/apiCrimes.js";
 
 const PIECHARTTITLES = {
     crimes: "Types (crimes)",
@@ -54,14 +52,14 @@ function handleEventListeners() {
 
     document.querySelector("#period").addEventListener("change", makeCharts);
 
-    document.querySelector("#period").addEventListener("change", makeCharts)
+    document.querySelector("#period").addEventListener("change", makeCharts);
 
     function makeCharts() {
         createBarChart();
         createPieChart();
     }
 
-    eventListenerFullscreen("#category_chart .material-icons", "#category_chart")
+    eventListenerFullscreen("#category_chart .material-icons", "#category_chart");
 }
 
 

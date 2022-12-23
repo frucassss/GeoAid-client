@@ -18,7 +18,7 @@ function handleEventListeners() {
 function removeText() {
     document.querySelectorAll("input, textarea").forEach($input => {
         $input.value = "";
-    })
+    });
 }
 
 init();
